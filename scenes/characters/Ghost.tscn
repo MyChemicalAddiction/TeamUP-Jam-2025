@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c77yqcnjp0x8p"]
+
+[ext_resource type="Script" uid="uid://cnxen4dyqy530" path="res://scripts/classes/characters/ghost/GhostCharacter.gd" id="1_ddmg8"]
+[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_2cjv0"]
+[ext_resource type="Script" uid="uid://cktmeqx81nrv6" path="res://scripts/classes/components/behaviors/movement behaviors/ghost movement/GhostMovementComponent.gd" id="2_ddmg8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddmg8"]
+size = Vector2(129, 129)
+
+[node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("movement_component")]
+script = ExtResource("1_ddmg8")
+movement_component = NodePath("Components/GhostMovementComponent")
+metadata/_custom_type_script = "uid://cnxen4dyqy530"
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="GhostMovementComponent" type="Node2D" parent="Components"]
+script = ExtResource("2_ddmg8")
+metadata/_custom_type_script = "uid://cktmeqx81nrv6"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_ddmg8")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_2cjv0")

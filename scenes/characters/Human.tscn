@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnlp11cfws5mh"]
+
+[ext_resource type="Script" uid="uid://dqcux1xonf8to" path="res://scripts/classes/characters/human/HumanCharacter.gd" id="1_fn0a6"]
+[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_rm4bp"]
+[ext_resource type="Script" uid="uid://cmxxa7fkgcmc2" path="res://scripts/classes/components/behaviors/movement behaviors/human movement/HumanMovementComponent.gd" id="3_fn0a6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rm4bp"]
+size = Vector2(129, 129)
+
+[node name="Human" type="CharacterBody2D" node_paths=PackedStringArray("movement_component")]
+script = ExtResource("1_fn0a6")
+movement_component = NodePath("Components/HumanMovementComponent")
+metadata/_custom_type_script = "uid://dqcux1xonf8to"
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="HumanMovementComponent" type="Node2D" parent="Components"]
+script = ExtResource("3_fn0a6")
+metadata/_custom_type_script = "uid://cmxxa7fkgcmc2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_rm4bp")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_rm4bp")
