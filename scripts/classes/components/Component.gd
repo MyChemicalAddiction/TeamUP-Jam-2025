@@ -2,8 +2,7 @@ extends Node2D
 class_name Component
 
 """
-The Component superclass is implemented by things like movement behaviors
-(see MovementComponent). It provides a common interface for enabling/disabling
+The Component superclass provides a common interface for enabling/disabling
 behavior of a component.
 """
 
