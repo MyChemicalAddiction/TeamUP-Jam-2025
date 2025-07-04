@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://cc4fjv8w3pibj" path="res://scripts/classes/components/input managers/Characters/Human/HumanInputManager.gd" id="7_0nw2b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rm4bp"]
-size = Vector2(129, 129)
+size = Vector2(128, 128)
 
 [node name="Human" type="CharacterBody2D" node_paths=PackedStringArray("movement_component")]
 script = ExtResource("1_fn0a6")
@@ -62,7 +62,6 @@ script = ExtResource("7_0nw2b")
 metadata/_custom_type_script = "uid://cc4fjv8w3pibj"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_rm4bp")
 
 [node name="Icon" type="Sprite2D" parent="."]

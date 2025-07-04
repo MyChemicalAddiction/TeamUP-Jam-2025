@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bv6bg7t0cca6i"]
+[gd_scene load_steps=7 format=3 uid="uid://bv6bg7t0cca6i"]
 
 [ext_resource type="Script" uid="uid://b2cxqgalfwh0f" path="res://scripts/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://c77yqcnjp0x8p" path="res://scenes/characters/Ghost.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dnlp11cfws5mh" path="res://scenes/characters/Human.tscn" id="3_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://yu6yynod5on7" path="res://scripts/multitarget_camera.gd" id="5_tbgi4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
 size = Vector2(1453, 46)
@@ -32,3 +33,10 @@ shape = SubResource("RectangleShape2D_tbgi4")
 position = Vector2(421.5, 15)
 scale = Vector2(11.3203, 0.34375)
 texture = ExtResource("4_jyhfs")
+
+[node name="MultiTargetCamera" type="Camera2D" parent="." node_paths=PackedStringArray("targets")]
+position = Vector2(1007, 539)
+script = ExtResource("5_tbgi4")
+margin = Vector2(1920, 1080)
+targets = [NodePath("../Characters/Ghost"), NodePath("../Characters/Human")]
+metadata/_custom_type_script = "uid://yu6yynod5on7"
