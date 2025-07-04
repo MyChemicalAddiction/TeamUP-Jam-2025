@@ -40,6 +40,7 @@ func _handle_movement(delta):
 		MovementStates.Walking:
 			character.velocity.x = horizontal_input * SPEED
 		MovementStates.Jumping:
+			character.velocity.x = horizontal_input * SPEED
 			character.velocity.y = move_toward(character.velocity.y, JUMP_VELOCITY, JUMP_SPEED)
 	
 	character.move_and_slide()
