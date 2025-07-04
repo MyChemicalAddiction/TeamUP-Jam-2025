@@ -9,7 +9,7 @@ is referenced by the character variable, to which the corresponding character
 assigns itself at its ready - see Character).
 """
 
-var character: Node ## The character which uses the functionality of this component.
+@export var character: Node ## The character which uses the functionality of this component.
 
 func _handle_movement(delta): ## Method signature for a hook that defines movement behavior.
 	push_error("Undefined _handle_movement method in MovementComponent")

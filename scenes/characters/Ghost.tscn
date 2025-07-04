@@ -14,8 +14,9 @@ metadata/_custom_type_script = "uid://cnxen4dyqy530"
 
 [node name="Components" type="Node2D" parent="."]
 
-[node name="GhostMovementComponent" type="Node2D" parent="Components"]
+[node name="GhostMovementComponent" type="Node2D" parent="Components" node_paths=PackedStringArray("character")]
 script = ExtResource("2_ddmg8")
+character = NodePath("../..")
 metadata/_custom_type_script = "uid://cktmeqx81nrv6"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
