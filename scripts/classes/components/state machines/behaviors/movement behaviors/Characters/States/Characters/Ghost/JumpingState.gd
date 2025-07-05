@@ -6,9 +6,9 @@ The GhostJumpingState allows the ghost to jump (fly) by holding the jump button
 rather than pressing it like the Human.
 """
 
-const SPEED = 300.0
-const ACCELERATE = 60.0
-const JUMP_VELOCITY = -400
+@export var SPEED = 300.0
+@export var ACCELERATE = 60.0
+@export var JUMP_VELOCITY = -400
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 

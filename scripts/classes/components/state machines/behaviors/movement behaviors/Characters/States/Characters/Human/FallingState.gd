@@ -5,8 +5,8 @@ class_name HumanFallingState
 The human player falls normally.
 """
 
-const SPEED = 300.0
-const ACCELERATE = 60.0
+@export var SPEED = 300.0
+@export var ACCELERATE = 60.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 

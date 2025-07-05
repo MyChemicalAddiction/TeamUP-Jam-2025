@@ -1,8 +1,8 @@
 extends CharacterWalkingState
 class_name HumanWalkingState
 
-const SPEED = 300.0
-const ACCELERATE = 60.0
+@export var SPEED = 300.0
+@export var ACCELERATE = 60.0
 
 var vertical_input = Vector2.ZERO
 var horizontal_input = Vector2.ZERO

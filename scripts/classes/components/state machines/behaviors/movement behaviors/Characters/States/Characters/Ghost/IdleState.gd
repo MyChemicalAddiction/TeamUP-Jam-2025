@@ -1,7 +1,7 @@
 extends CharacterIdleState
 class_name GhostIdleState
 
-const ACCELERATE = 60.0
+@export var ACCELERATE = 60.0
 
 func process_input(delta):
 	input_manager.process_input()
