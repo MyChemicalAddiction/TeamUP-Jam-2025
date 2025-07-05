@@ -24,5 +24,5 @@ GhostFallingState, etc. to provide concrete behavior definitions.
 
 @export var input_manager: InputManager ## Manages the input that controls what this state does/changes to.
 
-func process_input(delta): ## Overridden to process input as provided by the input_manager and return a new state if needed.
+func process_input(_delta): ## Overridden to process input as provided by the input_manager and return a new state if needed.
 	return null 

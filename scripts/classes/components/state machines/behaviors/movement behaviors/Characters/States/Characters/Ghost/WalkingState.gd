@@ -7,7 +7,7 @@ class_name GhostWalkingState
 var vertical_input = Vector2.ZERO
 var horizontal_input = Vector2.ZERO
 
-func process_input(delta):
+func process_input(_delta):
 	input_manager.process_input()
 	horizontal_input = input_manager.horizontal_input
 	vertical_input = input_manager.vertical_input
@@ -22,7 +22,7 @@ func process_input(delta):
 	
 	object.move_and_slide()
 
-func process_physics(delta: float):
+func process_physics(_delta: float):
 	if not object.is_on_floor():
 		return FallingState
 

@@ -31,5 +31,5 @@ func _on_enter(): ## Hook for extra behavior when entered.
 func _on_exit(): ## Hook for extra behavior when exited.
 	pass
 
-func process_physics(delta): ## What this state should do every frame if it's active.
+func process_physics(_delta): ## What this state should do every frame if it's active.
 	return null

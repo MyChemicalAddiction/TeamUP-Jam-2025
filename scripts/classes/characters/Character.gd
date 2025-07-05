@@ -26,5 +26,5 @@ func _physics_process(delta: float) -> void: ## Called every frame.
 	movement_component.process_physics(delta)
 	_process_physics(delta)
 
-func _process_physics(delta): ## Implementation-defined hook for behavior on physics process.
+func _process_physics(_delta): ## Implementation-defined hook for behavior on physics process.
 	pass

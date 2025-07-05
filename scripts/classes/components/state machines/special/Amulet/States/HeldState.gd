@@ -16,8 +16,8 @@ func _on_enter():
 func _on_exit():
 	pass
 
-func process_physics(delta):
+func process_physics(_delta):
 	pass
 
-func process_input(delta):
+func process_input(_delta):
 	pass

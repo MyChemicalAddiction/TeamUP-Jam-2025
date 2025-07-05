@@ -9,5 +9,5 @@ in-game ghost character.
 func _on_ready():
 	pass
 
-func _process_physics(delta):
+func _process_physics(_delta):
 	pass

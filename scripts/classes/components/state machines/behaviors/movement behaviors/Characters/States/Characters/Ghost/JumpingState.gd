@@ -15,7 +15,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var vertical_input = 0.0
 var horizontal_input = 0.0
 
-func process_input(delta):
+func process_input(_delta):
 	input_manager.process_input()
 	vertical_input = input_manager.vertical_input
 	horizontal_input = input_manager.horizontal_input
