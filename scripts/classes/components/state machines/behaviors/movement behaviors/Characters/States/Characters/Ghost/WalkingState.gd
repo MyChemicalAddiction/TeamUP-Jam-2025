@@ -26,8 +26,8 @@ func process_physics(delta: float):
 	if not object.is_on_floor():
 		return FallingState
 
-func enter():
+func _on_enter():
 	pass
 
-func exit():
+func _on_exit():
 	pass

@@ -33,8 +33,8 @@ func process_physics(delta: float):
 	if object.velocity.y > 0:
 		return FallingState
 
-func enter():
+func _on_enter():
 	pass
 
-func exit():
+func _on_exit():
 	pass

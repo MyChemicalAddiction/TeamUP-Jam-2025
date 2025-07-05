@@ -7,3 +7,15 @@ class_name ThrownState
 The state the amulet is in upon being thrown (in this state, it is out of the
 human's hands and can maybe be retrieved).
 """
+
+func _on_enter():
+	pass
+
+func _on_exit():
+	pass
+
+func process_physics(delta):
+	pass
+
+func process_input(delta):
+	pass

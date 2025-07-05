@@ -27,8 +27,8 @@ func process_physics(delta: float):
 	
 	object.move_and_slide()
 
-func enter():
+func _on_enter():
 	object.velocity.y = JUMP_VELOCITY
 
-func exit():
+func _on_exit():
 	pass

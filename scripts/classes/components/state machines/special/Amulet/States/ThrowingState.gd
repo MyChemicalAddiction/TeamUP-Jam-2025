@@ -16,3 +16,15 @@ Upon being entered, this state might emit a corresponding signal that can maybe
 in the future communicate to an AnimationPlayer observer that causes the
 human to look like he's throwing something when the signal is received.
 """
+
+func _on_enter():
+	pass
+
+func _on_exit():
+	pass
+
+func process_physics(delta):
+	pass
+
+func process_input(delta):
+	pass

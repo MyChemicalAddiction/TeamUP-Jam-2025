@@ -37,8 +37,8 @@ func process_physics(delta: float):
 		
 	object.move_and_slide()
 
-func enter():
+func _on_enter():
 	pass
 
-func exit():
+func _on_exit():
 	pass
