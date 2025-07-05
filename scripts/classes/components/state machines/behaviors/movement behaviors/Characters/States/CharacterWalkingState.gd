@@ -1,4 +1,4 @@
-extends CharacterMovementState
+extends InputState
 class_name CharacterWalkingState
 
 @export var IdleState: State

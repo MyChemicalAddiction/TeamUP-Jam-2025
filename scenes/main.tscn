@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv6bg7t0cca6i"]
+[gd_scene load_steps=8 format=3 uid="uid://bv6bg7t0cca6i"]
 
 [ext_resource type="Script" uid="uid://b2cxqgalfwh0f" path="res://scripts/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://c77yqcnjp0x8p" path="res://scenes/characters/Ghost.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dnlp11cfws5mh" path="res://scenes/characters/Human.tscn" id="3_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://yu6yynod5on7" path="res://scripts/multitarget_camera.gd" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://bf1uei6a8uqil" path="res://scenes/objects/unique/amulet.tscn" id="6_tefeu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
 size = Vector2(1453, 46)
@@ -20,16 +21,18 @@ position = Vector2(526, 652)
 [node name="Human" parent="Characters" instance=ExtResource("3_jyhfs")]
 position = Vector2(1373, 661)
 
-[node name="Level" type="Node2D" parent="."]
+[node name="CurrentLevel" type="Node2D" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Level"]
+[node name="Mock Level" type="Node2D" parent="CurrentLevel"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="CurrentLevel/Mock Level"]
 position = Vector2(532, 750)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CurrentLevel/Mock Level/StaticBody2D"]
 position = Vector2(423.5, 13)
 shape = SubResource("RectangleShape2D_tbgi4")
 
-[node name="Icon" type="Sprite2D" parent="Level/StaticBody2D"]
+[node name="Icon" type="Sprite2D" parent="CurrentLevel/Mock Level/StaticBody2D"]
 position = Vector2(421.5, 15)
 scale = Vector2(11.3203, 0.34375)
 texture = ExtResource("4_jyhfs")
@@ -40,3 +43,6 @@ script = ExtResource("5_tbgi4")
 margin = Vector2(1920, 1080)
 targets = [NodePath("../Characters/Ghost"), NodePath("../Characters/Human")]
 metadata/_custom_type_script = "uid://yu6yynod5on7"
+
+[node name="Amulet" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(978, 543)

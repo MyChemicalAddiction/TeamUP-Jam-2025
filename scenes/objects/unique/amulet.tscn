@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://bf1uei6a8uqil"]
+
+[ext_resource type="Script" uid="uid://dfwxvk54axc1" path="res://scripts/classes/components/state machines/special/Amulet/AmuletStateMachine.gd" id="1_1numj"]
+[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="1_faw7v"]
+[ext_resource type="Script" uid="uid://dukeo7ylkp6g3" path="res://scripts/classes/components/state machines/special/Amulet/States/HeldState.gd" id="2_nncdm"]
+[ext_resource type="Script" uid="uid://bukmwe5b6fuky" path="res://scripts/classes/components/state machines/special/Amulet/States/ThrownState.gd" id="3_c2c0c"]
+[ext_resource type="Script" uid="uid://bv4q7rhf2igqn" path="res://scripts/classes/components/state machines/special/Amulet/States/ThrowingState.gd" id="4_ulww5"]
+[ext_resource type="Script" uid="uid://bp078yt1n57lh" path="res://scripts/classes/components/input managers/Special Objects/AmuletInputManager.gd" id="5_c2c0c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_faw7v"]
+size = Vector2(128, 128)
+
+[node name="Amulet" type="RigidBody2D"]
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="AmuletStateMachine" type="Node2D" parent="Components" node_paths=PackedStringArray("starting_state", "object")]
+script = ExtResource("1_1numj")
+starting_state = NodePath("HeldState")
+object = NodePath("../..")
+metadata/_custom_type_script = "uid://dfwxvk54axc1"
+
+[node name="HeldState" type="Node2D" parent="Components/AmuletStateMachine" node_paths=PackedStringArray("throwingState", "input_manager")]
+script = ExtResource("2_nncdm")
+throwingState = NodePath("../ThrowingState")
+input_manager = NodePath("../../AmuletInputManager")
+metadata/_custom_type_script = "uid://dukeo7ylkp6g3"
+
+[node name="ThrownState" type="Node2D" parent="Components/AmuletStateMachine" node_paths=PackedStringArray("heldState", "input_manager")]
+script = ExtResource("3_c2c0c")
+heldState = NodePath("../HeldState")
+input_manager = NodePath("../../AmuletInputManager")
+metadata/_custom_type_script = "uid://bukmwe5b6fuky"
+
+[node name="ThrowingState" type="Node2D" parent="Components/AmuletStateMachine" node_paths=PackedStringArray("thrownState", "heldState", "input_manager")]
+script = ExtResource("4_ulww5")
+thrownState = NodePath("../ThrownState")
+heldState = NodePath("../HeldState")
+input_manager = NodePath("../../AmuletInputManager")
+metadata/_custom_type_script = "uid://bv4q7rhf2igqn"
+
+[node name="AmuletInputManager" type="Node" parent="Components"]
+script = ExtResource("5_c2c0c")
+metadata/_custom_type_script = "uid://bp078yt1n57lh"
+
+[node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(0.831582, 0.831582, 0, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_faw7v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(0.831582, 0.831582, 0, 1)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_faw7v")

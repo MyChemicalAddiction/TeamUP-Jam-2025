@@ -13,7 +13,7 @@ characters in the game: the human player and the ghost player. These include:
 	-A shared _physics_process() function and a shared _process_physics() hook.
 """
 
-@export var movement_component: MovementStateMachine ## The component which handles player movement.
+@export var movement_component: InputStateMachine ## The component which handles player movement.
 
 ## Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dnlp11cfws5mh"]
 
 [ext_resource type="Script" uid="uid://dqcux1xonf8to" path="res://scripts/classes/characters/human/HumanCharacter.gd" id="1_fn0a6"]
-[ext_resource type="Script" uid="uid://c0kbow20mhepj" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/MovementStateMachine.gd" id="2_opdk1"]
+[ext_resource type="Script" uid="uid://c0kbow20mhepj" path="res://scripts/classes/components/state machines/InputStateMachine.gd" id="2_opdk1"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_rm4bp"]
 [ext_resource type="Script" uid="uid://cq7hetf2d2i77" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Human/IdleState.gd" id="3_opdk1"]
 [ext_resource type="Script" uid="uid://8g6gd5gevs7f" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Human/WalkingState.gd" id="4_0nw2b"]

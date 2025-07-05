@@ -1,0 +1,2 @@
+extends InputStateMachine
+class_name AmuletStateMachine

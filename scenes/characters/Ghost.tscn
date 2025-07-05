@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnxen4dyqy530" path="res://scripts/classes/characters/ghost/GhostCharacter.gd" id="1_ddmg8"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_2cjv0"]
-[ext_resource type="Script" uid="uid://c0kbow20mhepj" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/MovementStateMachine.gd" id="2_4gosf"]
+[ext_resource type="Script" uid="uid://c0kbow20mhepj" path="res://scripts/classes/components/state machines/InputStateMachine.gd" id="2_4gosf"]
 [ext_resource type="Script" uid="uid://4j4yhcucvxiq" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Ghost/FallingState.gd" id="3_4gosf"]
 [ext_resource type="Script" uid="uid://c24ikmo4sglwi" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Ghost/IdleState.gd" id="4_3grc2"]
 [ext_resource type="Script" uid="uid://cujjfn1uqfj3n" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Ghost/JumpingState.gd" id="5_tvor1"]
@@ -65,4 +65,5 @@ metadata/_custom_type_script = "uid://bjqhj6wxoiy3n"
 shape = SubResource("RectangleShape2D_ddmg8")
 
 [node name="Icon" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.4)
 texture = ExtResource("2_2cjv0")
