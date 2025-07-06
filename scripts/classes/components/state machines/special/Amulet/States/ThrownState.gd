@@ -9,7 +9,7 @@ human's hands and can maybe be retrieved).
 """
 
 func _on_enter():
-	pass
+	print('thrown!')
 
 func _on_exit():
 	pass

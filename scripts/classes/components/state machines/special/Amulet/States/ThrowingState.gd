@@ -1,9 +1,6 @@
 extends InputState
 class_name ThrowingState
 
-@export var thrownState: State
-@export var heldState: State
-
 """
 The state the amulet is in whilst being thrown. In this state, the correct
 velocity & direction that will be applied to the throwing force upon release
@@ -17,14 +14,44 @@ in the future communicate to an AnimationPlayer observer that causes the
 human to look like he's throwing something when the signal is received.
 """
 
+@export var holder: Character ## References the Human - which "holds" the amulet, meaning the amulet's position at the start of the throw must be at the center of the human
+
+@export var thrownState: State
+@export var heldState: State
+
+var charging := false ## Whether the player is currently holding down LMB to charge the amulet.
+var cancel := false ## When the player is charging the amulet throw, he can optionally RMB click to cancel the throw (reflected in this variable).
+var mouse_pos := Vector2.ZERO ## The position of the mouse cursor (used to calculate the direction of the force applied to the amulet)>
+
+var direction := Vector2.ZERO ## The direction toward which the force will be applied.
+var min_force := 0.1
+var max_force := 1.0
+
 func _on_enter():
-	pass
+	print('throwing!')
 
 func _on_exit():
-	pass
+	object.freeze = false
+	
+	object.position = holder.position
+	object.visible = true
+	
+	direction = (mouse_pos - object.position).normalized()
+	
+	object.apply_central_impulse(Vector2(max_force, max_force) * direction)
 
 func process_physics(_delta):
 	pass
 
 func process_input(_delta):
-	pass
+	input_manager.process_input()
+	
+	charging = input_manager.charging
+	cancel = input_manager.cancel
+	mouse_pos = input_manager.mouse_pos
+	
+	if cancel:
+		return heldState
+	
+	if !charging:
+		return thrownState

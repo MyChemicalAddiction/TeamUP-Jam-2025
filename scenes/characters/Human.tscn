@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnlp11cfws5mh"]
+[gd_scene load_steps=11 format=3 uid="uid://dnlp11cfws5mh"]
 
 [ext_resource type="Script" uid="uid://dqcux1xonf8to" path="res://scripts/classes/characters/human/HumanCharacter.gd" id="1_fn0a6"]
 [ext_resource type="Script" uid="uid://c0kbow20mhepj" path="res://scripts/classes/components/state machines/InputStateMachine.gd" id="2_opdk1"]
@@ -8,11 +8,13 @@
 [ext_resource type="Script" uid="uid://b6onqdkxd13yl" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Human/FallingState.gd" id="5_ovymh"]
 [ext_resource type="Script" uid="uid://c0j3byxgcbbui" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Human/JumpingState.gd" id="6_rv0c7"]
 [ext_resource type="Script" uid="uid://cc4fjv8w3pibj" path="res://scripts/classes/components/input managers/Characters/Human/HumanInputManager.gd" id="7_0nw2b"]
+[ext_resource type="Script" uid="uid://bngv2rtf3degk" path="res://scripts/classes/components/state machines/state listeners/Human Player/AmuletThrowingStateListener.gd" id="9_ovymh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rm4bp"]
 size = Vector2(128, 128)
 
 [node name="Human" type="CharacterBody2D" node_paths=PackedStringArray("movement_component")]
+collision_layer = 0
 script = ExtResource("1_fn0a6")
 movement_component = NodePath("Components/MovementStateMachine")
 metadata/_custom_type_script = "uid://dqcux1xonf8to"
@@ -61,8 +63,21 @@ metadata/_custom_type_script = "uid://c0j3byxgcbbui"
 script = ExtResource("7_0nw2b")
 metadata/_custom_type_script = "uid://cc4fjv8w3pibj"
 
+[node name="Visual" type="Node2D" parent="."]
+
+[node name="Throwing_Arrow" type="Sprite2D" parent="Visual"]
+visible = false
+rotation = -4.71238
+scale = Vector2(1.1875, 0.125)
+texture = ExtResource("2_rm4bp")
+offset = Vector2(-64, 0)
+
+[node name="StateListener" type="Node2D" parent="Visual/Throwing_Arrow"]
+script = ExtResource("9_ovymh")
+metadata/_custom_type_script = "uid://cga1lq65xwp1"
+
+[node name="Icon" type="Sprite2D" parent="Visual"]
+texture = ExtResource("2_rm4bp")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rm4bp")
-
-[node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("2_rm4bp")

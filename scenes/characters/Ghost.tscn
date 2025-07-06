@@ -13,6 +13,7 @@
 size = Vector2(128, 128)
 
 [node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("movement_component")]
+collision_layer = 0
 script = ExtResource("1_ddmg8")
 movement_component = NodePath("Components/MovementStateMachine")
 metadata/_custom_type_script = "uid://cnxen4dyqy530"

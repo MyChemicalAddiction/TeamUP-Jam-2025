@@ -1,16 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://bf1uei6a8uqil"]
+[gd_scene load_steps=10 format=3 uid="uid://bf1uei6a8uqil"]
 
 [ext_resource type="Script" uid="uid://dfwxvk54axc1" path="res://scripts/classes/components/state machines/special/Amulet/AmuletStateMachine.gd" id="1_1numj"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="1_faw7v"]
+[ext_resource type="Script" uid="uid://1ngpyj4uh14m" path="res://scripts/objects/special/amulet.gd" id="1_ulww5"]
 [ext_resource type="Script" uid="uid://dukeo7ylkp6g3" path="res://scripts/classes/components/state machines/special/Amulet/States/HeldState.gd" id="2_nncdm"]
 [ext_resource type="Script" uid="uid://bukmwe5b6fuky" path="res://scripts/classes/components/state machines/special/Amulet/States/ThrownState.gd" id="3_c2c0c"]
 [ext_resource type="Script" uid="uid://bv4q7rhf2igqn" path="res://scripts/classes/components/state machines/special/Amulet/States/ThrowingState.gd" id="4_ulww5"]
 [ext_resource type="Script" uid="uid://bp078yt1n57lh" path="res://scripts/classes/components/input managers/Special Objects/AmuletInputManager.gd" id="5_c2c0c"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2c0c"]
+bounce = 0.15
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_faw7v"]
 size = Vector2(128, 128)
 
-[node name="Amulet" type="RigidBody2D"]
+[node name="Amulet" type="RigidBody2D" node_paths=PackedStringArray("stateMachine")]
+collision_layer = 0
+mass = 0.001
+physics_material_override = SubResource("PhysicsMaterial_c2c0c")
+script = ExtResource("1_ulww5")
+stateMachine = NodePath("Components/AmuletStateMachine")
 
 [node name="Components" type="Node2D" parent="."]
 
