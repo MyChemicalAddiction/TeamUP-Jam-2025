@@ -27,6 +27,15 @@ var direction := Vector2.ZERO ## The direction toward which the force will be ap
 var min_force := 0.1
 var max_force := 1.0
 
+func enter(): ## Overridden here to fix an annoying visual defect where the arrow toward which the player is throwing something is oriented wrong on the first frame.
+	input_manager.process_input()
+
+	mouse_pos = input_manager.mouse_pos
+	
+	entered.emit()
+	
+	_on_enter()
+
 func _on_enter():
 	print('throwing!')
 
