@@ -69,6 +69,6 @@ collision_mask = 0
 
 [node name="RadiusCollisionShape2D" type="CollisionPolygon2D" parent="Amulet Radius Circle"]
 script = ExtResource("8_ns171")
-circle_density = 16
+circle_density = 32
 circle_radius = 500
 metadata/_custom_type_script = "uid://dcc8kr4gx8lv3"

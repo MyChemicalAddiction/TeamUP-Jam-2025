@@ -61,9 +61,6 @@ holder = NodePath("../../../../Characters/Human")
 [node name="ThrowingState" parent="Amulet/Components/AmuletStateMachine" index="2" node_paths=PackedStringArray("holder")]
 holder = NodePath("../../../../Characters/Human")
 
-[node name="RadiusCollisionShape2D" parent="Amulet/StaticBody2D" index="0"]
-circle_density = 32
-
 [editable path="Characters/Ghost"]
 [editable path="Characters/Human"]
 [editable path="Amulet"]

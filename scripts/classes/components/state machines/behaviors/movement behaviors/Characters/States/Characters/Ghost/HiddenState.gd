@@ -1,6 +1,11 @@
 extends InputState
 class_name GhostHiddenState
 
+"""
+Active when the ghost is hidden inside the amulet. In this state, it can't
+do anything and is invisible.
+"""
+
 @export var IdleState: InputState
 @export var GhostCollision: CollisionShape2D
 @export var amulet: Node
@@ -11,7 +16,7 @@ func process_input(_delta):
 		return IdleState
 		
 func process_physics(_delta: float):
-	pass
+	object.global_position = amulet.global_position ## The ghost should keep up with the amulet so the camera updates properly.
 
 func _on_enter():
 	object.visible = false
