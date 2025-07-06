@@ -43,14 +43,14 @@ func enter(): ## Overridden here to fix an annoying visual defect where the arro
 
 	mouse_pos = input_manager.mouse_pos
 	
+	force_multiplier = 0.0
+	
 	entered.emit()
 	
 	_on_enter()
 
 func _on_enter():
 	current_tween = self.create_tween()
-	
-	force_multiplier = 0.0
 	
 	current_tween.tween_property(self, "force_multiplier", 1.0, REV_TIME)
 	current_tween.tween_callback(_rev_finished)
