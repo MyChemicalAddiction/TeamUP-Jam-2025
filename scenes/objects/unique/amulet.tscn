@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bf1uei6a8uqil"]
+[gd_scene load_steps=11 format=3 uid="uid://bf1uei6a8uqil"]
 
 [ext_resource type="Script" uid="uid://dfwxvk54axc1" path="res://scripts/classes/components/state machines/special/Amulet/AmuletStateMachine.gd" id="1_1numj"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="1_faw7v"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bukmwe5b6fuky" path="res://scripts/classes/components/state machines/special/Amulet/States/ThrownState.gd" id="3_c2c0c"]
 [ext_resource type="Script" uid="uid://bv4q7rhf2igqn" path="res://scripts/classes/components/state machines/special/Amulet/States/ThrowingState.gd" id="4_ulww5"]
 [ext_resource type="Script" uid="uid://bp078yt1n57lh" path="res://scripts/classes/components/input managers/Special Objects/AmuletInputManager.gd" id="5_c2c0c"]
+[ext_resource type="Script" uid="uid://dcc8kr4gx8lv3" path="res://scripts/functionality/radius_collision_shape.gd" id="8_ns171"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2c0c"]
 bounce = 0.15
@@ -61,3 +62,13 @@ texture = ExtResource("1_faw7v")
 modulate = Color(0.831582, 0.831582, 0, 1)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_faw7v")
+
+[node name="Amulet Radius Circle" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="RadiusCollisionShape2D" type="CollisionPolygon2D" parent="Amulet Radius Circle"]
+script = ExtResource("8_ns171")
+circle_density = 16
+circle_radius = 500
+metadata/_custom_type_script = "uid://dcc8kr4gx8lv3"

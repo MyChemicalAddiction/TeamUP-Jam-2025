@@ -42,7 +42,6 @@ func _on_enter():
 func _on_exit():
 	object.freeze = false
 	
-	object.position = holder.position
 	object.visible = true
 	
 	direction = (mouse_pos - object.position).normalized()
@@ -50,7 +49,7 @@ func _on_exit():
 	object.apply_central_impulse(Vector2(max_force, max_force) * direction)
 
 func process_physics(_delta):
-	pass
+	object.position = holder.position
 
 func process_input(_delta):
 	input_manager.process_input()

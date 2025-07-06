@@ -1,5 +1,9 @@
-extends CharacterIdleState
+extends InputState
 class_name HumanIdleState
+
+@export var WalkingState: InputState
+@export var JumpingState: InputState
+@export var FallingState: InputState
 
 @export var ACCELERATE = 60.0
 

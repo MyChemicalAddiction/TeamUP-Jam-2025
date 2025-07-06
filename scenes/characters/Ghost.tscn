@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c77yqcnjp0x8p"]
+[gd_scene load_steps=11 format=3 uid="uid://c77yqcnjp0x8p"]
 
 [ext_resource type="Script" uid="uid://cnxen4dyqy530" path="res://scripts/classes/characters/ghost/GhostCharacter.gd" id="1_ddmg8"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_2cjv0"]
@@ -8,12 +8,14 @@
 [ext_resource type="Script" uid="uid://cujjfn1uqfj3n" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Ghost/JumpingState.gd" id="5_tvor1"]
 [ext_resource type="Script" uid="uid://bk2itwnuliqo6" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Ghost/WalkingState.gd" id="6_1ma87"]
 [ext_resource type="Script" uid="uid://dyfj8np7ybeoi" path="res://scripts/classes/components/input managers/Characters/Ghost/GhostInputManager.gd" id="7_3grc2"]
+[ext_resource type="Script" uid="uid://iehh465xdyjd" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Ghost/HiddenState.gd" id="7_tvor1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddmg8"]
 size = Vector2(128, 128)
 
 [node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("movement_component")]
 collision_layer = 0
+collision_mask = 3
 script = ExtResource("1_ddmg8")
 movement_component = NodePath("Components/MovementStateMachine")
 metadata/_custom_type_script = "uid://cnxen4dyqy530"
@@ -26,37 +28,45 @@ starting_state = NodePath("GhostIdleState")
 object = NodePath("../..")
 metadata/_custom_type_script = "uid://c0kbow20mhepj"
 
-[node name="GhostFallingState" type="Node2D" parent="Components/MovementStateMachine" node_paths=PackedStringArray("WalkingState", "IdleState", "JumpingState", "input_manager")]
+[node name="GhostFallingState" type="Node2D" parent="Components/MovementStateMachine" node_paths=PackedStringArray("JumpingState", "IdleState", "HiddenState", "input_manager")]
 script = ExtResource("3_4gosf")
-WalkingState = NodePath("../GhostWalkingState")
-IdleState = NodePath("../GhostIdleState")
 JumpingState = NodePath("../GhostJumpingState")
+IdleState = NodePath("../GhostIdleState")
+HiddenState = NodePath("../GhostHiddenState")
 input_manager = NodePath("../../GhostInputManager")
 metadata/_custom_type_script = "uid://4j4yhcucvxiq"
 
-[node name="GhostIdleState" type="Node2D" parent="Components/MovementStateMachine" node_paths=PackedStringArray("WalkingState", "FallingState", "JumpingState", "input_manager")]
+[node name="GhostIdleState" type="Node2D" parent="Components/MovementStateMachine" node_paths=PackedStringArray("WalkingState", "JumpingState", "FallingState", "HiddenState", "input_manager")]
 script = ExtResource("4_3grc2")
 WalkingState = NodePath("../GhostWalkingState")
-FallingState = NodePath("../GhostFallingState")
 JumpingState = NodePath("../GhostJumpingState")
+FallingState = NodePath("../GhostFallingState")
+HiddenState = NodePath("../GhostHiddenState")
 input_manager = NodePath("../../GhostInputManager")
 metadata/_custom_type_script = "uid://c24ikmo4sglwi"
 
-[node name="GhostJumpingState" type="Node2D" parent="Components/MovementStateMachine" node_paths=PackedStringArray("WalkingState", "FallingState", "IdleState", "input_manager")]
+[node name="GhostJumpingState" type="Node2D" parent="Components/MovementStateMachine" node_paths=PackedStringArray("FallingState", "HiddenState", "input_manager")]
 script = ExtResource("5_tvor1")
-WalkingState = NodePath("../GhostWalkingState")
 FallingState = NodePath("../GhostFallingState")
-IdleState = NodePath("../GhostIdleState")
+HiddenState = NodePath("../GhostHiddenState")
 input_manager = NodePath("../../GhostInputManager")
 metadata/_custom_type_script = "uid://cujjfn1uqfj3n"
 
-[node name="GhostWalkingState" type="Node2D" parent="Components/MovementStateMachine" node_paths=PackedStringArray("IdleState", "FallingState", "JumpingState", "input_manager")]
+[node name="GhostWalkingState" type="Node2D" parent="Components/MovementStateMachine" node_paths=PackedStringArray("IdleState", "JumpingState", "FallingState", "HiddenState", "input_manager")]
 script = ExtResource("6_1ma87")
 IdleState = NodePath("../GhostIdleState")
-FallingState = NodePath("../GhostFallingState")
 JumpingState = NodePath("../GhostJumpingState")
+FallingState = NodePath("../GhostFallingState")
+HiddenState = NodePath("../GhostHiddenState")
 input_manager = NodePath("../../GhostInputManager")
 metadata/_custom_type_script = "uid://bk2itwnuliqo6"
+
+[node name="GhostHiddenState" type="Node2D" parent="Components/MovementStateMachine" node_paths=PackedStringArray("IdleState", "GhostCollision", "input_manager")]
+script = ExtResource("7_tvor1")
+IdleState = NodePath("../GhostIdleState")
+GhostCollision = NodePath("../../../CollisionShape2D")
+input_manager = NodePath("../../GhostInputManager")
+metadata/_custom_type_script = "uid://iehh465xdyjd"
 
 [node name="GhostInputManager" type="Node" parent="Components"]
 script = ExtResource("7_3grc2")

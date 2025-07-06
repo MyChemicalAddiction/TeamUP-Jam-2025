@@ -1,10 +1,13 @@
-extends CharacterJumpingState
+extends InputState
 class_name GhostJumpingState
 
 """
 The GhostJumpingState allows the ghost to jump (fly) by holding the jump button
 rather than pressing it like the Human.
 """
+
+@export var FallingState: InputState
+@export var HiddenState: InputState
 
 @export var SPEED = 300.0
 @export var ACCELERATE = 60.0
@@ -17,6 +20,9 @@ var horizontal_input = 0.0
 
 func process_input(_delta):
 	input_manager.process_input()
+	if input_manager.toggle_amulet:
+		return HiddenState
+		
 	vertical_input = input_manager.vertical_input
 	horizontal_input = input_manager.horizontal_input
 	object.velocity.x = move_toward(object.velocity.x, SPEED * horizontal_input, ACCELERATE)

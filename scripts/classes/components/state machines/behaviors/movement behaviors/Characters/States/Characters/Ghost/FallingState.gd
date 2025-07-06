@@ -1,10 +1,14 @@
-extends CharacterFallingState
+extends InputState
 class_name GhostFallingState
 
 """
 The ghost's concrete implementation of the CharacterFallingState allows it to
 jump (and thus fly) even when falling.
 """
+
+@export var JumpingState: InputState
+@export var IdleState: InputState
+@export var HiddenState: InputState
 
 @export var SPEED = 300.0
 @export var ACCELERATE = 60.0
@@ -17,6 +21,9 @@ var vertical_input = 0.0
 
 func process_input(_delta):
 	input_manager.process_input()
+	if input_manager.toggle_amulet:
+		return HiddenState
+		
 	vertical_input = input_manager.vertical_input
 	horizontal_input = input_manager.horizontal_input ## The horizontal direction toward which the player is moving.
 	

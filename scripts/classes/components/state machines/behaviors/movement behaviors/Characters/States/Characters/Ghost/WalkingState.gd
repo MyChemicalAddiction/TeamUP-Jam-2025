@@ -1,14 +1,23 @@
-extends CharacterWalkingState
+extends InputState
 class_name GhostWalkingState
 
 @export var SPEED = 300.0
 @export var ACCELERATE = 60.0
+
+@export var IdleState: InputState
+@export var JumpingState: InputState
+@export var FallingState: InputState
+@export var HiddenState: InputState
 
 var vertical_input = Vector2.ZERO
 var horizontal_input = Vector2.ZERO
 
 func process_input(_delta):
 	input_manager.process_input()
+	
+	if input_manager.toggle_amulet:
+		return HiddenState
+	
 	horizontal_input = input_manager.horizontal_input
 	vertical_input = input_manager.vertical_input
 	

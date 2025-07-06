@@ -1,9 +1,11 @@
-extends CharacterFallingState
+extends InputState
 class_name HumanFallingState
 
 """
 The human player falls normally.
 """
+
+@export var IdleState: InputState
 
 @export var SPEED = 300.0
 @export var ACCELERATE = 60.0
