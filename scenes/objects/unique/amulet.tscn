@@ -71,7 +71,6 @@ shape = SubResource("RectangleShape2D_faw7v")
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("8_ns171")
-ATTRACTION_SPEED = 500.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AmuletRadiusArea"]
 shape = SubResource("CircleShape2D_ahiox")
