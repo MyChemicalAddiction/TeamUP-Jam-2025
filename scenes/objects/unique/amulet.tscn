@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bf1uei6a8uqil"]
+[gd_scene load_steps=12 format=3 uid="uid://bf1uei6a8uqil"]
 
 [ext_resource type="Script" uid="uid://dfwxvk54axc1" path="res://scripts/classes/components/state machines/special/Amulet/AmuletStateMachine.gd" id="1_1numj"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="1_faw7v"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://bukmwe5b6fuky" path="res://scripts/classes/components/state machines/special/Amulet/States/ThrownState.gd" id="3_c2c0c"]
 [ext_resource type="Script" uid="uid://bv4q7rhf2igqn" path="res://scripts/classes/components/state machines/special/Amulet/States/ThrowingState.gd" id="4_ulww5"]
 [ext_resource type="Script" uid="uid://bp078yt1n57lh" path="res://scripts/classes/components/input managers/Special Objects/AmuletInputManager.gd" id="5_c2c0c"]
-[ext_resource type="Script" uid="uid://dcc8kr4gx8lv3" path="res://scripts/functionality/radius_collision_shape.gd" id="8_ns171"]
+[ext_resource type="Script" uid="uid://cys4mdwpjj11c" path="res://scripts/functionality/amulet_radius_area.gd" id="8_ns171"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2c0c"]
 bounce = 0.15
@@ -15,10 +15,14 @@ bounce = 0.15
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_faw7v"]
 size = Vector2(128, 128)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ahiox"]
+radius = 922.157
+
 [node name="Amulet" type="RigidBody2D" node_paths=PackedStringArray("stateMachine")]
 collision_layer = 0
 mass = 0.001
 physics_material_override = SubResource("PhysicsMaterial_c2c0c")
+continuous_cd = 1
 script = ExtResource("1_ulww5")
 stateMachine = NodePath("Components/AmuletStateMachine")
 
@@ -63,12 +67,14 @@ modulate = Color(0.831582, 0.831582, 0, 1)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_faw7v")
 
-[node name="Amulet Radius Circle" type="StaticBody2D" parent="."]
-collision_layer = 2
-collision_mask = 0
-
-[node name="RadiusCollisionShape2D" type="CollisionPolygon2D" parent="Amulet Radius Circle"]
+[node name="AmuletRadiusArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 script = ExtResource("8_ns171")
-circle_density = 32
-circle_radius = 500
-metadata/_custom_type_script = "uid://dcc8kr4gx8lv3"
+ATTRACTION_SPEED = 500.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AmuletRadiusArea"]
+shape = SubResource("CircleShape2D_ahiox")
+
+[connection signal="body_entered" from="AmuletRadiusArea" to="AmuletRadiusArea" method="_on_body_entered"]
+[connection signal="body_exited" from="AmuletRadiusArea" to="AmuletRadiusArea" method="_on_body_exited"]
