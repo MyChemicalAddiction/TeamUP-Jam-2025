@@ -25,5 +25,3 @@ func _physics_process(_delta: float) -> void:
 	modulate_alpha = state.force_multiplier
 	object.modulate[3] = modulate_alpha
 	## TODO: remove the above later
-	
-	print(object.modulate)

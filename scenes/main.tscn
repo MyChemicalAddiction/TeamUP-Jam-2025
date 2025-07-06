@@ -58,6 +58,9 @@ freeze_mode = 1
 [node name="HeldState" parent="Amulet/Components/AmuletStateMachine" index="0" node_paths=PackedStringArray("holder")]
 holder = NodePath("../../../../Characters/Human")
 
+[node name="ThrownState" parent="Amulet/Components/AmuletStateMachine" index="1" node_paths=PackedStringArray("holder")]
+holder = NodePath("../../../../Characters/Human")
+
 [node name="ThrowingState" parent="Amulet/Components/AmuletStateMachine" index="2" node_paths=PackedStringArray("holder")]
 holder = NodePath("../../../../Characters/Human")
 

@@ -29,5 +29,3 @@ func process_input(_delta):
 	charging = input_manager.charging
 	if charging:
 		return throwingState
-	
-	#object.position = mouse_pos

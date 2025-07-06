@@ -30,7 +30,7 @@ func _on_body_exited(body: Node2D) -> void:
 			current_tween.tween_property(self, "force_multiplier", 1.0, TIME_TO_SPEED) ## Makes the ghost go quicker toward the area as more time passes with it outside it.
 			outside = true
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if outside: ## Moves the ghost toward the center of the amulet if it's outside its radius.
 		object.velocity = (global_position - object.global_position).normalized() * MAX_ATTRACTION_SPEED * force_multiplier
 		object.move_and_slide()

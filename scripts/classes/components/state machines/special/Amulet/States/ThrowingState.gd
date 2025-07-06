@@ -55,8 +55,6 @@ func _on_enter():
 	current_tween.tween_property(self, "force_multiplier", 1.0, REV_TIME)
 	current_tween.tween_callback(_rev_finished)
 	
-	print('throwing!')
-
 func _rev_finished():
 	current_tween.kill()
 
@@ -70,7 +68,6 @@ func _on_exit():
 	var applied_force = min_force + (max_force - min_force) * force_multiplier
 	
 	object.apply_central_impulse(Vector2(applied_force, applied_force) * direction)
-	print('applied force - ', applied_force)
 
 func process_physics(_delta):
 	object.position = holder.position
