@@ -21,7 +21,7 @@ func unregister_area(area: InteractionArea):
 	active_areas.erase(area)
 	active_areas.sort_custom(_sort_by_distance_to_player)
 		
-func _process(delta):
+func _process(_delta):
 	if active_areas.size() > 0 && can_interact:
 		if player == null:
 			player = get_tree().get_first_node_in_group("player")
