@@ -59,6 +59,7 @@ func _rev_finished():
 	current_tween.kill()
 
 func _on_exit():
+	current_tween.kill()
 	object.freeze = false
 	
 	object.visible = true
@@ -70,6 +71,7 @@ func _on_exit():
 	object.apply_central_impulse(Vector2(applied_force, applied_force) * direction)
 
 func process_physics(_delta):
+	print(force_multiplier)
 	object.position = holder.position
 
 func process_input(_delta):
