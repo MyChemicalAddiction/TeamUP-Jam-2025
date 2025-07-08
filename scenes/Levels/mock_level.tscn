@@ -256,7 +256,7 @@ offset_left = -231.0
 offset_top = -109.0
 offset_right = 219.0
 offset_bottom = -86.0
-text = "Watch out! I'm a hitbox that'll deal damage to your hitbox!"
+text = "Watch out! I'm a hitbox that'll deal damage to your hurtbox!"
 
 [node name="Sprite2D" type="Sprite2D" parent="Special Objects/Hurtbox"]
 modulate = Color(0.440393, 0, 0.0546909, 1)
