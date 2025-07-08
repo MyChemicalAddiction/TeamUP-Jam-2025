@@ -14,6 +14,7 @@ characters in the game: the human player and the ghost player. These include:
 """
 
 @export var movement_component: InputStateMachine ## The component which handles player movement.
+@export var interaction_component: InteractionManager ## The component which handles player interaction.
 
 ## Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,5 +1,5 @@
 extends InputManager
-class_name GhostInputManager
+class_name GhostMovementInputManager
 
 """
 The GhostInputManager is a concrete implementation of the InputManager and is 

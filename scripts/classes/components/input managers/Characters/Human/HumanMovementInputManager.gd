@@ -1,10 +1,10 @@
 extends InputManager
-class_name HumanInputManager
+class_name HumanMovementInputManager
 
 """
-The HumanInputManager is a concrete implementation of the InputManager and is 
+The HumanMovementInputManager is a concrete implementation of the InputManager and is 
 meant to manage inputs that are to be used somehow by the Human character's
-other components (or by it itself).
+other components (or by it itself) for moving.
 """
 
 var vertical_input = 0.0 
