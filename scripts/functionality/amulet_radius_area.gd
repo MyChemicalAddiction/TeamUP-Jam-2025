@@ -44,5 +44,3 @@ func _physics_process(_delta: float) -> void:
 	object.velocity = (global_position - object.global_position).normalized() * MAX_ATTRACTION_SPEED * force_multiplier
 	object.move_and_slide()
 	
-	
-	

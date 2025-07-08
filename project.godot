@@ -36,11 +36,13 @@ config/icon="res://icon.svg"
 [autoload]
 
 FmodManager="*res://addons/fmod/FmodManager.gd"
+SceneManager="*res://scripts/singletons/SceneManager.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=800
+window/size/viewport_height=600
+window/size/mode=1
 window/size/borderless=true
 window/stretch/mode="canvas_items"
 

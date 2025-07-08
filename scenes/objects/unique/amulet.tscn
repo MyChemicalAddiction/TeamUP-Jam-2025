@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://cys4mdwpjj11c" path="res://scripts/functionality/amulet_radius_area.gd" id="8_ns171"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2c0c"]
-bounce = 0.15
+bounce = 0.3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_faw7v"]
 size = Vector2(128, 128)
