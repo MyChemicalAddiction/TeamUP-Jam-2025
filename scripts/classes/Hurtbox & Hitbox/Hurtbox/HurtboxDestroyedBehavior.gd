@@ -1,0 +1,20 @@
+extends Component
+class_name HurtboxDestroyedBehavior
+
+"""
+The HurtboxDestroyedBehavior is implemented to define behavior local to the 
+Hurtbox that it's assigned to that should be triggered when the Hurtbox is 
+destroyed (its HP reaches 0.)
+"""
+
+@export var hurtbox: Hurtbox ## Assign the hitbox here. When this hitbox is hit, this behavior will be triggered.
+
+func _ready():
+	hurtbox.destroyed.connect(destroyed)
+
+func destroyed(): ## Triggered when the Hitbox hits something.
+	if enabled:
+		_on_destroyed()
+
+func _on_destroyed(): ## Override to define behavior.
+	pass

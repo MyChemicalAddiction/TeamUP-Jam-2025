@@ -2,9 +2,9 @@ extends InputManager
 class_name GhostMovementInputManager
 
 """
-The GhostInputManager is a concrete implementation of the InputManager and is 
-meant to manage inputs that are to be used somehow by the Ghost character's
-other components (or by it itself).
+The GhostMovementInputManager is a concrete implementation of the InputManager 
+and manages inputs that are to be used somehow by the Ghost character's
+other components (or by it itself) for movement.
 """
 
 var vertical_input := 0.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dnlp11cfws5mh"]
+[gd_scene load_steps=20 format=3 uid="uid://dnlp11cfws5mh"]
 
 [ext_resource type="Script" uid="uid://dqcux1xonf8to" path="res://scripts/classes/characters/human/HumanCharacter.gd" id="1_fn0a6"]
 [ext_resource type="Script" uid="uid://c0kbow20mhepj" path="res://scripts/classes/components/state machines/InputStateMachine.gd" id="2_opdk1"]
@@ -9,11 +9,23 @@
 [ext_resource type="Script" uid="uid://c0j3byxgcbbui" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Human/JumpingState.gd" id="6_rv0c7"]
 [ext_resource type="Script" uid="uid://cc4fjv8w3pibj" path="res://scripts/classes/components/input managers/Characters/Human/HumanMovementInputManager.gd" id="7_0nw2b"]
 [ext_resource type="Script" uid="uid://cnh6wau76q5w6" path="res://scripts/classes/components/input managers/Characters/Human/HumanInteractInputManager.gd" id="8_rv0c7"]
-[ext_resource type="Script" uid="uid://brwvuypl3ag2w" path="res://scripts/functionality/interaction/interaction manager/InteractionManager.gd" id="9_1s6pi"]
+[ext_resource type="Script" uid="uid://brwvuypl3ag2w" path="res://scripts/classes/interaction/interaction manager/InteractionManager.gd" id="9_1s6pi"]
 [ext_resource type="Script" uid="uid://bngv2rtf3degk" path="res://scripts/classes/components/state machines/state listeners/Human Player/AmuletThrowingStateListener.gd" id="9_ovymh"]
+[ext_resource type="Script" uid="uid://dvixfmg80rixg" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Hurtbox.gd" id="10_2vwdl"]
+[ext_resource type="Script" uid="uid://bj3kpi7kuya4w" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Custom Resource/HurtboxRes.gd" id="11_jlbu2"]
+[ext_resource type="Script" uid="uid://hk3ym3rj1kh8" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/DestroyedBehavior/HurtboxSimpleDestroyedBehavior.gd" id="12_jlbu2"]
+[ext_resource type="Script" uid="uid://drft6dfp41fxt" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/HitBehavior/HurtboxSimpleDamageHitBehavior.gd" id="13_jlbu2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s6pi"]
 size = Vector2(241, 180)
+
+[sub_resource type="Resource" id="Resource_4yc4a"]
+script = ExtResource("11_jlbu2")
+HP = 1.0
+metadata/_custom_type_script = "uid://bj3kpi7kuya4w"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3q8g"]
+size = Vector2(128, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rm4bp"]
 size = Vector2(128, 128)
@@ -79,6 +91,25 @@ metadata/_custom_type_script = "uid://brwvuypl3ag2w"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/InteractionManager"]
 position = Vector2(-0.5, -26)
 shape = SubResource("RectangleShape2D_1s6pi")
+
+[node name="Hurtbox" type="Area2D" parent="Components" node_paths=PackedStringArray("holder")]
+script = ExtResource("10_2vwdl")
+hurtboxRes = SubResource("Resource_4yc4a")
+holder = NodePath("../..")
+metadata/_custom_type_script = "uid://dvixfmg80rixg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Hurtbox"]
+shape = SubResource("RectangleShape2D_l3q8g")
+
+[node name="HurtboxSimpleDestroyedBehavior" type="Node2D" parent="Components/Hurtbox" node_paths=PackedStringArray("hurtbox")]
+script = ExtResource("12_jlbu2")
+hurtbox = NodePath("..")
+metadata/_custom_type_script = "uid://hk3ym3rj1kh8"
+
+[node name="HurtboxSimpleDamageHitBehavior" type="Node2D" parent="Components/Hurtbox" node_paths=PackedStringArray("hurtbox")]
+script = ExtResource("13_jlbu2")
+hurtbox = NodePath("..")
+metadata/_custom_type_script = "uid://drft6dfp41fxt"
 
 [node name="Visual" type="Node2D" parent="."]
 
