@@ -25,8 +25,10 @@ and precisely control their behavior in the interact() function.
 
 signal used() ## Emitted when the interaction area is interacted with.
 
+@export var interact_layer := 4 ## Set to 4 (by default) through code as to match the InteractionArea's layer
+
 func _ready(): ## Sets the InteractionArea's collision layer to be able to be detected by InteractionManagers (4)
-	collision_layer = 4
+	set_collision_layer_value(interact_layer, true)
 
 func interact(): ## Called when the player interacts with this area.
 	used.emit()

@@ -3,7 +3,7 @@ A component designed for managing freeing objects.
 You assign the object you need deleted to the export object variable.
 """
 
-extends functional_component
+extends FunctionalComponent
 class_name DeleteComponent
 
 @export var object: Node ## The object that is to be deleted.

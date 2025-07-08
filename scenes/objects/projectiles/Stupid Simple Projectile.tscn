@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://hibwxjb2khf0"]
+
+[ext_resource type="Script" uid="uid://cmdr7k4jfy66e" path="res://scripts/classes/projectile/Projectile.gd" id="1_0accw"]
+[ext_resource type="Script" uid="uid://ct5bew00lbo6h" path="res://scripts/classes/projectile/Custom Resource/StraightProjectileRes.gd" id="2_i53c3"]
+[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="3_ynni3"]
+[ext_resource type="Script" uid="uid://bp3r0ffx34h" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Hitbox.gd" id="4_xvfdy"]
+[ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="5_bp250"]
+[ext_resource type="Script" uid="uid://by0f5pd4kfjdi" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Implementations/HitboxHitDeleteBehavior.gd" id="6_poy4d"]
+
+[sub_resource type="Resource" id="Resource_6e4ye"]
+script = ExtResource("2_i53c3")
+SPEED = 75
+metadata/_custom_type_script = "uid://ct5bew00lbo6h"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3df27"]
+size = Vector2(102, 102)
+
+[sub_resource type="Resource" id="Resource_h1ddd"]
+script = ExtResource("5_bp250")
+damage = 1.0
+knockback = 0.0
+metadata/_custom_type_script = "uid://dmohabdm78d23"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb14o"]
+size = Vector2(128, 128)
+
+[node name="Stupid Simple Projectile" type="RigidBody2D"]
+collision_layer = 0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_0accw")
+projectileRes = SubResource("Resource_6e4ye")
+metadata/_custom_type_script = "uid://cmdr7k4jfy66e"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.262745, 0.0901961, 0.756863)
+rotation = 1.5708
+texture = ExtResource("3_ynni3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_3df27")
+
+[node name="Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("holder")]
+rotation = 1.5708
+script = ExtResource("4_xvfdy")
+hitboxRes = SubResource("Resource_h1ddd")
+holder = NodePath("..")
+metadata/_custom_type_script = "uid://bp3r0ffx34h"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_tb14o")
+
+[node name="HitboxHitDeleteBehavior" type="Node2D" parent="Hitbox" node_paths=PackedStringArray("hitbox")]
+script = ExtResource("6_poy4d")
+hitbox = NodePath("..")
+metadata/_custom_type_script = "uid://by0f5pd4kfjdi"

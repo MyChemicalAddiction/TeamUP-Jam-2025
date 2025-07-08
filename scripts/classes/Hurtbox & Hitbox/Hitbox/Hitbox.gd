@@ -33,6 +33,8 @@ To add a hitbox to something:
 
 @export var enabled := true ## Whether this Hitbox can do anything.
 
+@export var holder: Node ## The thing that "holds" the hitbox (set to the projectile if parented to one)
+
 signal hit ## Emitted when the hitbox hits something
 
 func _ready():

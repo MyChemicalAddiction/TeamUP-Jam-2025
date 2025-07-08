@@ -1,4 +1,4 @@
-class_name functional_component 
+class_name FunctionalComponent
 extends Component
 
 """

@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://de6vsppsr1un1"]
+[gd_scene load_steps=12 format=3 uid="uid://de6vsppsr1un1"]
 
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="1_1a2xh"]
+[ext_resource type="PackedScene" uid="uid://hibwxjb2khf0" path="res://scenes/objects/projectiles/Stupid Simple Projectile.tscn" id="1_kr33g"]
 [ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/interaction/interaction area/InteractionArea.gd" id="2_7o6r4"]
 [ext_resource type="Script" uid="uid://du7sowey406lo" path="res://scripts/classes/components/Functional Components/Implementations/DeleteComponent.gd" id="3_00pat"]
 [ext_resource type="Script" uid="uid://bp3r0ffx34h" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Hitbox.gd" id="4_vpnf0"]
 [ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="5_kr33g"]
+[ext_resource type="Script" uid="uid://bboji5tvpnhjv" path="res://scripts/classes/projectile/ProjectileShooter.gd" id="6_kr33g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00pat"]
 size = Vector2(181, 174)
@@ -261,6 +263,21 @@ text = "Watch out! I'm a hitbox that'll deal damage to your hurtbox!"
 [node name="Sprite2D" type="Sprite2D" parent="Special Objects/Hurtbox"]
 modulate = Color(0.440393, 0, 0.0546909, 1)
 texture = ExtResource("1_1a2xh")
+
+[node name="ProjectileShooter" type="Node2D" parent="Special Objects"]
+position = Vector2(132, 11)
+rotation = 1.5708
+script = ExtResource("6_kr33g")
+projectile_scene = ExtResource("1_kr33g")
+metadata/_custom_type_script = "uid://bboji5tvpnhjv"
+
+[node name="Label" type="Label" parent="Special Objects/ProjectileShooter"]
+offset_left = -11.0
+offset_top = 94.0
+offset_right = 170.0
+offset_bottom = 117.0
+rotation = -1.57079
+text = "projectile shooter here!"
 
 [node name="Platforms" type="Node2D" parent="."]
 

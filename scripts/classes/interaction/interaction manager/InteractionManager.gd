@@ -6,7 +6,7 @@ The interaction manager manages multiple interactables within the same area,
 prioritizing the closest interactable first.
 """
 
-@export var interact_mask: int = 4
+@export var interact_mask: int = 4 ## Set to 4 (by default) through code as to match the InteractionManager's mask
 @export var player: Character ## References the character.
 @export var input_manager: InputManager ## Manages varying inputs for interacting.
 # @onready var label = $Label
@@ -23,7 +23,7 @@ var enabled: bool = false : ## Allows the InteractionManager to be disabled/enab
 		set_process(enabled)
 
 func _ready(): ## Sets the collision mask to detect the interaction area's collision layer (4)
-	collision_mask = interact_mask
+	set_collision_mask_value(interact_mask, true)
 	enabled = false
 	area_entered.connect(_on_area_entered) ## Dynamically connects own area_entered signal to self
 	area_exited.connect(_on_area_exited) ## Dynamically connects own area_exited signal to self
