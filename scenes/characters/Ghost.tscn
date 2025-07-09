@@ -30,10 +30,11 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddmg8"]
 size = Vector2(128, 128)
 
-[node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("movement_component")]
+[node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("movement_component", "interaction_component")]
 collision_layer = 4
 script = ExtResource("1_ddmg8")
 movement_component = NodePath("Components/MovementStateMachine")
+interaction_component = NodePath("Components/InteractionManager")
 metadata/_custom_type_script = "uid://cnxen4dyqy530"
 
 [node name="Components" type="Node2D" parent="."]

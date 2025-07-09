@@ -49,7 +49,7 @@ func _ready():
 func _on_area_entered(area): ## Checks if a hurtbox has been hit.
 	if area is Hitbox:
 		if enabled:
-			hit.emit(area.get_damage(), area.get_knockback)
+			hit.emit(area.get_damage(), area.get_knockback())
 
 func _on_ready(): ## Overridden hook for desired extra behavior on ready.
 	pass
@@ -57,7 +57,7 @@ func _on_ready(): ## Overridden hook for desired extra behavior on ready.
 func get_HP(): ## Returns the HP.
 	return hurtboxRes.HP
 
-func damage(received_damage): ## Deals damage to the hurtbox & emits the destroyed signal if the HP goes below 0.
+func damage(received_damage): ## Deals damage to the hurtbox & emits the destroyed signal if the HP goes below 0. This does not get called by default by the hurtbox! Instead, it is called externally by a HurtboxDamageHitBehavior implementation if it deems it fit.
 	hurtboxRes.HP -= received_damage
 	if hurtboxRes.HP <= 0:
 		destroyed.emit()

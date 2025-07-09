@@ -10,10 +10,10 @@
 [ext_resource type="Script" uid="uid://cys4mdwpjj11c" path="res://scripts/functionality/amulet_radius_area.gd" id="8_ns171"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2c0c"]
-bounce = 0.3
+bounce = 0.75
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_faw7v"]
-size = Vector2(128, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ns171"]
+radius = 65.7647
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ahiox"]
 radius = 922.157
@@ -65,7 +65,7 @@ texture = ExtResource("1_faw7v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color(0.831582, 0.831582, 0, 1)
 scale = Vector2(0.2, 0.2)
-shape = SubResource("RectangleShape2D_faw7v")
+shape = SubResource("CircleShape2D_ns171")
 
 [node name="AmuletRadiusArea" type="Area2D" parent="."]
 collision_layer = 0

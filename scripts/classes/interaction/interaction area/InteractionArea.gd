@@ -8,9 +8,10 @@ by the player.
 This is a superclass (it can be implemented for extra or more complex behavior),
 but it can itself be instanced because it allows easy implementation of
 simple non-conditional interactions via Functional Components (to which it
-communicated the used signal.) To implement such simple behavior:
-	1) Instance the InteractionArea (and give it a collision shape)
-	2) Add desired Functional Component implementations as its children
+communicates the used signal.) To implement such simple behavior:
+	1) Instance the InteractionArea (and give it a collision shape).
+	2) Add desired Functional Component implementations as its children & set
+	them up as per their documentation.
 	3) Set each Functional Component's Triggerer in the inspector to the
 	Interaction Area instance.
 	4) Now, whenever the InteractionArea is interacted with, it will emit
