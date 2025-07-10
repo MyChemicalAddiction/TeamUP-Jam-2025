@@ -29,7 +29,7 @@ DSP/dsp_buffer_count=4
 [application]
 
 config/name="New Game Project"
-run/main_scene="uid://bv6bg7t0cca6i"
+run/main_scene="uid://dajpopjceep4u"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
