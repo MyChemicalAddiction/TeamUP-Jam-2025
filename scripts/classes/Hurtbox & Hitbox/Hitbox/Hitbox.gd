@@ -29,11 +29,14 @@ To add a hitbox to something:
 	something.
 """
 
-@export var hitboxRes: HitboxRes ## Assign a [b]HitboxRes[/b] instance to this.
+## Assign a [b]HitboxRes[/b] instance to this.
+@export var hitboxRes: HitboxRes 
 
-@export var enabled := true ## Whether this Hitbox can do anything.
+## Whether this Hitbox can do anything.
+@export var enabled := true 
 
-@export var holder: Node ## The thing that "holds" the hitbox (set to the projectile if parented to one)
+## The thing that "holds" the hitbox (set to the projectile if parented to one)
+@export var holder: Node 
 
 signal hit ## Emitted when the hitbox hits something
 

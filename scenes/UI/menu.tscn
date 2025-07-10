@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://dajpopjceep4u"]
+
+[ext_resource type="Script" uid="uid://653s076xfe72" path="res://scripts/classes/UI/Menu.gd" id="1_2un8v"]
+[ext_resource type="PackedScene" uid="uid://dr5fxdp8vo6rl" path="res://scenes/UI/main menu UI.tscn" id="1_u81ku"]
+[ext_resource type="PackedScene" uid="uid://c7vh0fx3q7g3l" path="res://scenes/UI/settings UI.tscn" id="2_2tfbb"]
+[ext_resource type="PackedScene" uid="uid://ccy3ybriga8j3" path="res://scenes/UI/level select UI.tscn" id="4_ny0ke"]
+[ext_resource type="PackedScene" uid="uid://de6vsppsr1un1" path="res://scenes/Levels/mock_level.tscn" id="5_78n2u"]
+
+[node name="Menu" type="Control" node_paths=PackedStringArray("current_section")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2un8v")
+current_section = NodePath("Main Menu UI")
+
+[node name="Main Menu UI" parent="." instance=ExtResource("1_u81ku")]
+layout_mode = 1
+offset_left = -125.0
+offset_top = -33.0
+offset_right = 125.0
+offset_bottom = 33.0
+
+[node name="LevelsButton" parent="Main Menu UI" index="0" node_paths=PackedStringArray("section", "menu")]
+section = NodePath("../../Level Select UI")
+menu = NodePath("../..")
+
+[node name="SettingsButton" parent="Main Menu UI" index="1" node_paths=PackedStringArray("section", "menu")]
+section = NodePath("../../Settings UI")
+menu = NodePath("../..")
+
+[node name="Settings UI" parent="." instance=ExtResource("2_2tfbb")]
+visible = false
+layout_mode = 1
+offset_left = -126.0
+offset_top = -46.5
+offset_right = 126.0
+offset_bottom = 46.5
+
+[node name="SectionButton" parent="Settings UI" index="2" node_paths=PackedStringArray("section", "menu")]
+section = NodePath("../../Main Menu UI")
+menu = NodePath("../..")
+
+[node name="Level Select UI" parent="." instance=ExtResource("4_ny0ke")]
+visible = false
+layout_mode = 1
+offset_left = -125.0
+offset_top = -46.5
+offset_right = 125.0
+offset_bottom = 46.5
+
+[node name="0" parent="Level Select UI" index="1" node_paths=PackedStringArray("menu")]
+level = ExtResource("5_78n2u")
+menu = NodePath("../..")
+
+[node name="SectionButton" parent="Level Select UI" index="2" node_paths=PackedStringArray("section", "menu")]
+section = NodePath("../../Main Menu UI")
+menu = NodePath("../..")
+
+[editable path="Main Menu UI"]
+[editable path="Settings UI"]
+[editable path="Level Select UI"]

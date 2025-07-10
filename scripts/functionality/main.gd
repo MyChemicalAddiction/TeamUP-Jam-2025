@@ -9,12 +9,17 @@ To make the main scene start at a certain level, assign that level's scene to
 the default_scene variable (currently set to the Mock Level).
 """
 
-@export var anim_player: AnimationPlayer ## The animation player that fades & unfades the screen.
-@onready var currentLevel := $CurrentLevel ## The Node2D that holds the current level (NOT THE LEVEL ITSELF)
+## The animation player that fades & unfades the screen.
+@export var anim_player: AnimationPlayer 
 
-@export var default_scene: PackedScene ## The scene that gets loaded by default (use this for debug purposes - drag & drop a level scene from the files)
+## The Node2D that holds the current level (NOT THE LEVEL ITSELF)
+@onready var currentLevel := $CurrentLevel 
+
+## The scene that gets loaded by default (use this for debug purposes - drag & drop a level scene from the files)
+@export var default_scene: PackedScene 
 
 var next_scene: PackedScene
+
 var currentScene: Node ## The actual current level scene node.
 
 func _ready():
@@ -22,7 +27,8 @@ func _ready():
 	if default_scene:
 		transition_to_scene(default_scene)
 	
-func transition_to_scene(new_scene: PackedScene): ## For transitioning the player's location to a different scene
+## For transitioning the player's location to a different scene
+func transition_to_scene(new_scene: PackedScene): 
 	get_tree().paused = true ## Pauses the game 
 	
 	next_scene = new_scene ## Sets the scene that the player will go to

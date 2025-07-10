@@ -9,7 +9,9 @@ When entered, this state makes the amulet invisible.
 """
 
 @export var throwingState: State 
-@export var holder: Character ## The human.
+
+## The human.
+@export var holder: Character 
 
 var charging := false ## Whether the player is currently holding down LMB to charge the amulet.
 

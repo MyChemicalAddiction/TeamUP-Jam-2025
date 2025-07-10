@@ -10,7 +10,8 @@ To use it:
 	4) assign the Projectile a ProjectileRes & set that up
 """
 
-@export var projectileRes: ProjectileRes ## The Resource of the projectile holds info about its speed, etc.
+## The Resource of the projectile holds info about its speed, etc.
+@export var projectileRes: ProjectileRes 
 
 func _ready():
 	## Set the projectile to be able to collide with walls and such.

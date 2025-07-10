@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7vh0fx3q7g3l"]
+
+[ext_resource type="Script" uid="uid://bro3w88p8iojd" path="res://scripts/classes/UI/buttons/SectionButton.gd" id="1_t3uui"]
+
+[node name="Settings UI" type="VBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -20.0
+offset_right = 20.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Input Mode (click to select)[/center]"
+fit_content = true
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "1 (for high end keyboards)"
+popup/item_0/id = 1
+popup/item_1/text = "2 (for low-end keyboards)"
+popup/item_1/id = 2
+
+[node name="SectionButton" type="Button" parent="."]
+layout_mode = 2
+text = "Back"
+script = ExtResource("1_t3uui")
+metadata/_custom_type_script = "uid://bro3w88p8iojd"

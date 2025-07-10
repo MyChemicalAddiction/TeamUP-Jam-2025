@@ -33,11 +33,14 @@ To add a hurtbox to something:
 	7) Assign the Holder of the Hurtbox.
 """
 
-@export var hurtboxRes: HurtboxRes ## Assign a [b]HurtboxRes[/b] instance to this.
+## Assign a [b]HurtboxRes[/b] instance to this.
+@export var hurtboxRes: HurtboxRes 
 
-@export var enabled := true ## Whether this Hurtbox can do anything.
+## Whether this Hurtbox can do anything.
+@export var enabled := true 
 
-@export var holder: Node ## The "thing" that has this hurtbox. This reference is used inside destroy() to free it.
+## The "thing" that has this hurtbox. This reference is used inside destroy() to free it.
+@export var holder: Node 
 
 signal hit(damage, knockback) ## Emitted when the hurtbox is hit.
 signal destroyed ## Emitted when the hurtbox is destroyed.

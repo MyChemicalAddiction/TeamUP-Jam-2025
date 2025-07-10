@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=2 format=3 uid="uid://c4eo81kfmrq3q"]
+
+[ext_resource type="Script" uid="uid://cde650mosyaye" path="res://scripts/save data custom resources/LevelData.gd" id="1_vqyqd"]
+
+[resource]
+script = ExtResource("1_vqyqd")
+level_completed_data = Dictionary[String, bool]({})
+metadata/_custom_type_script = "uid://cde650mosyaye"
