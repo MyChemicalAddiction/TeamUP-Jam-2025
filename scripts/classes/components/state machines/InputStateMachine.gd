@@ -8,6 +8,12 @@ The InputStateMachine is a state machine whose States are InputStates.
 InputStates can get interchanged based on inputs received from an InputManager.
 """
 
+@export var input_manager: InputManager
+
 func _process(delta: float) -> void:
 	var new_state = current_state.process_input(delta)
 	if new_state: change_state(new_state)
+
+func _on_ready():
+	for i in get_children():
+		i.input_manager = input_manager

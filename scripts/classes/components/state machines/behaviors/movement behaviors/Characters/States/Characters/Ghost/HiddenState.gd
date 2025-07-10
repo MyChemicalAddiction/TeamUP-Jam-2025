@@ -8,7 +8,8 @@ do anything and is invisible.
 
 @export var IdleState: InputState
 @export var GhostCollision: CollisionShape2D
-@export var amulet: Node
+
+@onready var amulet = get_tree().get_first_node_in_group("Amulet")
 
 func process_input(_delta):
 	input_manager.process_input()

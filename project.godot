@@ -51,6 +51,12 @@ window/stretch/mode="canvas_items"
 
 enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
+[global_group]
+
+Amulet=""
+Human=""
+Ghost=""
+
 [input]
 
 human_move_left={

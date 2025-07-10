@@ -2,7 +2,9 @@ extends InputState
 class_name ThrownState
 
 @export var heldState: State
-@export var holder: Character ## The human player.
+
+## The human player.
+@onready var holder = get_tree().get_first_node_in_group("Human") 
 
 """
 The state the amulet is in upon being thrown (in this state, it is out of the

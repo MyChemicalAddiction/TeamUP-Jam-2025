@@ -11,9 +11,10 @@ When entered, this state makes the amulet invisible.
 @export var throwingState: State 
 
 ## The human.
-@export var holder: Character 
+@onready var holder = get_tree().get_first_node_in_group("Human")
 
-var charging := false ## Whether the player is currently holding down LMB to charge the amulet.
+## Whether the player is currently holding down LMB to charge the amulet.
+var charging := false 
 
 func _on_enter():
 	object.visible = false

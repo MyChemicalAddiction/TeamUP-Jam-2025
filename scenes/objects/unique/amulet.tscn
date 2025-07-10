@@ -1,11 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bf1uei6a8uqil"]
+[gd_scene load_steps=9 format=3 uid="uid://bf1uei6a8uqil"]
 
-[ext_resource type="Script" uid="uid://dfwxvk54axc1" path="res://scripts/classes/components/state machines/special/Amulet/AmuletStateMachine.gd" id="1_1numj"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="1_faw7v"]
 [ext_resource type="Script" uid="uid://1ngpyj4uh14m" path="res://scripts/objects/special/amulet.gd" id="1_ulww5"]
-[ext_resource type="Script" uid="uid://dukeo7ylkp6g3" path="res://scripts/classes/components/state machines/special/Amulet/States/HeldState.gd" id="2_nncdm"]
-[ext_resource type="Script" uid="uid://bukmwe5b6fuky" path="res://scripts/classes/components/state machines/special/Amulet/States/ThrownState.gd" id="3_c2c0c"]
-[ext_resource type="Script" uid="uid://bv4q7rhf2igqn" path="res://scripts/classes/components/state machines/special/Amulet/States/ThrowingState.gd" id="4_ulww5"]
+[ext_resource type="PackedScene" uid="uid://dqmvrgjgqo846" path="res://scenes/functionality/complete state machines/characters/AmuletStateMachine.tscn" id="2_nncdm"]
 [ext_resource type="Script" uid="uid://bp078yt1n57lh" path="res://scripts/classes/components/input managers/Special Objects/AmuletInputManager.gd" id="5_c2c0c"]
 [ext_resource type="Script" uid="uid://cys4mdwpjj11c" path="res://scripts/functionality/amulet_radius_area.gd" id="8_ns171"]
 
@@ -18,7 +15,7 @@ radius = 65.7647
 [sub_resource type="CircleShape2D" id="CircleShape2D_ahiox"]
 radius = 922.157
 
-[node name="Amulet" type="RigidBody2D" node_paths=PackedStringArray("stateMachine")]
+[node name="Amulet" type="RigidBody2D" node_paths=PackedStringArray("stateMachine") groups=["Amulet"]]
 collision_layer = 0
 mass = 0.001
 physics_material_override = SubResource("PhysicsMaterial_c2c0c")
@@ -28,30 +25,9 @@ stateMachine = NodePath("Components/AmuletStateMachine")
 
 [node name="Components" type="Node2D" parent="."]
 
-[node name="AmuletStateMachine" type="Node2D" parent="Components" node_paths=PackedStringArray("starting_state", "object")]
-script = ExtResource("1_1numj")
-starting_state = NodePath("HeldState")
+[node name="AmuletStateMachine" parent="Components" node_paths=PackedStringArray("input_manager", "object") instance=ExtResource("2_nncdm")]
+input_manager = NodePath("../AmuletInputManager")
 object = NodePath("../..")
-metadata/_custom_type_script = "uid://dfwxvk54axc1"
-
-[node name="HeldState" type="Node2D" parent="Components/AmuletStateMachine" node_paths=PackedStringArray("throwingState", "input_manager")]
-script = ExtResource("2_nncdm")
-throwingState = NodePath("../ThrowingState")
-input_manager = NodePath("../../AmuletInputManager")
-metadata/_custom_type_script = "uid://dukeo7ylkp6g3"
-
-[node name="ThrownState" type="Node2D" parent="Components/AmuletStateMachine" node_paths=PackedStringArray("heldState", "input_manager")]
-script = ExtResource("3_c2c0c")
-heldState = NodePath("../HeldState")
-input_manager = NodePath("../../AmuletInputManager")
-metadata/_custom_type_script = "uid://bukmwe5b6fuky"
-
-[node name="ThrowingState" type="Node2D" parent="Components/AmuletStateMachine" node_paths=PackedStringArray("thrownState", "heldState", "input_manager")]
-script = ExtResource("4_ulww5")
-thrownState = NodePath("../ThrownState")
-heldState = NodePath("../HeldState")
-input_manager = NodePath("../../AmuletInputManager")
-metadata/_custom_type_script = "uid://bv4q7rhf2igqn"
 
 [node name="AmuletInputManager" type="Node" parent="Components"]
 script = ExtResource("5_c2c0c")
@@ -77,3 +53,5 @@ shape = SubResource("CircleShape2D_ahiox")
 
 [connection signal="body_entered" from="AmuletRadiusArea" to="AmuletRadiusArea" method="_on_body_entered"]
 [connection signal="body_exited" from="AmuletRadiusArea" to="AmuletRadiusArea" method="_on_body_exited"]
+
+[editable path="Components/AmuletStateMachine"]

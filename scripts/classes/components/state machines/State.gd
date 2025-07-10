@@ -12,24 +12,33 @@ A State can have specific behavior upon:
 	by the parent StateMachine implementation.)
 """
 
-var object: Node ## The object upon which this state acts.
+## The object upon which this state acts.
+var object: Node 
 
-signal entered ## The entered signal is emitted when the state is set as the current one (this can be used by things like various audio players, animation players, etc. for giving the players feedback).
-signal exited ## The entered signal is emitted when the state is no longer the current one (this can be used by things like various audio players, animation players, etc. for giving the players feedback).
+## The entered signal is emitted when the state is set as the current one (this can be used by things like various audio players, animation players, etc. for giving the players feedback).
+signal entered 
 
-func enter(): ## What should happen when this becomes the active state.
+## The entered signal is emitted when the state is no longer the current one (this can be used by things like various audio players, animation players, etc. for giving the players feedback).
+signal exited
+
+## What should happen when this becomes the active state.
+func enter(): 
 	entered.emit()
 	_on_enter()
 
-func exit(): ## What should happen when this isn't the active state anymore.
+## What should happen when this isn't the active state anymore.
+func exit(): 
 	exited.emit()
 	_on_exit()
 
-func _on_enter(): ## Hook for extra behavior when entered.
+## Hook for extra behavior when entered.
+func _on_enter(): 
 	pass
 
-func _on_exit(): ## Hook for extra behavior when exited.
+## Hook for extra behavior when exited.
+func _on_exit(): 
 	pass
 
-func process_physics(_delta): ## What this state should do every frame if it's active.
+## What this state should do every frame if it's active.
+func process_physics(_delta):
 	return null

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqmvrgjgqo846"]
+
+[ext_resource type="Script" uid="uid://dfwxvk54axc1" path="res://scripts/classes/components/state machines/special/Amulet/AmuletStateMachine.gd" id="1_u8ln1"]
+[ext_resource type="Script" uid="uid://dukeo7ylkp6g3" path="res://scripts/classes/components/state machines/special/Amulet/States/HeldState.gd" id="2_ocew2"]
+[ext_resource type="Script" uid="uid://bukmwe5b6fuky" path="res://scripts/classes/components/state machines/special/Amulet/States/ThrownState.gd" id="3_s42ca"]
+[ext_resource type="Script" uid="uid://bv4q7rhf2igqn" path="res://scripts/classes/components/state machines/special/Amulet/States/ThrowingState.gd" id="4_qq7be"]
+
+[node name="AmuletStateMachine" type="Node2D" node_paths=PackedStringArray("input_manager", "starting_state", "object")]
+script = ExtResource("1_u8ln1")
+input_manager = NodePath("")
+starting_state = NodePath("HeldState")
+object = NodePath("")
+metadata/_custom_type_script = "uid://dfwxvk54axc1"
+
+[node name="HeldState" type="Node2D" parent="." node_paths=PackedStringArray("throwingState")]
+script = ExtResource("2_ocew2")
+throwingState = NodePath("../ThrowingState")
+metadata/_custom_type_script = "uid://dukeo7ylkp6g3"
+
+[node name="ThrownState" type="Node2D" parent="." node_paths=PackedStringArray("heldState")]
+script = ExtResource("3_s42ca")
+heldState = NodePath("../HeldState")
+metadata/_custom_type_script = "uid://bukmwe5b6fuky"
+
+[node name="ThrowingState" type="Node2D" parent="." node_paths=PackedStringArray("thrownState", "heldState")]
+script = ExtResource("4_qq7be")
+thrownState = NodePath("../ThrownState")
+heldState = NodePath("../HeldState")
+metadata/_custom_type_script = "uid://bv4q7rhf2igqn"

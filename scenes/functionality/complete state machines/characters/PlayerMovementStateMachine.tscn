@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmakco5i5eh8i"]
+
+[ext_resource type="Script" uid="uid://c0kbow20mhepj" path="res://scripts/classes/components/state machines/InputStateMachine.gd" id="1_ieada"]
+[ext_resource type="Script" uid="uid://cq7hetf2d2i77" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Human/IdleState.gd" id="2_ydk3u"]
+[ext_resource type="Script" uid="uid://8g6gd5gevs7f" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Human/WalkingState.gd" id="3_qmqvc"]
+[ext_resource type="Script" uid="uid://b6onqdkxd13yl" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Human/FallingState.gd" id="4_xlqu7"]
+[ext_resource type="Script" uid="uid://c0j3byxgcbbui" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Characters/Human/JumpingState.gd" id="5_ghoir"]
+
+[node name="MovementStateMachine" type="Node2D" node_paths=PackedStringArray("starting_state", "object")]
+script = ExtResource("1_ieada")
+starting_state = NodePath("HumanIdleState")
+object = NodePath("")
+metadata/_custom_type_script = "uid://c0kbow20mhepj"
+
+[node name="HumanIdleState" type="Node2D" parent="." node_paths=PackedStringArray("WalkingState", "JumpingState", "FallingState", "input_manager")]
+script = ExtResource("2_ydk3u")
+WalkingState = NodePath("../HumanWalkingState")
+JumpingState = NodePath("../HumanJumpingState")
+FallingState = NodePath("../HumanFallingState")
+input_manager = NodePath("")
+metadata/_custom_type_script = "uid://cq7hetf2d2i77"
+
+[node name="HumanWalkingState" type="Node2D" parent="." node_paths=PackedStringArray("IdleState", "JumpingState", "FallingState", "input_manager")]
+script = ExtResource("3_qmqvc")
+IdleState = NodePath("../HumanIdleState")
+JumpingState = NodePath("../HumanJumpingState")
+FallingState = NodePath("../HumanFallingState")
+input_manager = NodePath("")
+metadata/_custom_type_script = "uid://8g6gd5gevs7f"
+
+[node name="HumanFallingState" type="Node2D" parent="." node_paths=PackedStringArray("IdleState", "input_manager")]
+script = ExtResource("4_xlqu7")
+IdleState = NodePath("../HumanIdleState")
+input_manager = NodePath("")
+metadata/_custom_type_script = "uid://b6onqdkxd13yl"
+
+[node name="HumanJumpingState" type="Node2D" parent="." node_paths=PackedStringArray("FallingState", "input_manager")]
+script = ExtResource("5_ghoir")
+FallingState = NodePath("../HumanFallingState")
+input_manager = NodePath("")
+metadata/_custom_type_script = "uid://c0j3byxgcbbui"
