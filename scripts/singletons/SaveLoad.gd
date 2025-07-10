@@ -31,7 +31,6 @@ func load_game():
 	if ResourceLoader.exists(SAVE_GAME_PATH):
 		saveDataRes = load(SAVE_GAME_PATH)
 	
-	print(saveDataRes.player_settings_data['input_mode'])
 	loaded.emit()
 
 ## Changes the key attribute of dict dictionary with value value in saveDataRes

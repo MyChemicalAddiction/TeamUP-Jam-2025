@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bv6bg7t0cca6i"]
+[gd_scene load_steps=10 format=3 uid="uid://bv6bg7t0cca6i"]
 
 [ext_resource type="Script" uid="uid://b2cxqgalfwh0f" path="res://scripts/functionality/main.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://c77yqcnjp0x8p" path="res://scenes/characters/Ghost.tscn" id="2_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dnlp11cfws5mh" path="res://scenes/characters/Human.tscn" id="3_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://de6vsppsr1un1" path="res://scenes/Levels/mock_level.tscn" id="4_tefeu"]
 [ext_resource type="Script" uid="uid://yu6yynod5on7" path="res://scripts/functionality/multitarget_camera.gd" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://bf1uei6a8uqil" path="res://scenes/objects/unique/amulet.tscn" id="6_tefeu"]
 
@@ -78,7 +77,6 @@ _data = {
 [node name="Main" type="Node2D" node_paths=PackedStringArray("anim_player")]
 script = ExtResource("1_0wfyh")
 anim_player = NodePath("MultiTargetCamera/AnimationPlayer")
-default_scene = ExtResource("4_tefeu")
 
 [node name="CurrentLevel" type="Node2D" parent="."]
 
