@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="SaveData" load_steps=4 format=3 uid="uid://cdjv7dg6ll1q2"]
+[gd_resource type="Resource" script_class="SaveData" load_steps=2 format=3 uid="uid://cdjv7dg6ll1q2"]
 
-[ext_resource type="Resource" uid="uid://c4eo81kfmrq3q" path="res://scripts/save data custom resources/Instances/LevelDataResource.tres" id="1_7euj3"]
 [ext_resource type="Script" uid="uid://y1oa6xrk0bjw" path="res://scripts/save data custom resources/SaveData.gd" id="2_2epgp"]
-[ext_resource type="Resource" uid="uid://cphdr5u4teypk" path="res://scripts/save data custom resources/Instances/SettingsDataResource.tres" id="3_pv77q"]
 
 [resource]
 script = ExtResource("2_2epgp")
-settings = ExtResource("3_pv77q")
-levelData = ExtResource("1_7euj3")
+level_completed_data = Dictionary[String, bool]({})
+player_settings_data = Dictionary[String, Variant]({
+"input_mode": "1"
+})
 metadata/_custom_type_script = "uid://y1oa6xrk0bjw"

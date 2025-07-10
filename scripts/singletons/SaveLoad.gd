@@ -8,14 +8,14 @@ level selecting UI will use to)
 
 const SAVE_GAME_PATH := "user://savegame.tres"
 
-## Emitted when the game is being saved.
-signal saving
+## Emitted when the game saved some new data.
+signal saved
 
-## Emitted when the game is being loaded.
-signal loading
+## Emitted when the game loaded some new data.
+signal loaded
 
 ## The resource that holds all save data
-@export var saveData: Resource = preload("res://scripts/save data custom resources/Instances/SaveDataResource.tres")
+@export var saveDataRes: Resource = preload("res://scripts/save data custom resources/Instances/SaveDataResource.tres")
 
 ## Loads the save game data when launched
 func _ready():
@@ -23,9 +23,20 @@ func _ready():
 
 ## Saves the current game data.
 func save_game():
-	ResourceSaver.save(saveData, SAVE_GAME_PATH)
-
+	ResourceSaver.save(saveDataRes, SAVE_GAME_PATH)
+	saved.emit()
+	
 ## Loads game data if available.
 func load_game():
 	if ResourceLoader.exists(SAVE_GAME_PATH):
-		saveData = load(SAVE_GAME_PATH)
+		saveDataRes = load(SAVE_GAME_PATH)
+	
+	print(saveDataRes.player_settings_data['input_mode'])
+	loaded.emit()
+
+## Changes the key attribute of dict dictionary with value value in saveDataRes
+func change_data(dict: String, key: Variant, value: Variant):
+	var dict_ref = saveDataRes.get(dict)
+	dict_ref[key] = value
+	save_game()
+	
