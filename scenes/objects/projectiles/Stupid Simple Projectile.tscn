@@ -51,7 +51,6 @@ metadata/_custom_type_script = "uid://bp3r0ffx34h"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource("RectangleShape2D_tb14o")
 
-[node name="HitboxHitDeleteBehavior" type="Node2D" parent="Hitbox" node_paths=PackedStringArray("hitbox")]
+[node name="HitboxHitDeleteBehavior" type="Node2D" parent="Hitbox"]
 script = ExtResource("6_poy4d")
-hitbox = NodePath("..")
 metadata/_custom_type_script = "uid://by0f5pd4kfjdi"

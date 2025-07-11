@@ -6,7 +6,7 @@ The HitboxHitBehavior is implemented to define behavior local to the Hitbox
 that it's assigned to that should be triggered when the Hitbox hits something.
 """
 
-@export var hitbox: Hitbox ## Assign the hitbox here. When this hitbox is hit, this behavior will be triggered.
+@onready var hitbox := get_parent() ## Assign the hitbox here. When this hitbox is hit, this behavior will be triggered.
 
 func _ready():
 	hitbox.hit.connect(hit)

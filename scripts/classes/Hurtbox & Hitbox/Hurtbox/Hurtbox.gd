@@ -4,7 +4,7 @@ class_name Hurtbox
 """
 The Hurtbox component defines behavior of hurtboxes - areas which should take
 damage and/or knockback (and/or other stuff as defined by implementations
-if ever such things get created) from Hurtbox components when their areas 
+if ever such things get created) from Hitbox components when their areas 
 overlap.
 
 The Hurtbox itself doesn't hold hurtbox-relevant state. It doesn't even hold 
