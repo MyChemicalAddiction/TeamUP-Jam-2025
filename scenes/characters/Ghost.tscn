@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://c77yqcnjp0x8p"]
 
 [ext_resource type="Script" uid="uid://cnxen4dyqy530" path="res://scripts/classes/characters/ghost/GhostCharacter.gd" id="1_ddmg8"]
-[ext_resource type="PackedScene" path="res://scenes/functionality/complete state machines/characters/GhostMovementStateMachine.tscn" id="2_1ma87"]
+[ext_resource type="PackedScene" uid="uid://br0iax3k3pmwl" path="res://scenes/functionality/complete state machines/characters/GhostMovementStateMachine.tscn" id="2_1ma87"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_2cjv0"]
 [ext_resource type="Script" uid="uid://dyfj8np7ybeoi" path="res://scripts/classes/components/input managers/Characters/Ghost/GhostMovementInputManager.gd" id="7_3grc2"]
 [ext_resource type="Script" uid="uid://cd218insare6n" path="res://scripts/classes/components/input managers/Characters/Ghost/GhostInteractInputManager.gd" id="9_qoedd"]
@@ -25,11 +25,12 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddmg8"]
 size = Vector2(128, 128)
 
-[node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("movement_component", "interaction_component") groups=["Ghost"]]
+[node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("movement_component", "interaction_component", "hurtbox_component") groups=["Ghost"]]
 collision_layer = 4
 script = ExtResource("1_ddmg8")
 movement_component = NodePath("Components/MovementStateMachine")
 interaction_component = NodePath("Components/InteractionManager")
+hurtbox_component = NodePath("Components/Hurtbox")
 metadata/_custom_type_script = "uid://cnxen4dyqy530"
 
 [node name="Components" type="Node2D" parent="."]
@@ -70,14 +71,12 @@ metadata/_custom_type_script = "uid://dvixfmg80rixg"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Hurtbox"]
 shape = SubResource("RectangleShape2D_kdffh")
 
-[node name="HurtboxSimpleDestroyedBehavior" type="Node2D" parent="Components/Hurtbox" node_paths=PackedStringArray("hurtbox")]
+[node name="HurtboxDestroyedLevelResetBehavior" type="Node2D" parent="Components/Hurtbox"]
 script = ExtResource("13_m8awq")
-hurtbox = NodePath("..")
 metadata/_custom_type_script = "uid://hk3ym3rj1kh8"
 
-[node name="HurtboxSimpleDamageHitBehavior" type="Node2D" parent="Components/Hurtbox" node_paths=PackedStringArray("hurtbox")]
+[node name="HurtboxSimpleDamageHitBehavior" type="Node2D" parent="Components/Hurtbox"]
 script = ExtResource("14_25nvg")
-hurtbox = NodePath("..")
 metadata/_custom_type_script = "uid://drft6dfp41fxt"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

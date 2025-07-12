@@ -18,8 +18,6 @@ the default_scene variable (currently set to the Mock Level).
 ## The scene that gets loaded by default (use this for debug purposes - drag & drop a level scene from the files)
 @export var default_scene: PackedScene 
 
-var next_scene: PackedScene
-
 var currentScene: Node ## The actual current level scene node.
 
 func _ready():
@@ -31,8 +29,12 @@ func _ready():
 func transition_to_scene(new_scene: PackedScene): 
 	get_tree().paused = true ## Pauses the game 
 	
-	next_scene = new_scene ## Sets the scene that the player will go to
+	default_scene = new_scene ## Sets the scene that the player will go to
 	
+	anim_player.play("FadeToBlack") ## Makes the screen fade
+
+func reset_scene():
+	get_tree().paused = true ## Pauses the game 
 	anim_player.play("FadeToBlack") ## Makes the screen fade
 
 func finished_fading():
@@ -41,7 +43,7 @@ func finished_fading():
 	if currentScene:
 		currentScene.queue_free() ## Removes the old scene
 	
-	currentScene = next_scene.instantiate()
+	currentScene = default_scene.instantiate()
 	currentLevel.add_child(currentScene) ## Adds the new scene
 	
 	anim_player.play("FadeToNormal") ## Makes the screen unfade

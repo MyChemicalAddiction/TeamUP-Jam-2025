@@ -26,11 +26,12 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rm4bp"]
 size = Vector2(128, 128)
 
-[node name="Human" type="CharacterBody2D" node_paths=PackedStringArray("movement_component", "interaction_component") groups=["Human"]]
+[node name="Human" type="CharacterBody2D" node_paths=PackedStringArray("movement_component", "interaction_component", "hurtbox_component") groups=["Human"]]
 collision_layer = 2
 script = ExtResource("1_fn0a6")
 movement_component = NodePath("Components/MovementStateMachine")
 interaction_component = NodePath("Components/InteractionManager")
+hurtbox_component = NodePath("Components/Hurtbox")
 metadata/_custom_type_script = "uid://dqcux1xonf8to"
 
 [node name="Components" type="Node2D" parent="."]

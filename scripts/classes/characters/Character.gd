@@ -15,10 +15,17 @@ characters in the game: the human player and the ghost player. These include:
 
 @export var movement_component: InputStateMachine ## The component which handles player movement.
 @export var interaction_component: InteractionManager ## The component which handles player interaction.
+@export var hurtbox_component: Hurtbox ## The hurtbox of the character.
 
 ## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SceneManager.loading_scene.connect(reset_character)
 	_on_ready()
+
+## What should happen when the character gets "reset" - this happens when the game loads a new level.
+func reset_character():
+	global_position = Vector2.ZERO
+	hurtbox_component.reset()
 
 func _on_ready(): ## Hook method for extra behavior on ready (overridden by implementations).
 	pass

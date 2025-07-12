@@ -45,9 +45,13 @@ To add a hurtbox to something:
 signal hit(damage, knockback) ## Emitted when the hurtbox is hit.
 signal destroyed ## Emitted when the hurtbox is destroyed.
 
+## The initial and max HP of the hurtbox.
+var max_HP: float
+
 func _ready():
 	area_entered.connect(_on_area_entered)
 	_on_ready()
+	max_HP = hurtboxRes.HP
 
 func _on_area_entered(area): ## Checks if a hurtbox has been hit.
 	if area is Hitbox:
@@ -67,3 +71,7 @@ func damage(received_damage): ## Deals damage to the hurtbox & emits the destroy
 
 func destroy():
 	holder.queue_free()
+
+## Resets the hurtbox's HP.
+func reset():
+	hurtboxRes.HP = max_HP

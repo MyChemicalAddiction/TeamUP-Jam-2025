@@ -110,14 +110,10 @@ libraries = {
 
 [node name="ColorRect" type="ColorRect" parent="MultiTargetCamera/AnimationPlayer"]
 anchors_preset = -1
-anchor_left = -1.63
-anchor_top = -2.08
-anchor_right = 4.32
-anchor_bottom = 4.14
-offset_left = 0.00012207
-offset_top = 0.00012207
-offset_right = -0.000244141
-offset_bottom = -0.000244141
+anchor_left = -3.0
+anchor_top = -3.0
+anchor_right = 3.0
+anchor_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
