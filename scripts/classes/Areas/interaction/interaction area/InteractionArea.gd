@@ -24,7 +24,9 @@ You can give the subclass export references to components as to directly
 and precisely control their behavior in the interact() function.
 """
 
-signal used() ## Emitted when the interaction area is interacted with.
+signal used ## Emitted when the interaction area is interacted with.
+signal on_disable ## Emitted when disabled
+signal on_enable ## Emitted when enabled
 
 @export var interact_layer := 4 ## Set to 4 (by default) through code as to match the InteractionArea's layer
 
@@ -34,3 +36,9 @@ func _ready(): ## Sets the InteractionArea's collision layer to be able to be de
 
 func interact(): ## Called when the player interacts with this area.
 	used.emit()
+
+func disable():
+	on_disable.emit() ## This disables all connected components
+
+func enable():
+	on_enable.emit() ## This enables all connected components 

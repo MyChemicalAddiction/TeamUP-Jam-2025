@@ -37,6 +37,7 @@ func _on_enter():
 
 func _on_exit():
 	active = false
+	if current_area: current_area.disable()
 	object.collision_mask = default_ghost_collision_mask
 	object.visible = true
 	interaction_manager.can_interact = true
@@ -64,12 +65,14 @@ func process_input(_delta):
 	input_manager.process_input()
 	
 	if input_manager.depossess:
+		if current_area: current_area.disable()
 		return idleState
 
 func force_depossess():
 	can_possess = false
 	if active:
 		state_machine.change_state(idleState)
+		if current_area: current_area.disable()
 
 func enable_possess():
 	can_possess = true

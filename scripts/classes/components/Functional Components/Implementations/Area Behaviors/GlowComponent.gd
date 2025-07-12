@@ -1,5 +1,5 @@
-extends AreaEnteredComponent
-class_name AreaEnteredGlowComponent
+extends FunctionalComponent
+class_name GlowComponent
 
 """
 The AreaEnteredGlowComponent provides visual feedback to players that wish to
@@ -20,7 +20,7 @@ var visual_target_modulate: Color
 ## Keeps track of the visual's default alpha value.
 var visual_default_modulate: Color
 
-func _on_ready_behavior():
+func _on_ready():
 	visual_default_modulate = visual.modulate
 	visual_target_modulate = Color(visual_default_modulate)
 	visual_target_modulate[3] = 0.25

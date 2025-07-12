@@ -20,6 +20,8 @@ TLDR: the interface for implementing a functional component is to:
 @export var enabler: Node ## A node that, when used, enables this one. This is typically assigned an InteractionArea node but can also be assigned another Functional Component, too, since they also emit this signal (polymorphism W).
 @export var triggerer: Node ## A node that, when used, directly triggers this node's use function, too. This is typically assigned an InteractionArea node but can also be assigned another Functional Component, too, since they also emit this signal (polymorphism W).
 @export var one_shot = false ## If true, deletes self upon use.
+@export var area: Area2D ## The area that, when entered, triggers this behavior.
+@export var enable_manager: Node ## When this node emits a on_disable or on_enable signal, this node reacts accordingly and disables/enables itself too.
 
 signal used ## Emmitted when used.
 
@@ -37,7 +39,15 @@ func _ready(): ## Connects own on_use functionality with triggerer's used signal
 		triggerer.used.connect(use)
 	if enabler and enabler != self:
 		enabler.used.connect(enable)
+	if area:
+		area.area_entered.connect(_on_area_entered)
+	if enable_manager:
+		enable_manager.on_disable.connect(disable)
+		enable_manager.on_enable.connect(enable)
 	_on_ready()
+
+func _on_area_entered(_obj):
+	use()
 
 func _on_ready(): ## Overriden method that adds behavior on ready.
 	pass
