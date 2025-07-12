@@ -9,6 +9,8 @@ do anything and is invisible.
 @export var IdleState: InputState
 @export var GhostCollision: CollisionShape2D
 
+@export var interaction_manager: InteractionManager ## Referenced to disable it when the ghost is inside the amulet.
+
 @onready var amulet = get_tree().get_first_node_in_group("Amulet")
 
 func process_input(_delta):
@@ -20,11 +22,13 @@ func process_physics(_delta: float):
 	object.global_position = amulet.global_position ## The ghost should keep up with the amulet so the camera updates properly.
 
 func _on_enter():
+	interaction_manager.can_interact = false
 	object.visible = false
 	object.velocity = Vector2.ZERO
 	GhostCollision.disabled = true
 
 func _on_exit():
+	interaction_manager.can_interact = true
 	object.position = amulet.position
 	call_deferred("disable_ghost_collision")
 	object.visible = true
