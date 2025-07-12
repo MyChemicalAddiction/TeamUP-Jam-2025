@@ -1,8 +1,15 @@
 extends FunctionalComponent
 class_name PlatformMovementComponent
 
-"""w
+"""
 Encapsulates behavior for the ghost moving a possessed platform.
+
+It's a bit unwieldy and kind of breaks the LSP but this component doesn't
+work on a per-use-call basis; instead, when enabled, it executes a continuous
+process (namely - moving the platform based on the player's inputs).
+
+It gets enabled when the area owner gets interacted with, and disabled when the
+area's disable() function is called.
 """
 
 @export var object: Node ## The object to be moved (platform).
