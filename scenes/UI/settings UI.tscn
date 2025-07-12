@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7vh0fx3q7g3l"]
 
-[ext_resource type="Script" uid="uid://b0dtsty17hr5o" path="res://scripts/classes/UI/buttons/Settings /PlayerSettingsOptionButton.gd" id="1_m4wj0"]
+[ext_resource type="Script" uid="uid://b0dtsty17hr5o" path="res://scripts/classes/UI/buttons/Settings/PlayerSettingsOptionButton.gd" id="1_m4wj0"]
 [ext_resource type="Script" uid="uid://bro3w88p8iojd" path="res://scripts/classes/UI/buttons/SectionButton.gd" id="1_t3uui"]
 
 [node name="Settings UI" type="VBoxContainer"]
