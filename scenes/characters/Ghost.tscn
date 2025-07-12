@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_2cjv0"]
 [ext_resource type="Script" uid="uid://dyfj8np7ybeoi" path="res://scripts/classes/components/input managers/Characters/Ghost/GhostMovementInputManager.gd" id="7_3grc2"]
 [ext_resource type="Script" uid="uid://cd218insare6n" path="res://scripts/classes/components/input managers/Characters/Ghost/GhostInteractInputManager.gd" id="9_qoedd"]
-[ext_resource type="Script" uid="uid://brwvuypl3ag2w" path="res://scripts/classes/interaction/interaction manager/InteractionManager.gd" id="10_matwj"]
+[ext_resource type="Script" uid="uid://brwvuypl3ag2w" path="res://scripts/classes/Areas/interaction/interaction manager/InteractionManager.gd" id="10_matwj"]
 [ext_resource type="Script" uid="uid://dvixfmg80rixg" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Hurtbox.gd" id="11_pwbk5"]
 [ext_resource type="Script" uid="uid://bj3kpi7kuya4w" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Custom Resource/HurtboxRes.gd" id="12_25nvg"]
 [ext_resource type="Script" uid="uid://hk3ym3rj1kh8" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/DestroyedBehavior/HurtboxSimpleDestroyedBehavior.gd" id="13_m8awq"]
@@ -27,6 +27,7 @@ size = Vector2(128, 128)
 
 [node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("movement_component", "interaction_component", "hurtbox_component") groups=["Ghost"]]
 collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_ddmg8")
 movement_component = NodePath("Components/MovementStateMachine")
 interaction_component = NodePath("Components/InteractionManager")

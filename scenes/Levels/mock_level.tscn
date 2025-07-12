@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="1_1a2xh"]
 [ext_resource type="PackedScene" uid="uid://hibwxjb2khf0" path="res://scenes/objects/projectiles/Stupid Simple Projectile.tscn" id="1_kr33g"]
-[ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/interaction/interaction area/InteractionArea.gd" id="2_7o6r4"]
+[ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/Areas/interaction/interaction area/InteractionArea.gd" id="2_7o6r4"]
 [ext_resource type="Script" uid="uid://du7sowey406lo" path="res://scripts/classes/components/Functional Components/Implementations/DeleteComponent.gd" id="3_00pat"]
 [ext_resource type="Script" uid="uid://bp3r0ffx34h" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Hitbox.gd" id="4_vpnf0"]
 [ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="5_kr33g"]

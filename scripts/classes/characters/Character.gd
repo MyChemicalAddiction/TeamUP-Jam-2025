@@ -22,7 +22,7 @@ func _ready() -> void:
 	SceneManager.loading_scene.connect(reset_character)
 	_on_ready()
 
-## What should happen when the character gets "reset" - this happens when the game loads a new level.
+## What should happen when the character gets "reset" - this happens when the game loads a new level or resets the level (the game currently resets the level when a character dies).
 func reset_character():
 	global_position = Vector2.ZERO
 	hurtbox_component.reset()

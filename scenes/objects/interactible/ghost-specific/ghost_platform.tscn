@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8xf6mcl8d82x"]
+
+[ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/Areas/interaction/interaction area/InteractionArea.gd" id="1_kt7wl"]
+[ext_resource type="Script" uid="uid://bgglcirqtvtj3" path="res://scripts/classes/components/Functional Components/Implementations/Area Behaviors/Implementations/AreaEnteredGlowComponent.gd" id="2_ekpkx"]
+[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_glthr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kt7wl"]
+size = Vector2(19.9466, 20.5866)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekpkx"]
+size = Vector2(30.9668, 102.454)
+
+[node name="Ghost Platform" type="Area2D"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_kt7wl")
+metadata/_custom_type_script = "uid://dlpckao766xkb"
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="AreaEnteredGlowComponent" type="Node2D" parent="Components" node_paths=PackedStringArray("visual", "area")]
+script = ExtResource("2_ekpkx")
+visual = NodePath("../../AnimatableBody2D/Icon")
+area = NodePath("../..")
+metadata/_custom_type_script = "uid://bgglcirqtvtj3"
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="Icon" type="Sprite2D" parent="AnimatableBody2D"]
+self_modulate = Color(0.203708, 0.360525, 0.125536, 1)
+scale = Vector2(2.85715, 0.328833)
+texture = ExtResource("2_glthr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(6.13928e-06, 0.500001)
+scale = Vector2(18.1485, 2.08873)
+shape = SubResource("RectangleShape2D_kt7wl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+scale = Vector2(18.1485, 2.08873)
+shape = SubResource("RectangleShape2D_ekpkx")

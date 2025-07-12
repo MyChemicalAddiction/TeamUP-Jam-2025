@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://c55ostl8df6lu"]
+
+[ext_resource type="PackedScene" uid="uid://w4hb2qd8g6lr" path="res://scenes/objects/hazards/evil_hands.tscn" id="1_lr367"]
+[ext_resource type="PackedScene" uid="uid://b8xf6mcl8d82x" path="res://scenes/objects/interactible/ghost-specific/ghost_platform.tscn" id="2_cags0"]
+[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_k0apv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcxo6"]
+
+[node name="RetmodLevelIdea" type="Node2D"]
+
+[node name="Special Objects" type="Node2D" parent="."]
+
+[node name="Evil Hands" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(199, 392)
+
+[node name="Evil Hands2" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(299, 392)
+
+[node name="Evil Hands3" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(399, 393)
+
+[node name="Evil Hands4" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(502, 393)
+
+[node name="Evil Hands5" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(602, 393)
+
+[node name="Evil Hands6" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(702, 394)
+
+[node name="Evil Hands7" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(803, 396)
+
+[node name="Evil Hands8" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(903, 396)
+
+[node name="Evil Hands9" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(1003, 397)
+
+[node name="Evil Hands10" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(1106, 397)
+
+[node name="Evil Hands11" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(1206, 397)
+
+[node name="Evil Hands12" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(1306, 398)
+
+[node name="Evil Hands13" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(1407, 392)
+
+[node name="Evil Hands14" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(1507, 392)
+
+[node name="Evil Hands15" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(1607, 393)
+
+[node name="Evil Hands16" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(1710, 393)
+
+[node name="Evil Hands17" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(1810, 393)
+
+[node name="Evil Hands18" parent="Special Objects" instance=ExtResource("1_lr367")]
+position = Vector2(1910, 394)
+
+[node name="Ghost Platform" parent="Special Objects" instance=ExtResource("2_cags0")]
+position = Vector2(646, 4)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Platforms"]
+scale = Vector2(12.2902, 1.14557)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
+shape = SubResource("RectangleShape2D_dcxo6")
+
+[node name="Icon" type="Sprite2D" parent="Platforms/StaticBody2D"]
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("2_k0apv")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Platforms"]
+position = Vector2(1045, 473)
+scale = Vector2(93.3671, 1.97234)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D3"]
+shape = SubResource("RectangleShape2D_dcxo6")
+
+[node name="Icon" type="Sprite2D" parent="Platforms/StaticBody2D3"]
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("2_k0apv")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Platforms"]
+position = Vector2(113, 241)
+rotation = 1.5708
+scale = Vector2(25.1099, 0.800108)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D2"]
+shape = SubResource("RectangleShape2D_dcxo6")
+
+[node name="Icon" type="Sprite2D" parent="Platforms/StaticBody2D2"]
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("2_k0apv")

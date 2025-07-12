@@ -30,6 +30,7 @@ signal used() ## Emitted when the interaction area is interacted with.
 
 func _ready(): ## Sets the InteractionArea's collision layer to be able to be detected by InteractionManagers (4)
 	set_collision_layer_value(interact_layer, true)
+	set_collision_mask_value(interact_layer, true)
 
 func interact(): ## Called when the player interacts with this area.
 	used.emit()

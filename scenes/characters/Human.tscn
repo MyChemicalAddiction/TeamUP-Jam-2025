@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_rm4bp"]
 [ext_resource type="Script" uid="uid://cc4fjv8w3pibj" path="res://scripts/classes/components/input managers/Characters/Human/HumanMovementInputManager.gd" id="7_0nw2b"]
 [ext_resource type="Script" uid="uid://cnh6wau76q5w6" path="res://scripts/classes/components/input managers/Characters/Human/HumanInteractInputManager.gd" id="8_rv0c7"]
-[ext_resource type="Script" uid="uid://brwvuypl3ag2w" path="res://scripts/classes/interaction/interaction manager/InteractionManager.gd" id="9_1s6pi"]
+[ext_resource type="Script" uid="uid://brwvuypl3ag2w" path="res://scripts/classes/Areas/interaction/interaction manager/InteractionManager.gd" id="9_1s6pi"]
 [ext_resource type="Script" uid="uid://bngv2rtf3degk" path="res://scripts/classes/components/state machines/state listeners/Human Player/AmuletThrowingStateListener.gd" id="9_ovymh"]
 [ext_resource type="Script" uid="uid://dvixfmg80rixg" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Hurtbox.gd" id="10_2vwdl"]
 [ext_resource type="Script" uid="uid://bj3kpi7kuya4w" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Custom Resource/HurtboxRes.gd" id="11_jlbu2"]
@@ -28,6 +28,7 @@ size = Vector2(128, 128)
 
 [node name="Human" type="CharacterBody2D" node_paths=PackedStringArray("movement_component", "interaction_component", "hurtbox_component") groups=["Human"]]
 collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_fn0a6")
 movement_component = NodePath("Components/MovementStateMachine")
 interaction_component = NodePath("Components/InteractionManager")
@@ -52,6 +53,7 @@ metadata/_custom_type_script = "uid://cnh6wau76q5w6"
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("9_1s6pi")
+special_interact_mask = 6
 player = NodePath("../..")
 input_manager = NodePath("../HumanInteractInputManager")
 metadata/_custom_type_script = "uid://brwvuypl3ag2w"

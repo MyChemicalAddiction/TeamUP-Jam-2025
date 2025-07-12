@@ -1,6 +1,6 @@
 extends StateListener
 
-@export var object: Node ## Needed to reference the arrow sprite
+@onready var object = get_tree().get_first_node_in_group("Amulet") ## Needed to reference the arrow sprite
 
 ## TODO: remove this later, this is hardcoded visual feedback for debugging purposes only 
 var modulate_alpha := 1.0

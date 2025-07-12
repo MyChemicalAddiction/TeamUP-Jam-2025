@@ -86,8 +86,7 @@ anim_player = NodePath("MultiTargetCamera/AnimationPlayer")
 
 [node name="Human" parent="Characters" instance=ExtResource("3_jyhfs")]
 
-[node name="StateListener" parent="Characters/Human/Visual/Throwing_Arrow" index="0" node_paths=PackedStringArray("object", "state")]
-object = NodePath("..")
+[node name="StateListener" parent="Characters/Human/Visual/Throwing_Arrow" index="0" node_paths=PackedStringArray("state")]
 state = NodePath("../../../../Amulet/Components/AmuletStateMachine/ThrowingState")
 
 [node name="Amulet" parent="Characters" instance=ExtResource("6_tefeu")]
