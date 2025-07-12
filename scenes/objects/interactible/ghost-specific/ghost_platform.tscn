@@ -30,7 +30,7 @@ shape = SubResource("RectangleShape2D_kt7wl")
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_kt7wl")
-interact_layer = 6
+interact_layer = 5
 metadata/_custom_type_script = "uid://dlpckao766xkb"
 
 [node name="Components" type="Node2D" parent="Ghost Platform"]
