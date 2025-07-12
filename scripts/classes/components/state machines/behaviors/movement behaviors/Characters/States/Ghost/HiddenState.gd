@@ -26,5 +26,8 @@ func _on_enter():
 
 func _on_exit():
 	object.position = amulet.position
-	GhostCollision.disabled = false
+	call_deferred("disable_ghost_collision")
 	object.visible = true
+
+func disable_ghost_collision():
+	GhostCollision.disabled = false

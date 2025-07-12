@@ -27,18 +27,16 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is GhostCharacter:
-		if body.visible:
-			object.in_amulet_radius = false
-			
-			current_tween.kill()
-			current_tween = self.create_tween()
-			
-			force_multiplier = 0.0
-			
-			current_tween.tween_property(self, "force_multiplier", 1.0, TIME_TO_SPEED) ## Makes the ghost go quicker toward the area as more time passes with it outside it.
-			set_physics_process(true)
-
-			object.collision_mask = 0
+		object.in_amulet_radius = false
+		
+		current_tween.kill()
+		current_tween = self.create_tween()
+		
+		force_multiplier = 0.0
+		
+		current_tween.tween_property(self, "force_multiplier", 1.0, TIME_TO_SPEED) ## Makes the ghost go quicker toward the area as more time passes with it outside it.
+		set_physics_process(true)
+		object.collision_mask = 0
 
 func _physics_process(_delta: float) -> void:
 	object.velocity = (global_position - object.global_position).normalized() * MAX_ATTRACTION_SPEED * force_multiplier

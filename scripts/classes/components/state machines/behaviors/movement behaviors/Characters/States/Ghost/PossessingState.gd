@@ -26,12 +26,17 @@ var can_possess := true
 ## Stores the ghost's default collision mask so it can be disabled or enabled at will.
 var default_ghost_collision_mask: int = -1
 
+## keeps track of whether this is the current state.
+var active := false
+
 func _on_enter():
+	active = true
 	object.collision_mask = -1
 	object.visible = false
 	interaction_manager.can_interact = false
 
 func _on_exit():
+	active = false
 	object.collision_mask = default_ghost_collision_mask
 	object.visible = true
 	interaction_manager.can_interact = true
@@ -52,7 +57,8 @@ func possess(area):
 		current_area = area
 
 func process_physics(_delta):
-	object.global_position = current_area.global_position
+	if current_area:
+		object.global_position = current_area.global_position
 
 func process_input(_delta):
 	input_manager.process_input()
@@ -61,9 +67,9 @@ func process_input(_delta):
 		return idleState
 
 func force_depossess():
-	#print('hello??')
 	can_possess = false
-	state_machine.change_state(idleState)
+	if active:
+		state_machine.change_state(idleState)
 
 func enable_possess():
 	can_possess = true

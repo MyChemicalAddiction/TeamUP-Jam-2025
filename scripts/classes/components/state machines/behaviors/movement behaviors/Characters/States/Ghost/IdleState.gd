@@ -8,6 +8,15 @@ class_name GhostIdleState
 @export var FallingState: InputState
 @export var HiddenState: InputState
 
+## References the state machine so this state can force a change to self in the event of a level reset.
+@onready var state_machine = get_parent()
+
+func _ready():
+	SceneManager.loading_scene.connect(reset)
+
+func reset():
+	state_machine.change_state(self)
+
 func process_input(_delta):
 	input_manager.process_input()
 	if input_manager.toggle_amulet:
