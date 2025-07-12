@@ -43,6 +43,9 @@ object = NodePath("../..")
 [node name="GhostHiddenState" parent="Components/MovementStateMachine" index="4" node_paths=PackedStringArray("GhostCollision")]
 GhostCollision = NodePath("../../../CollisionShape2D")
 
+[node name="GhostPossessingState" parent="Components/MovementStateMachine" index="5" node_paths=PackedStringArray("interaction_manager")]
+interaction_manager = NodePath("../../InteractionManager")
+
 [node name="GhostMovementInputManager" type="Node" parent="Components"]
 script = ExtResource("7_3grc2")
 metadata/_custom_type_script = "uid://dyfj8np7ybeoi"

@@ -10,9 +10,6 @@ prioritizing the closest interactable first.
 @export var special_interact_mask: int = 5 ## Each character has a "special_interact_mask" - this mask detects the corresponding layer of interaction areas that ONLY THIS CHARACTER CAN INTERACT WITH. By default: set interaction areas which both players can interact with to 4; only ghost - 5; only human - 6.
 @export var player: Character ## References the character.
 @export var input_manager: InputManager ## Manages varying inputs for interacting.
-# @onready var label = $Label
-
-# const base_text = "[E] to "
 
 var active_areas: Array[Node] ## The list of interaction areas within the player's grasp.
 var can_interact = true ## Whether the player can interact at this time.
@@ -22,6 +19,9 @@ var enabled: bool = false : ## Allows the InteractionManager's process function 
 	set(value):
 		enabled = value
 		set_process(enabled)
+
+## Emitted when some area is interacted with, passing that area's reference.
+signal interacted(area)
 
 func _ready(): ## Sets the collision mask to detect the interaction area's collision layer (4)
 	set_collision_mask_value(interact_mask, true)
@@ -52,6 +52,7 @@ func _process(_delta): ## Processes input
 			active_areas.sort_custom(_sort_by_distance_to_player)
 			
 			await active_areas[0].interact()
+			interacted.emit(active_areas[0])
 			
 			can_interact = true
 

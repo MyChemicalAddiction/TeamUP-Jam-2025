@@ -11,6 +11,22 @@ all phyisics objects which both the human and ghost should
 collide with like walls).
 """
 
+var in_amulet_radius := true:
+	get:
+		return in_amulet_radius
+	set(value):
+		in_amulet_radius = value
+		if value:
+			entered_amulet_radius.emit()
+		else:
+			exited_amulet_radius.emit()
+
+## Emitted when entering the amulet's radius
+signal entered_amulet_radius
+
+## Emitted when exiting the amulet's radius.
+signal exited_amulet_radius
+
 func _on_ready():
 	pass
 
