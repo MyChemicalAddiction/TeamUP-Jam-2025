@@ -61,6 +61,7 @@ func process_input(_delta):
 		return idleState
 
 func force_depossess():
+	#print('hello??')
 	can_possess = false
 	state_machine.change_state(idleState)
 

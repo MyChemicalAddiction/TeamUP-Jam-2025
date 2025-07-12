@@ -16,8 +16,20 @@ When entered, this state makes the amulet invisible.
 ## Whether the player is currently holding down LMB to charge the amulet.
 var charging := false 
 
+## References the state machine so this state can force a change to self in the event of a level reset.
+@onready var state_machine = get_parent()
+
+func _ready():
+	SceneManager.loading_scene.connect(reset)
+
+func reset():
+	state_machine.change_state(self)
+
 func _on_enter():
 	object.visible = false
+	call_deferred('freeze_object')
+	
+func freeze_object():
 	object.freeze = true 
 
 func _on_exit():
