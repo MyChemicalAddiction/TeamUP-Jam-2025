@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://c55ostl8df6lu"]
+[gd_scene load_steps=6 format=3 uid="uid://c55ostl8df6lu"]
 
 [ext_resource type="PackedScene" uid="uid://w4hb2qd8g6lr" path="res://scenes/objects/hazards/evil_hands.tscn" id="1_lr367"]
+[ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/simple_platform_tilemap_placeholder.tscn" id="1_w4mb6"]
 [ext_resource type="PackedScene" uid="uid://b8xf6mcl8d82x" path="res://scenes/objects/interactible/ghost-specific/ghost_platform.tscn" id="2_cags0"]
-[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_k0apv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcxo6"]
+[ext_resource type="PackedScene" uid="uid://dgudsm50jqbt8" path="res://scenes/objects/movable rigid bodies/box.tscn" id="4_didsf"]
+[ext_resource type="PackedScene" uid="uid://b8tomno4vy81t" path="res://scenes/objects/movable rigid bodies/ghost_movable_box.tscn" id="4_w4mb6"]
 
 [node name="RetmodLevelIdea" type="Node2D"]
 
+[node name="Simple Platform Tilemap Placeholder" parent="." instance=ExtResource("1_w4mb6")]
+position = Vector2(-18, 115)
+
 [node name="Special Objects" type="Node2D" parent="."]
+position = Vector2(170, 115)
 
 [node name="Evil Hands" parent="Special Objects" instance=ExtResource("1_lr367")]
 position = Vector2(199, 392)
@@ -65,42 +69,13 @@ position = Vector2(1810, 393)
 position = Vector2(1910, 394)
 
 [node name="Ghost Platform" parent="Special Objects" instance=ExtResource("2_cags0")]
-position = Vector2(646, 4)
+position = Vector2(644, 43)
 
-[node name="Platforms" type="Node2D" parent="."]
+[node name="Box2" parent="Special Objects" instance=ExtResource("4_didsf")]
+position = Vector2(43, -54)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Platforms"]
-scale = Vector2(12.2902, 1.14557)
-metadata/_edit_group_ = true
+[node name="Box8" parent="Special Objects" instance=ExtResource("4_didsf")]
+position = Vector2(31, -155)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D"]
-shape = SubResource("RectangleShape2D_dcxo6")
-
-[node name="Icon" type="Sprite2D" parent="Platforms/StaticBody2D"]
-scale = Vector2(0.155, 0.155)
-texture = ExtResource("2_k0apv")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Platforms"]
-position = Vector2(1045, 473)
-scale = Vector2(93.3671, 1.97234)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D3"]
-shape = SubResource("RectangleShape2D_dcxo6")
-
-[node name="Icon" type="Sprite2D" parent="Platforms/StaticBody2D3"]
-scale = Vector2(0.155, 0.155)
-texture = ExtResource("2_k0apv")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Platforms"]
-position = Vector2(113, 241)
-rotation = 1.5708
-scale = Vector2(25.1099, 0.800108)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platforms/StaticBody2D2"]
-shape = SubResource("RectangleShape2D_dcxo6")
-
-[node name="Icon" type="Sprite2D" parent="Platforms/StaticBody2D2"]
-scale = Vector2(0.155, 0.155)
-texture = ExtResource("2_k0apv")
+[node name="Box11" parent="Special Objects" instance=ExtResource("4_w4mb6")]
+position = Vector2(24, -258)

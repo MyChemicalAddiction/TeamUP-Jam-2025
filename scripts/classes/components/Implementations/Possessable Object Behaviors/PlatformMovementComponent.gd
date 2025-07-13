@@ -1,12 +1,11 @@
-extends FunctionalComponent
+extends Component
 class_name PlatformMovementComponent
 
 """
 Encapsulates behavior for the ghost moving a possessed platform.
 
-It's a bit unwieldy and kind of breaks the LSP but this component doesn't
-work on a per-use-call basis; instead, when enabled, it executes a continuous
-process (namely - moving the platform based on the player's inputs).
+When enabled, it executes a continuous process (namely - moving the platform 
+based on the player's inputs).
 
 It gets enabled when the area owner gets interacted with, and disabled when the
 area's disable() function is called.
@@ -20,9 +19,6 @@ func _on_enable():
 	set_physics_process(true)
 
 func _on_disable():
-	set_physics_process(false)
-
-func _on_ready():
 	set_physics_process(false)
 
 func _physics_process(_delta: float) -> void:

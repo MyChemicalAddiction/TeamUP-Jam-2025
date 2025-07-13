@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqmvrgjgqo846"]
 
-[ext_resource type="Script" uid="uid://dfwxvk54axc1" path="res://scripts/classes/components/state machines/special/Amulet/AmuletStateMachine.gd" id="1_u8ln1"]
-[ext_resource type="Script" uid="uid://dukeo7ylkp6g3" path="res://scripts/classes/components/state machines/special/Amulet/States/HeldState.gd" id="2_ocew2"]
-[ext_resource type="Script" uid="uid://bukmwe5b6fuky" path="res://scripts/classes/components/state machines/special/Amulet/States/ThrownState.gd" id="3_s42ca"]
-[ext_resource type="Script" uid="uid://bv4q7rhf2igqn" path="res://scripts/classes/components/state machines/special/Amulet/States/ThrowingState.gd" id="4_qq7be"]
+[ext_resource type="Script" uid="uid://dfwxvk54axc1" path="res://scripts/classes/components/Implementations/state machines/special/Amulet/AmuletStateMachine.gd" id="1_u8ln1"]
+[ext_resource type="Script" uid="uid://dukeo7ylkp6g3" path="res://scripts/classes/components/Implementations/state machines/special/Amulet/States/HeldState.gd" id="2_ocew2"]
+[ext_resource type="Script" uid="uid://bukmwe5b6fuky" path="res://scripts/classes/components/Implementations/state machines/special/Amulet/States/ThrownState.gd" id="3_s42ca"]
+[ext_resource type="Script" uid="uid://bv4q7rhf2igqn" path="res://scripts/classes/components/Implementations/state machines/special/Amulet/States/ThrowingState.gd" id="4_qq7be"]
 
 [node name="AmuletStateMachine" type="Node2D" node_paths=PackedStringArray("input_manager", "starting_state", "object")]
 script = ExtResource("1_u8ln1")

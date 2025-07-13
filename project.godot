@@ -138,4 +138,16 @@ ghost_depossess={
 
 [layer_names]
 
-2d_physics/layer_1="player"
+2d_physics/layer_1="Objects collideable by both players"
+2d_physics/layer_2="The human player"
+2d_physics/layer_3="The ghost player"
+2d_physics/layer_4="Objects interactable by both players"
+2d_physics/layer_5="Objects interactable by ghost"
+2d_physics/layer_6="Objects interactable by human"
+2d_physics/layer_7="Rigid bodies collideable by both players"
+2d_physics/layer_8="Rigid bodies collideable by ghost only"
+2d_physics/layer_9="Rigid bodies collideable by human only"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

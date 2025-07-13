@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgudsm50jqbt8"]
+
+[ext_resource type="Texture2D" uid="uid://d11fuyffc5s15" path="res://assets/visual/placeholders/placeholder_tileset.png" id="1_2dn76"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0xvh"]
+atlas = ExtResource("1_2dn76")
+region = Rect2(0.0877228, 279.989, 128.004, 103.09)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0xvh"]
+size = Vector2(130, 102)
+
+[node name="Box" type="RigidBody2D"]
+collision_layer = 256
+collision_mask = 449
+mass = 0.007
+can_sleep = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_e0xvh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_e0xvh")

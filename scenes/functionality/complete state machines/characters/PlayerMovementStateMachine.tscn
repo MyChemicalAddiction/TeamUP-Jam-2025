@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://bmakco5i5eh8i"]
 
-[ext_resource type="Script" uid="uid://c0kbow20mhepj" path="res://scripts/classes/components/state machines/InputStateMachine.gd" id="1_ieada"]
-[ext_resource type="Script" uid="uid://cq7hetf2d2i77" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Human/IdleState.gd" id="2_ydk3u"]
-[ext_resource type="Script" uid="uid://8g6gd5gevs7f" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Human/WalkingState.gd" id="3_qmqvc"]
-[ext_resource type="Script" uid="uid://b6onqdkxd13yl" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Human/FallingState.gd" id="4_xlqu7"]
-[ext_resource type="Script" uid="uid://c0j3byxgcbbui" path="res://scripts/classes/components/state machines/behaviors/movement behaviors/Characters/States/Human/JumpingState.gd" id="5_ghoir"]
+[ext_resource type="Script" uid="uid://c0kbow20mhepj" path="res://scripts/classes/components/Implementations/state machines/InputStateMachine.gd" id="1_ieada"]
+[ext_resource type="Script" uid="uid://cq7hetf2d2i77" path="res://scripts/classes/components/Implementations/state machines/States/Human/IdleState.gd" id="2_ydk3u"]
+[ext_resource type="Script" uid="uid://8g6gd5gevs7f" path="res://scripts/classes/components/Implementations/state machines/States/Human/WalkingState.gd" id="3_qmqvc"]
+[ext_resource type="Script" uid="uid://b6onqdkxd13yl" path="res://scripts/classes/components/Implementations/state machines/States/Human/FallingState.gd" id="4_xlqu7"]
+[ext_resource type="Script" uid="uid://c0j3byxgcbbui" path="res://scripts/classes/components/Implementations/state machines/States/Human/JumpingState.gd" id="5_ghoir"]
 
 [node name="MovementStateMachine" type="Node2D" node_paths=PackedStringArray("starting_state", "object")]
 script = ExtResource("1_ieada")

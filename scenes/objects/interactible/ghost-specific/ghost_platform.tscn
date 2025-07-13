@@ -1,20 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8xf6mcl8d82x"]
+[gd_scene load_steps=9 format=3 uid="uid://b8xf6mcl8d82x"]
 
 [ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/Areas/interaction/interaction area/InteractionArea.gd" id="1_kt7wl"]
-[ext_resource type="Script" uid="uid://bgglcirqtvtj3" path="res://scripts/classes/components/Functional Components/Implementations/Area Behaviors/GlowComponent.gd" id="2_ekpkx"]
+[ext_resource type="Script" uid="uid://bgglcirqtvtj3" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/Area Behaviors/GlowComponent.gd" id="2_ekpkx"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_glthr"]
-[ext_resource type="Script" uid="uid://bjisq1vjh82jp" path="res://scripts/classes/components/Functional Components/Implementations/Possessable Object Behaviors/PlatformMovementComponent.gd" id="3_djl51"]
-[ext_resource type="Script" uid="uid://3o5qtevy1vo1" path="res://scripts/classes/components/input managers/Platforms/HorizontalPlatformInputManager.gd" id="4_djl51"]
+[ext_resource type="Script" uid="uid://bjisq1vjh82jp" path="res://scripts/classes/components/Implementations/Possessable Object Behaviors/PlatformMovementComponent.gd" id="3_djl51"]
+[ext_resource type="Script" uid="uid://3o5qtevy1vo1" path="res://scripts/classes/components/Implementations/input managers/Platforms/HorizontalPlatformInputManager.gd" id="4_djl51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kt7wl"]
 size = Vector2(19.9466, 20.5866)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djl51"]
+size = Vector2(0.826538, 21.5442)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ekpkx"]
 size = Vector2(30.9668, 102.454)
 
 [node name="ghost_platform" type="CharacterBody2D"]
-collision_layer = 3
-collision_mask = 3
 
 [node name="Icon" type="Sprite2D" parent="."]
 self_modulate = Color(0.203708, 0.360525, 0.125536, 1)
@@ -25,6 +26,16 @@ texture = ExtResource("2_glthr")
 position = Vector2(6.13928e-06, 0.500001)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_kt7wl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-173.5, -0.500038)
+scale = Vector2(18.1485, 2.08873)
+shape = SubResource("RectangleShape2D_djl51")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(174, 0)
+scale = Vector2(18.1485, 2.08873)
+shape = SubResource("RectangleShape2D_djl51")
 
 [node name="Ghost Platform" type="Area2D" parent="." groups=["Possessable"]]
 collision_layer = 16
@@ -45,6 +56,7 @@ metadata/_custom_type_script = "uid://bgglcirqtvtj3"
 script = ExtResource("3_djl51")
 object = NodePath("../../..")
 input_manager = NodePath("../InputManager")
+enabled = false
 enabler = NodePath("../..")
 enable_manager = NodePath("../..")
 metadata/_custom_type_script = "uid://bjisq1vjh82jp"
