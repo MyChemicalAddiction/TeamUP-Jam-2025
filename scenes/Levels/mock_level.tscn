@@ -265,7 +265,7 @@ modulate = Color(0.440393, 0, 0.0546909, 1)
 texture = ExtResource("1_1a2xh")
 
 [node name="ProjectileShooter" type="Node2D" parent="Special Objects"]
-position = Vector2(132, 11)
+position = Vector2(172, -54)
 rotation = 1.5708
 script = ExtResource("6_kr33g")
 projectile_scene = ExtResource("1_kr33g")
