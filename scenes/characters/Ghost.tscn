@@ -45,9 +45,9 @@ object = NodePath("../..")
 GhostCollision = NodePath("../../../CollisionShape2D")
 interaction_manager = NodePath("../../InteractionManager")
 
-[node name="GhostPossessingState" parent="Components/MovementStateMachine" index="5" node_paths=PackedStringArray("interaction_manager", "hurtbox_component")]
+[node name="GhostPossessingState" parent="Components/MovementStateMachine" index="5" node_paths=PackedStringArray("interaction_manager", "hurtbox_collision")]
 interaction_manager = NodePath("../../InteractionManager")
-hurtbox_component = NodePath("../../Hurtbox")
+hurtbox_collision = NodePath("../../Hurtbox/CollisionShape2D")
 
 [node name="GhostMovementInputManager" type="Node" parent="Components"]
 script = ExtResource("7_3grc2")

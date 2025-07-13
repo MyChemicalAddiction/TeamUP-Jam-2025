@@ -11,8 +11,8 @@ upon interaction with such an object.
 ## The Possessing state listens to what kind of area the interaction manager interacts with - if it's a possessable area, this state is entered.
 @export var interaction_manager: InteractionManager
 
-## The Possessing state disables the ghost's hurtbox when active.
-@export var hurtbox_component: Hurtbox
+## The Possessing state disables the ghost's hurtbox's collision when active.
+@export var hurtbox_collision: CollisionShape2D
 
 ## Needs to reference the state machine to force it to switch to this state when needed.
 @onready var state_machine: StateMachine = get_parent()
@@ -33,14 +33,14 @@ var default_ghost_collision_mask: int = -1
 var active := false
 
 func _on_enter():
-	hurtbox_component.enabled = false
+	hurtbox_collision.disabled = true
 	active = true
 	object.collision_mask = -1
 	object.visible = false
 	interaction_manager.can_interact = false
 
 func _on_exit():
-	hurtbox_component.enabled = true
+	hurtbox_collision.disabled = false
 	active = false
 	if current_area: current_area.disable()
 	object.collision_mask = default_ghost_collision_mask
