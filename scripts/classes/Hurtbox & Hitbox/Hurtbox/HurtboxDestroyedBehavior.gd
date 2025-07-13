@@ -7,7 +7,8 @@ Hurtbox that it's assigned to that should be triggered when the Hurtbox is
 destroyed (its HP reaches 0.)
 """
 
-@onready var hurtbox := get_parent() ## Assign the hitbox here. When this hitbox is hit, this behavior will be triggered.
+## Assign the hitbox here. When this hitbox is hit, this behavior will be triggered.
+@onready var hurtbox := get_parent() 
 
 func _ready():
 	hurtbox.destroyed.connect(destroyed)

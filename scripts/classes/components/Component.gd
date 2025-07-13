@@ -11,8 +11,11 @@ behavior of a component.
 signal on_enabled
 signal on_disabled
 
-@export var enabler: Node ## A node that, when used, enables this one. This is typically assigned an InteractionArea node but can also be assigned another Functional Component, too, since they also emit this signal (polymorphism W).
-@export var enable_manager: Node ## When this node emits a on_disable or on_enable signal, this node reacts accordingly and disables/enables itself too.
+## A node that, when used, enables this one. This is typically assigned an InteractionArea node but can also be assigned another Functional Component, too, since they also emit this signal (polymorphism W).
+@export var enabler: Node 
+
+## A node that, when disabled/enabled, disables/enables this one, too.
+@export var enable_manager: Node 
 
 func _ready():
 	if enabler and enabler != self:
