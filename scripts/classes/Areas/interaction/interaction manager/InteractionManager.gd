@@ -45,16 +45,16 @@ func unregister_area(area: InteractionArea): ## Removes an area from active_area
 
 func _process(_delta): ## Processes input
 	input_manager.process_input()
-	if input_manager.pressed_interact && can_interact:
+	if input_manager.pressed_interact and can_interact:
 		if active_areas.size() > 0:
 			can_interact = false
 			
 			active_areas.sort_custom(_sort_by_distance_to_player)
 			
 			await active_areas[0].interact()
-			interacted.emit(active_areas[0])
 			
 			can_interact = true
+			interacted.emit(active_areas[0])
 
 func _sort_by_distance_to_player(area1, area2): ## Prioritize closer areas in active_areas list.
 	#if player == null: ## Commented out to avoid silent errors

@@ -58,9 +58,10 @@ func setup():
 
 ## Possesses the area.
 func possess(area):
-	if can_possess:
-		state_machine.change_state(self)
-		current_area = area
+	if area.is_in_group("Possessable"):
+		if can_possess:
+			state_machine.change_state(self)
+			current_area = area
 
 func process_physics(_delta):
 	if current_area:

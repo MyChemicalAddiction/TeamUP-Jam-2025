@@ -17,7 +17,7 @@ func _on_enable():
 func _on_disable():
 	set_physics_process(false)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	for i in object.get_slide_collision_count():
 		var c = object.get_slide_collision(i)
 		if c.get_collider() is RigidBody2D:
