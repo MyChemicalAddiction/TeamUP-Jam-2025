@@ -42,6 +42,9 @@ var force_multiplier := 0.0
 ## The amount it takes to go from full force to max force.
 var REV_TIME := 1.0 
 
+## The visible image of the amulet.
+@export var visual: Node 
+
 func _ready():
 	## INITIALIZING THE TWEEN:
 	current_tween = self.create_tween()
@@ -73,7 +76,7 @@ func _on_exit():
 	
 	object.freeze = false
 	
-	object.visible = true
+	visual.visible = true
 	
 	direction = (mouse_pos - object.position).normalized()
 	

@@ -10,6 +10,9 @@ When entered, this state makes the amulet invisible.
 
 @export var throwingState: State 
 
+## The visible image of the amulet.
+@export var visual: Node 
+
 ## The human.
 @onready var holder = get_tree().get_first_node_in_group("Human")
 
@@ -26,7 +29,8 @@ func reset():
 	state_machine.change_state(self)
 
 func _on_enter():
-	object.visible = false
+	print('hi')
+	visual.visible = false
 	call_deferred('freeze_object')
 	
 func freeze_object():

@@ -30,6 +30,12 @@ stateMachine = NodePath("Components/AmuletStateMachine")
 input_manager = NodePath("../AmuletInputManager")
 object = NodePath("../..")
 
+[node name="HeldState" parent="Components/AmuletStateMachine" index="0" node_paths=PackedStringArray("visual")]
+visual = NodePath("../../../Icon")
+
+[node name="ThrowingState" parent="Components/AmuletStateMachine" index="2" node_paths=PackedStringArray("visual")]
+visual = NodePath("../../../Icon")
+
 [node name="AmuletInputManager" type="Node" parent="Components"]
 script = ExtResource("5_c2c0c")
 metadata/_custom_type_script = "uid://bp078yt1n57lh"
