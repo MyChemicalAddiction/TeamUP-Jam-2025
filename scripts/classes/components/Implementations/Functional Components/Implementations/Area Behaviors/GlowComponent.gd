@@ -8,6 +8,9 @@ when the player is able to interact with it. It implements the
 AreaEnteredComponent's interface.
 """
 
+## If set to something, will only glow if this thing is enabled.
+@export var component_enabled_check: Component
+
 ## Assign this the thing that you want to glow (usually a Sprite).
 @export var visual: Node
 
@@ -26,6 +29,10 @@ func _on_ready():
 	visual_target_modulate[3] = 0.25
 	
 func _on_use():
+	if component_enabled_check:
+		if !component_enabled_check.enabled:
+			return
+			
 	if current_tween:
 		current_tween.kill()
 

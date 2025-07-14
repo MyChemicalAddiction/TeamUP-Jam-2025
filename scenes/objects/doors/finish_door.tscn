@@ -31,8 +31,9 @@ next_level_scene = ExtResource("4_mr4dm")
 triggerer = NodePath("..")
 metadata/_custom_type_script = "uid://c46as10t6gpl0"
 
-[node name="GlowComponent" type="Node2D" parent="." node_paths=PackedStringArray("visual", "area")]
+[node name="GlowComponent" type="Node2D" parent="." node_paths=PackedStringArray("component_enabled_check", "visual", "area")]
 script = ExtResource("5_5te6j")
+component_enabled_check = NodePath("../FinishDoorComponent")
 visual = NodePath("../Sprite2D")
 area = NodePath("..")
 metadata/_custom_type_script = "uid://bgglcirqtvtj3"
