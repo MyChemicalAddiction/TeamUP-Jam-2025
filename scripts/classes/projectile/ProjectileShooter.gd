@@ -25,7 +25,7 @@ func _fire_projectile():
 	var instance = projectile_scene.instantiate()
 
 	add_child.call_deferred(instance)
-	instance.position = Vector2.ZERO
+	#instance.position = self.position
 
 	var direction = Vector2.RIGHT.rotated(global_rotation)  ## Facing direction
 	instance.shoot(direction)

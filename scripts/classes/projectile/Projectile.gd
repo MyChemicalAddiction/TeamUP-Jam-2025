@@ -37,7 +37,8 @@ func shoot(direction: Vector2):
 	if direction == Vector2.ZERO:
 		push_error("Invalid direction passed to shoot().")
 		return
-		
+	
+	
 	direction = direction.normalized()
-	global_rotation = direction.angle()
+	look_at(direction)
 	linear_velocity = direction * projectileRes.SPEED

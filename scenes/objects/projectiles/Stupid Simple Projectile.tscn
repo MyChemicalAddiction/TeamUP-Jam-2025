@@ -36,14 +36,17 @@ metadata/_custom_type_script = "uid://cmdr7k4jfy66e"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0.262745, 0.0901961, 0.756863)
 rotation = 1.5708
+scale = Vector2(0.265852, 0.265852)
 texture = ExtResource("3_ynni3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
+scale = Vector2(0.265852, 0.265852)
 shape = SubResource("RectangleShape2D_3df27")
 
 [node name="Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("holder")]
 rotation = 1.5708
+scale = Vector2(0.265852, 0.265852)
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("4_xvfdy")
