@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8lt7usj83dfv"]
+
+[ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/Areas/interaction/interaction area/InteractionArea.gd" id="1_066s8"]
+
+[node name="AimedProjectileShooterArea" type="Area2D"]
+script = ExtResource("1_066s8")
+metadata/_custom_type_script = "uid://dlpckao766xkb"

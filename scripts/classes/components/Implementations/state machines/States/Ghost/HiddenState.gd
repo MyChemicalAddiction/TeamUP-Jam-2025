@@ -33,5 +33,5 @@ func _on_exit():
 	HurtboxCollision.set_deferred('disabled', false)
 	interaction_manager.can_interact = true
 	object.position = amulet.position
-	GhostCollision.set_deferred('disabled', true)
+	GhostCollision.set_deferred('disabled', false)
 	object.visible = true

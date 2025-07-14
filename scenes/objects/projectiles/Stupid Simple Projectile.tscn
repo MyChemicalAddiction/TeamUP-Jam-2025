@@ -44,6 +44,8 @@ shape = SubResource("RectangleShape2D_3df27")
 
 [node name="Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("holder")]
 rotation = 1.5708
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("4_xvfdy")
 hitboxRes = SubResource("Resource_h1ddd")
 holder = NodePath("..")
