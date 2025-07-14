@@ -12,6 +12,7 @@ Hurtbox area.
 """
 
 @export var projectile_scene: PackedScene
+@export var projectile_holder: Node ## The node to which the projectile will be added as children (leave null if this should be to self)
 
 func _on_use():
 	_fire_projectile()
@@ -23,8 +24,11 @@ func _on_area_entered(obj):
 
 func _fire_projectile():
 	var instance = projectile_scene.instantiate()
-
-	add_child.call_deferred(instance)
+	
+	if projectile_holder:
+		projectile_holder.add_child.call_deferred(instance)
+	else:
+		add_child.call_deferred(instance)
 	#instance.position = self.position
 
 	var direction = Vector2.RIGHT.rotated(global_rotation)  ## Facing direction

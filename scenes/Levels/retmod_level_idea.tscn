@@ -77,13 +77,16 @@ position = Vector2(1910, 394)
 [node name="Movable rigid bodies" type="Node2D" parent="Special Objects"]
 
 [node name="Box2" parent="Special Objects/Movable rigid bodies" instance=ExtResource("4_didsf")]
-position = Vector2(43, -54)
+position = Vector2(33, -58)
 
 [node name="Box8" parent="Special Objects/Movable rigid bodies" instance=ExtResource("4_didsf")]
-position = Vector2(31, -155)
+position = Vector2(21, -159)
 
-[node name="Box11" parent="Special Objects/Movable rigid bodies" instance=ExtResource("4_w4mb6")]
-position = Vector2(24, -258)
+[node name="Box9" parent="Special Objects/Movable rigid bodies" instance=ExtResource("4_didsf")]
+position = Vector2(33, -260)
+
+[node name="Box12" parent="Special Objects/Movable rigid bodies" instance=ExtResource("4_w4mb6")]
+position = Vector2(18, -363)
 
 [node name="Interactable" type="Node2D" parent="Special Objects"]
 

@@ -43,10 +43,11 @@ area_tracking_component = NodePath("../../AreaEnteredTrackerComponent")
 idleState = NodePath("../StaticAimedShooterIdleState")
 metadata/_custom_type_script = "uid://b3gmlh61munrd"
 
-[node name="ProjectileShooter" type="Node2D" parent="Components"]
+[node name="ProjectileShooter" type="Node2D" parent="Components" node_paths=PackedStringArray("projectile_holder")]
 rotation = 1.5708
 script = ExtResource("2_ujvcm")
 projectile_scene = ExtResource("3_swc48")
+projectile_holder = NodePath("../..")
 metadata/_custom_type_script = "uid://bboji5tvpnhjv"
 
 [node name="Sprite2D" type="Sprite2D" parent="Components/ProjectileShooter"]

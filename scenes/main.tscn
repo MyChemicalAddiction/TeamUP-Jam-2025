@@ -90,6 +90,7 @@ anim_player = NodePath("MultiTargetCamera/AnimationPlayer")
 state = NodePath("../../../../Amulet/Components/AmuletStateMachine/ThrowingState")
 
 [node name="Amulet" parent="Characters" instance=ExtResource("6_tefeu")]
+collision_mask = 449
 freeze_mode = 1
 
 [node name="MultiTargetCamera" type="Camera2D" parent="." node_paths=PackedStringArray("targets")]

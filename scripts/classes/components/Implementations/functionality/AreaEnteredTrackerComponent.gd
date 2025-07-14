@@ -30,7 +30,7 @@ func _on_area_exited(area: Area2D) -> void: ## When an area leaves the interacti
 	_unregister_area(area)
 
 ## Implementation-defined for condition checking before appending an area
-func area_condition_check(_area) -> bool:
+func area_condition_check(_area) -> bool: 
 	return true
 
 func _register_area(area: Area2D): ## Adds an area to active_areas
