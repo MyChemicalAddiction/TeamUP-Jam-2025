@@ -40,7 +40,7 @@ func _on_enter():
 	interaction_manager.can_interact = false
 
 func _on_exit():
-	hurtbox_collision.disabled = false
+	hurtbox_collision.set_deferred('disabled', false) 
 	active = false
 	if current_area: current_area.disable()
 	object.collision_mask = default_ghost_collision_mask

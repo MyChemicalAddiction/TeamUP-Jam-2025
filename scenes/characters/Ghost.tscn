@@ -41,8 +41,9 @@ metadata/_custom_type_script = "uid://cnxen4dyqy530"
 input_manager = NodePath("../GhostMovementInputManager")
 object = NodePath("../..")
 
-[node name="GhostHiddenState" parent="Components/MovementStateMachine" index="4" node_paths=PackedStringArray("GhostCollision", "interaction_manager")]
+[node name="GhostHiddenState" parent="Components/MovementStateMachine" index="4" node_paths=PackedStringArray("GhostCollision", "HurtboxCollision", "interaction_manager")]
 GhostCollision = NodePath("../../../CollisionShape2D")
+HurtboxCollision = NodePath("../../Hurtbox/CollisionShape2D")
 interaction_manager = NodePath("../../InteractionManager")
 
 [node name="GhostPossessingState" parent="Components/MovementStateMachine" index="5" node_paths=PackedStringArray("interaction_manager", "hurtbox_collision")]
