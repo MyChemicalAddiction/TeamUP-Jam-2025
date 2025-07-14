@@ -70,6 +70,7 @@ func _rev_finished():
 
 func _on_exit():
 	current_tween.kill()
+	
 	object.freeze = false
 	
 	object.visible = true
