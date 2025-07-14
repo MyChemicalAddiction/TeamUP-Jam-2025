@@ -40,5 +40,5 @@ func shoot(direction: Vector2):
 	
 	
 	direction = direction.normalized()
-	look_at(direction)
+	#look_at(direction)
 	linear_velocity = direction * projectileRes.SPEED
