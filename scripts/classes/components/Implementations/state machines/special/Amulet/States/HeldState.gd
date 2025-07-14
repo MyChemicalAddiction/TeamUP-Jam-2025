@@ -29,7 +29,6 @@ func reset():
 	state_machine.change_state(self)
 
 func _on_enter():
-	print('hi')
 	visual.visible = false
 	call_deferred('freeze_object')
 	
