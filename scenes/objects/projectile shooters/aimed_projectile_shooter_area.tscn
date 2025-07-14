@@ -1,7 +1,66 @@
-[gd_scene load_steps=2 format=3 uid="uid://c8lt7usj83dfv"]
+[gd_scene load_steps=11 format=3 uid="uid://c8lt7usj83dfv"]
 
-[ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/Areas/interaction/interaction area/InteractionArea.gd" id="1_066s8"]
+[ext_resource type="Script" uid="uid://e0p143fkoaat" path="res://scripts/functionality/aimed_projectile_shooter_area.gd" id="1_idnxq"]
+[ext_resource type="Script" uid="uid://bmjff2qd1s3id" path="res://scripts/classes/components/Implementations/functionality/implementations/ShooterAreaEnteredTrackerComponent.gd" id="2_idnxq"]
+[ext_resource type="Script" uid="uid://cvbk7ssl4w7ch" path="res://scripts/classes/components/Implementations/state machines/StateMachine.gd" id="2_pr3ed"]
+[ext_resource type="Script" uid="uid://bboji5tvpnhjv" path="res://scripts/classes/projectile/ProjectileShooter.gd" id="2_ujvcm"]
+[ext_resource type="Script" uid="uid://c6vhl4ahb0v66" path="res://scripts/classes/components/Implementations/state machines/States/Enemies/Static/AimedProjectileShooterArea/StaticAimedShooterIdleState.gd" id="3_idnxq"]
+[ext_resource type="PackedScene" uid="uid://hibwxjb2khf0" path="res://scenes/objects/projectiles/Stupid Simple Projectile.tscn" id="3_swc48"]
+[ext_resource type="Script" uid="uid://b3gmlh61munrd" path="res://scripts/classes/components/Implementations/state machines/States/Enemies/Static/AimedProjectileShooterArea/StaticAimedShooterShootingState.gd" id="4_pr3ed"]
+[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="4_swc48"]
+[ext_resource type="Texture2D" uid="uid://5a5txvctxywq" path="res://assets/visual/placeholders/red_transparent_circle.png" id="5_guigo"]
 
-[node name="AimedProjectileShooterArea" type="Area2D"]
-script = ExtResource("1_066s8")
-metadata/_custom_type_script = "uid://dlpckao766xkb"
+[sub_resource type="CircleShape2D" id="CircleShape2D_swc48"]
+radius = 732.492
+
+[node name="AimedProjectileShooterArea" type="Area2D" node_paths=PackedStringArray("state_machine")]
+collision_mask = 7
+script = ExtResource("1_idnxq")
+state_machine = NodePath("Components/StateMachine")
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="AreaEnteredTrackerComponent" type="Node2D" parent="Components" node_paths=PackedStringArray("tracking_area", "object")]
+script = ExtResource("2_idnxq")
+tracking_area = NodePath("../..")
+object = NodePath("../..")
+metadata/_custom_type_script = "uid://ba0im6i353yq8"
+
+[node name="StateMachine" type="Node2D" parent="Components" node_paths=PackedStringArray("starting_state", "object")]
+script = ExtResource("2_pr3ed")
+starting_state = NodePath("StaticAimedShooterIdleState")
+object = NodePath("../ProjectileShooter")
+metadata/_custom_type_script = "uid://cvbk7ssl4w7ch"
+
+[node name="StaticAimedShooterIdleState" type="Node2D" parent="Components/StateMachine"]
+script = ExtResource("3_idnxq")
+metadata/_custom_type_script = "uid://c6vhl4ahb0v66"
+
+[node name="StaticAimedShooterShootingState" type="Node2D" parent="Components/StateMachine" node_paths=PackedStringArray("projectile_shooter", "area_tracking_component", "idleState")]
+script = ExtResource("4_pr3ed")
+projectile_shooter = NodePath("../../ProjectileShooter")
+area_tracking_component = NodePath("../../AreaEnteredTrackerComponent")
+idleState = NodePath("../StaticAimedShooterIdleState")
+metadata/_custom_type_script = "uid://b3gmlh61munrd"
+
+[node name="ProjectileShooter" type="Node2D" parent="Components"]
+rotation = 1.5708
+script = ExtResource("2_ujvcm")
+projectile_scene = ExtResource("3_swc48")
+metadata/_custom_type_script = "uid://bboji5tvpnhjv"
+
+[node name="Sprite2D" type="Sprite2D" parent="Components/ProjectileShooter"]
+modulate = Color(0.704081, 0, 0.0804177, 1)
+rotation = 1.5708
+texture = ExtResource("4_swc48")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(11.7188, 11.7188)
+texture = ExtResource("5_guigo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(3.40625, 11.7188)
+texture = ExtResource("5_guigo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_swc48")
