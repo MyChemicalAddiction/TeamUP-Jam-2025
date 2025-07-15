@@ -30,6 +30,7 @@ func _on_enter():
 	GhostCollision.disabled = true
 
 func _on_exit():
+	object.velocity = Vector2.ZERO
 	HurtboxCollision.set_deferred('disabled', false)
 	interaction_manager.can_interact = true
 	object.position = amulet.position
