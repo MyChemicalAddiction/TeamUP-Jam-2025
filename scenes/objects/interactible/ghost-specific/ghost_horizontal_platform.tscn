@@ -76,6 +76,7 @@ metadata/_custom_type_script = "uid://bjisq1vjh82jp"
 
 [node name="InputManager" type="Node" parent="Ghost Platform/Components"]
 script = ExtResource("4_djl51")
+horizontal = true
 metadata/_custom_type_script = "uid://3o5qtevy1vo1"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ghost Platform"]

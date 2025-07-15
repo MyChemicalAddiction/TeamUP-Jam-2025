@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://w4hb2qd8g6lr" path="res://scenes/objects/hazards/evil_hands.tscn" id="1_lr367"]
 [ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/simple_platform_tilemap_placeholder.tscn" id="1_w4mb6"]
-[ext_resource type="PackedScene" uid="uid://b8xf6mcl8d82x" path="res://scenes/objects/interactible/ghost-specific/ghost_platform.tscn" id="2_cags0"]
+[ext_resource type="PackedScene" uid="uid://b8xf6mcl8d82x" path="res://scenes/objects/interactible/ghost-specific/ghost_horizontal_platform.tscn" id="2_cags0"]
 [ext_resource type="PackedScene" uid="uid://dgudsm50jqbt8" path="res://scenes/objects/movable rigid bodies/box.tscn" id="4_didsf"]
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/doors/finish_door.tscn" id="6_y80pa"]
 [ext_resource type="PackedScene" uid="uid://c8lt7usj83dfv" path="res://scenes/objects/projectile shooters/aimed_projectile_shooter_area.tscn" id="8_k0apv"]

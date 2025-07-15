@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://d0yt2e6rh6c05"]
+
+[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="1_jdqsj"]
+[ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/Areas/interaction/interaction area/InteractionArea.gd" id="2_obdj0"]
+[ext_resource type="Script" uid="uid://bgglcirqtvtj3" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/Area Behaviors/GlowComponent.gd" id="3_yo78c"]
+[ext_resource type="Script" uid="uid://bjisq1vjh82jp" path="res://scripts/classes/components/Implementations/Possessable Object Behaviors/PlatformMovementComponent.gd" id="4_nvmaq"]
+[ext_resource type="Script" uid="uid://3o5qtevy1vo1" path="res://scripts/classes/components/Implementations/input managers/Platforms/HorizontalPlatformInputManager.gd" id="5_mwnj0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kt7wl"]
+size = Vector2(19.9466, 20.5866)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_djl51"]
+size = Vector2(0.826538, 21.5442)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekpkx"]
+size = Vector2(30.9668, 102.454)
+
+[node name="ghost_platform" type="CharacterBody2D"]
+collision_layer = 64
+
+[node name="Icon" type="Sprite2D" parent="."]
+self_modulate = Color(0.203708, 0.360525, 0.125536, 1)
+scale = Vector2(2.85715, 0.328833)
+texture = ExtResource("1_jdqsj")
+
+[node name="Icon2" type="Sprite2D" parent="Icon"]
+self_modulate = Color(0.203708, 0.360525, 0.125536, 1)
+position = Vector2(-61.2498, -60.8211)
+scale = Vector2(0.0437501, 1.85314)
+texture = ExtResource("1_jdqsj")
+
+[node name="Icon3" type="Sprite2D" parent="Icon"]
+self_modulate = Color(0.203708, 0.360525, 0.125536, 1)
+position = Vector2(60.5498, -57.7801)
+scale = Vector2(0.0437501, 1.85314)
+texture = ExtResource("1_jdqsj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.13928e-06, 0.500001)
+scale = Vector2(18.1485, 2.08873)
+shape = SubResource("RectangleShape2D_kt7wl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-175, -19)
+scale = Vector2(17.7471, 3.66915)
+shape = SubResource("RectangleShape2D_djl51")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(172.5, -18.5)
+scale = Vector2(17.7471, 3.66915)
+shape = SubResource("RectangleShape2D_djl51")
+
+[node name="Ghost Platform" type="Area2D" parent="." groups=["Possessable"]]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("2_obdj0")
+interact_layer = 5
+metadata/_custom_type_script = "uid://dlpckao766xkb"
+
+[node name="Components" type="Node2D" parent="Ghost Platform"]
+
+[node name="GlowComponent" type="Node2D" parent="Ghost Platform/Components" node_paths=PackedStringArray("visual", "area")]
+script = ExtResource("3_yo78c")
+visual = NodePath("../../../Icon")
+area = NodePath("../..")
+metadata/_custom_type_script = "uid://bgglcirqtvtj3"
+
+[node name="PlatformMovementComponent" type="Node2D" parent="Ghost Platform/Components" node_paths=PackedStringArray("object", "input_manager", "enabler", "enable_manager")]
+script = ExtResource("4_nvmaq")
+object = NodePath("../../..")
+input_manager = NodePath("../InputManager")
+enabled = false
+enabler = NodePath("../..")
+enable_manager = NodePath("../..")
+metadata/_custom_type_script = "uid://bjisq1vjh82jp"
+
+[node name="InputManager" type="Node" parent="Ghost Platform/Components"]
+script = ExtResource("5_mwnj0")
+vertical = true
+metadata/_custom_type_script = "uid://3o5qtevy1vo1"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ghost Platform"]
+scale = Vector2(18.1485, 2.08873)
+shape = SubResource("RectangleShape2D_ekpkx")
