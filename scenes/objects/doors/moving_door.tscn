@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhkad48ij8ha7"]
+
+[ext_resource type="Script" uid="uid://d4esf4meclpan" path="res://scripts/classes/components/Implementations/animation/MovingDoorComponent.gd" id="1_y4ggs"]
+[ext_resource type="Texture2D" uid="uid://dgna04txtwnyb" path="res://addons/fmod/icons/d_parameter_icon.svg" id="2_r8g0t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpl0x"]
+size = Vector2(44, 414)
+
+[node name="Moving Door" type="AnimatableBody2D"]
+collision_layer = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jpl0x")
+
+[node name="MovingDoorComponent" type="Node2D" parent="." node_paths=PackedStringArray("object")]
+script = ExtResource("1_y4ggs")
+object = NodePath("..")
+MOVING_DISTANCE = 250
+enabled = false
+metadata/_custom_type_script = "uid://d4esf4meclpan"
+
+[node name="DParameterIcon" type="Sprite2D" parent="."]
+rotation = 1.57079
+scale = Vector2(23, 2.23807)
+texture = ExtResource("2_r8g0t")
