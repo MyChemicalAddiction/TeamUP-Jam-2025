@@ -23,6 +23,9 @@ var current_area: Area2D
 ## When depossessing, this state should be exited and the IdleState entered.
 @export var idleState: State
 
+## The visual of the ghost.
+@export var visual: Node
+
 ## Describes whether the ghost can possess something. Set to false when the ghost is outside the amulet's radius.
 var can_possess := true
 
@@ -36,7 +39,7 @@ func _on_enter():
 	hurtbox_collision.disabled = true
 	active = true
 	object.collision_mask = -1
-	object.visible = false
+	visual.visible = false
 	interaction_manager.can_interact = false
 
 func _on_exit():
@@ -44,7 +47,7 @@ func _on_exit():
 	active = false
 	if current_area: current_area.disable()
 	object.collision_mask = default_ghost_collision_mask
-	object.visible = true
+	visual.visible = true
 	interaction_manager.can_interact = true
 
 func _ready():
