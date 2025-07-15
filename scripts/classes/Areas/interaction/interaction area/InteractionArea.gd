@@ -25,8 +25,8 @@ and precisely control their behavior in the interact() function.
 """
 
 signal used ## Emitted when the interaction area is interacted with.
-signal on_disable ## Emitted when disabled
-signal on_enable ## Emitted when enabled
+signal on_disabled ## Emitted when disabled
+signal on_enabled ## Emitted when enabled
 
 @export var interact_layer := 4 ## Set to 4 (by default) through code as to match the InteractionArea's layer
 
@@ -38,7 +38,7 @@ func interact(): ## Called when the player interacts with this area.
 	used.emit()
 
 func disable():
-	on_disable.emit() ## This disables all connected components
+	on_disabled.emit() ## This disables all connected components
 
 func enable():
-	on_enable.emit() ## This enables all connected components 
+	on_enabled.emit() ## This enables all connected components 

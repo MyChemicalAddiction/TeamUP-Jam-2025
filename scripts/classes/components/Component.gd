@@ -14,15 +14,21 @@ signal on_disabled
 ## A node that, when used, enables this one. This is typically assigned an InteractionArea node but can also be assigned another Functional Component, too, since they also emit this signal (polymorphism W).
 @export var enabler: Node 
 
-## A node that, when disabled/enabled, disables/enables this one, too.
+## A node that can send a disable/enable signal which disables/enables this component.
 @export var enable_manager: Node 
+
+## An area that, when entered [b]by another area[/b], enables this component, and when exited, disables it.
+@export var enabling_area: Area2D
 
 func _ready():
 	if enabler and enabler != self:
 		enabler.used.connect(enable)
 	if enable_manager:
-		enable_manager.on_disable.connect(disable)
-		enable_manager.on_enable.connect(enable)
+		enable_manager.on_disabled.connect(disable)
+		enable_manager.on_enabled.connect(enable)
+	if enabling_area:
+		enabling_area.area_entered.connect(_on_enabling_area_entered)
+		enabling_area.area_exited.connect(_on_enabling_area_exited)
 	if enabled:
 		enable()
 	else:
@@ -37,6 +43,12 @@ func disable(): ## Sets enabled variable to false & triggers any extra relevant 
 	enabled = false
 	on_disabled.emit()
 	_on_disable()
+
+func _on_enabling_area_entered(_area):
+	enable()
+	
+func _on_enabling_area_exited(_area):
+	disable()
 
 func _on_disable(): ## Hook for extra behavior on disabling.
 	pass

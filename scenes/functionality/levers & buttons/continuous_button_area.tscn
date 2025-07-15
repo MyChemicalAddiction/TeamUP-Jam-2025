@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://boch8qluci7ev"]
+
+[ext_resource type="Script" uid="uid://bt5qx0ha05v8h" path="res://scripts/classes/components/Implementations/animation/AnimationComponent.gd" id="1_liwl2"]
+[ext_resource type="Texture2D" uid="uid://o2chsr07oeqs" path="res://addons/fmod/icons/bank_icon.svg" id="2_liwl2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l07bw"]
+size = Vector2(38, 22)
+
+[sub_resource type="Animation" id="Animation_x87ur"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_liwl2"]
+resource_name = "press"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_c0lck"]
+resource_name = "release"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c0lck"]
+_data = {
+&"RESET": SubResource("Animation_x87ur"),
+&"press": SubResource("Animation_liwl2"),
+&"release": SubResource("Animation_c0lck")
+}
+
+[node name="Continuous Button Area" type="Area2D"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="AnimationComponent" type="Node2D" parent="." node_paths=PackedStringArray("animation_player", "enabling_area")]
+scale = Vector2(3.61929, 3.61929)
+script = ExtResource("1_liwl2")
+animation_player = NodePath("../AnimationPlayer")
+on_enabled_animation = "press"
+on_disabled_animation = "release"
+enabled = false
+enabling_area = NodePath("..")
+metadata/_custom_type_script = "uid://bt5qx0ha05v8h"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.61929, 3.61929)
+shape = SubResource("RectangleShape2D_l07bw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.61929, 3.61929)
+texture = ExtResource("2_liwl2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_c0lck")
+}

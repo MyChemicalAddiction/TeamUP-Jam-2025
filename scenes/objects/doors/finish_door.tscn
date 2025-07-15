@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b33oe1nbvhdl1"]
+[gd_scene load_steps=9 format=3 uid="uid://b33oe1nbvhdl1"]
 
 [ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/Areas/interaction/interaction area/InteractionArea.gd" id="1_aio78"]
 [ext_resource type="Texture2D" uid="uid://d11fuyffc5s15" path="res://assets/visual/placeholders/placeholder_tileset.png" id="2_mi41h"]
@@ -12,6 +12,9 @@ region = Rect2(236.909, 1029.82, 28.1818, 250)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aio78"]
 size = Vector2(126, 242)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5te6j"]
+size = Vector2(20, 236)
 
 [node name="FinishDoor" type="Area2D"]
 script = ExtResource("1_aio78")
@@ -37,3 +40,10 @@ component_enabled_check = NodePath("../FinishDoorComponent")
 visual = NodePath("../Sprite2D")
 area = NodePath("..")
 metadata/_custom_type_script = "uid://bgglcirqtvtj3"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_5te6j")

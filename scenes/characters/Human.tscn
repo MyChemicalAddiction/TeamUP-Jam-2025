@@ -52,8 +52,8 @@ script = ExtResource("8_rv0c7")
 metadata/_custom_type_script = "uid://cnh6wau76q5w6"
 
 [node name="InteractionManager" type="Area2D" parent="Components" node_paths=PackedStringArray("player", "input_manager")]
-collision_layer = 0
-collision_mask = 8
+collision_layer = 40
+collision_mask = 40
 script = ExtResource("9_1s6pi")
 special_interact_mask = 6
 player = NodePath("../..")
