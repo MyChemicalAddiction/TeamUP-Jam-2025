@@ -1,0 +1,106 @@
+[gd_scene load_steps=11 format=3 uid="uid://chum35l360n6t"]
+
+[ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/Areas/interaction/interaction area/InteractionArea.gd" id="1_wtn63"]
+[ext_resource type="Script" uid="uid://bt5qx0ha05v8h" path="res://scripts/classes/components/Implementations/animation/AnimationComponent.gd" id="2_c0p7n"]
+[ext_resource type="Script" uid="uid://dav8v2ao4vgij" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/SwitchComponent.gd" id="3_fgoh2"]
+[ext_resource type="Script" uid="uid://bgglcirqtvtj3" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/Area Behaviors/GlowComponent.gd" id="4_x6g4x"]
+[ext_resource type="Texture2D" uid="uid://b4jxbh86chubi" path="res://addons/fmod/icons/snapshot_icon.svg" id="5_sn6y5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l07bw"]
+size = Vector2(38, 22)
+
+[sub_resource type="Animation" id="Animation_x87ur"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_liwl2"]
+resource_name = "press"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_c0lck"]
+resource_name = "release"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.5708, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c0lck"]
+_data = {
+&"RESET": SubResource("Animation_x87ur"),
+&"press": SubResource("Animation_liwl2"),
+&"release": SubResource("Animation_c0lck")
+}
+
+[node name="Lever" type="Area2D"]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_wtn63")
+metadata/_custom_type_script = "uid://dlpckao766xkb"
+
+[node name="AnimationComponent" type="Node2D" parent="." node_paths=PackedStringArray("animation_player", "enable_manager")]
+scale = Vector2(3.61929, 3.61929)
+script = ExtResource("2_c0p7n")
+animation_player = NodePath("../AnimationPlayer")
+on_enabled_animation = "press"
+on_disabled_animation = "release"
+enabled = false
+enable_manager = NodePath("../SwitchComponent")
+metadata/_custom_type_script = "uid://bt5qx0ha05v8h"
+
+[node name="SwitchComponent" type="Node2D" parent="." node_paths=PackedStringArray("triggerer")]
+script = ExtResource("3_fgoh2")
+triggerer = NodePath("..")
+metadata/_custom_type_script = "uid://dav8v2ao4vgij"
+
+[node name="GlowComponent" type="Node2D" parent="." node_paths=PackedStringArray("component_enabled_check", "visual", "area")]
+script = ExtResource("4_x6g4x")
+component_enabled_check = NodePath("../SwitchComponent")
+visual = NodePath("../Sprite2D")
+area = NodePath("..")
+metadata/_custom_type_script = "uid://bgglcirqtvtj3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3.61929, 3.61929)
+shape = SubResource("RectangleShape2D_l07bw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.619608, 1, 0.74902, 1)
+scale = Vector2(4.44444, 4.44444)
+texture = ExtResource("5_sn6y5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_c0lck")
+}

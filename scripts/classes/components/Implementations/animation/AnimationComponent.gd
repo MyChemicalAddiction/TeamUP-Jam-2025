@@ -12,11 +12,9 @@ animation & optionally play another one when disabled.
 @export var on_disabled_animation: String
 
 func _on_disable(): ## Hook for extra behavior on disabling.
-	animation_player.stop()
 	if on_disabled_animation:
 		animation_player.play(on_disabled_animation)
 	
 func _on_enable(): ## Hook for extra behavior on enabling.
-	animation_player.stop()
 	if on_enabled_animation:
 		animation_player.play(on_enabled_animation)

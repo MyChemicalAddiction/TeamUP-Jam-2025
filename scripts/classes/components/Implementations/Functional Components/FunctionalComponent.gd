@@ -19,7 +19,7 @@ TLDR: the interface for implementing a functional component is to:
 
 @export var triggerer: Node ## A node that, when used, directly triggers this node's use function, too. This is typically assigned an InteractionArea node but can also be assigned another Functional Component, too, since they also emit this signal (polymorphism W).
 @export var one_shot = false ## If true, deletes self upon use.
-@export var area: Area2D ## The area that, when entered, triggers this behavior.
+@export var area: Area2D ## The area that, when entered by another area (for example - by an InteractionManager's - which both players have), triggers this behavior.
 
 signal used ## Emmitted when used.
 
