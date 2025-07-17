@@ -92,8 +92,7 @@ metadata/_custom_type_script = "uid://bpwjpuysmtl7y"
 [node name="Visual" type="Node2D" parent="."]
 
 [node name="Throwing_Arrow" type="Sprite2D" parent="Visual"]
-visible = false
-modulate = Color(0, 0, 0, 1)
+modulate = Color(0.462291, 0.462291, 0.462291, 1)
 rotation = -4.71238
 scale = Vector2(1.1875, 0.125)
 texture = ExtResource("2_rm4bp")

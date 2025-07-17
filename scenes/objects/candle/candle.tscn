@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://redl6f4o5wqv"]
+
+[ext_resource type="Texture2D" uid="uid://bfvl2wm2l1iw2" path="res://assets/visual/placeholders/light_circle.png" id="1_m1p7u"]
+[ext_resource type="Texture2D" uid="uid://l3arbm5d7nno" path="res://assets/visual/placeholders/candle.png" id="2_u2dvq"]
+
+[node name="Candle" type="PointLight2D"]
+color = Color(0.856405, 0.66547, 0.419512, 1)
+texture = ExtResource("1_m1p7u")
+texture_scale = 8.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_u2dvq")
