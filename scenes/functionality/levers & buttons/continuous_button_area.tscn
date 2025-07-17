@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://boch8qluci7ev"]
+[gd_scene load_steps=9 format=3 uid="uid://boch8qluci7ev"]
 
 [ext_resource type="Script" uid="uid://bt5qx0ha05v8h" path="res://scripts/classes/components/Implementations/animation/AnimationComponent.gd" id="1_liwl2"]
+[ext_resource type="Script" uid="uid://ba0im6i353yq8" path="res://scripts/classes/components/Implementations/functionality/AreaEnteredTrackerComponent.gd" id="1_x87ur"]
 [ext_resource type="Texture2D" uid="uid://o2chsr07oeqs" path="res://addons/fmod/icons/bank_icon.svg" id="2_liwl2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l07bw"]
@@ -63,15 +64,21 @@ _data = {
 collision_layer = 32
 collision_mask = 32
 
-[node name="AnimationComponent" type="Node2D" parent="." node_paths=PackedStringArray("animation_player", "enabling_area")]
+[node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("animation_player", "area_tracker_component")]
 scale = Vector2(3.61929, 3.61929)
 script = ExtResource("1_liwl2")
 animation_player = NodePath("../AnimationPlayer")
 on_enabled_animation = "press"
 on_disabled_animation = "release"
+area_tracker_component = NodePath("../AreaEnteredTrackerComponent")
 enabled = false
-enabling_area = NodePath("..")
 metadata/_custom_type_script = "uid://bt5qx0ha05v8h"
+
+[node name="AreaEnteredTrackerComponent" type="Node2D" parent="." node_paths=PackedStringArray("tracking_area")]
+script = ExtResource("1_x87ur")
+tracking_area = NodePath("..")
+metadata/_custom_type_script = "uid://ba0im6i353yq8"
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(3.61929, 3.61929)

@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://6dp2fu6som85"]
+
+[ext_resource type="Texture2D" uid="uid://xw2i423f08wv" path="res://assets/visual/placeholders/wood.png" id="1_ddqdi"]
+[ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/simple_platform_tilemap_placeholder.tscn" id="2_xe48r"]
+[ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="3_igr8q"]
+[ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/doors/finish_door.tscn" id="6_47nfn"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+scale = Vector2(573.75, 400.29)
+texture = ExtResource("1_ddqdi")
+
+[node name="Simple Platform Tilemap Placeholder" parent="." instance=ExtResource("2_xe48r")]
+position = Vector2(220, 89)
+
+[node name="Special Objects" type="Node2D" parent="."]
+
+[node name="Candles" type="Node2D" parent="Special Objects"]
+position = Vector2(-408, -89)
+
+[node name="Candle" parent="Special Objects/Candles" instance=ExtResource("3_igr8q")]
+visible = false
+
+[node name="Hazards" type="Node2D" parent="Special Objects"]
+
+[node name="Interactable" type="Node2D" parent="Special Objects"]
+
+[node name="Possessables" type="Node2D" parent="Special Objects/Interactable"]
+
+[node name="FinishDoor" parent="Special Objects/Interactable" instance=ExtResource("6_47nfn")]
+position = Vector2(2495, -117)
+
+[node name="Movable rigid bodies" type="Node2D" parent="Special Objects"]
+
+[node name="Enemies" type="Node2D" parent="Special Objects"]
+
+[node name="Darkness" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[editable path="Special Objects/Interactable/FinishDoor"]

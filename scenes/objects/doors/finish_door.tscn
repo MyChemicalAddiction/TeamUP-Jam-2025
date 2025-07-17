@@ -22,6 +22,13 @@ collision_mask = 0
 script = ExtResource("1_aio78")
 interact_layer = 6
 metadata/_custom_type_script = "uid://dlpckao766xkb"
+metadata/_edit_group_ = true
+
+[node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("triggerer")]
+script = ExtResource("3_mi41h")
+next_level_scene = ExtResource("4_mr4dm")
+triggerer = NodePath("..")
+metadata/_custom_type_script = "uid://c46as10t6gpl0"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("AtlasTexture_aio78")
@@ -30,15 +37,9 @@ texture = SubResource("AtlasTexture_aio78")
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_aio78")
 
-[node name="FinishDoorComponent" type="Node2D" parent="." node_paths=PackedStringArray("triggerer")]
-script = ExtResource("3_mi41h")
-next_level_scene = ExtResource("4_mr4dm")
-triggerer = NodePath("..")
-metadata/_custom_type_script = "uid://c46as10t6gpl0"
-
 [node name="GlowComponent" type="Node2D" parent="." node_paths=PackedStringArray("component_enabled_check", "visual", "area")]
 script = ExtResource("5_5te6j")
-component_enabled_check = NodePath("../FinishDoorComponent")
+component_enabled_check = NodePath("../MAIN")
 visual = NodePath("../Sprite2D")
 area = NodePath("..")
 metadata/_custom_type_script = "uid://bgglcirqtvtj3"

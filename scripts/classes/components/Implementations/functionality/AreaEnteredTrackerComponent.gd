@@ -16,6 +16,12 @@ areas are currently within the radius of a specific area.
 signal area_entered 
 signal area_exited
 
+## Emitted when there's 0 areas inside the Tracking Area.
+signal area_empty
+
+## Emitted when one area is inside the Tracking Area.
+signal area_present
+
 ## The list of areas within the specific area's grasp.
 var active_areas: Array[Node]
 
@@ -37,14 +43,19 @@ func _register_area(area: Area2D): ## Adds an area to active_areas
 	if area_condition_check(area):
 		active_areas.push_back(area)
 		area_entered.emit()
+		if len(active_areas) == 1: 
+			area_present.emit()
 	
 func _unregister_area(area: Area2D): ## Removes an area from active_areas
 	active_areas.erase(area)
 	area_exited.emit()
-
+	if len(active_areas) == 0:
+		area_empty.emit()
+	
 ## Sorts the active_areas list by distance to the selected export object variable.
 func sort_areas_by_distance():
-	active_areas.sort_custom(_sort_by_distance_to_object)
+	if object:
+		active_areas.sort_custom(_sort_by_distance_to_object)
 
 func _sort_by_distance_to_object(area1, area2): ## Prioritize closer areas in active_areas list.
 	var area1_to_player = object.global_position.distance_squared_to(area1.global_position)

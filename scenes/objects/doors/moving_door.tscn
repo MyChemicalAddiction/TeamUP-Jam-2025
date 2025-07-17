@@ -8,16 +8,17 @@ size = Vector2(44, 414)
 
 [node name="Moving Door" type="AnimatableBody2D"]
 collision_layer = 256
+metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_jpl0x")
-
-[node name="MovingDoorComponent" type="Node2D" parent="." node_paths=PackedStringArray("object")]
+[node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("object")]
 script = ExtResource("1_y4ggs")
 object = NodePath("..")
 MOVING_DISTANCE = 250
 enabled = false
 metadata/_custom_type_script = "uid://d4esf4meclpan"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jpl0x")
 
 [node name="DParameterIcon" type="Sprite2D" parent="."]
 rotation = 1.57079
