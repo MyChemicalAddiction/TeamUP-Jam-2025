@@ -25,14 +25,14 @@ texture = ExtResource("2_glthr")
 
 [node name="Icon2" type="Sprite2D" parent="Icon"]
 self_modulate = Color(0.203708, 0.360525, 0.125536, 1)
-position = Vector2(-61.2498, -60.8211)
-scale = Vector2(0.0437501, 1.85314)
+position = Vector2(-60.8998, -33.2086)
+scale = Vector2(0.0437501, 1.00164)
 texture = ExtResource("2_glthr")
 
 [node name="Icon3" type="Sprite2D" parent="Icon"]
 self_modulate = Color(0.203708, 0.360525, 0.125536, 1)
-position = Vector2(60.5498, -57.7801)
-scale = Vector2(0.0437501, 1.85314)
+position = Vector2(60.8998, -30.1676)
+scale = Vector2(0.0437501, 1.00164)
 texture = ExtResource("2_glthr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -41,13 +41,13 @@ scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_kt7wl")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-175, -19)
-scale = Vector2(17.7471, 3.66915)
+position = Vector2(-174, -8)
+scale = Vector2(18.4783, 2.14397)
 shape = SubResource("RectangleShape2D_djl51")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(172.5, -18.5)
-scale = Vector2(17.7471, 3.66915)
+position = Vector2(173.5, -7.5)
+scale = Vector2(18.4783, 2.14397)
 shape = SubResource("RectangleShape2D_djl51")
 
 [node name="Ghost Platform" type="Area2D" parent="." groups=["Possessable"]]
