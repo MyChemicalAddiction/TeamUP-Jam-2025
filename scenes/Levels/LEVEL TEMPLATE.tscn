@@ -22,7 +22,6 @@ position = Vector2(220, 89)
 position = Vector2(-408, -89)
 
 [node name="Candle" parent="Special Objects/Candles" instance=ExtResource("3_igr8q")]
-visible = false
 
 [node name="Hazards" type="Node2D" parent="Special Objects"]
 
