@@ -93,7 +93,7 @@ state = NodePath("../../../../Amulet/Components/AmuletStateMachine/ThrowingState
 collision_mask = 449
 freeze_mode = 1
 
-[node name="MultiTargetCamera" type="Camera2D" parent="." node_paths=PackedStringArray("targets")]
+[node name="MultiTargetCamera" type="Camera2D" parent="." node_paths=PackedStringArray("targets") groups=["camera"]]
 process_mode = 3
 script = ExtResource("5_tbgi4")
 min_zoom = 3.5

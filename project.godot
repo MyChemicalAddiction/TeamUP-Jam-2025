@@ -57,6 +57,7 @@ Amulet=""
 Human=""
 Ghost=""
 Possessable=""
+camera=""
 
 [input]
 

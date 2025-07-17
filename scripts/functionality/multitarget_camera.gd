@@ -10,26 +10,29 @@ extends Camera2D
 
 @onready var screen_size = get_viewport_rect().size
 
+## If true, will hide the ghost if its top node is not visible on the screen. The MultiTargetCamera must be added to the "camera" group for this to be able to be referenced.
+@export var untrack_hidden = false
+
 func _process(delta):
 	if !targets:
 		return
 
-	var visible_targets: Array[Character]
+	var tracked_targets: Array[Character]
 	for i in targets:
-		if i.visible:
-			visible_targets.append(i)
+		if i.visible or !untrack_hidden:
+			tracked_targets.append(i)
 
 	# Keep the camera centered among all targets
 	var p = Vector2.ZERO
-	for target in visible_targets:
+	for target in tracked_targets:
 		p += target.position
 	
-	p /= visible_targets.size() 
+	p /= tracked_targets.size() 
 	position = lerp(position, p, move_speed * delta)
 
 	# Find the zoom that will contain all targets
 	var r = Rect2(position, Vector2.ONE)
-	for target in visible_targets:
+	for target in tracked_targets:
 		r = r.expand(target.position)
 	r = r.grow_individual(margin.x, margin.y, margin.x, margin.y)
 	var z

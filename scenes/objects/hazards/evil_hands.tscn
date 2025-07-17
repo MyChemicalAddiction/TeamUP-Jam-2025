@@ -18,11 +18,11 @@ hitboxRes = SubResource("Resource_l52yk")
 metadata/_custom_type_script = "uid://bp3r0ffx34h"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(5.06091, 5.06091)
+scale = Vector2(4.19538, 4.19538)
 shape = SubResource("RectangleShape2D_k0fka")
 
 [node name="EvilHands" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(2, -2)
-scale = Vector2(2.3723, 1.89784)
+scale = Vector2(1.96658, 1.57327)
 texture = ExtResource("3_cp1w5")

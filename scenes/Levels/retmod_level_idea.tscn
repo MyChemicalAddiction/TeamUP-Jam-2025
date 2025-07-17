@@ -19,58 +19,58 @@ position = Vector2(408, 89)
 [node name="Hazards" type="Node2D" parent="Special Objects"]
 
 [node name="Evil Hands" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(199, 392)
+position = Vector2(191, 413)
 
 [node name="Evil Hands2" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(299, 392)
+position = Vector2(291, 413)
 
 [node name="Evil Hands3" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(399, 393)
+position = Vector2(391, 414)
 
 [node name="Evil Hands4" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(502, 393)
+position = Vector2(494, 414)
 
 [node name="Evil Hands5" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(602, 393)
+position = Vector2(594, 414)
 
 [node name="Evil Hands6" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(702, 394)
+position = Vector2(694, 415)
 
 [node name="Evil Hands7" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(803, 396)
+position = Vector2(795, 417)
 
 [node name="Evil Hands8" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(903, 396)
+position = Vector2(895, 417)
 
 [node name="Evil Hands9" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(1003, 397)
+position = Vector2(995, 418)
 
 [node name="Evil Hands10" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(1106, 397)
+position = Vector2(1098, 418)
 
 [node name="Evil Hands11" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(1206, 397)
+position = Vector2(1198, 418)
 
 [node name="Evil Hands12" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(1306, 398)
+position = Vector2(1298, 419)
 
 [node name="Evil Hands13" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(1407, 392)
+position = Vector2(1399, 413)
 
 [node name="Evil Hands14" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(1507, 392)
+position = Vector2(1499, 413)
 
 [node name="Evil Hands15" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(1607, 393)
+position = Vector2(1599, 414)
 
 [node name="Evil Hands16" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(1710, 393)
+position = Vector2(1702, 414)
 
 [node name="Evil Hands17" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(1810, 393)
+position = Vector2(1802, 414)
 
 [node name="Evil Hands18" parent="Special Objects/Hazards" instance=ExtResource("1_lr367")]
-position = Vector2(1910, 394)
+position = Vector2(1902, 415)
 
 [node name="Movable rigid bodies" type="Node2D" parent="Special Objects"]
 
