@@ -134,9 +134,8 @@ position = Vector2(1324, 1264)
 [node name="FinishDoor" parent="Special Objects/Interactable" instance=ExtResource("4_5s37k")]
 position = Vector2(1409, 787)
 
-[node name="MAIN" parent="Special Objects/Interactable/FinishDoor" index="0" node_paths=PackedStringArray("enable_manager")]
+[node name="MAIN" parent="Special Objects/Interactable/FinishDoor" index="0"]
 next_level_scene_path = "res://scenes/Levels/mock_level.tscn"
-enable_manager = NodePath("../../../Switches/Ghost Continuous Button Area/MAIN")
 
 [node name="Movable rigid bodies" type="Node2D" parent="Special Objects"]
 
