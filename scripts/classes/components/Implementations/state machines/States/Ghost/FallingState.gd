@@ -14,6 +14,8 @@ jump (and thus fly) even when falling.
 @export var ACCELERATE = 60.0
 @export var JUMP_VELOCITY = -400
 
+@export var gravity_multiplier := 0.5
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var horizontal_input = 0.0
@@ -35,7 +37,7 @@ func process_physics(delta: float):
 		object.velocity.y = move_toward(object.velocity.y, JUMP_VELOCITY, ACCELERATE)
 	
 	else:
-		object.velocity.y += gravity * delta
+		object.velocity.y += gravity * gravity_multiplier * delta
 	
 	object.velocity.x = move_toward(object.velocity.x, SPEED * horizontal_input, ACCELERATE)
 	
