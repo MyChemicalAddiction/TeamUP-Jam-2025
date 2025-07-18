@@ -152,22 +152,22 @@ position = Vector2(-1240, 58)
 position = Vector2(-1109, 57)
 
 [node name="Box5" parent="Special Objects/Movable rigid bodies" instance=ExtResource("8_8fsvy")]
-position = Vector2(-1239, -44)
+position = Vector2(-1224, -44)
 
 [node name="Box6" parent="Special Objects/Movable rigid bodies" instance=ExtResource("8_8fsvy")]
-position = Vector2(-1371, -43)
+position = Vector2(-1356, -43)
 
 [node name="Box7" parent="Special Objects/Movable rigid bodies" instance=ExtResource("8_8fsvy")]
-position = Vector2(-1503, -45)
+position = Vector2(-1488, -45)
 
 [node name="Box8" parent="Special Objects/Movable rigid bodies" instance=ExtResource("8_8fsvy")]
-position = Vector2(-1369, -147)
+position = Vector2(-1330, -143)
 
 [node name="Box9" parent="Special Objects/Movable rigid bodies" instance=ExtResource("8_8fsvy")]
-position = Vector2(-1502, -147)
+position = Vector2(-1463, -143)
 
 [node name="Cursed Box" parent="Special Objects/Movable rigid bodies" instance=ExtResource("9_3dn13")]
-position = Vector2(-1503, -248)
+position = Vector2(-1410, -242)
 
 [node name="Enemies" type="Node2D" parent="Special Objects"]
 
