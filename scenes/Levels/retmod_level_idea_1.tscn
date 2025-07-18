@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bhkad48ij8ha7" path="res://scenes/objects/doors/vertical_door.tscn" id="7_d7m03"]
 [ext_resource type="PackedScene" uid="uid://boch8qluci7ev" path="res://scenes/functionality/levers & buttons/continuous_button_area.tscn" id="8_5s37k"]
 [ext_resource type="PackedScene" uid="uid://dgudsm50jqbt8" path="res://scenes/objects/movable rigid bodies/box.tscn" id="8_8fsvy"]
-[ext_resource type="PackedScene" uid="uid://b3p14t07es2nd" path="res://scenes/objects/doors/horizontal_door.tscn" id="9_0v3j1"]
 [ext_resource type="PackedScene" uid="uid://b8tomno4vy81t" path="res://scenes/objects/movable rigid bodies/cursed box.tscn" id="9_3dn13"]
+[ext_resource type="PackedScene" uid="uid://deqeo7yuvxhl2" path="res://scenes/objects/doors/cursed_horizontal_door.tscn" id="11_imigb"]
 [ext_resource type="PackedScene" uid="uid://riuotyrpb2p2" path="res://scenes/functionality/levers & buttons/continuous_cursed_button_area.tscn" id="13_imigb"]
 
 [node name="Level" type="Node2D"]
@@ -179,10 +179,10 @@ position = Vector2(1297, 718)
 [node name="MAIN" parent="Special Objects/Moving Doors/Vertical" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Switches/Continuous Button Area/MAIN")
 
-[node name="Horizontal Door" parent="Special Objects/Moving Doors" instance=ExtResource("9_0v3j1")]
-position = Vector2(14, 869)
+[node name="Cursed Horizontal Door" parent="Special Objects/Moving Doors" instance=ExtResource("11_imigb")]
+position = Vector2(17, 864)
 
-[node name="MAIN" parent="Special Objects/Moving Doors/Horizontal Door" index="0" node_paths=PackedStringArray("enable_manager")]
+[node name="MAIN" parent="Special Objects/Moving Doors/Cursed Horizontal Door" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Switches/Ghost Continuous Button Area/MAIN")
 
 [node name="Switches" type="Node2D" parent="Special Objects"]
@@ -191,7 +191,7 @@ enable_manager = NodePath("../../../Switches/Ghost Continuous Button Area/MAIN")
 position = Vector2(19, 1288)
 
 [node name="Ghost Continuous Button Area" parent="Special Objects/Switches" instance=ExtResource("13_imigb")]
-position = Vector2(-97, 290)
+position = Vector2(-101, 284)
 
 [node name="Darkness" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
@@ -203,6 +203,6 @@ metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 
 [editable path="Special Objects/Interactable/FinishDoor"]
 [editable path="Special Objects/Moving Doors/Vertical"]
-[editable path="Special Objects/Moving Doors/Horizontal Door"]
+[editable path="Special Objects/Moving Doors/Cursed Horizontal Door"]
 [editable path="Special Objects/Switches/Continuous Button Area"]
 [editable path="Special Objects/Switches/Ghost Continuous Button Area"]
