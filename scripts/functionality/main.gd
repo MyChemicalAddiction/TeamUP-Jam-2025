@@ -21,9 +21,9 @@ the default_scene variable (currently set to the Mock Level).
 var currentScene: Node ## The actual current level scene node.
 
 func _ready():
-	SceneManager.main_scene = self
+	SceneManager.change_scene.connect(transition_to_scene)
 	if default_scene:
-		transition_to_scene(default_scene)
+		SceneManager.transition_to_scene(default_scene)
 	
 ## For transitioning the player's location to a different scene
 func transition_to_scene(new_scene: PackedScene): 

@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b33oe1nbvhdl1"]
+[gd_scene load_steps=8 format=3 uid="uid://b33oe1nbvhdl1"]
 
 [ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/Areas/interaction/interaction area/InteractionArea.gd" id="1_aio78"]
 [ext_resource type="Texture2D" uid="uid://d11fuyffc5s15" path="res://assets/visual/placeholders/placeholder_tileset.png" id="2_mi41h"]
 [ext_resource type="Script" uid="uid://c46as10t6gpl0" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/FinishDoorComponent.gd" id="3_mi41h"]
-[ext_resource type="PackedScene" uid="uid://de6vsppsr1un1" path="res://scenes/Levels/mock_level.tscn" id="4_mr4dm"]
 [ext_resource type="Script" uid="uid://bgglcirqtvtj3" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/Area Behaviors/GlowComponent.gd" id="5_5te6j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aio78"]
@@ -26,7 +25,6 @@ metadata/_edit_group_ = true
 
 [node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("triggerer")]
 script = ExtResource("3_mi41h")
-next_level_scene = ExtResource("4_mr4dm")
 triggerer = NodePath("..")
 metadata/_custom_type_script = "uid://c46as10t6gpl0"
 

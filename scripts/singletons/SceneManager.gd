@@ -1,21 +1,16 @@
 extends Node
 
 """
-The scene manager singleton delegates scene switching functionality to
-main_scene.
+The scene manager singleton delegates scene switching functionality to a main
+scene.
 """
 
-## The scene to which scene changing behavior is delegated
-var main_scene: Node
+## Caught by all nodes that need to know when the scene is changing
+signal loading_scene
+ 
+## Caught by the main node
+signal change_scene(new_scene: PackedScene)
 
-## Emitted after the screen goes black and the game starts loading a new level scene.
-signal loading_scene 
-
-func transition_to_scene(new_scene: PackedScene): ## For transitioning to a different scene
+func transition_to_scene(new_scene: PackedScene): # For transitioning the player's location to a different scene
+	change_scene.emit(new_scene)
 	loading_scene.emit()
-	main_scene.transition_to_scene(new_scene)
-
-## resets the scene
-func reset_scene():
-	loading_scene.emit()
-	main_scene.reset_scene()

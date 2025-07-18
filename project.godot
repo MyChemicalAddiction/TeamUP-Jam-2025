@@ -58,6 +58,7 @@ Human=""
 Ghost=""
 Possessable=""
 camera=""
+Player=""
 
 [input]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://c55ostl8df6lu"]
+[gd_scene load_steps=10 format=4 uid="uid://c55ostl8df6lu"]
 
 [ext_resource type="PackedScene" uid="uid://w4hb2qd8g6lr" path="res://scenes/objects/hazards/evil_hands.tscn" id="1_lr367"]
 [ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/simple_platform_tilemap_placeholder.tscn" id="1_w4mb6"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/doors/finish_door.tscn" id="6_y80pa"]
 [ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="8_0dblc"]
 [ext_resource type="PackedScene" uid="uid://c8lt7usj83dfv" path="res://scenes/objects/projectile shooters/aimed_projectile_shooter_area.tscn" id="8_k0apv"]
+[ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="9_0dblc"]
 
 [node name="RetmodLevelIdea" type="Node2D"]
 
@@ -126,6 +127,9 @@ position = Vector2(373, 155)
 [node name="FinishDoor" parent="Special Objects/Interactable" instance=ExtResource("6_y80pa")]
 position = Vector2(2495, -117)
 
+[node name="MAIN" parent="Special Objects/Interactable/FinishDoor" index="0"]
+next_level_scene_path = "res://scenes/Levels/mock_level.tscn"
+
 [node name="Movable rigid bodies" type="Node2D" parent="Special Objects"]
 
 [node name="Box2" parent="Special Objects/Movable rigid bodies" instance=ExtResource("4_didsf")]
@@ -153,5 +157,10 @@ position = Vector2(1488, -574)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
+
+[node name="PlayersStartMarker" type="Marker2D" parent="."]
+position = Vector2(1, 0)
+script = ExtResource("9_0dblc")
+metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 
 [editable path="Special Objects/Interactable/FinishDoor"]

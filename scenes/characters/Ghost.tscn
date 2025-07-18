@@ -26,7 +26,7 @@ size = Vector2(128, 128)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddmg8"]
 size = Vector2(128, 128)
 
-[node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("movement_component", "interaction_component", "hurtbox_component") groups=["Ghost"]]
+[node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("movement_component", "interaction_component", "hurtbox_component") groups=["Ghost", "Player"]]
 collision_layer = 4
 collision_mask = 197
 script = ExtResource("1_ddmg8")
