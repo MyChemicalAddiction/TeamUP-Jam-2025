@@ -177,8 +177,14 @@ position = Vector2(-1503, -248)
 [node name="Vertical" parent="Special Objects/Moving Doors" instance=ExtResource("7_d7m03")]
 position = Vector2(1297, 718)
 
+[node name="MAIN" parent="Special Objects/Moving Doors/Vertical" index="0" node_paths=PackedStringArray("enable_manager")]
+enable_manager = NodePath("../../../Switches/Continuous Button Area/MAIN")
+
 [node name="Horizontal Door" parent="Special Objects/Moving Doors" instance=ExtResource("9_0v3j1")]
 position = Vector2(14, 869)
+
+[node name="MAIN" parent="Special Objects/Moving Doors/Horizontal Door" index="0" node_paths=PackedStringArray("enable_manager")]
+enable_manager = NodePath("../../../Switches/Ghost Continuous Button Area/MAIN")
 
 [node name="Switches" type="Node2D" parent="Special Objects"]
 
@@ -197,6 +203,7 @@ script = ExtResource("5_oy22u")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 
 [editable path="Special Objects/Interactable/FinishDoor"]
+[editable path="Special Objects/Moving Doors/Vertical"]
 [editable path="Special Objects/Moving Doors/Horizontal Door"]
 [editable path="Special Objects/Switches/Continuous Button Area"]
 [editable path="Special Objects/Switches/Ghost Continuous Button Area"]
