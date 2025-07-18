@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/simple_platform_tilemap_placeholder.tscn" id="1_f0yyc"]
 [ext_resource type="PackedScene" uid="uid://w4hb2qd8g6lr" path="res://scenes/objects/hazards/evil_hands.tscn" id="2_gd187"]
 [ext_resource type="PackedScene" uid="uid://dgudsm50jqbt8" path="res://scenes/objects/movable rigid bodies/box.tscn" id="3_qjkrx"]
-[ext_resource type="PackedScene" uid="uid://b8tomno4vy81t" path="res://scenes/objects/movable rigid bodies/ghost_movable_box.tscn" id="4_c3pgx"]
+[ext_resource type="PackedScene" uid="uid://b8tomno4vy81t" path="res://scenes/objects/movable rigid bodies/cursed box.tscn" id="4_c3pgx"]
 [ext_resource type="PackedScene" uid="uid://b8xf6mcl8d82x" path="res://scenes/objects/interactible/ghost-specific/ghost_horizontal_platform.tscn" id="5_gv1nd"]
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/doors/finish_door.tscn" id="6_778nw"]
 [ext_resource type="PackedScene" uid="uid://br8v1ktnoqsga" path="res://scenes/objects/buttons/simple_button.tscn" id="7_gcr2i"]

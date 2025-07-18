@@ -3,10 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://bfvl2wm2l1iw2" path="res://assets/visual/placeholders/light_circle.png" id="1_m1p7u"]
 [ext_resource type="Texture2D" uid="uid://l3arbm5d7nno" path="res://assets/visual/placeholders/candle.png" id="2_u2dvq"]
 
-[node name="Candle" type="PointLight2D"]
-color = Color(0.856405, 0.66547, 0.419512, 1)
-texture = ExtResource("1_m1p7u")
-texture_scale = 8.0
+[node name="Candle" type="Node2D"]
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_u2dvq")
+
+[node name="Candle" type="PointLight2D" parent="."]
+color = Color(0.856405, 0.66547, 0.419512, 1)
+energy = 0.5
+texture = ExtResource("1_m1p7u")
+texture_scale = 8.0
+metadata/_edit_lock_ = true

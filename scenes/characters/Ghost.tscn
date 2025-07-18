@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://drft6dfp41fxt" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/HitBehavior/HurtboxSimpleDamageHitBehavior.gd" id="14_25nvg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8bju"]
-size = Vector2(241, 180)
+size = Vector2(133, 132)
 
 [sub_resource type="Resource" id="Resource_gevwg"]
 script = ExtResource("12_25nvg")
@@ -68,7 +68,7 @@ input_manager = NodePath("../GhostInteractInputManager")
 metadata/_custom_type_script = "uid://brwvuypl3ag2w"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/InteractionManager"]
-position = Vector2(-0.5, -26)
+position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_n8bju")
 
 [node name="Hurtbox" type="Area2D" parent="Components" node_paths=PackedStringArray("holder")]

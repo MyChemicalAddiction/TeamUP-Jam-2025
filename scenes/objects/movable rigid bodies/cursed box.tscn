@@ -12,7 +12,7 @@ size = Vector2(130, 102)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3c25c"]
 size = Vector2(130, 102)
 
-[node name="Box" type="RigidBody2D"]
+[node name="Cursed Box" type="RigidBody2D"]
 collision_layer = 64
 collision_mask = 449
 mass = 7.0

@@ -6,14 +6,13 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpl0x"]
 size = Vector2(44, 414)
 
-[node name="Moving Door" type="AnimatableBody2D"]
+[node name="Vertical Door" type="AnimatableBody2D"]
 collision_layer = 256
 metadata/_edit_group_ = true
 
 [node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("object")]
 script = ExtResource("1_y4ggs")
 object = NodePath("..")
-MOVING_DISTANCE = 250
 enabled = false
 metadata/_custom_type_script = "uid://d4esf4meclpan"
 

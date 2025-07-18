@@ -6,17 +6,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpl0x"]
 size = Vector2(44, 414)
 
-[node name="Moving Door" type="AnimatableBody2D"]
+[node name="Cursed Vertical Door" type="AnimatableBody2D"]
+
+[node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("object")]
+script = ExtResource("1_uef34")
+object = NodePath("..")
+enabled = false
+metadata/_custom_type_script = "uid://d4esf4meclpan"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jpl0x")
-
-[node name="MovingDoorComponent" type="Node2D" parent="." node_paths=PackedStringArray("object")]
-script = ExtResource("1_uef34")
-object = NodePath("..")
-MOVING_DISTANCE = 250
-enabled = false
-metadata/_custom_type_script = "uid://d4esf4meclpan"
 
 [node name="DParameterIcon" type="Sprite2D" parent="."]
 modulate = Color(0.584314, 1, 0.662745, 1)
