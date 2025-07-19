@@ -45,7 +45,6 @@ object = NodePath("../..")
 MovingState = NodePath("../GhostMovingState")
 
 [node name="GhostMovingState" parent="Components/MovementStateMachine" index="1" node_paths=PackedStringArray("HiddenState")]
-ACCELERATE = 30.0
 HiddenState = NodePath("../GhostHiddenState")
 
 [node name="GhostHiddenState" parent="Components/MovementStateMachine" index="2" node_paths=PackedStringArray("GhostCollision", "HurtboxCollision", "interaction_manager_collision_shape")]

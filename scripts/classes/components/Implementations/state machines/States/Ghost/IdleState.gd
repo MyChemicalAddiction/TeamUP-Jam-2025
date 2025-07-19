@@ -1,7 +1,7 @@
 extends InputState
 class_name GhostIdleState
 
-@export var ACCELERATE = 60.0
+@export var ACCELERATE = 45.0
 
 @export var MovingState: InputState
 @export var HiddenState: InputState
@@ -29,7 +29,7 @@ func process_physics(_delta: float):
 	object.move_and_slide()
 
 func _on_enter():
-	object.velocity.y = 0
+	pass
 
 func _on_exit():
 	pass

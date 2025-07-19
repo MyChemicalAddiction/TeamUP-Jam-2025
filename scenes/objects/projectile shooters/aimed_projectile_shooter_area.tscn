@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c8lt7usj83dfv"]
 
 [ext_resource type="Script" uid="uid://e0p143fkoaat" path="res://scripts/functionality/aimed_projectile_shooter_area.gd" id="1_idnxq"]
-[ext_resource type="Script" uid="uid://bmjff2qd1s3id" path="res://scripts/classes/components/Implementations/functionality/implementations/ShooterAreaEnteredTrackerComponent.gd" id="2_idnxq"]
+[ext_resource type="Script" uid="uid://bmjff2qd1s3id" path="res://scripts/classes/components/Implementations/functionality/ShooterAreaEnteredTrackerComponent.gd" id="2_idnxq"]
 [ext_resource type="Script" uid="uid://cvbk7ssl4w7ch" path="res://scripts/classes/components/Implementations/state machines/StateMachine.gd" id="2_pr3ed"]
 [ext_resource type="Script" uid="uid://bboji5tvpnhjv" path="res://scripts/classes/projectile/ProjectileShooter.gd" id="2_ujvcm"]
 [ext_resource type="Script" uid="uid://c6vhl4ahb0v66" path="res://scripts/classes/components/Implementations/state machines/States/Enemies/Static/AimedProjectileShooterArea/StaticAimedShooterIdleState.gd" id="3_idnxq"]

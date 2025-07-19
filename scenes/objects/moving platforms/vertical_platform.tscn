@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4el63hhb4nr5"]
+
+[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="1_odifh"]
+[ext_resource type="Script" uid="uid://dwqil4kc4xuat" path="res://scripts/classes/components/Implementations/functionality/PlatformMovementComponent.gd" id="2_a70w8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a70w8"]
+size = Vector2(19.9466, 20.5866)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpatd"]
+size = Vector2(0.826538, 21.5442)
+
+[node name="ghost_platform" type="CharacterBody2D"]
+collision_layer = 64
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(2.85715, 0.328833)
+texture = ExtResource("1_odifh")
+
+[node name="Icon2" type="Sprite2D" parent="Icon"]
+position = Vector2(-60.8998, -33.2086)
+scale = Vector2(0.0437501, 1.00164)
+texture = ExtResource("1_odifh")
+
+[node name="Icon3" type="Sprite2D" parent="Icon"]
+position = Vector2(60.8998, -30.1676)
+scale = Vector2(0.0437501, 1.00164)
+texture = ExtResource("1_odifh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.13928e-06, 0.500001)
+scale = Vector2(18.1485, 2.08873)
+shape = SubResource("RectangleShape2D_a70w8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-174, -8)
+scale = Vector2(18.4783, 2.14397)
+shape = SubResource("RectangleShape2D_cpatd")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(173.5, -7.5)
+scale = Vector2(18.4783, 2.14397)
+shape = SubResource("RectangleShape2D_cpatd")
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="PlatformMovementComponent" type="Node2D" parent="Components" node_paths=PackedStringArray("object")]
+script = ExtResource("2_a70w8")
+object = NodePath("../..")
+metadata/_custom_type_script = "uid://dwqil4kc4xuat"

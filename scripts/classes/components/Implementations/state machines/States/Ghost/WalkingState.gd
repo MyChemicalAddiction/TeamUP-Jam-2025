@@ -2,7 +2,7 @@ extends InputState
 class_name GhostMovingState
 
 @export var SPEED = 400.0
-@export var ACCELERATE = 60.0
+@export var ACCELERATE = 45.0
 
 @export var IdleState: InputState
 @export var HiddenState: InputState

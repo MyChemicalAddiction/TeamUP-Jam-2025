@@ -1,5 +1,5 @@
 extends Component
-class_name PlatformMovementComponent
+class_name GhostPlatformMovementComponent
 
 """
 Encapsulates behavior for the ghost moving a possessed platform.
