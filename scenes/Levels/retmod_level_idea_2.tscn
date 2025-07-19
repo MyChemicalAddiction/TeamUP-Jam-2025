@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://78xa0hq56pji"]
+[gd_scene load_steps=7 format=4 uid="uid://78xa0hq56pji"]
 
 [ext_resource type="Texture2D" uid="uid://xw2i423f08wv" path="res://assets/visual/placeholders/wood.png" id="1_gilkv"]
 [ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/simple_platform_tilemap_placeholder.tscn" id="2_rhl33"]
 [ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="3_ohetx"]
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/interactible/finish_door.tscn" id="4_cxlq3"]
 [ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="5_85amx"]
+[ext_resource type="PackedScene" uid="uid://b75dcm16rsq2f" path="res://scenes/objects/moving platforms/horizontal_platform.tscn" id="6_rhl33"]
 
 [node name="Level" type="Node2D"]
 
@@ -16,6 +17,7 @@ texture = ExtResource("1_gilkv")
 
 [node name="Simple Platform Tilemap Placeholder" parent="." instance=ExtResource("2_rhl33")]
 position = Vector2(220, 89)
+tile_map_data = PackedByteArray("AAACAPn/AAAIADAAAFACAPr/AAAJADAAAFACAPv/AAAKADAAAFACAPz/AAALADAAAFACAP3/AAAMADAAAFACAP7/AAANADAAAFACAP//AAAOADAAAFACAAAAAAAPADAAAFDV//n/AAAIADAAAFDV//r/AAAJADAAAFDV//v/AAAKADAAAFDV//z/AAALADAAAFDV//3/AAAMADAAAFDV//7/AAANADAAAFDV////AAAOADAAAFDV/wAAAAAPADAAAFDu/+r/AAAIADAAAADv/+r/AAAJADAAAADw/+r/AAAKADAAAADx/+r/AAALADAAAADy/+r/AAAMADAAAADz/+r/AAANADAAAAD0/+r/AAAOADAAAAD1/+r/AAAPADAAAADt/xIAAAAIADAAAADu/xIAAAAJADAAAADv/xIAAAAKADAAAADw/xIAAAALADAAAADx/xIAAAAMADAAAADy/xIAAAANADAAAADz/xIAAAAOADAAAAD0/xIAAAAPADAAAAA=")
 
 [node name="Special Objects" type="Node2D" parent="."]
 
@@ -46,5 +48,8 @@ color = Color(0, 0, 0, 1)
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
 script = ExtResource("5_85amx")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
+
+[node name="horizontal_platform" parent="." instance=ExtResource("6_rhl33")]
+position = Vector2(-77, 79)
 
 [editable path="Special Objects/Interactable/FinishDoor"]

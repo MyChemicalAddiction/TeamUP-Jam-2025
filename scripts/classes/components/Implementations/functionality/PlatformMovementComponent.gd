@@ -1,20 +1,29 @@
 extends Component
 class_name PlatformMovementComponent
 
-"""
-Encapsulates behavior for the ghost moving a possessed platform.
+@export var object: CharacterBody2D ## The platform's node (that should be moved)
+@export var move_speed: float = 100.0 ## The speed at which the platform moves.
+@export var collision_detector: Area2D ## Detects collisions with walls/ceilings to know when to switch direction.
 
-When enabled, it executes a continuous process (namely - moving the platform 
-based on the player's inputs).
+var current_speed := 0.0
 
-It gets enabled when the area owner gets interacted with, and disabled when the
-area's disable() function is called.
-"""
+@export_enum("horizontal", "vertical") var type ## Whether this should move horizontally or vertically.
 
-@export var object: Node ## The object to be moved (platform).
+func switch_direction(_body):
+	current_speed *= -1
+	if type: object.velocity.y = current_speed
+	else: object.velocity.x = current_speed
 
-@export var SPEED: int = 500
+func _ready():
+	collision_detector.body_entered.connect(switch_direction)
+	
+	if !type:
+		object.velocity.x = move_speed
+		current_speed = object.velocity.x
+	else:
+		object.velocity.y = move_speed
+		current_speed = object.velocity.y
 
-func _physics_process(_delta: float) -> void:
-	object.velocity = Vector2.ZERO
+@warning_ignore("unused_parameter")
+func _physics_process(delta: float) -> void:
 	object.move_and_slide()
