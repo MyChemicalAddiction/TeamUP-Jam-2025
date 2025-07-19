@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dnlpbofs2h540"]
+[gd_scene load_steps=18 format=4 uid="uid://dnlpbofs2h540"]
 
 [ext_resource type="Texture2D" uid="uid://xw2i423f08wv" path="res://assets/visual/placeholders/wood.png" id="1_j2wyt"]
 [ext_resource type="PackedScene" uid="uid://c8lt7usj83dfv" path="res://scenes/objects/projectile shooters/aimed_projectile_shooter_area.tscn" id="2_n4ir2"]
@@ -15,6 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://cclkqpsjouer1" path="res://scenes/objects/doors/cursed_vertical_door.tscn" id="10_imigb"]
 [ext_resource type="PackedScene" uid="uid://deqeo7yuvxhl2" path="res://scenes/objects/doors/cursed_horizontal_door.tscn" id="11_imigb"]
 [ext_resource type="PackedScene" uid="uid://riuotyrpb2p2" path="res://scenes/functionality/levers & buttons/continuous_cursed_button_area.tscn" id="13_imigb"]
+[ext_resource type="Texture2D" uid="uid://dgna04txtwnyb" path="res://addons/fmod/icons/d_parameter_icon.svg" id="13_luupb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpl0x"]
+size = Vector2(44, 17.9999)
 
 [node name="Level" type="Node2D"]
 
@@ -192,6 +196,28 @@ position = Vector2(17, 864)
 
 [node name="MAIN" parent="Special Objects/Moving Doors/Cursed Horizontal Door" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Switches/Ghost Continuous Button Area/MAIN")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Special Objects/Moving Doors/Cursed Horizontal Door"]
+position = Vector2(-198, -24)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_jpl0x")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Special Objects/Moving Doors/Cursed Horizontal Door"]
+position = Vector2(197, -23)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_jpl0x")
+
+[node name="DParameterIcon2" type="Sprite2D" parent="Special Objects/Moving Doors/Cursed Horizontal Door"]
+modulate = Color(0.584314, 1, 0.662745, 1)
+position = Vector2(-198, -25)
+scale = Vector2(0.968036, 2.08052)
+texture = ExtResource("13_luupb")
+
+[node name="DParameterIcon3" type="Sprite2D" parent="Special Objects/Moving Doors/Cursed Horizontal Door"]
+modulate = Color(0.584314, 1, 0.662745, 1)
+position = Vector2(197, -25)
+scale = Vector2(0.968036, 2.08052)
+texture = ExtResource("13_luupb")
 
 [node name="Switches" type="Node2D" parent="Special Objects"]
 
