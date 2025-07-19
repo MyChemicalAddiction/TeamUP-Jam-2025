@@ -22,3 +22,4 @@ func transition_to_scene(new_scene: PackedScene): # For transitioning the player
 
 func reset_scene():
 	change_scene.emit(current_scene)
+	loading_scene.emit()
