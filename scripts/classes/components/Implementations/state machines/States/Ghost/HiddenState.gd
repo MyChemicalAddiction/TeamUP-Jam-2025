@@ -10,7 +10,7 @@ do anything and is invisible.
 @export var GhostCollision: CollisionShape2D
 @export var HurtboxCollision: CollisionShape2D
 
-@export var interaction_manager: InteractionManager ## Referenced to disable it when the ghost is inside the amulet.
+@export var interaction_manager_collision_shape: CollisionShape2D ## Referenced to disable it when the ghost is inside the amulet.
 
 @onready var amulet = get_tree().get_first_node_in_group("Amulet")
 
@@ -24,7 +24,7 @@ func process_physics(_delta: float):
 
 func _on_enter():
 	HurtboxCollision.set_deferred('disabled', true)
-	interaction_manager.can_interact = false
+	interaction_manager_collision_shape.set_deferred("disabled", true)
 	object.visible = false
 	object.velocity = Vector2.ZERO
 	GhostCollision.disabled = true
@@ -32,7 +32,7 @@ func _on_enter():
 func _on_exit():
 	object.velocity = Vector2.ZERO
 	HurtboxCollision.set_deferred('disabled', false)
-	interaction_manager.can_interact = true
+	interaction_manager_collision_shape.set_deferred("disabled", false)
 	object.position = amulet.position
 	GhostCollision.set_deferred('disabled', false)
 	object.visible = true

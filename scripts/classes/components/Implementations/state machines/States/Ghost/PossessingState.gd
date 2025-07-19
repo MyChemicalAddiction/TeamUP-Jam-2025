@@ -35,12 +35,15 @@ var default_ghost_collision_mask: int = -1
 ## keeps track of whether this is the current state.
 var active := false
 
+## keeps track of the collision shape of the interaction manager as to de-activate it on entry 
+@export var interaction_manager_collision_shape: CollisionShape2D
+
 func _on_enter():
 	hurtbox_collision.disabled = true
 	active = true
 	object.collision_mask = -1
 	visual.visible = false
-	interaction_manager.can_interact = false
+	interaction_manager_collision_shape.set_deferred("disabled", true)
 
 func _on_exit():
 	hurtbox_collision.set_deferred('disabled', false) 
@@ -48,7 +51,7 @@ func _on_exit():
 	if current_area: current_area.disable()
 	object.collision_mask = default_ghost_collision_mask
 	visual.visible = true
-	interaction_manager.can_interact = true
+	interaction_manager_collision_shape.set_deferred("disabled", false)
 
 func _ready():
 	call_deferred('setup')

@@ -1,12 +1,10 @@
 extends InputState
-class_name GhostWalkingState
+class_name GhostMovingState
 
-@export var SPEED = 300.0
+@export var SPEED = 400.0
 @export var ACCELERATE = 60.0
 
 @export var IdleState: InputState
-@export var JumpingState: InputState
-@export var FallingState: InputState
 @export var HiddenState: InputState
 
 var vertical_input = Vector2.ZERO
@@ -21,19 +19,17 @@ func process_input(_delta):
 	horizontal_input = input_manager.horizontal_input
 	vertical_input = input_manager.vertical_input
 	
-	if horizontal_input:
+	if horizontal_input or vertical_input:
 		object.velocity.x = move_toward(object.velocity.x, SPEED * horizontal_input, ACCELERATE)
+		object.velocity.y = move_toward(object.velocity.y, SPEED * vertical_input, ACCELERATE)
+
 	else:
 		return IdleState
-
-	if vertical_input < 0:
-		return JumpingState
 	
 	object.move_and_slide()
 
 func process_physics(_delta: float):
-	if not object.is_on_floor():
-		return FallingState
+	pass
 
 func _on_enter():
 	pass

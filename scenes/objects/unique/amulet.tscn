@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="1_faw7v"]
 [ext_resource type="Script" uid="uid://1ngpyj4uh14m" path="res://scripts/objects/special/amulet.gd" id="1_ulww5"]
-[ext_resource type="PackedScene" uid="uid://dqmvrgjgqo846" path="res://scenes/functionality/complete state machines/characters/AmuletStateMachine.tscn" id="2_nncdm"]
+[ext_resource type="PackedScene" uid="uid://dqmvrgjgqo846" path="res://scenes/functionality/complete state machines/AmuletStateMachine.tscn" id="2_nncdm"]
 [ext_resource type="Script" uid="uid://bp078yt1n57lh" path="res://scripts/classes/components/Implementations/input managers/Special Objects/AmuletInputManager.gd" id="5_c2c0c"]
 [ext_resource type="Texture2D" uid="uid://5a5txvctxywq" path="res://assets/visual/placeholders/red_transparent_circle.png" id="5_ulww5"]
 [ext_resource type="Script" uid="uid://cys4mdwpjj11c" path="res://scripts/functionality/amulet_radius_area.gd" id="8_ns171"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvci04mstcsnl"]
+
+[ext_resource type="Script" uid="uid://c0kbow20mhepj" path="res://scripts/classes/components/Implementations/state machines/InputStateMachine.gd" id="1_mkh68"]
+[ext_resource type="Script" uid="uid://c24ikmo4sglwi" path="res://scripts/classes/components/Implementations/state machines/States/Ghost/IdleState.gd" id="2_j3u52"]
+[ext_resource type="Script" uid="uid://bk2itwnuliqo6" path="res://scripts/classes/components/Implementations/state machines/States/Ghost/WalkingState.gd" id="3_a566w"]
+[ext_resource type="Script" uid="uid://iehh465xdyjd" path="res://scripts/classes/components/Implementations/state machines/States/Ghost/HiddenState.gd" id="4_ep3i3"]
+[ext_resource type="Script" uid="uid://de2olwbtswg44" path="res://scripts/classes/components/Implementations/state machines/States/Ghost/PossessingState.gd" id="5_02k15"]
+
+[node name="MovementStateMachine" type="Node2D" node_paths=PackedStringArray("starting_state")]
+script = ExtResource("1_mkh68")
+starting_state = NodePath("GhostIdleState")
+metadata/_custom_type_script = "uid://c0kbow20mhepj"
+
+[node name="GhostIdleState" type="Node2D" parent="." node_paths=PackedStringArray("HiddenState")]
+script = ExtResource("2_j3u52")
+HiddenState = NodePath("../GhostHiddenState")
+metadata/_custom_type_script = "uid://c24ikmo4sglwi"
+
+[node name="GhostMovingState" type="Node2D" parent="." node_paths=PackedStringArray("IdleState")]
+script = ExtResource("3_a566w")
+IdleState = NodePath("../GhostIdleState")
+metadata/_custom_type_script = "uid://bk2itwnuliqo6"
+
+[node name="GhostHiddenState" type="Node2D" parent="." node_paths=PackedStringArray("IdleState")]
+script = ExtResource("4_ep3i3")
+IdleState = NodePath("../GhostIdleState")
+metadata/_custom_type_script = "uid://iehh465xdyjd"
+
+[node name="GhostPossessingState" type="Node2D" parent="." node_paths=PackedStringArray("idleState")]
+script = ExtResource("5_02k15")
+idleState = NodePath("../GhostIdleState")
+metadata/_custom_type_script = "uid://de2olwbtswg44"

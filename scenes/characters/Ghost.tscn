@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=3 uid="uid://c77yqcnjp0x8p"]
 
 [ext_resource type="Script" uid="uid://cnxen4dyqy530" path="res://scripts/classes/characters/ghost/GhostCharacter.gd" id="1_ddmg8"]
-[ext_resource type="PackedScene" uid="uid://br0iax3k3pmwl" path="res://scenes/functionality/complete state machines/characters/GhostMovementStateMachine.tscn" id="2_1ma87"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_2cjv0"]
+[ext_resource type="PackedScene" uid="uid://bvci04mstcsnl" path="res://scenes/functionality/complete state machines/characters/Ghost/GhostMovementStateMachine.tscn" id="2_qoedd"]
 [ext_resource type="Script" uid="uid://dyfj8np7ybeoi" path="res://scripts/classes/components/Implementations/input managers/Characters/Ghost/GhostMovementInputManager.gd" id="7_3grc2"]
 [ext_resource type="Script" uid="uid://cd218insare6n" path="res://scripts/classes/components/Implementations/input managers/Characters/Ghost/GhostInteractInputManager.gd" id="9_qoedd"]
 [ext_resource type="Script" uid="uid://brwvuypl3ag2w" path="res://scripts/classes/Areas/interaction/interaction manager/InteractionManager.gd" id="10_matwj"]
@@ -37,19 +37,27 @@ metadata/_custom_type_script = "uid://cnxen4dyqy530"
 
 [node name="Components" type="Node2D" parent="."]
 
-[node name="MovementStateMachine" parent="Components" node_paths=PackedStringArray("input_manager", "object") instance=ExtResource("2_1ma87")]
+[node name="MovementStateMachine" parent="Components" node_paths=PackedStringArray("input_manager", "object") instance=ExtResource("2_qoedd")]
 input_manager = NodePath("../GhostMovementInputManager")
 object = NodePath("../..")
 
-[node name="GhostHiddenState" parent="Components/MovementStateMachine" index="4" node_paths=PackedStringArray("GhostCollision", "HurtboxCollision", "interaction_manager")]
+[node name="GhostIdleState" parent="Components/MovementStateMachine" index="0" node_paths=PackedStringArray("MovingState")]
+MovingState = NodePath("../GhostMovingState")
+
+[node name="GhostMovingState" parent="Components/MovementStateMachine" index="1" node_paths=PackedStringArray("HiddenState")]
+ACCELERATE = 30.0
+HiddenState = NodePath("../GhostHiddenState")
+
+[node name="GhostHiddenState" parent="Components/MovementStateMachine" index="2" node_paths=PackedStringArray("GhostCollision", "HurtboxCollision", "interaction_manager_collision_shape")]
 GhostCollision = NodePath("../../../CollisionShape2D")
 HurtboxCollision = NodePath("../../Hurtbox/CollisionShape2D")
-interaction_manager = NodePath("../../InteractionManager")
+interaction_manager_collision_shape = NodePath("../../InteractionManager/CollisionShape2D")
 
-[node name="GhostPossessingState" parent="Components/MovementStateMachine" index="5" node_paths=PackedStringArray("interaction_manager", "hurtbox_collision", "visual")]
+[node name="GhostPossessingState" parent="Components/MovementStateMachine" index="3" node_paths=PackedStringArray("interaction_manager", "hurtbox_collision", "visual", "interaction_manager_collision_shape")]
 interaction_manager = NodePath("../../InteractionManager")
 hurtbox_collision = NodePath("../../Hurtbox/CollisionShape2D")
 visual = NodePath("../../../Icon")
+interaction_manager_collision_shape = NodePath("../../InteractionManager/CollisionShape2D")
 
 [node name="GhostMovementInputManager" type="Node" parent="Components"]
 script = ExtResource("7_3grc2")

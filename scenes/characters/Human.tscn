@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://dnlp11cfws5mh"]
 
 [ext_resource type="Script" uid="uid://dqcux1xonf8to" path="res://scripts/classes/characters/human/HumanCharacter.gd" id="1_fn0a6"]
-[ext_resource type="PackedScene" uid="uid://bmakco5i5eh8i" path="res://scenes/functionality/complete state machines/characters/PlayerMovementStateMachine.tscn" id="2_1s6pi"]
+[ext_resource type="PackedScene" uid="uid://bmakco5i5eh8i" path="res://scenes/functionality/complete state machines/characters/Human/HumanMovementStateMachine.tscn" id="2_1s6pi"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_rm4bp"]
 [ext_resource type="Script" uid="uid://cc4fjv8w3pibj" path="res://scripts/classes/components/Implementations/input managers/Characters/Human/HumanMovementInputManager.gd" id="7_0nw2b"]
 [ext_resource type="Script" uid="uid://cnh6wau76q5w6" path="res://scripts/classes/components/Implementations/input managers/Characters/Human/HumanInteractInputManager.gd" id="8_rv0c7"]
