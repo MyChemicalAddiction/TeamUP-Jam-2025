@@ -56,7 +56,10 @@ menu = NodePath("../..")
 [node name="1" parent="Level Select UI" index="2" node_paths=PackedStringArray("menu")]
 menu = NodePath("../..")
 
-[node name="SectionButton" parent="Level Select UI" index="3" node_paths=PackedStringArray("section", "menu")]
+[node name="2" parent="Level Select UI" index="3" node_paths=PackedStringArray("menu")]
+menu = NodePath("../..")
+
+[node name="SectionButton" parent="Level Select UI" index="4" node_paths=PackedStringArray("section", "menu")]
 section = NodePath("../../Main Menu UI")
 menu = NodePath("../..")
 

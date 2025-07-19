@@ -5,7 +5,7 @@ class_name HumanJumpingState
 
 @export var SPEED = 300.0
 @export var ACCELERATE = 60.0
-@export var JUMP_VELOCITY = -600.0
+@export var JUMP_VELOCITY = -620.0
 @export var JUMP_DECCELERATE = 0.85 ## The speed at which the vertical velocity deccelerates when the player releases the jump button (to enable varying-height jumps based on time the button is pressed).
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

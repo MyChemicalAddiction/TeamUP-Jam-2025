@@ -7,7 +7,8 @@
 size = Vector2(44, 414)
 
 [node name="Horizontal Door" type="AnimatableBody2D"]
-collision_layer = 256
+collision_layer = 258
+collision_mask = 449
 metadata/_edit_group_ = true
 
 [node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("object")]

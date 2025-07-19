@@ -7,6 +7,8 @@
 size = Vector2(44, 414)
 
 [node name="Cursed Horizontal Door" type="AnimatableBody2D"]
+collision_layer = 64
+collision_mask = 449
 
 [node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("object")]
 script = ExtResource("1_pcu7w")

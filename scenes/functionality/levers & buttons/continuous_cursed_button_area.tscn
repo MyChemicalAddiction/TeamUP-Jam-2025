@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://o2chsr07oeqs" path="res://addons/fmod/icons/bank_icon.svg" id="2_r17rj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l07bw"]
-size = Vector2(38, 22)
+size = Vector2(23.209, 22)
 
 [sub_resource type="Animation" id="Animation_x87ur"]
 length = 0.001
@@ -64,6 +64,7 @@ _data = {
 [node name="Ghost Continuous Button Area" type="Area2D"]
 collision_layer = 8
 collision_mask = 8
+metadata/_edit_group_ = true
 
 [node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("animation_player", "area_tracker_component")]
 scale = Vector2(3.61929, 3.61929)
