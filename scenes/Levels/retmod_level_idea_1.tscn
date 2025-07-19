@@ -198,24 +198,24 @@ position = Vector2(17, 864)
 enable_manager = NodePath("../../../Switches/Ghost Continuous Button Area/MAIN")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Special Objects/Moving Doors/Cursed Horizontal Door"]
-position = Vector2(-198, -24)
+position = Vector2(-216.288, -35.1545)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_jpl0x")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Special Objects/Moving Doors/Cursed Horizontal Door"]
-position = Vector2(197, -23)
+position = Vector2(212.712, -33.1545)
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_jpl0x")
 
 [node name="DParameterIcon2" type="Sprite2D" parent="Special Objects/Moving Doors/Cursed Horizontal Door"]
 modulate = Color(0.584314, 1, 0.662745, 1)
-position = Vector2(-198, -25)
+position = Vector2(-216.288, -36.1545)
 scale = Vector2(0.968036, 2.08052)
 texture = ExtResource("13_luupb")
 
 [node name="DParameterIcon3" type="Sprite2D" parent="Special Objects/Moving Doors/Cursed Horizontal Door"]
 modulate = Color(0.584314, 1, 0.662745, 1)
-position = Vector2(197, -25)
+position = Vector2(212.712, -35.1545)
 scale = Vector2(0.968036, 2.08052)
 texture = ExtResource("13_luupb")
 
