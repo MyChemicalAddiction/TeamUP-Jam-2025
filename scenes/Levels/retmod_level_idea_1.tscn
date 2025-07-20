@@ -29,10 +29,10 @@ scale = Vector2(573.75, 400.29)
 texture = ExtResource("1_j2wyt")
 
 [node name="AimedProjectileShooterArea" parent="Background" instance=ExtResource("2_n4ir2")]
-position = Vector2(-6, -414)
+position = Vector2(952, -69)
 
 [node name="ghost_platform" parent="Background" instance=ExtResource("3_0v3j1")]
-position = Vector2(-580, -344)
+position = Vector2(-313, 120)
 
 [node name="Simple Platform Tilemap Placeholder" parent="." instance=ExtResource("2_vmfpf")]
 position = Vector2(220, 89)

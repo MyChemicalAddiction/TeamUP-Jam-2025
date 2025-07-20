@@ -143,7 +143,6 @@ scale = Vector2(0.498398, 16.0939)
 
 [node name="CollisionShape2D" parent="Special Objects/Hazards/AimedProjectileShooterArea" index="3"]
 position = Vector2(-3.77283, 944.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ij1pd")
 
 [node name="Interactable" type="Node2D" parent="Special Objects"]
