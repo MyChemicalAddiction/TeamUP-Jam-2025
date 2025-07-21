@@ -12,60 +12,63 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 script = ExtResource("1_2un8v")
-current_section = NodePath("Main Menu UI")
+current_section = NodePath("CanvasLayer/Main Menu UI")
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
 bank_paths = ["res://assets/fmod_build/Desktop//Master.strings.bank", "res://assets/fmod_build/Desktop//Master.bank", "res://assets/fmod_build/Desktop//UI.bank"]
 
-[node name="Main Menu UI" parent="." instance=ExtResource("1_u81ku")]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Main Menu UI" parent="CanvasLayer" instance=ExtResource("1_u81ku")]
+visible = false
 offset_left = -125.0
 offset_top = -33.0
 offset_right = 125.0
 offset_bottom = 33.0
 
-[node name="SectionButton2" parent="Main Menu UI" index="0" node_paths=PackedStringArray("section", "menu")]
+[node name="SectionButton2" parent="CanvasLayer/Main Menu UI" index="0" node_paths=PackedStringArray("section", "menu")]
 section = NodePath("../../Level Select UI")
-menu = NodePath("../..")
+menu = NodePath("../../..")
 
-[node name="SectionButton3" parent="Main Menu UI" index="1" node_paths=PackedStringArray("section", "menu")]
+[node name="SectionButton3" parent="CanvasLayer/Main Menu UI" index="1" node_paths=PackedStringArray("section", "menu")]
 section = NodePath("../../Settings UI")
-menu = NodePath("../..")
+menu = NodePath("../../..")
 
-[node name="Settings UI" parent="." instance=ExtResource("2_2tfbb")]
+[node name="Settings UI" parent="CanvasLayer" instance=ExtResource("2_2tfbb")]
 visible = false
-layout_mode = 1
 offset_left = -126.0
-offset_top = -46.5
+offset_top = -46.0
 offset_right = 126.0
-offset_bottom = 46.5
+offset_bottom = 47.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="SectionButton2" parent="Settings UI" index="2" node_paths=PackedStringArray("section", "menu")]
+[node name="SectionButton2" parent="CanvasLayer/Settings UI" index="2" node_paths=PackedStringArray("section", "menu")]
 section = NodePath("../../Main Menu UI")
-menu = NodePath("../..")
+menu = NodePath("../../..")
 
-[node name="Level Select UI" parent="." instance=ExtResource("4_ny0ke")]
+[node name="Level Select UI" parent="CanvasLayer" instance=ExtResource("4_ny0ke")]
 visible = false
-layout_mode = 1
 offset_left = -125.0
-offset_top = -46.5
+offset_top = -81.0
 offset_right = 125.0
-offset_bottom = 46.5
+offset_bottom = 82.0
 
-[node name="0" parent="Level Select UI" index="1" node_paths=PackedStringArray("menu")]
-menu = NodePath("../..")
+[node name="0" parent="CanvasLayer/Level Select UI" index="1" node_paths=PackedStringArray("menu")]
+menu = NodePath("../../..")
 
-[node name="1" parent="Level Select UI" index="2" node_paths=PackedStringArray("menu")]
-menu = NodePath("../..")
+[node name="1" parent="CanvasLayer/Level Select UI" index="2" node_paths=PackedStringArray("menu")]
+menu = NodePath("../../..")
 
-[node name="2" parent="Level Select UI" index="3" node_paths=PackedStringArray("menu")]
-menu = NodePath("../..")
+[node name="2" parent="CanvasLayer/Level Select UI" index="3" node_paths=PackedStringArray("menu")]
+menu = NodePath("../../..")
 
-[node name="SectionButton" parent="Level Select UI" index="4" node_paths=PackedStringArray("section", "menu")]
+[node name="SectionButton" parent="CanvasLayer/Level Select UI" index="4" node_paths=PackedStringArray("section", "menu")]
 section = NodePath("../../Main Menu UI")
-menu = NodePath("../..")
+menu = NodePath("../../..")
 
-[editable path="Main Menu UI"]
-[editable path="Settings UI"]
-[editable path="Level Select UI"]
+[editable path="CanvasLayer/Main Menu UI"]
+[editable path="CanvasLayer/Settings UI"]
+[editable path="CanvasLayer/Level Select UI"]

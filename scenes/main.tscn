@@ -95,7 +95,7 @@ freeze_mode = 1
 [node name="MultiTargetCamera" type="Camera2D" parent="." node_paths=PackedStringArray("targets") groups=["camera"]]
 process_mode = 3
 script = ExtResource("5_tbgi4")
-min_zoom = 5.0
+min_zoom = 6.0
 max_zoom = 3.5
 margin = Vector2(800, 600)
 targets = [NodePath("../Characters/Ghost"), NodePath("../Characters/Human")]
