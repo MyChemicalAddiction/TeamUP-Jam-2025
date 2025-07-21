@@ -10,10 +10,10 @@ size = Vector2(19.9466, 20.5866)
 size = Vector2(0.826538, 21.5442)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mwxe"]
-size = Vector2(2.09384, 17.7141)
+size = Vector2(0.55101, 17.7141)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvtjl"]
-size = Vector2(2.09383, 17.7141)
+size = Vector2(0.55101, 17.7141)
 
 [node name="horizontal_platform" type="CharacterBody2D"]
 collision_layer = 64
@@ -58,16 +58,18 @@ metadata/_custom_type_script = "uid://dwqil4kc4xuat"
 
 [node name="LeftCollisionDetector" type="Area2D" parent="."]
 collision_layer = 0
+collision_mask = 3
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="LeftCollisionDetector"]
-position = Vector2(-211, -1)
+position = Vector2(-188, -1)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_5mwxe")
 
 [node name="RightCollisionDetector" type="Area2D" parent="."]
 collision_layer = 0
+collision_mask = 7
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="RightCollisionDetector"]
-position = Vector2(209, -1)
+position = Vector2(187, -1)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_fvtjl")
