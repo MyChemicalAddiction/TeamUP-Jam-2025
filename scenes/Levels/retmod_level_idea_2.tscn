@@ -20,6 +20,16 @@ size = Vector2(165.201, 1909)
 
 [node name="Level" type="Node2D"]
 
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="Audio"]
+bank_paths = ["res://assets/fmod_build/Desktop//Haunted_House.bank"]
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Audio"]
+event_name = "event:/AMBs/AMB_House"
+event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
+autoplay = true
+
 [node name="Background" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
@@ -159,7 +169,7 @@ next_level_scene_path = "res://scenes/Levels/mock_level.tscn"
 position = Vector2(256, 452)
 
 [node name="Ghost Continuous Button Area2" parent="Special Objects/Interactable" instance=ExtResource("8_85amx")]
-position = Vector2(1760, -888)
+position = Vector2(1751, -887)
 
 [node name="Continuous Button Area" parent="Special Objects/Interactable" instance=ExtResource("8_osvqq")]
 position = Vector2(-875, 417)
@@ -220,14 +230,6 @@ color = Color(0.0885599, 0.0885599, 0.0885599, 1)
 position = Vector2(186, 672)
 script = ExtResource("5_85amx")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://assets/fmod_build/Desktop//Haunted_House.bank"]
-
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/AMBs/AMB_House"
-event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
-autoplay = true
 
 [editable path="Special Objects/Hazards/AimedProjectileShooterArea"]
 [editable path="Special Objects/Interactable/FinishDoor"]
