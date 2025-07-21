@@ -16,6 +16,7 @@ script = ExtResource("1_h4sa2")
 object = NodePath("..")
 orientation = 1
 enabled = false
+is_enablee = true
 metadata/_custom_type_script = "uid://d4esf4meclpan"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

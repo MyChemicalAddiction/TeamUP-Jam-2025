@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://riuotyrpb2p2"]
+[gd_scene load_steps=11 format=3 uid="uid://riuotyrpb2p2"]
 
 [ext_resource type="Script" uid="uid://bt5qx0ha05v8h" path="res://scripts/classes/components/Implementations/animation/AnimationComponent.gd" id="1_giqcr"]
 [ext_resource type="Script" uid="uid://ba0im6i353yq8" path="res://scripts/classes/components/Implementations/functionality/AreaEnteredTrackerComponent.gd" id="1_r17rj"]
 [ext_resource type="Texture2D" uid="uid://o2chsr07oeqs" path="res://addons/fmod/icons/bank_icon.svg" id="2_r17rj"]
 [ext_resource type="Script" uid="uid://kbboeb0q588r" path="res://scripts/functionality/audio/AudioPlayerComponent.gd" id="4_4l5fa"]
+[ext_resource type="PackedScene" uid="uid://da03mkmgnylvx" path="res://scenes/functionality/arrows/component_arrow.tscn" id="5_6u3ko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l07bw"]
 size = Vector2(19.8934, 20.9986)
@@ -73,8 +74,8 @@ script = ExtResource("1_giqcr")
 animation_player = NodePath("../AnimationPlayer")
 on_enabled_animation = "press"
 on_disabled_animation = "release"
-area_tracker_component = NodePath("../AreaEnteredTrackerComponent")
 enabled = false
+area_tracker_component = NodePath("../AreaEnteredTrackerComponent")
 metadata/_custom_type_script = "uid://bt5qx0ha05v8h"
 
 [node name="AreaEnteredTrackerComponent" type="Node2D" parent="." node_paths=PackedStringArray("tracking_area")]
@@ -103,3 +104,6 @@ script = ExtResource("4_4l5fa")
 component = NodePath("../MAIN")
 mode = 1
 metadata/_custom_type_script = "uid://kbboeb0q588r"
+
+[node name="Component Arrow" parent="." node_paths=PackedStringArray("component") instance=ExtResource("5_6u3ko")]
+component = NodePath("../MAIN")

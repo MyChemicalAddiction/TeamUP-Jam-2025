@@ -15,6 +15,7 @@ metadata/_edit_group_ = true
 script = ExtResource("1_y4ggs")
 object = NodePath("..")
 enabled = false
+is_enablee = true
 metadata/_custom_type_script = "uid://d4esf4meclpan"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

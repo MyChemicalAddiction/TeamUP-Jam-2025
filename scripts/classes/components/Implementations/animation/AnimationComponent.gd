@@ -11,14 +11,6 @@ animation & optionally play another one when disabled.
 @export var on_enabled_animation: String
 @export var on_disabled_animation: String
 
-## Keeps track of if any areas are currently inside the area of the "Tracking Area" assigned to this component
-@export var area_tracker_component: AreaEnteredTrackerComponent
-
-func _ready():
-	super()
-	area_tracker_component.area_empty.connect(disable)
-	area_tracker_component.area_present.connect(enable)
-
 func _on_disable(): ## Hook for extra behavior on disabling.
 	if on_disabled_animation:
 		animation_player.play(on_disabled_animation)
