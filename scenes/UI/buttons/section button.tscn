@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmpxr4howyw3m"]
+
+[ext_resource type="Script" uid="uid://bro3w88p8iojd" path="res://scripts/classes/UI/buttons/SectionButton.gd" id="1_5b0hf"]
+
+[node name="SectionButton" type="Button" node_paths=PackedStringArray("audio_player")]
+text = "Back"
+script = ExtResource("1_5b0hf")
+audio_player = NodePath("FmodEventEmitter2D")
+metadata/_custom_type_script = "uid://bro3w88p8iojd"
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/UI/SFX_UI_Select"
+event_guid = "{cdc1a907-a4d0-4482-83eb-b1d81d4513f9}"

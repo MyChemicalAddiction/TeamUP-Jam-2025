@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://o2chsr07oeqs" path="res://addons/fmod/icons/bank_icon.svg" id="2_liwl2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l07bw"]
-size = Vector2(38, 22)
+size = Vector2(22.1038, 22)
 
 [sub_resource type="Animation" id="Animation_x87ur"]
 length = 0.001

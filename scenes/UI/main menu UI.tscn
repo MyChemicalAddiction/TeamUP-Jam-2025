@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dr5fxdp8vo6rl"]
 
-[ext_resource type="Script" uid="uid://bro3w88p8iojd" path="res://scripts/classes/UI/buttons/SectionButton.gd" id="1_u7kmm"]
+[ext_resource type="PackedScene" uid="uid://bmpxr4howyw3m" path="res://scenes/UI/buttons/section button.tscn" id="2_rkpoj"]
 
 [node name="Main Menu UI" type="VBoxContainer"]
 anchors_preset = 8
@@ -17,17 +17,11 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="LevelsButton" type="Button" parent="."]
+[node name="SectionButton2" parent="." instance=ExtResource("2_rkpoj")]
 layout_mode = 2
 text = "Levels"
-script = ExtResource("1_u7kmm")
-metadata/_custom_type_script = "uid://bro3w88p8iojd"
 
-[node name="SettingsButton" type="Button" parent="."]
-custom_minimum_size = Vector2(250, 0)
+[node name="SectionButton3" parent="." instance=ExtResource("2_rkpoj")]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Settings"
-script = ExtResource("1_u7kmm")
-metadata/_custom_type_script = "uid://bro3w88p8iojd"
+text = "Settings
+"

@@ -15,6 +15,9 @@ grow_vertical = 2
 script = ExtResource("1_2un8v")
 current_section = NodePath("Main Menu UI")
 
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://assets/fmod_build/Desktop//Master.strings.bank", "res://assets/fmod_build/Desktop//Master.bank", "res://assets/fmod_build/Desktop//UI.bank"]
+
 [node name="Main Menu UI" parent="." instance=ExtResource("1_u81ku")]
 layout_mode = 1
 offset_left = -125.0
@@ -22,11 +25,11 @@ offset_top = -33.0
 offset_right = 125.0
 offset_bottom = 33.0
 
-[node name="LevelsButton" parent="Main Menu UI" index="0" node_paths=PackedStringArray("section", "menu")]
+[node name="SectionButton2" parent="Main Menu UI" index="0" node_paths=PackedStringArray("section", "menu")]
 section = NodePath("../../Level Select UI")
 menu = NodePath("../..")
 
-[node name="SettingsButton" parent="Main Menu UI" index="1" node_paths=PackedStringArray("section", "menu")]
+[node name="SectionButton3" parent="Main Menu UI" index="1" node_paths=PackedStringArray("section", "menu")]
 section = NodePath("../../Settings UI")
 menu = NodePath("../..")
 
@@ -38,7 +41,7 @@ offset_top = -46.5
 offset_right = 126.0
 offset_bottom = 46.5
 
-[node name="SectionButton" parent="Settings UI" index="2" node_paths=PackedStringArray("section", "menu")]
+[node name="SectionButton2" parent="Settings UI" index="2" node_paths=PackedStringArray("section", "menu")]
 section = NodePath("../../Main Menu UI")
 menu = NodePath("../..")
 

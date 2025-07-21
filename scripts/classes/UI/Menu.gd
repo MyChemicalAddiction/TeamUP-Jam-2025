@@ -12,7 +12,7 @@ don't have a process function; they only communicate via signals back to the
 Menu.
 """
 
-## The resource main scene of the game
+## The resource of the main scene of the game
 @export var main_game_scene_res := preload("res://scenes/main.tscn")
 
 ## The current visible UI section

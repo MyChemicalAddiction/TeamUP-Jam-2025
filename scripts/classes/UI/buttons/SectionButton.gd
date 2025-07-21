@@ -10,6 +10,9 @@ signal section_switch(new_section)
 ## The top menu control node (to which it connects the section_switch signal)
 @export var menu: Control
 
+## The FMOD event emitter that plays SFX for this button when it's pressed
+@export var audio_player: FmodEventEmitter2D
+
 func _ready():
 	button_up.connect(switch_section)
 	section_switch.connect(menu.switch_section)
@@ -17,3 +20,4 @@ func _ready():
 ## Emits the section_switch signal, caught by the top menu node
 func switch_section():
 	section_switch.emit(section)
+	audio_player.play()
