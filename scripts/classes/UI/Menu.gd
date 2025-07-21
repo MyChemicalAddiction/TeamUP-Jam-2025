@@ -23,6 +23,9 @@ var default_section: Control
 ## The node reference to the main game scene (once instanced)
 var main_game_scene: Node
 
+## Emitted when a level is selected
+signal level_selected 
+
 func _ready():
 	default_section = current_section
 	current_section.visible = true
@@ -37,6 +40,8 @@ func switch_section(new_section):
 
 ## Loads a level as passed by a LevelButton's signal
 func instantiate_game(level: PackedScene):
+	level_selected.emit()
+	
 	current_section.visible = false ## Hides the current UI section
 	set_process(true)
 	

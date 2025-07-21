@@ -107,5 +107,4 @@ libraries = {
 }
 
 [node name="Component Arrow" parent="." node_paths=PackedStringArray("component") instance=ExtResource("6_c0p7n")]
-scale = Vector2(0.6239, 0.6239)
 component = NodePath("../MAIN")
