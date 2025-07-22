@@ -1,18 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://cclkqpsjouer1"]
+[gd_scene load_steps=6 format=3 uid="uid://cclkqpsjouer1"]
 
 [ext_resource type="Script" uid="uid://d4esf4meclpan" path="res://scripts/classes/components/Implementations/animation/MovingDoorComponent.gd" id="1_uef34"]
 [ext_resource type="Texture2D" uid="uid://dgna04txtwnyb" path="res://addons/fmod/icons/d_parameter_icon.svg" id="2_nxb6p"]
+[ext_resource type="Script" uid="uid://ba0im6i353yq8" path="res://scripts/classes/components/Implementations/functionality/AreaEnteredTrackerComponent.gd" id="3_cmsvx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpl0x"]
 size = Vector2(44, 414)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cmsvx"]
+size = Vector2(2.09384, 0.478752)
 
 [node name="Cursed Vertical Door" type="AnimatableBody2D"]
 collision_layer = 64
 sync_to_physics = false
 
-[node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("object")]
+[node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("object", "closing_collision_detector", "opening_collision_detector")]
 script = ExtResource("1_uef34")
 object = NodePath("..")
+closing_collision_detector = NodePath("../AreaEnteredTrackerComponent4")
+opening_collision_detector = NodePath("../AreaEnteredTrackerComponent3")
 enabled = false
 is_enablee = true
 metadata/_custom_type_script = "uid://d4esf4meclpan"
@@ -25,3 +31,35 @@ modulate = Color(0.584314, 1, 0.662745, 1)
 rotation = 1.57079
 scale = Vector2(23, 2.23807)
 texture = ExtResource("2_nxb6p")
+
+[node name="AreaEnteredTrackerComponent3" type="Node2D" parent="." node_paths=PackedStringArray("tracking_area")]
+script = ExtResource("3_cmsvx")
+tracking_area = NodePath("CollisionDetector")
+track_areas = false
+track_bodies = true
+metadata/_custom_type_script = "uid://ba0im6i353yq8"
+
+[node name="CollisionDetector" type="Area2D" parent="AreaEnteredTrackerComponent3"]
+collision_layer = 0
+collision_mask = 455
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="AreaEnteredTrackerComponent3/CollisionDetector"]
+position = Vector2(0, -208)
+scale = Vector2(18.1485, 2.08873)
+shape = SubResource("RectangleShape2D_cmsvx")
+
+[node name="AreaEnteredTrackerComponent4" type="Node2D" parent="." node_paths=PackedStringArray("tracking_area")]
+script = ExtResource("3_cmsvx")
+tracking_area = NodePath("CollisionDetector2")
+track_areas = false
+track_bodies = true
+metadata/_custom_type_script = "uid://ba0im6i353yq8"
+
+[node name="CollisionDetector2" type="Area2D" parent="AreaEnteredTrackerComponent4"]
+collision_layer = 0
+collision_mask = 455
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="AreaEnteredTrackerComponent4/CollisionDetector2"]
+position = Vector2(0, 208)
+scale = Vector2(18.1485, 2.08873)
+shape = SubResource("RectangleShape2D_cmsvx")

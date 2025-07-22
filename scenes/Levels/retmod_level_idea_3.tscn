@@ -37,6 +37,9 @@ position = Vector2(-408, -89)
 [node name="FinishDoor" parent="Special Objects/Interactable" instance=ExtResource("4_0kc5q")]
 position = Vector2(2495, -117)
 
+[node name="MAIN" parent="Special Objects/Interactable/FinishDoor" index="0"]
+next_level_scene_path = "res://scenes/Levels/mock_level.tscn"
+
 [node name="Lever" parent="Special Objects/Interactable" instance=ExtResource("5_ta4au")]
 position = Vector2(119, -78)
 

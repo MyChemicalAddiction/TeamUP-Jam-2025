@@ -25,28 +25,35 @@ signal area_present
 ## The list of areas within the specific area's grasp.
 var active_areas: Array[Node]
 
-func _ready():
-	tracking_area.area_entered.connect(_on_area_entered) ## Dynamically connects own area_entered signal to self
-	tracking_area.area_exited.connect(_on_area_exited) ## Dynamically connects own area_exited signal to self
+@export var track_areas := true ## Whether this tracks areas entering the area.
+@export var track_bodies := false ## Whether this tracks bodies entering the area.
 
-func _on_area_entered(area: Area2D) -> void: ## Adds the InteractionArea to active_areas if it's in the InteractionManager's reach.
+func _ready():
+	if track_areas:
+		tracking_area.area_entered.connect(_on_area_entered) ## Dynamically connects own area_entered signal to self
+		tracking_area.area_exited.connect(_on_area_exited) ## Dynamically connects own area_exited signal to self
+	if track_bodies:
+		tracking_area.body_entered.connect(_on_area_entered) ## Dynamically connects own area_entered signal to self
+		tracking_area.body_exited.connect(_on_area_exited) ## Dynamically connects own area_exited signal to self
+
+func _on_area_entered(area: Node) -> void: ## Adds the InteractionArea to active_areas if it's in the InteractionManager's reach.
 	_register_area(area)
 
-func _on_area_exited(area: Area2D) -> void: ## When an area leaves the interaction manager's reach, it should be erased from active_areas
+func _on_area_exited(area: Node) -> void: ## When an area leaves the interaction manager's reach, it should be erased from active_areas
 	_unregister_area(area)
 
 ## Implementation-defined for condition checking before appending an area
 func area_condition_check(_area) -> bool: 
 	return true
 
-func _register_area(area: Area2D): ## Adds an area to active_areas
+func _register_area(area: Node): ## Adds an area/body to active_areas
 	if area_condition_check(area):
 		active_areas.push_back(area)
 		area_entered.emit()
 		if len(active_areas) == 1: 
 			area_present.emit()
 	
-func _unregister_area(area: Area2D): ## Removes an area from active_areas
+func _unregister_area(area: Node): ## Removes an area/body from active_areas
 	active_areas.erase(area)
 	area_exited.emit()
 	if len(active_areas) == 0:

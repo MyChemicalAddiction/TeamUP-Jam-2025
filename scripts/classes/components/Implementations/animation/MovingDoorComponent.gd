@@ -17,6 +17,38 @@ var velocity: Vector2
 @onready var closing_velocity: Vector2 = Vector2(0, speed) if !orientation else Vector2(-speed, 0) 
 @onready var opening_velocity: Vector2 = Vector2(0, -speed) if !orientation else Vector2(speed, 0) 
 
+@export var closing_collision_detector: AreaEnteredTrackerComponent ## Detects collisions with objects & players when closing to stop moving if something is in the way.
+@export var opening_collision_detector: AreaEnteredTrackerComponent ## Detects collisions with objects & players wehn opening to stop moving if something is in the way.
+
+func _ready():
+	super()
+	
+	closing_collision_detector.area_present.connect(closing_detector_entered)
+	opening_collision_detector.area_present.connect(opening_detector_entered)
+	
+	closing_collision_detector.area_empty.connect(closing_detector_exited)
+	opening_collision_detector.area_empty.connect(opening_detector_exited)
+
+func opening_detector_entered():
+	if enabled:
+		set_physics_process(false)
+		print('hey 1')
+		
+func closing_detector_entered():
+	if !enabled:
+		set_physics_process(false)
+		print('hey 2')
+		
+func opening_detector_exited():
+	if enabled:
+		set_physics_process(true)
+		print('hey 3')
+		
+func closing_detector_exited():
+	if !enabled:
+		set_physics_process(true)
+		print('hey 4')
+		
 func _on_enable():
 	velocity = opening_velocity
 	set_physics_process(true)
