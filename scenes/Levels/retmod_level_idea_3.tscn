@@ -46,7 +46,7 @@ position = Vector2(119, -78)
 [node name="Movable rigid bodies" type="Node2D" parent="Special Objects"]
 
 [node name="Box" parent="Special Objects/Movable rigid bodies" instance=ExtResource("7_0kc5q")]
-position = Vector2(416, -56)
+position = Vector2(376, -5)
 
 [node name="Vertical Door" parent="Special Objects/Movable rigid bodies" instance=ExtResource("6_0kc5q")]
 position = Vector2(388, -926)

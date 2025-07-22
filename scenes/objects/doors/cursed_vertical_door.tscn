@@ -32,11 +32,12 @@ rotation = 1.57079
 scale = Vector2(23, 2.23807)
 texture = ExtResource("2_nxb6p")
 
-[node name="AreaEnteredTrackerComponent3" type="Node2D" parent="." node_paths=PackedStringArray("tracking_area")]
+[node name="AreaEnteredTrackerComponent3" type="Node2D" parent="." node_paths=PackedStringArray("tracking_area", "excluded")]
 script = ExtResource("3_cmsvx")
 tracking_area = NodePath("CollisionDetector")
 track_areas = false
 track_bodies = true
+excluded = [NodePath("..")]
 metadata/_custom_type_script = "uid://ba0im6i353yq8"
 
 [node name="CollisionDetector" type="Area2D" parent="AreaEnteredTrackerComponent3"]
@@ -48,11 +49,12 @@ position = Vector2(0, -208)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_cmsvx")
 
-[node name="AreaEnteredTrackerComponent4" type="Node2D" parent="." node_paths=PackedStringArray("tracking_area")]
+[node name="AreaEnteredTrackerComponent4" type="Node2D" parent="." node_paths=PackedStringArray("tracking_area", "excluded")]
 script = ExtResource("3_cmsvx")
 tracking_area = NodePath("CollisionDetector2")
 track_areas = false
 track_bodies = true
+excluded = [NodePath("..")]
 metadata/_custom_type_script = "uid://ba0im6i353yq8"
 
 [node name="CollisionDetector2" type="Area2D" parent="AreaEnteredTrackerComponent4"]
