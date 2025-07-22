@@ -31,6 +31,7 @@ func _ready():
 
 func opening_detector_entered():
 	if enabled:
+		print(opening_collision_detector.active_areas)
 		set_physics_process(false)
 		print('hey 1')
 		
@@ -38,6 +39,7 @@ func closing_detector_entered():
 	if !enabled:
 		set_physics_process(false)
 		print('hey 2')
+		print(opening_collision_detector.active_areas)
 		
 func opening_detector_exited():
 	if enabled:

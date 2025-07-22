@@ -45,19 +45,16 @@ position = Vector2(119, -78)
 
 [node name="Movable rigid bodies" type="Node2D" parent="Special Objects"]
 
-[node name="Enemies" type="Node2D" parent="Special Objects"]
+[node name="Box" parent="Special Objects/Movable rigid bodies" instance=ExtResource("7_0kc5q")]
+position = Vector2(416, -56)
 
-[node name="Moving Platforms" type="Node2D" parent="Special Objects"]
+[node name="Vertical Door" parent="Special Objects/Movable rigid bodies" instance=ExtResource("6_0kc5q")]
+position = Vector2(388, -926)
 
-[node name="Vertical Door" parent="Special Objects/Moving Platforms" instance=ExtResource("6_0kc5q")]
-position = Vector2(325, -695)
-
-[node name="MAIN" parent="Special Objects/Moving Platforms/Vertical Door" index="0" node_paths=PackedStringArray("enable_manager")]
+[node name="MAIN" parent="Special Objects/Movable rigid bodies/Vertical Door" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Interactable/Lever/MAIN")
 
-[node name="Box" parent="Special Objects/Moving Platforms" instance=ExtResource("7_0kc5q")]
-position = Vector2(271, -22)
-rotation = 1.5708
+[node name="Enemies" type="Node2D" parent="Special Objects"]
 
 [node name="Darkness" type="CanvasModulate" parent="."]
 visible = false
@@ -69,4 +66,4 @@ metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 
 [editable path="Special Objects/Interactable/FinishDoor"]
 [editable path="Special Objects/Interactable/Lever"]
-[editable path="Special Objects/Moving Platforms/Vertical Door"]
+[editable path="Special Objects/Movable rigid bodies/Vertical Door"]
