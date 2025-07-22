@@ -7,34 +7,34 @@ button is being pressed).
 """
 
 @export var object: Node ## The door that needs to move up/down
+
+@export var speed: float = 10 ## The speed at which this door opens/closes
+
 @export var MOVING_DISTANCE := 450 ## How far should the door move up/down
-@export var MOVING_TIME := 0.6 ## THe time in seconds for the object to open/close
 
-@onready var current_tween : Tween ## The current tween being used
+@onready var closed_pos : Vector2 = object.position
 
-@onready var closed_pos = object.position
+var open_pos: Vector2 = closed_pos - Vector2(0, MOVING_DISTANCE) if !orientation else closed_pos + Vector2(MOVING_DISTANCE, 0)
 
-var open_pos: Vector2
+var velocity: Vector2
 
 @export_enum("Vertical", "Horizontal") var orientation: int = 0
 
+@onready var closing_velocity: Vector2 = Vector2(0, speed) if !orientation else Vector2(-speed, 0) 
+@onready var opening_velocity: Vector2 = Vector2(0, -speed) if !orientation else Vector2(speed, 0) 
+
 func _ready():
 	super()
-	if !orientation: open_pos = closed_pos - Vector2(0, MOVING_DISTANCE)
-	else: open_pos = closed_pos - Vector2(MOVING_DISTANCE, 0)
+	
+	set_physics_process(false)
 
 func _on_enable():
-	if current_tween: current_tween.kill()
-	current_tween = self.create_tween()
-	if orientation:
-		current_tween.tween_property(object, "position", open_pos, MOVING_TIME * (abs(object.position.x - open_pos.x) / MOVING_DISTANCE))
-	else:
-		current_tween.tween_property(object, "position", open_pos, MOVING_TIME * (abs(object.position.y - open_pos.y) / MOVING_DISTANCE))
+	velocity = opening_velocity
+	set_physics_process(true)
+
+func _physics_process(_delta):
+	object.move_and_collide(velocity)
 		
 func _on_disable():
-	if current_tween: current_tween.kill()
-	current_tween = self.create_tween()
-	if orientation:
-		current_tween.tween_property(object, "position", closed_pos, MOVING_TIME * (abs(object.position.x - closed_pos.x) / MOVING_DISTANCE))
-	else:
-		current_tween.tween_property(object, "position", closed_pos, MOVING_TIME * (abs(object.position.y - closed_pos.y) / MOVING_DISTANCE))
+	velocity = closing_velocity
+	set_physics_process(true)
