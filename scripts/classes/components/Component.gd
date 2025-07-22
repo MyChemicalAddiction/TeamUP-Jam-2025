@@ -17,6 +17,9 @@ signal on_disabled
 ## Keeps track of if any areas are currently inside the area of the "Tracking Area" assigned to this component
 @export var area_tracker_component: AreaEnteredTrackerComponent
 
+## Whether this component is able to be enabled/disabled
+var actable := true
+
 ## A node that can send a disable/enable signal which disables/enables this component.
 @export var enable_manager: Node 
 
@@ -57,14 +60,16 @@ func set_enablee(new_enablee: Node):
 	enablee_set.emit(enablee)
 
 func enable(): ## Sets enabled variable to true & triggers any extra relevant implementation-defined behavior.
-	enabled = true
-	on_enabled.emit()
-	_on_enable()
+	if actable:
+		enabled = true
+		on_enabled.emit()
+		_on_enable()
 
 func disable(): ## Sets enabled variable to false & triggers any extra relevant implementation-defined behavior.
-	enabled = false
-	on_disabled.emit()
-	_on_disable()
+	if actable:
+		enabled = false
+		on_disabled.emit()
+		_on_disable()
 
 func _on_enabling_area_entered(_area):
 	enable()
