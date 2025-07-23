@@ -8,6 +8,10 @@
 
 [node name="Level" type="Node2D"]
 
+[node name="PlayersStartMarker" type="Marker2D" parent="."]
+script = ExtResource("5_5ky8n")
+metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
+
 [node name="Background" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
@@ -41,9 +45,5 @@ position = Vector2(2495, -117)
 
 [node name="Darkness" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
-
-[node name="PlayersStartMarker" type="Marker2D" parent="."]
-script = ExtResource("5_5ky8n")
-metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 
 [editable path="Special Objects/Interactable/FinishDoor"]
