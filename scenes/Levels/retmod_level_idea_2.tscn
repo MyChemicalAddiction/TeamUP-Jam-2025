@@ -199,7 +199,7 @@ position = Vector2(1704, -736)
 [node name="Moving Platforms" type="Node2D" parent="Special Objects"]
 
 [node name="horizontal_platform" parent="Special Objects/Moving Platforms" instance=ExtResource("6_rhl33")]
-position = Vector2(-110, -406)
+position = Vector2(-107, -481)
 
 [node name="Cursed Horizontal Door" parent="Special Objects/Moving Platforms" instance=ExtResource("9_evl5c")]
 position = Vector2(4, 326)
