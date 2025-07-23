@@ -140,8 +140,8 @@ position = Vector2(2271, 844)
 position = Vector2(2359, 846)
 
 [node name="AimedProjectileShooterArea" parent="Special Objects/Hazards" instance=ExtResource("5_osvqq")]
-position = Vector2(-1213, -802)
-rotation = -1.45818
+position = Vector2(-1192, -665)
+rotation = -1.46038
 
 [node name="Sprite2D" parent="Special Objects/Hazards/AimedProjectileShooterArea" index="1"]
 position = Vector2(2.56264, 849.038)
@@ -202,7 +202,7 @@ position = Vector2(1704, -736)
 [node name="Moving Platforms" type="Node2D" parent="Special Objects"]
 
 [node name="horizontal_platform" parent="Special Objects/Moving Platforms" instance=ExtResource("6_rhl33")]
-position = Vector2(-2, -520)
+position = Vector2(-110, -406)
 
 [node name="Cursed Horizontal Door" parent="Special Objects/Moving Platforms" instance=ExtResource("9_evl5c")]
 position = Vector2(4, 326)

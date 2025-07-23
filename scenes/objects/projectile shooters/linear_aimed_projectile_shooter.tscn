@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://b0ckbwjy0xfp2"]
+
+[ext_resource type="Script" uid="uid://e0p143fkoaat" path="res://scripts/functionality/aimed_projectile_shooter_area.gd" id="1_by52x"]
+[ext_resource type="Script" uid="uid://bmjff2qd1s3id" path="res://scripts/classes/components/Implementations/functionality/ShooterAreaEnteredTrackerComponent.gd" id="2_sb7mf"]
+[ext_resource type="Script" uid="uid://cvbk7ssl4w7ch" path="res://scripts/classes/components/Implementations/state machines/StateMachine.gd" id="3_x88g2"]
+[ext_resource type="Script" uid="uid://c6vhl4ahb0v66" path="res://scripts/classes/components/Implementations/state machines/States/Enemies/Static/AimedProjectileShooterArea/StaticAimedShooterIdleState.gd" id="4_oogkr"]
+[ext_resource type="Script" uid="uid://dqn10aofk2yp7" path="res://scripts/classes/components/Implementations/state machines/States/Enemies/Static/SimpleProjectileShooter/SimpleProjectileShooterShootingState.gd" id="5_rm1jc"]
+[ext_resource type="Script" uid="uid://bboji5tvpnhjv" path="res://scripts/classes/projectile/ProjectileShooter.gd" id="6_1uh4q"]
+[ext_resource type="PackedScene" uid="uid://hibwxjb2khf0" path="res://scenes/objects/projectiles/Stupid Simple Projectile.tscn" id="7_lrij2"]
+[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="8_5h66e"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rm1jc"]
+b = Vector2(-1, 561)
+
+[node name="AimedProjectileShooterArea" type="Area2D" node_paths=PackedStringArray("state_machine")]
+collision_mask = 7
+script = ExtResource("1_by52x")
+state_machine = NodePath("Components/StateMachine")
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="AreaEnteredTrackerComponent" type="Node2D" parent="Components" node_paths=PackedStringArray("tracking_area", "object")]
+script = ExtResource("2_sb7mf")
+tracking_area = NodePath("../..")
+object = NodePath("../..")
+metadata/_custom_type_script = "uid://ba0im6i353yq8"
+
+[node name="StateMachine" type="Node2D" parent="Components" node_paths=PackedStringArray("starting_state", "object")]
+script = ExtResource("3_x88g2")
+starting_state = NodePath("StaticAimedShooterIdleState")
+object = NodePath("../ProjectileShooter")
+metadata/_custom_type_script = "uid://cvbk7ssl4w7ch"
+
+[node name="StaticAimedShooterIdleState" type="Node2D" parent="Components/StateMachine"]
+script = ExtResource("4_oogkr")
+metadata/_custom_type_script = "uid://c6vhl4ahb0v66"
+
+[node name="SimpleProjectileShooterShootingState" type="Node2D" parent="Components/StateMachine" node_paths=PackedStringArray("projectile_shooter", "area_tracking_component", "idleState")]
+script = ExtResource("5_rm1jc")
+projectile_shooter = NodePath("../../ProjectileShooter")
+area_tracking_component = NodePath("../../AreaEnteredTrackerComponent")
+idleState = NodePath("../StaticAimedShooterIdleState")
+metadata/_custom_type_script = "uid://dqn10aofk2yp7"
+
+[node name="ProjectileShooter" type="Node2D" parent="Components" node_paths=PackedStringArray("projectile_holder")]
+rotation = 1.5708
+script = ExtResource("6_1uh4q")
+projectile_scene = ExtResource("7_lrij2")
+projectile_holder = NodePath("../..")
+metadata/_custom_type_script = "uid://bboji5tvpnhjv"
+
+[node name="Sprite2D" type="Sprite2D" parent="Components/ProjectileShooter"]
+modulate = Color(0.704081, 0, 0.0804177, 1)
+rotation = 1.5708
+texture = ExtResource("8_5h66e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_rm1jc")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 566, 0, 0)
