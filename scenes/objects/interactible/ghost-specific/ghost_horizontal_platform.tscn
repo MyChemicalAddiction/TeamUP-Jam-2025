@@ -17,6 +17,7 @@ size = Vector2(30.9668, 102.454)
 
 [node name="ghost_platform" type="CharacterBody2D"]
 collision_layer = 64
+collision_mask = 3
 
 [node name="Icon" type="Sprite2D" parent="."]
 self_modulate = Color(0.203708, 0.360525, 0.125536, 1)
