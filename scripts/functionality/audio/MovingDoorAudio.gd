@@ -9,8 +9,12 @@ Encapsulates logic for playing SFX of moving vertical/horizontal doors:
 @export var door_component: MovingDoorComponent
 
 func _ready():
+	SceneManager.loading_scene.connect(queue_free)
+	
 	door_component.stopped_signal.connect(on_stopped)
 	door_component.moving_signal.connect(on_moving)
+
+
 
 func on_stopped():
 	print('stopped')

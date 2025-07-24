@@ -150,7 +150,6 @@ rotation = -1.57079
 
 [node name="CollisionShape2D" parent="Special Objects/Hazards/AimedProjectileShooterArea2" index="2"]
 shape = SubResource("SegmentShape2D_osvqq")
-original_b = Vector2(0, 1752.26)
 
 [node name="Interactable" type="Node2D" parent="Special Objects"]
 

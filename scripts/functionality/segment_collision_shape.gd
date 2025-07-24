@@ -1,14 +1,17 @@
 extends CollisionShape2D
 
-@export var original_b := Vector2(0, 600)
+
 var target_area: Node = null
 
-@onready var segment := shape as SegmentShape2D
+@onready var segment := shape.duplicate() as SegmentShape2D
+@onready var original_b := segment.b
+
 @export var area_tracker: AreaEnteredTrackerComponent
 @export var line: Line2D
 
 func _ready():
-	segment.b = original_b 
+	shape = segment
+	
 	line.points[1] = segment.b
 	
 	area_tracker.connect("area_entered", _on_area_entered)
