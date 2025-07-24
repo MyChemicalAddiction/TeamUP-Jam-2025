@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b75dcm16rsq2f"]
+[gd_scene load_steps=8 format=3 uid="uid://b75dcm16rsq2f"]
 
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="1_kdt2c"]
 [ext_resource type="Script" uid="uid://dwqil4kc4xuat" path="res://scripts/classes/components/Implementations/functionality/HorizontalPlatformMovementComponent.gd" id="2_5mwxe"]
+[ext_resource type="Script" uid="uid://ba0im6i353yq8" path="res://scripts/classes/components/Implementations/functionality/AreaEnteredTrackerComponent.gd" id="3_fvtjl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kt7wl"]
 size = Vector2(19.9466, 20.5866)
@@ -52,8 +53,8 @@ shape = SubResource("RectangleShape2D_djl51")
 [node name="PlatformMovementComponent" type="Node2D" parent="Components" node_paths=PackedStringArray("object", "right_collision_detector", "left_collision_detector")]
 script = ExtResource("2_5mwxe")
 object = NodePath("../..")
-right_collision_detector = NodePath("../../CollisionDetector2")
-left_collision_detector = NodePath("../../CollisionDetector")
+right_collision_detector = NodePath("../../CollisionDetector2/AreaEnteredTrackerComponent")
+left_collision_detector = NodePath("../../CollisionDetector/AreaEnteredTrackerComponent")
 metadata/_custom_type_script = "uid://dwqil4kc4xuat"
 
 [node name="CollisionDetector" type="Area2D" parent="."]
@@ -65,6 +66,14 @@ position = Vector2(-188, -1)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_5mwxe")
 
+[node name="AreaEnteredTrackerComponent" type="Node2D" parent="CollisionDetector" node_paths=PackedStringArray("tracking_area", "excluded")]
+script = ExtResource("3_fvtjl")
+tracking_area = NodePath("..")
+track_areas = false
+track_bodies = true
+excluded = [NodePath("..")]
+metadata/_custom_type_script = "uid://ba0im6i353yq8"
+
 [node name="CollisionDetector2" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 455
@@ -73,3 +82,11 @@ collision_mask = 455
 position = Vector2(187, -1)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_fvtjl")
+
+[node name="AreaEnteredTrackerComponent" type="Node2D" parent="CollisionDetector2" node_paths=PackedStringArray("tracking_area", "excluded")]
+script = ExtResource("3_fvtjl")
+tracking_area = NodePath("..")
+track_areas = false
+track_bodies = true
+excluded = [NodePath("..")]
+metadata/_custom_type_script = "uid://ba0im6i353yq8"

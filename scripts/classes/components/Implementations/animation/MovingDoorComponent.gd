@@ -20,6 +20,9 @@ var velocity: Vector2
 @export var closing_collision_detector: AreaEnteredTrackerComponent ## Detects collisions with objects & players when closing to stop moving if something is in the way.
 @export var opening_collision_detector: AreaEnteredTrackerComponent ## Detects collisions with objects & players wehn opening to stop moving if something is in the way.
 
+signal moving_signal
+signal stopped_signal
+
 func _ready():
 	super()
 	
@@ -31,27 +34,38 @@ func _ready():
 
 func opening_detector_entered():
 	if enabled:
-		set_physics_process(false)
+		stop()
 		
 func closing_detector_entered():
 	if !enabled:
-		set_physics_process(false)
+		stop()
 		
 func opening_detector_exited():
 	if enabled:
-		set_physics_process(true)
+		move()
 		
 func closing_detector_exited():
 	if !enabled:
-		set_physics_process(true)
+		move()
 		
 func _on_enable():
 	velocity = opening_velocity
-	set_physics_process(true)
+	if len(opening_collision_detector.active_areas) == 0:
+		move()
 
 func _physics_process(delta):
 	object.move_and_collide(velocity * delta)
 		
 func _on_disable():
 	velocity = closing_velocity
+	if len(closing_collision_detector.active_areas) == 0:
+		move()
+
+func move():
 	set_physics_process(true)
+	moving_signal.emit()
+	
+func stop():
+	set_physics_process(false)
+	stopped_signal.emit()
+	
