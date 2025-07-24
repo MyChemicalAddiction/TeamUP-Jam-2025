@@ -13,7 +13,9 @@ func _ready():
 	door_component.moving_signal.connect(on_moving)
 
 func on_stopped():
+	print('stopped')
 	stop()
 
 func on_moving():
-	play(false)
+	play()
+	print('playing')
