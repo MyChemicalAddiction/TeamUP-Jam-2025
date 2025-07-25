@@ -206,17 +206,26 @@ position = Vector2(4, 326)
 [node name="MAIN" parent="Special Objects/Moving Platforms/Cursed Horizontal Door" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Interactable/Ghost Continuous Button Area/MAIN")
 
+[node name="FmodEventEmitter2D" parent="Special Objects/Moving Platforms/Cursed Horizontal Door" index="5"]
+event_name = "event:/Doors/old_Moving_Doors"
+
 [node name="Vertical Door" parent="Special Objects/Moving Platforms" instance=ExtResource("13_osvqq")]
 position = Vector2(759, -801)
 
 [node name="MAIN" parent="Special Objects/Moving Platforms/Vertical Door" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Interactable/Ghost Continuous Button Area2/MAIN")
 
+[node name="FmodEventEmitter2D" parent="Special Objects/Moving Platforms/Vertical Door" index="5"]
+event_name = "event:/Doors/old_Moving_Doors"
+
 [node name="Vertical Door2" parent="Special Objects/Moving Platforms" instance=ExtResource("13_osvqq")]
 position = Vector2(-1131, -372)
 
 [node name="MAIN" parent="Special Objects/Moving Platforms/Vertical Door2" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Interactable/Continuous Button Area/MAIN")
+
+[node name="FmodEventEmitter2D" parent="Special Objects/Moving Platforms/Vertical Door2" index="5"]
+event_name = "event:/Doors/old_Moving_Doors"
 
 [node name="Darkness" type="CanvasModulate" parent="."]
 visible = false

@@ -193,7 +193,6 @@ enable_manager = NodePath("../../../Switches/Continuous Button Area/MAIN")
 
 [node name="Cursed Vertical Door" parent="Special Objects/Moving Doors" instance=ExtResource("10_imigb")]
 position = Vector2(-955, -102)
-collision_mask = 1
 
 [node name="MAIN" parent="Special Objects/Moving Doors/Cursed Vertical Door" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Switches/Ghost Continuous Button Area2/MAIN")
