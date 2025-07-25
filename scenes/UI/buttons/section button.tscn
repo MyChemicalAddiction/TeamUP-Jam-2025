@@ -9,5 +9,5 @@ audio_player = NodePath("FmodEventEmitter2D")
 metadata/_custom_type_script = "uid://bro3w88p8iojd"
 
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/UI/SFX_UI_Select"
-event_guid = "{cdc1a907-a4d0-4482-83eb-b1d81d4513f9}"
+event_name = "event:/UI/SFX_UI_MainMenu"
+event_guid = "{37d6a8ad-0002-4313-bc15-0caaef2c321d}"
