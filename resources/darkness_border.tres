@@ -2,14 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://bytehsip8oplv" path="res://assets/visual/placeholders/darknessblack.png" id="1_6v1y1"]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bsq3i"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6v1y1"]
 polygon = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i8c7m"]
 texture = ExtResource("1_6v1y1")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
-0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_bsq3i")
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_6v1y1")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
 
 [resource]

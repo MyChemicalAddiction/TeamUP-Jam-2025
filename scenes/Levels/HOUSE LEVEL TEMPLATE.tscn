@@ -10,6 +10,9 @@
 
 [node name="Level" type="Node2D"]
 
+[node name="Border" parent="." instance=ExtResource("3_3xpag")]
+tile_set = ExtResource("5_3xpag")
+
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
 script = ExtResource("1_7n0sf")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
@@ -26,9 +29,6 @@ tile_set = ExtResource("3_1tevl")
 
 [node name="Tiles" parent="." instance=ExtResource("3_3xpag")]
 tile_set = ExtResource("4_1tevl")
-
-[node name="Border" parent="." instance=ExtResource("3_3xpag")]
-tile_set = ExtResource("5_3xpag")
 
 [node name="Special Objects" type="Node2D" parent="."]
 

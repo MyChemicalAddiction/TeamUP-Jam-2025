@@ -1,12 +1,13 @@
-[gd_scene load_steps=16 format=4 uid="uid://78xa0hq56pji"]
+[gd_scene load_steps=17 format=4 uid="uid://78xa0hq56pji"]
 
-[ext_resource type="Texture2D" uid="uid://xw2i423f08wv" path="res://assets/visual/placeholders/wood.png" id="1_gilkv"]
 [ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/simple_platform_tilemap_placeholder.tscn" id="2_rhl33"]
 [ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="3_ohetx"]
+[ext_resource type="TileSet" uid="uid://884ga5kdmv1k" path="res://resources/ground_bg_tileset.tres" id="3_p72ix"]
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/interactible/finish_door.tscn" id="4_cxlq3"]
 [ext_resource type="PackedScene" uid="uid://d27ix3phd1jfc" path="res://scenes/objects/hazards/spikes.tscn" id="4_d0vn0"]
 [ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="5_85amx"]
 [ext_resource type="PackedScene" uid="uid://b8tomno4vy81t" path="res://scenes/objects/movable rigid bodies/cursed box.tscn" id="5_cxlq3"]
+[ext_resource type="TileSet" uid="uid://p35k8y3kcuqe" path="res://resources/darkness_border.tres" id="5_mus5x"]
 [ext_resource type="PackedScene" uid="uid://dgudsm50jqbt8" path="res://scenes/objects/movable rigid bodies/box.tscn" id="5_ohetx"]
 [ext_resource type="PackedScene" uid="uid://b0ckbwjy0xfp2" path="res://scenes/objects/projectile shooters/linear_aimed_projectile_shooter.tscn" id="6_ij1pd"]
 [ext_resource type="PackedScene" uid="uid://b75dcm16rsq2f" path="res://scenes/objects/moving platforms/horizontal_platform.tscn" id="6_rhl33"]
@@ -20,10 +21,20 @@ b = Vector2(0, 1752.26)
 
 [node name="Level" type="Node2D"]
 
+[node name="Border" parent="." instance=ExtResource("2_rhl33")]
+tile_set = ExtResource("5_mus5x")
+
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
 position = Vector2(186, 672)
 script = ExtResource("5_85amx")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
+
+[node name="Black Darkness" type="ColorRect" parent="."]
+offset_left = -3073.0
+offset_top = -1870.0
+offset_right = 3114.0
+offset_bottom = 1910.0
+color = Color(0, 0, 0, 1)
 
 [node name="Audio" type="Node2D" parent="."]
 
@@ -35,11 +46,8 @@ event_name = "event:/AMBs/AMB_House"
 event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
 autoplay = true
 
-[node name="Background" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Background"]
-scale = Vector2(573.75, 400.29)
-texture = ExtResource("1_gilkv")
+[node name="BG" parent="." instance=ExtResource("2_rhl33")]
+tile_set = ExtResource("3_p72ix")
 
 [node name="Simple Platform Tilemap Placeholder" parent="." instance=ExtResource("2_rhl33")]
 position = Vector2(220, 89)
@@ -51,98 +59,66 @@ tile_map_data = PackedByteArray("AADl/x4AAAANADAAAFAEAB4AAAANADAAAFAEABYAAAAIADA
 position = Vector2(-408, -89)
 
 [node name="Candle" parent="Special Objects/Candles" instance=ExtResource("3_ohetx")]
+position = Vector2(207, 87)
+
+[node name="Candle2" parent="Special Objects/Candles" instance=ExtResource("3_ohetx")]
+position = Vector2(-940, -522)
+
+[node name="Candle3" parent="Special Objects/Candles" instance=ExtResource("3_ohetx")]
+position = Vector2(1628, -538)
 
 [node name="Hazards" type="Node2D" parent="Special Objects"]
 
 [node name="Spikes" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(-1333, 844)
+position = Vector2(-1310, 846)
 
 [node name="Spikes2" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(-1206, 843)
+position = Vector2(-1183, 845)
 
 [node name="Spikes3" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(-1077, 843)
+position = Vector2(-1054, 845)
 
 [node name="Spikes4" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(-947, 844)
+position = Vector2(-924, 846)
 
 [node name="Spikes5" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(-820, 843)
+position = Vector2(-797, 845)
 
 [node name="Spikes6" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(-691, 843)
+position = Vector2(-668, 845)
 
 [node name="Spikes7" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(-560, 843)
+position = Vector2(-537, 845)
 
 [node name="Spikes8" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(-433, 842)
+position = Vector2(-410, 844)
 
 [node name="Spikes9" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(-304, 842)
+position = Vector2(-281, 844)
 
 [node name="Spikes10" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(-175, 842)
+position = Vector2(-152, 844)
 
 [node name="Spikes11" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(-48, 841)
+position = Vector2(-25, 843)
 
 [node name="Spikes12" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(81, 841)
+position = Vector2(104, 843)
 
 [node name="Spikes13" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(212, 842)
+position = Vector2(235, 844)
 
 [node name="Spikes14" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(339, 841)
+position = Vector2(362, 843)
 
 [node name="Spikes15" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(468, 841)
+position = Vector2(491, 843)
 
 [node name="Spikes16" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(598, 843)
+position = Vector2(633, 843)
 
 [node name="Spikes17" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(725, 842)
-
-[node name="Spikes18" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(854, 842)
-
-[node name="Spikes19" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(985, 841)
-
-[node name="Spikes20" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(1112, 840)
-
-[node name="Spikes21" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(1241, 840)
-
-[node name="Spikes22" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(1371, 841)
-
-[node name="Spikes23" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(1498, 840)
-
-[node name="Spikes24" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(1627, 840)
-
-[node name="Spikes25" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(1757, 841)
-
-[node name="Spikes26" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(1884, 840)
-
-[node name="Spikes27" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(2013, 840)
-
-[node name="Spikes28" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(2144, 845)
-
-[node name="Spikes29" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(2271, 844)
-
-[node name="Spikes30" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
-position = Vector2(2359, 846)
+position = Vector2(774, 843)
 
 [node name="AimedProjectileShooterArea2" parent="Special Objects/Hazards" instance=ExtResource("6_ij1pd")]
 position = Vector2(-1234, -626)
@@ -219,7 +195,6 @@ position = Vector2(-1131, -372)
 enable_manager = NodePath("../../../Interactable/Continuous Button Area/MAIN")
 
 [node name="Darkness" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0.0885599, 0.0885599, 0.0885599, 1)
 
 [editable path="Special Objects/Hazards/AimedProjectileShooterArea2"]
