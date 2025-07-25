@@ -212,19 +212,11 @@ position = Vector2(759, -801)
 [node name="MAIN" parent="Special Objects/Moving Platforms/Vertical Door" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Interactable/Ghost Continuous Button Area2/MAIN")
 
-[node name="FmodEventEmitter2D" parent="Special Objects/Moving Platforms/Vertical Door" index="5"]
-event_name = "event:/Doors/old_Moving_Doors"
-event_guid = "{4bac644a-2fb9-4c63-88a9-0ebce8c53748}"
-
 [node name="Vertical Door2" parent="Special Objects/Moving Platforms" instance=ExtResource("13_osvqq")]
 position = Vector2(-1131, -372)
 
 [node name="MAIN" parent="Special Objects/Moving Platforms/Vertical Door2" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Interactable/Continuous Button Area/MAIN")
-
-[node name="FmodEventEmitter2D" parent="Special Objects/Moving Platforms/Vertical Door2" index="5"]
-event_name = "event:/Doors/old_Moving_Doors"
-event_guid = "{4bac644a-2fb9-4c63-88a9-0ebce8c53748}"
 
 [node name="Darkness" type="CanvasModulate" parent="."]
 visible = false
