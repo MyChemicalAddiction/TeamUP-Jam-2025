@@ -68,7 +68,7 @@ scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_cmsvx")
 
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." node_paths=PackedStringArray("door_component")]
-event_name = "event:/Doors/Moving_Doors_Test"
+event_name = "event:/Doors/Moving_Doors"
 event_guid = "{d6e9f475-7c92-466b-b30b-cf43f5c6fc8c}"
 script = ExtResource("4_raw2q")
 door_component = NodePath("../MAIN")
