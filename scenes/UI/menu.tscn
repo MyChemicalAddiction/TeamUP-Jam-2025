@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dr5fxdp8vo6rl" path="res://scenes/UI/main menu UI.tscn" id="1_u81ku"]
 [ext_resource type="PackedScene" uid="uid://c7vh0fx3q7g3l" path="res://scenes/UI/settings UI.tscn" id="2_2tfbb"]
 [ext_resource type="Script" uid="uid://b8abnvxsbtb1" path="res://scripts/functionality/main_theme.gd" id="2_ny0ke"]
+[ext_resource type="Script" uid="uid://0snjao7rq46i" path="res://scripts/functionality/UI/title_screen.gd" id="3_ofy2k"]
 [ext_resource type="PackedScene" uid="uid://ccy3ybriga8j3" path="res://scenes/UI/level select UI.tscn" id="4_ny0ke"]
-[ext_resource type="Script" uid="uid://2j4ms8je7dm7" path="res://scripts/title_screen.gd" id="6_78n2u"]
 [ext_resource type="PackedScene" uid="uid://cc5seuil7h8lf" path="res://scenes/UI/controls.tscn" id="6_ofy2k"]
 [ext_resource type="PackedScene" uid="uid://c74c6g7dpdv28" path="res://scenes/UI/credits_UI.tscn" id="6_svcqa"]
 
@@ -29,6 +29,35 @@ event_guid = "{83fde73f-8e21-43ff-abe5-c5b67496b8af}"
 autoplay = true
 script = ExtResource("2_ny0ke")
 menu = NodePath("..")
+
+[node name="Title Screen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_ofy2k")
+
+[node name="ColorRect" type="ColorRect" parent="Title Screen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Title Screen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_right = 45.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Title Screen"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -84,51 +113,6 @@ visible = false
 
 [node name="SectionButton" parent="CanvasLayer/Credits UI" index="2" node_paths=PackedStringArray("section")]
 section = NodePath("../../Main Menu UI")
-
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-script = ExtResource("6_78n2u")
-
-[node name="Title Screen" type="Control" parent="CanvasLayer2"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer2/Title Screen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="Label" type="Label" parent="CanvasLayer2/Title Screen"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -45.0
-offset_right = 45.0
-offset_bottom = 23.0
-grow_horizontal = 2
-text = "Title Screen"
-
-[node name="Label2" type="Label" parent="CanvasLayer2/Title Screen"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -45.0
-offset_top = -23.0
-offset_right = 45.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Press any key"
 
 [editable path="CanvasLayer/Main Menu UI"]
 [editable path="CanvasLayer/Settings UI"]
