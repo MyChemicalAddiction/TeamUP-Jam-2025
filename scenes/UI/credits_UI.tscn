@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://c74c6g7dpdv28"]
+
+[ext_resource type="PackedScene" uid="uid://bmpxr4howyw3m" path="res://scenes/UI/buttons/section button.tscn" id="5_11jeb"]
+
+[node name="Credits UI" type="VBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -81.0
+offset_right = 125.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][b]Credits[/b][/center]"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Programming -[/b] retmod
+[b]Art -[/b] ArtHunterVera, Kaadu
+[b]SFX -[/b] Victoria Kaye
+[b]Music -[/b] fishegg
+[b]Writing[/b] - 
+(you can replace these names with any other names you'd like. later we can also add hyperlinks to each name which will lead to any link you desire.)"
+fit_content = true
+
+[node name="SectionButton" parent="." instance=ExtResource("5_11jeb")]
+layout_mode = 2

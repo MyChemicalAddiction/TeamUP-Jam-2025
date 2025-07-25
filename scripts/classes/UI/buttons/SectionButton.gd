@@ -8,7 +8,7 @@ signal section_switch(new_section)
 @export var section: Control
 
 ## The top menu control node (to which it connects the section_switch signal)
-@export var menu: Control
+@onready var menu = get_tree().get_first_node_in_group("Menu")
 
 ## The FMOD event emitter that plays SFX for this button when it's pressed
 @export var audio_player: FmodEventEmitter2D

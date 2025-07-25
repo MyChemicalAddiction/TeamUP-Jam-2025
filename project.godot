@@ -59,6 +59,7 @@ Ghost=""
 Possessable=""
 camera=""
 Player=""
+Menu=""
 
 [input]
 

@@ -10,7 +10,7 @@ by the level var.)
 @export var level: PackedScene 
 
 ## The top menu control node (to which it connects the section_switch signal)
-@export var menu: Control
+@onready var menu = get_tree().get_first_node_in_group("Menu")
 
 ## Emitted when the button is released
 signal level_select(level: PackedScene)
