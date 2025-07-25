@@ -5,7 +5,5 @@
 [resource]
 script = ExtResource("2_2epgp")
 level_completed_data = Dictionary[String, bool]({})
-player_settings_data = Dictionary[String, Variant]({
-"input_mode": "1"
-})
+player_settings_data = Dictionary[String, Variant]({})
 metadata/_custom_type_script = "uid://y1oa6xrk0bjw"
