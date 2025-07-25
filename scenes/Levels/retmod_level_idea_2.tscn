@@ -120,13 +120,6 @@ position = Vector2(633, 843)
 [node name="Spikes17" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
 position = Vector2(774, 843)
 
-[node name="AimedProjectileShooterArea2" parent="Special Objects/Hazards" instance=ExtResource("6_ij1pd")]
-position = Vector2(-1234, -626)
-rotation = -1.57079
-
-[node name="CollisionShape2D" parent="Special Objects/Hazards/AimedProjectileShooterArea2" index="2"]
-shape = SubResource("SegmentShape2D_osvqq")
-
 [node name="Interactable" type="Node2D" parent="Special Objects"]
 
 [node name="Possessables" type="Node2D" parent="Special Objects/Interactable"]
@@ -171,6 +164,13 @@ position = Vector2(1704, -736)
 
 [node name="Enemies" type="Node2D" parent="Special Objects"]
 
+[node name="AimedProjectileShooterArea2" parent="Special Objects/Enemies" instance=ExtResource("6_ij1pd")]
+position = Vector2(-1234, -626)
+rotation = -1.57079
+
+[node name="CollisionShape2D" parent="Special Objects/Enemies/AimedProjectileShooterArea2" index="2"]
+shape = SubResource("SegmentShape2D_osvqq")
+
 [node name="Moving Platforms" type="Node2D" parent="Special Objects"]
 
 [node name="horizontal_platform" parent="Special Objects/Moving Platforms" instance=ExtResource("6_rhl33")]
@@ -197,11 +197,11 @@ enable_manager = NodePath("../../../Interactable/Continuous Button Area/MAIN")
 [node name="Darkness" type="CanvasModulate" parent="."]
 color = Color(0.0885599, 0.0885599, 0.0885599, 1)
 
-[editable path="Special Objects/Hazards/AimedProjectileShooterArea2"]
 [editable path="Special Objects/Interactable/FinishDoor"]
 [editable path="Special Objects/Interactable/Ghost Continuous Button Area"]
 [editable path="Special Objects/Interactable/Ghost Continuous Button Area2"]
 [editable path="Special Objects/Interactable/Continuous Button Area"]
+[editable path="Special Objects/Enemies/AimedProjectileShooterArea2"]
 [editable path="Special Objects/Moving Platforms/Cursed Horizontal Door"]
 [editable path="Special Objects/Moving Platforms/Vertical Door"]
 [editable path="Special Objects/Moving Platforms/Vertical Door2"]

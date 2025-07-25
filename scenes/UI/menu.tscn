@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dajpopjceep4u"]
+[gd_scene load_steps=9 format=3 uid="uid://dajpopjceep4u"]
 
 [ext_resource type="Script" uid="uid://653s076xfe72" path="res://scripts/classes/UI/Menu.gd" id="1_2un8v"]
 [ext_resource type="PackedScene" uid="uid://dr5fxdp8vo6rl" path="res://scenes/UI/main menu UI.tscn" id="1_u81ku"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b8abnvxsbtb1" path="res://scripts/functionality/main_theme.gd" id="2_ny0ke"]
 [ext_resource type="PackedScene" uid="uid://ccy3ybriga8j3" path="res://scenes/UI/level select UI.tscn" id="4_ny0ke"]
 [ext_resource type="Script" uid="uid://2j4ms8je7dm7" path="res://scripts/title_screen.gd" id="6_78n2u"]
+[ext_resource type="PackedScene" uid="uid://cc5seuil7h8lf" path="res://scenes/UI/controls.tscn" id="6_ofy2k"]
 [ext_resource type="PackedScene" uid="uid://c74c6g7dpdv28" path="res://scenes/UI/credits_UI.tscn" id="6_svcqa"]
 
 [node name="Menu" type="Control" node_paths=PackedStringArray("current_section") groups=["Menu"]]
@@ -56,6 +57,9 @@ offset_bottom = 47.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
+[node name="SectionButton3" parent="CanvasLayer/Settings UI" index="1" node_paths=PackedStringArray("section")]
+section = NodePath("../../Controls")
+
 [node name="SectionButton2" parent="CanvasLayer/Settings UI" index="2" node_paths=PackedStringArray("section")]
 section = NodePath("../../Main Menu UI")
 
@@ -68,6 +72,12 @@ offset_bottom = 82.0
 
 [node name="SectionButton" parent="CanvasLayer/Level Select UI" index="4" node_paths=PackedStringArray("section")]
 section = NodePath("../../Main Menu UI")
+
+[node name="Controls" parent="CanvasLayer" instance=ExtResource("6_ofy2k")]
+visible = false
+
+[node name="SectionButton" parent="CanvasLayer/Controls" index="1" node_paths=PackedStringArray("section")]
+section = NodePath("../../Settings UI")
 
 [node name="Credits UI" parent="CanvasLayer" instance=ExtResource("6_svcqa")]
 visible = false
@@ -123,4 +133,5 @@ text = "Press any key"
 [editable path="CanvasLayer/Main Menu UI"]
 [editable path="CanvasLayer/Settings UI"]
 [editable path="CanvasLayer/Level Select UI"]
+[editable path="CanvasLayer/Controls"]
 [editable path="CanvasLayer/Credits UI"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://cc5seuil7h8lf"]
+
+[ext_resource type="PackedScene" uid="uid://bmpxr4howyw3m" path="res://scenes/UI/buttons/section button.tscn" id="1_1osir"]
+
+[node name="controls" type="VBoxContainer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -168.5
+offset_right = 125.0
+offset_bottom = 169.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]Elias:[/b]
+  left - L
+  right - \"
+  jump - p
+  use - SPACE
+
+[b]Mira[/b]:
+  up - W  
+  left - A
+  down - S
+  right - D
+  toggle amulet - SHIFT
+  use - E"
+fit_content = true
+
+[node name="SectionButton" parent="." instance=ExtResource("1_1osir")]
+layout_mode = 2

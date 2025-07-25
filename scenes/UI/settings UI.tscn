@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7vh0fx3q7g3l"]
+[gd_scene load_steps=2 format=3 uid="uid://c7vh0fx3q7g3l"]
 
-[ext_resource type="Script" uid="uid://b0dtsty17hr5o" path="res://scripts/classes/UI/buttons/Settings/PlayerSettingsOptionButton.gd" id="1_m4wj0"]
 [ext_resource type="PackedScene" uid="uid://bmpxr4howyw3m" path="res://scenes/UI/buttons/section button.tscn" id="2_m4wj0"]
 
 [node name="Settings UI" type="VBoxContainer"]
@@ -19,20 +18,12 @@ grow_vertical = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center]Input Mode (click to select)[/center]"
 fit_content = true
 
-[node name="OptionButton" type="OptionButton" parent="."]
+[node name="SectionButton3" parent="." instance=ExtResource("2_m4wj0")]
 layout_mode = 2
-selected = 0
-item_count = 2
-popup/item_0/text = "1 (for high end keyboards)"
-popup/item_0/id = 1
-popup/item_1/text = "2 (for low-end keyboards)"
-popup/item_1/id = 2
-script = ExtResource("1_m4wj0")
-saveDataDict = "player_settings_data"
-metadata/_custom_type_script = "uid://b0dtsty17hr5o"
+text = "Controls
+"
 
 [node name="SectionButton2" parent="." instance=ExtResource("2_m4wj0")]
 layout_mode = 2
