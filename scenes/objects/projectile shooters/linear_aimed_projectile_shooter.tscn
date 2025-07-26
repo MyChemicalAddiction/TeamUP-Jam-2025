@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b0ckbwjy0xfp2"]
+[gd_scene load_steps=16 format=3 uid="uid://b0ckbwjy0xfp2"]
 
 [ext_resource type="Script" uid="uid://e0p143fkoaat" path="res://scripts/functionality/aimed_projectile_shooter_area.gd" id="1_by52x"]
 [ext_resource type="Script" uid="uid://bmjff2qd1s3id" path="res://scripts/classes/components/Implementations/functionality/ShooterAreaEnteredTrackerComponent.gd" id="2_sb7mf"]
@@ -10,9 +10,20 @@
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="8_5h66e"]
 [ext_resource type="Script" uid="uid://ddncd0mbjymm5" path="res://scripts/functionality/segment_collision_shape.gd" id="9_by52x"]
 [ext_resource type="Script" uid="uid://dma7f77yq7bot" path="res://scripts/functionality/simple_projectile_shooter_collisionshape_area_entered_tracker_component.gd" id="10_sb7mf"]
+[ext_resource type="Script" uid="uid://bp3r0ffx34h" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Hitbox.gd" id="11_oogkr"]
+[ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="12_w2qrg"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rm1jc"]
 b = Vector2(0, 1714)
+
+[sub_resource type="Resource" id="Resource_1uh4q"]
+script = ExtResource("12_w2qrg")
+damage = 10000.0
+knockback = 0.0
+metadata/_custom_type_script = "uid://dmohabdm78d23"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oogkr"]
+size = Vector2(128, 128)
 
 [node name="SimpleProjectileShooterArea" type="Area2D" node_paths=PackedStringArray("state_machine")]
 collision_mask = 455
@@ -73,3 +84,14 @@ metadata/_custom_type_script = "uid://ba0im6i353yq8"
 [node name="Line2D" type="Line2D" parent="CollisionShape2D"]
 points = PackedVector2Array(0, 0, 0, 600)
 default_color = Color(0.148989, 0, 0.0273442, 1)
+
+[node name="Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("holder")]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("11_oogkr")
+hitboxRes = SubResource("Resource_1uh4q")
+holder = NodePath("..")
+metadata/_custom_type_script = "uid://bp3r0ffx34h"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("RectangleShape2D_oogkr")
