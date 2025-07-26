@@ -67,8 +67,15 @@ position = Vector2(0, 208)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_3cvve")
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." node_paths=PackedStringArray("door_component")]
-event_name = "event:/Doors/Moving_Doors"
+[node name="Open" type="FmodEventEmitter2D" parent="." node_paths=PackedStringArray("door_component")]
+event_name = "event:/Doors/Moving_Doors_Open"
 event_guid = "{d6e9f475-7c92-466b-b30b-cf43f5c6fc8c}"
 script = ExtResource("4_woniu")
 door_component = NodePath("../MAIN")
+
+[node name="Close" type="FmodEventEmitter2D" parent="." node_paths=PackedStringArray("door_component")]
+event_name = "event:/Doors/Moving_Doors_Close"
+event_guid = "{76f57fad-b59e-4d30-80db-0de9adae715f}"
+script = ExtResource("4_woniu")
+door_component = NodePath("../MAIN")
+mode = 1

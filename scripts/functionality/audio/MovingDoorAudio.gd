@@ -7,6 +7,7 @@ Encapsulates logic for playing SFX of moving vertical/horizontal doors:
 """
 
 @export var door_component: MovingDoorComponent
+@export_enum("Play on Moving", "Play on Stopped") var mode := 0
 
 func _ready():
 	SceneManager.loading_scene.connect(queue_free)
@@ -15,7 +16,15 @@ func _ready():
 	door_component.moving_signal.connect(on_moving)
 
 func on_stopped():
-	stop()
+	if !mode:
+		stop()
+		return
+	else:
+		play()
 
 func on_moving():
-	play()
+	if !mode:
+		play()
+		return
+	else:
+		stop()
