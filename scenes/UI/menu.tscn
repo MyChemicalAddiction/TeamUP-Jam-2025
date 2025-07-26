@@ -21,7 +21,7 @@ script = ExtResource("1_2un8v")
 current_section = NodePath("CanvasLayer/Main Menu UI")
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://assets/fmod_build/Desktop//Master.strings.bank", "res://assets/fmod_build/Desktop//Master.bank", "res://assets/fmod_build/Desktop//UI.bank", "res://assets/fmod_build/Desktop//Menus.bank", "res://assets/fmod_build/Desktop//DoorsPlatforms.bank"]
+bank_paths = ["res://assets/fmod_build/Desktop//Master.strings.bank", "res://assets/fmod_build/Desktop//Master.bank", "res://assets/fmod_build/Desktop//UI.bank", "res://assets/fmod_build/Desktop//Menus.bank", "res://assets/fmod_build/Desktop//DoorsPlatforms.bank", "res://assets/fmod_build/Desktop//Mira.bank"]
 
 [node name="Main Theme" type="FmodEventEmitter2D" parent="." node_paths=PackedStringArray("menu")]
 event_name = "event:/MUSIC/MX_MainMenu"
