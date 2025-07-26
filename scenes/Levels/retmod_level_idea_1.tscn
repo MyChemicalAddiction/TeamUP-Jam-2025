@@ -201,26 +201,17 @@ position = Vector2(1297, 718)
 [node name="MAIN" parent="Special Objects/Moving Doors/Vertical" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Switches/Continuous Button Area/MAIN")
 
-[node name="FmodEventEmitter2D" parent="Special Objects/Moving Doors/Vertical" index="5"]
-event_name = "event:/Doors/Moving_Doors_Open"
-
 [node name="Cursed Vertical Door" parent="Special Objects/Moving Doors" instance=ExtResource("10_imigb")]
 position = Vector2(-955, -102)
 
 [node name="MAIN" parent="Special Objects/Moving Doors/Cursed Vertical Door" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Switches/Ghost Continuous Button Area2/MAIN")
 
-[node name="FmodEventEmitter2D" parent="Special Objects/Moving Doors/Cursed Vertical Door" index="5"]
-event_name = "event:/Doors/Moving_Doors_Open"
-
 [node name="Cursed Horizontal Door" parent="Special Objects/Moving Doors" instance=ExtResource("11_imigb")]
 position = Vector2(17, 864)
 
 [node name="MAIN" parent="Special Objects/Moving Doors/Cursed Horizontal Door" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Switches/Ghost Continuous Button Area/MAIN")
-
-[node name="FmodEventEmitter2D" parent="Special Objects/Moving Doors/Cursed Horizontal Door" index="5"]
-event_name = "event:/Doors/Moving_Doors_Open"
 
 [node name="Switches" type="Node2D" parent="Special Objects"]
 

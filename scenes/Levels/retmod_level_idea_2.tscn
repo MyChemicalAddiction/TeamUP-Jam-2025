@@ -193,13 +193,13 @@ shape = SubResource("SegmentShape2D_osvqq")
 position = Vector2(-107, -480)
 
 [node name="Cursed Horizontal Door" parent="Special Objects/Moving Platforms" instance=ExtResource("9_evl5c")]
-position = Vector2(4, 326)
+position = Vector2(-3, 326)
 
 [node name="MAIN" parent="Special Objects/Moving Platforms/Cursed Horizontal Door" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Interactable/Ghost Continuous Button Area/MAIN")
 
 [node name="Vertical Door" parent="Special Objects/Moving Platforms" instance=ExtResource("13_osvqq")]
-position = Vector2(759, -801)
+position = Vector2(759, -653)
 
 [node name="MAIN" parent="Special Objects/Moving Platforms/Vertical Door" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Interactable/Ghost Continuous Button Area2/MAIN")
