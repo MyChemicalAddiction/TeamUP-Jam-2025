@@ -3,4 +3,16 @@ extends FmodEventEmitter2D
 @export var menu: Control
 
 func _ready():
-	menu.level_selected.connect(queue_free)
+	SceneManager.loading_scene.connect(_on_menu_untoggled)
+	
+	menu.toggled.connect(_on_menu_toggled)
+	menu.untoggled.connect(_on_menu_untoggled)
+
+func _on_menu_toggled():
+	volume = 1.0
+	play()
+	print('playin')
+
+func _on_menu_untoggled():
+	volume = 0.0
+	print('stopped')

@@ -12,6 +12,12 @@ don't have a process function; they only communicate via signals back to the
 Menu.
 """
 
+## Emitted when made visible (during play)
+signal toggled
+
+## Emitted when made invisible (during play)
+signal untoggled
+
 ## The resource of the main scene of the game
 @export var main_game_scene_res := preload("res://scenes/main.tscn")
 
@@ -61,8 +67,10 @@ func _process(_delta) -> void:
 	if main_game_scene:
 		if Input.is_action_just_pressed("toggle_menu"):
 			if !current_section.visible:
+				toggled.emit()
 				main_game_scene.process_mode = Node.PROCESS_MODE_DISABLED
 				switch_section(default_section)
 			else:
+				untoggled.emit()
 				current_section.visible = false
 				main_game_scene.process_mode = Node.PROCESS_MODE_INHERIT
