@@ -13,7 +13,7 @@ when an area is entered.
 @export var area_tracking_component: AreaEnteredTrackerComponent
 
 ## Once per how many seconds should this shoot?
-@export var SHOOTING_RATE_SECONDS := 0.35 
+@export var SHOOTING_RATE_SECONDS := 0.2 
 
 @export var idleState: State
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://dnlpbofs2h540"]
 
 [ext_resource type="Texture2D" uid="uid://xw2i423f08wv" path="res://assets/visual/placeholders/wood.png" id="1_j2wyt"]
-[ext_resource type="PackedScene" uid="uid://c8lt7usj83dfv" path="res://scenes/objects/projectile shooters/aimed_projectile_shooter_area.tscn" id="2_n4ir2"]
+[ext_resource type="PackedScene" uid="uid://c8lt7usj83dfv" path="res://aimed_projectile_shooter_area.tscn" id="2_n4ir2"]
 [ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/simple_platform_tilemap_placeholder.tscn" id="2_vmfpf"]
 [ext_resource type="PackedScene" uid="uid://b8xf6mcl8d82x" path="res://scenes/objects/interactible/ghost-specific/ghost_horizontal_platform.tscn" id="3_0v3j1"]
 [ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="3_d7m03"]

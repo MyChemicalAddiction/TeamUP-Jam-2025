@@ -1,22 +1,22 @@
 [gd_scene load_steps=15 format=3 uid="uid://c8lt7usj83dfv"]
 
-[ext_resource type="Script" uid="uid://e0p143fkoaat" path="res://scripts/functionality/aimed_projectile_shooter_area.gd" id="1_idnxq"]
-[ext_resource type="Script" uid="uid://bmjff2qd1s3id" path="res://scripts/classes/components/Implementations/functionality/ShooterAreaEnteredTrackerComponent.gd" id="2_idnxq"]
-[ext_resource type="Script" uid="uid://cvbk7ssl4w7ch" path="res://scripts/classes/components/Implementations/state machines/StateMachine.gd" id="2_pr3ed"]
-[ext_resource type="Script" uid="uid://bboji5tvpnhjv" path="res://scripts/classes/projectile/ProjectileShooter.gd" id="2_ujvcm"]
-[ext_resource type="Script" uid="uid://c6vhl4ahb0v66" path="res://scripts/classes/components/Implementations/state machines/States/Enemies/Static/AimedProjectileShooterArea/StaticAimedShooterIdleState.gd" id="3_idnxq"]
-[ext_resource type="PackedScene" uid="uid://hibwxjb2khf0" path="res://scenes/objects/projectiles/Stupid Simple Projectile.tscn" id="3_swc48"]
-[ext_resource type="Script" uid="uid://b3gmlh61munrd" path="res://scripts/classes/components/Implementations/state machines/States/Enemies/Static/AimedProjectileShooterArea/StaticAimedShooterShootingState.gd" id="4_pr3ed"]
-[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="4_swc48"]
-[ext_resource type="Texture2D" uid="uid://5a5txvctxywq" path="res://assets/visual/placeholders/red_transparent_circle.png" id="5_guigo"]
-[ext_resource type="Script" uid="uid://bp3r0ffx34h" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Hitbox.gd" id="10_ckf6l"]
-[ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="11_n6gy8"]
+[ext_resource type="Script" uid="uid://e0p143fkoaat" path="res://scripts/functionality/aimed_projectile_shooter_area.gd" id="1_yl1xd"]
+[ext_resource type="Script" uid="uid://bmjff2qd1s3id" path="res://scripts/classes/components/Implementations/functionality/ShooterAreaEnteredTrackerComponent.gd" id="2_ljxbq"]
+[ext_resource type="Script" uid="uid://cvbk7ssl4w7ch" path="res://scripts/classes/components/Implementations/state machines/StateMachine.gd" id="3_lvjm6"]
+[ext_resource type="Script" uid="uid://c6vhl4ahb0v66" path="res://scripts/classes/components/Implementations/state machines/States/Enemies/Static/AimedProjectileShooterArea/StaticAimedShooterIdleState.gd" id="4_1d1h0"]
+[ext_resource type="Script" uid="uid://b3gmlh61munrd" path="res://scripts/classes/components/Implementations/state machines/States/Enemies/Static/AimedProjectileShooterArea/StaticAimedShooterShootingState.gd" id="5_jmv1e"]
+[ext_resource type="Script" uid="uid://bboji5tvpnhjv" path="res://scripts/classes/projectile/ProjectileShooter.gd" id="6_yahtk"]
+[ext_resource type="PackedScene" uid="uid://hibwxjb2khf0" path="res://scenes/objects/projectiles/Stupid Simple Projectile.tscn" id="7_o8idu"]
+[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="8_a5v3t"]
+[ext_resource type="Texture2D" uid="uid://fd6n6kdqgxhl" path="res://assets/visual/enemies/red radius.png" id="9_oqj0t"]
+[ext_resource type="Script" uid="uid://bp3r0ffx34h" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Hitbox.gd" id="10_krvfn"]
+[ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="11_goi8r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_swc48"]
 radius = 732.492
 
 [sub_resource type="Resource" id="Resource_4qall"]
-script = ExtResource("11_n6gy8")
+script = ExtResource("11_goi8r")
 damage = 10000.0
 knockback = 0.0
 metadata/_custom_type_script = "uid://dmohabdm78d23"
@@ -26,29 +26,29 @@ size = Vector2(128, 128)
 
 [node name="AimedProjectileShooterArea" type="Area2D" node_paths=PackedStringArray("state_machine")]
 collision_mask = 7
-script = ExtResource("1_idnxq")
+script = ExtResource("1_yl1xd")
 state_machine = NodePath("Components/StateMachine")
 
 [node name="Components" type="Node2D" parent="."]
 
 [node name="AreaEnteredTrackerComponent" type="Node2D" parent="Components" node_paths=PackedStringArray("tracking_area", "object")]
-script = ExtResource("2_idnxq")
+script = ExtResource("2_ljxbq")
 tracking_area = NodePath("../..")
 object = NodePath("../..")
 metadata/_custom_type_script = "uid://ba0im6i353yq8"
 
 [node name="StateMachine" type="Node2D" parent="Components" node_paths=PackedStringArray("starting_state", "object")]
-script = ExtResource("2_pr3ed")
+script = ExtResource("3_lvjm6")
 starting_state = NodePath("StaticAimedShooterIdleState")
 object = NodePath("../ProjectileShooter")
 metadata/_custom_type_script = "uid://cvbk7ssl4w7ch"
 
 [node name="StaticAimedShooterIdleState" type="Node2D" parent="Components/StateMachine"]
-script = ExtResource("3_idnxq")
+script = ExtResource("4_1d1h0")
 metadata/_custom_type_script = "uid://c6vhl4ahb0v66"
 
 [node name="StaticAimedShooterShootingState" type="Node2D" parent="Components/StateMachine" node_paths=PackedStringArray("projectile_shooter", "area_tracking_component", "idleState")]
-script = ExtResource("4_pr3ed")
+script = ExtResource("5_jmv1e")
 projectile_shooter = NodePath("../../ProjectileShooter")
 area_tracking_component = NodePath("../../AreaEnteredTrackerComponent")
 idleState = NodePath("../StaticAimedShooterIdleState")
@@ -56,34 +56,37 @@ metadata/_custom_type_script = "uid://b3gmlh61munrd"
 
 [node name="ProjectileShooter" type="Node2D" parent="Components" node_paths=PackedStringArray("projectile_holder")]
 rotation = 1.5708
-script = ExtResource("2_ujvcm")
-projectile_scene = ExtResource("3_swc48")
+script = ExtResource("6_yahtk")
+projectile_scene = ExtResource("7_o8idu")
 projectile_holder = NodePath("../..")
 metadata/_custom_type_script = "uid://bboji5tvpnhjv"
 
 [node name="Sprite2D" type="Sprite2D" parent="Components/ProjectileShooter"]
 modulate = Color(0.704081, 0, 0.0804177, 1)
 rotation = 1.5708
-texture = ExtResource("4_swc48")
+texture = ExtResource("8_a5v3t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(11.7188, 11.7188)
-texture = ExtResource("5_guigo")
+self_modulate = Color(1, 1, 1, 0.117647)
+scale = Vector2(2.85937, 2.85937)
+texture = ExtResource("9_oqj0t")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-scale = Vector2(3.40625, 11.7188)
-texture = ExtResource("5_guigo")
+self_modulate = Color(1, 1, 1, 0.117647)
+scale = Vector2(0.832031, 2.8625)
+texture = ExtResource("9_oqj0t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_swc48")
 
-[node name="Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("holder")]
+[node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 6
 collision_mask = 6
-script = ExtResource("10_ckf6l")
+script = ExtResource("10_krvfn")
 hitboxRes = SubResource("Resource_4qall")
-holder = NodePath("")
 metadata/_custom_type_script = "uid://bp3r0ffx34h"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visible = false
 shape = SubResource("RectangleShape2D_bo8el")
