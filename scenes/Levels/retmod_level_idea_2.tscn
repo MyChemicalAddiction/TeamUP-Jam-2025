@@ -55,6 +55,11 @@ event_name = "event:/AMBs/AMB_House"
 event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
 autoplay = true
 
+[node name="FmodEventEmitter2D2" type="FmodEventEmitter2D" parent="Audio"]
+event_name = "snapshot:/Reverb_Home"
+event_guid = "{9b0ed7d8-b7d0-4315-aeb0-6d0e5f616186}"
+autoplay = true
+
 [node name="BG" parent="." instance=ExtResource("2_rhl33")]
 position = Vector2(155, -906)
 tile_set = ExtResource("3_p72ix")
