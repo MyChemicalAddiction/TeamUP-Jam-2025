@@ -9,7 +9,7 @@
 
 [sub_resource type="Resource" id="Resource_6e4ye"]
 script = ExtResource("2_i53c3")
-SPEED = 3000
+SPEED = 5000
 metadata/_custom_type_script = "uid://ct5bew00lbo6h"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3df27"]
@@ -27,6 +27,7 @@ size = Vector2(128, 128)
 [node name="Stupid Simple Projectile" type="RigidBody2D"]
 collision_layer = 0
 collision_mask = 449
+continuous_cd = 1
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_0accw")
