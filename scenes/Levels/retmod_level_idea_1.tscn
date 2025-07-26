@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dnlpbofs2h540"]
+[gd_scene load_steps=17 format=4 uid="uid://dnlpbofs2h540"]
 
 [ext_resource type="Texture2D" uid="uid://xw2i423f08wv" path="res://assets/visual/placeholders/wood.png" id="1_j2wyt"]
 [ext_resource type="PackedScene" uid="uid://c8lt7usj83dfv" path="res://scenes/objects/projectile shooters/aimed_projectile_shooter_area.tscn" id="2_n4ir2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="3_d7m03"]
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/interactible/finish_door.tscn" id="4_5s37k"]
 [ext_resource type="PackedScene" uid="uid://d27ix3phd1jfc" path="res://scenes/objects/hazards/spikes.tscn" id="4_vmfpf"]
+[ext_resource type="PackedScene" uid="uid://bwo0qi17l5yih" path="res://scenes/functionality/white_line.tscn" id="5_luupb"]
 [ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="5_oy22u"]
 [ext_resource type="PackedScene" uid="uid://bhkad48ij8ha7" path="res://scenes/objects/doors/vertical_door.tscn" id="7_d7m03"]
 [ext_resource type="PackedScene" uid="uid://boch8qluci7ev" path="res://scenes/functionality/levers & buttons/continuous_button_area.tscn" id="8_5s37k"]
@@ -33,12 +34,6 @@ autoplay = true
 [node name="Sprite2D" type="Sprite2D" parent="Background"]
 scale = Vector2(573.75, 400.29)
 texture = ExtResource("1_j2wyt")
-
-[node name="AimedProjectileShooterArea" parent="Background" instance=ExtResource("2_n4ir2")]
-position = Vector2(952, -69)
-
-[node name="ghost_platform" parent="Background" instance=ExtResource("3_0v3j1")]
-position = Vector2(-236, 140)
 
 [node name="Simple Platform Tilemap Placeholder" parent="." instance=ExtResource("2_vmfpf")]
 position = Vector2(220, 89)
@@ -142,6 +137,13 @@ position = Vector2(1324, 1264)
 
 [node name="Possessables" type="Node2D" parent="Special Objects/Interactable"]
 
+[node name="Line2D" parent="Special Objects/Interactable/Possessables" instance=ExtResource("5_luupb")]
+position = Vector2(-236, 123)
+points = PackedVector2Array(-711, 0, 1640, 0)
+
+[node name="ghost_platform" parent="Special Objects/Interactable/Possessables/Line2D" instance=ExtResource("3_0v3j1")]
+position = Vector2(0, 17)
+
 [node name="FinishDoor" parent="Special Objects/Interactable" instance=ExtResource("4_5s37k")]
 position = Vector2(1409, 787)
 
@@ -182,6 +184,9 @@ position = Vector2(-1491, -44)
 position = Vector2(-1360, -147)
 
 [node name="Enemies" type="Node2D" parent="Special Objects"]
+
+[node name="AimedProjectileShooterArea" parent="Special Objects/Enemies" instance=ExtResource("2_n4ir2")]
+position = Vector2(952, -69)
 
 [node name="Moving Doors" type="Node2D" parent="Special Objects"]
 

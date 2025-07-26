@@ -179,7 +179,7 @@ position = Vector2(1704, -736)
 position = Vector2(-1234, -626)
 rotation = -1.57079
 
-[node name="CollisionShape2D" parent="Special Objects/Enemies/AimedProjectileShooterArea2" index="2"]
+[node name="CollisionShape2D" parent="Special Objects/Enemies/AimedProjectileShooterArea2" index="1"]
 shape = SubResource("SegmentShape2D_osvqq")
 
 [node name="Moving Platforms" type="Node2D" parent="Special Objects"]

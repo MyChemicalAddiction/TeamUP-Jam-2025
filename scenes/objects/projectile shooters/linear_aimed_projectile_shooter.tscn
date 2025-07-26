@@ -12,16 +12,12 @@
 [ext_resource type="Script" uid="uid://dma7f77yq7bot" path="res://scripts/functionality/simple_projectile_shooter_collisionshape_area_entered_tracker_component.gd" id="10_sb7mf"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rm1jc"]
-b = Vector2(0.00378418, 1714)
+b = Vector2(0, 1714)
 
 [node name="SimpleProjectileShooterArea" type="Area2D" node_paths=PackedStringArray("state_machine")]
 collision_mask = 455
 script = ExtResource("1_by52x")
 state_machine = NodePath("Components/StateMachine")
-
-[node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(0, 0, 0, 600)
-default_color = Color(0.148989, 0, 0.0273442, 1)
 
 [node name="Components" type="Node2D" parent="."]
 
@@ -63,7 +59,7 @@ texture = ExtResource("8_5h66e")
 shape = SubResource("SegmentShape2D_rm1jc")
 script = ExtResource("9_by52x")
 area_tracker = NodePath("AreaEnteredTrackerComponent2")
-line = NodePath("../Line2D")
+line = NodePath("Line2D")
 
 [node name="AreaEnteredTrackerComponent2" type="Node2D" parent="CollisionShape2D" node_paths=PackedStringArray("tracking_area", "object", "excluded")]
 script = ExtResource("10_sb7mf")
@@ -73,3 +69,7 @@ track_areas = false
 track_bodies = true
 excluded = [NodePath("../..")]
 metadata/_custom_type_script = "uid://ba0im6i353yq8"
+
+[node name="Line2D" type="Line2D" parent="CollisionShape2D"]
+points = PackedVector2Array(0, 0, 0, 600)
+default_color = Color(0.148989, 0, 0.0273442, 1)
