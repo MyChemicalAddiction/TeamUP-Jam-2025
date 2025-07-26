@@ -11,8 +11,6 @@ func _ready():
 func _on_menu_toggled():
 	volume = 1.0
 	play()
-	print('playin')
 
 func _on_menu_untoggled():
 	volume = 0.0
-	print('stopped')
