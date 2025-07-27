@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8tomno4vy81t"]
+[gd_scene load_steps=5 format=3 uid="uid://b8tomno4vy81t"]
 
 [ext_resource type="Texture2D" uid="uid://d11fuyffc5s15" path="res://assets/visual/placeholders/placeholder_tileset.png" id="1_3c25c"]
-[ext_resource type="Texture2D" uid="uid://bfvl2wm2l1iw2" path="res://assets/visual/placeholders/light_circle.png" id="2_4dpk7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0xvh"]
 atlas = ExtResource("1_3c25c")
@@ -34,8 +33,3 @@ collision_mask = 56
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interacting Area"]
 visible = false
 shape = SubResource("RectangleShape2D_3c25c")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-2.27374e-13, -9.53674e-07)
-scale = Vector2(0.253906, 0.198768)
-texture = ExtResource("2_4dpk7")

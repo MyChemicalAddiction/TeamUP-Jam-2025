@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dajpopjceep4u"]
+[gd_scene load_steps=10 format=3 uid="uid://dajpopjceep4u"]
 
 [ext_resource type="Script" uid="uid://653s076xfe72" path="res://scripts/classes/UI/Menu.gd" id="1_2un8v"]
 [ext_resource type="PackedScene" uid="uid://dr5fxdp8vo6rl" path="res://scenes/UI/main menu UI.tscn" id="1_u81ku"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://ccy3ybriga8j3" path="res://scenes/UI/level select UI.tscn" id="4_ny0ke"]
 [ext_resource type="PackedScene" uid="uid://cc5seuil7h8lf" path="res://scenes/UI/controls.tscn" id="6_ofy2k"]
 [ext_resource type="PackedScene" uid="uid://c74c6g7dpdv28" path="res://scenes/UI/credits_UI.tscn" id="6_svcqa"]
+
+[sub_resource type="Environment" id="Environment_ofy2k"]
+glow_enabled = true
 
 [node name="Menu" type="Control" node_paths=PackedStringArray("current_section") groups=["Menu"]]
 layout_mode = 3
@@ -114,6 +117,9 @@ visible = false
 
 [node name="SectionButton" parent="CanvasLayer/Credits UI" index="2" node_paths=PackedStringArray("section")]
 section = NodePath("../../Main Menu UI")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ofy2k")
 
 [editable path="CanvasLayer/Main Menu UI"]
 [editable path="CanvasLayer/Settings UI"]

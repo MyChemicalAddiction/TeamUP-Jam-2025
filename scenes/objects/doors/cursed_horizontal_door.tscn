@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://deqeo7yuvxhl2"]
+[gd_scene load_steps=7 format=3 uid="uid://deqeo7yuvxhl2"]
 
 [ext_resource type="Script" uid="uid://d4esf4meclpan" path="res://scripts/classes/components/Implementations/animation/MovingDoorComponent.gd" id="1_pcu7w"]
 [ext_resource type="Texture2D" uid="uid://dgna04txtwnyb" path="res://addons/fmod/icons/d_parameter_icon.svg" id="2_ecata"]
 [ext_resource type="Script" uid="uid://ba0im6i353yq8" path="res://scripts/classes/components/Implementations/functionality/AreaEnteredTrackerComponent.gd" id="3_ecata"]
 [ext_resource type="Script" uid="uid://d0yw8lifbedu5" path="res://scripts/functionality/audio/MovingDoorAudio.gd" id="4_i525v"]
-[ext_resource type="Texture2D" uid="uid://bfvl2wm2l1iw2" path="res://assets/visual/placeholders/light_circle.png" id="5_iij8l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpl0x"]
 size = Vector2(44, 414)
@@ -81,8 +80,3 @@ event_guid = "{76f57fad-b59e-4d30-80db-0de9adae715f}"
 script = ExtResource("4_i525v")
 door_component = NodePath("../MAIN")
 mode = 1
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-2.27374e-13, -9.53674e-07)
-scale = Vector2(0.816406, 0.0859375)
-texture = ExtResource("5_iij8l")
