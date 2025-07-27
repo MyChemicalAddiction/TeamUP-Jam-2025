@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bvdokttsx3yjq"]
+
+[ext_resource type="Shader" uid="uid://c20s38gbqrkp3" path="res://shaders/cursed.gdshader" id="1_3hul6"]
+
+[resource]
+shader = ExtResource("1_3hul6")

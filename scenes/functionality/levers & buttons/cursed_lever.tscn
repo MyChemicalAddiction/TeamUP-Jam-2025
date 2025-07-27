@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://chum35l360n6t"]
+[gd_scene load_steps=13 format=3 uid="uid://chum35l360n6t"]
 
 [ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/Areas/interaction/interaction area/InteractionArea.gd" id="1_wtn63"]
 [ext_resource type="Script" uid="uid://bt5qx0ha05v8h" path="res://scripts/classes/components/Implementations/animation/AnimationComponent.gd" id="2_c0p7n"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bgglcirqtvtj3" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/Area Behaviors/GlowComponent.gd" id="4_x6g4x"]
 [ext_resource type="Texture2D" uid="uid://b4jxbh86chubi" path="res://addons/fmod/icons/snapshot_icon.svg" id="5_sn6y5"]
 [ext_resource type="PackedScene" uid="uid://da03mkmgnylvx" path="res://scenes/functionality/arrows/component_arrow.tscn" id="6_c0p7n"]
+[ext_resource type="Material" uid="uid://bvdokttsx3yjq" path="res://resources/cursed shader.tres" id="7_fgoh2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l07bw"]
 size = Vector2(38, 22)
@@ -134,6 +135,7 @@ shape = SubResource("RectangleShape2D_l07bw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.619608, 1, 0.74902, 1)
+material = ExtResource("7_fgoh2")
 scale = Vector2(4.44444, 4.44444)
 texture = ExtResource("5_sn6y5")
 

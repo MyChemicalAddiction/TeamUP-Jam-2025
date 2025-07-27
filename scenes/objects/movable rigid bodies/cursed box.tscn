@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8tomno4vy81t"]
+[gd_scene load_steps=6 format=3 uid="uid://b8tomno4vy81t"]
 
 [ext_resource type="Texture2D" uid="uid://d11fuyffc5s15" path="res://assets/visual/placeholders/placeholder_tileset.png" id="1_3c25c"]
+[ext_resource type="Material" uid="uid://bvdokttsx3yjq" path="res://resources/cursed shader.tres" id="1_4dpk7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0xvh"]
 atlas = ExtResource("1_3c25c")
@@ -20,6 +21,7 @@ can_sleep = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.16463, 0.443076, 0.348791, 1)
+material = ExtResource("1_4dpk7")
 texture = SubResource("AtlasTexture_e0xvh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

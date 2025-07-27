@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://riuotyrpb2p2"]
+[gd_scene load_steps=12 format=3 uid="uid://riuotyrpb2p2"]
 
 [ext_resource type="Script" uid="uid://bt5qx0ha05v8h" path="res://scripts/classes/components/Implementations/animation/AnimationComponent.gd" id="1_giqcr"]
 [ext_resource type="Script" uid="uid://ba0im6i353yq8" path="res://scripts/classes/components/Implementations/functionality/AreaEnteredTrackerComponent.gd" id="1_r17rj"]
 [ext_resource type="Texture2D" uid="uid://o2chsr07oeqs" path="res://addons/fmod/icons/bank_icon.svg" id="2_r17rj"]
+[ext_resource type="Material" uid="uid://bvdokttsx3yjq" path="res://resources/cursed shader.tres" id="3_la2l6"]
 [ext_resource type="Script" uid="uid://kbboeb0q588r" path="res://scripts/functionality/audio/AudioPlayerComponent.gd" id="4_4l5fa"]
 [ext_resource type="PackedScene" uid="uid://da03mkmgnylvx" path="res://scenes/functionality/arrows/component_arrow.tscn" id="5_6u3ko"]
 
@@ -89,6 +90,7 @@ shape = SubResource("RectangleShape2D_l07bw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.568627, 1, 0.717647, 1)
+material = ExtResource("3_la2l6")
 scale = Vector2(3.61929, 3.61929)
 texture = ExtResource("2_r17rj")
 
