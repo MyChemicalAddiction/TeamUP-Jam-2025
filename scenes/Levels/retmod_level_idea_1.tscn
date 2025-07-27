@@ -147,7 +147,7 @@ position = Vector2(-236, 123)
 points = PackedVector2Array(-711, 0, 1640, 0)
 
 [node name="ghost_platform" parent="Special Objects/Interactable/Possessables/Line2D" instance=ExtResource("3_0v3j1")]
-position = Vector2(0, 17)
+position = Vector2(-3, 12)
 
 [node name="FinishDoor" parent="Special Objects/Interactable" instance=ExtResource("4_5s37k")]
 position = Vector2(1409, 787)
