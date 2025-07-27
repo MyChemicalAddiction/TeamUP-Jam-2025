@@ -26,19 +26,19 @@ bbcode_enabled = true
 text = "[center][b]Select a Part[/b][/center]"
 fit_content = true
 
-[node name="SectionButton2" parent="." node_paths=PackedStringArray("section") instance=ExtResource("5_vcfi5")]
+[node name="Part 1" parent="." node_paths=PackedStringArray("section") instance=ExtResource("5_vcfi5")]
 layout_mode = 2
-text = "Part 1"
+text = "Easy"
 section = NodePath("../CanvasLayer/Part 1")
 
-[node name="SectionButton3" parent="." node_paths=PackedStringArray("section") instance=ExtResource("5_vcfi5")]
+[node name="Part 2" parent="." node_paths=PackedStringArray("section") instance=ExtResource("5_vcfi5")]
 layout_mode = 2
-text = "Part 2"
+text = "Medium"
 section = NodePath("../CanvasLayer/Part 2")
 
-[node name="SectionButton4" parent="." node_paths=PackedStringArray("section") instance=ExtResource("5_vcfi5")]
+[node name="Part 3" parent="." node_paths=PackedStringArray("section") instance=ExtResource("5_vcfi5")]
 layout_mode = 2
-text = "Part 3"
+text = "Hard"
 section = NodePath("../CanvasLayer/Part 3")
 
 [node name="SectionButton" parent="." instance=ExtResource("5_vcfi5")]
