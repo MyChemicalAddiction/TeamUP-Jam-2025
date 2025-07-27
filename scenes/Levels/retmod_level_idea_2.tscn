@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=4 uid="uid://78xa0hq56pji"]
 
-[ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/simple_platform_tilemap_placeholder.tscn" id="2_rhl33"]
+[ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/ground tilemap.tscn" id="2_rhl33"]
 [ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="3_ohetx"]
 [ext_resource type="TileSet" uid="uid://884ga5kdmv1k" path="res://resources/ground_bg_tileset.tres" id="3_p72ix"]
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/interactible/finish_door.tscn" id="4_cxlq3"]

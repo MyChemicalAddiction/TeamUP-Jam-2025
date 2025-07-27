@@ -1,16 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://c53hi0fheew2l"]
+[gd_scene load_steps=7 format=3 uid="uid://c53hi0fheew2l"]
 
 [ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="1_7n0sf"]
 [ext_resource type="TileSet" uid="uid://884ga5kdmv1k" path="res://resources/ground_bg_tileset.tres" id="3_1tevl"]
-[ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/simple_platform_tilemap_placeholder.tscn" id="3_3xpag"]
-[ext_resource type="TileSet" uid="uid://kppao2i5v074" path="res://resources/ground_tileset.tres" id="4_1tevl"]
+[ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/ground tilemap.tscn" id="3_3xpag"]
 [ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="4_m4iu2"]
 [ext_resource type="TileSet" uid="uid://p35k8y3kcuqe" path="res://resources/darkness_border.tres" id="5_3xpag"]
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/interactible/finish_door.tscn" id="5_7pycn"]
 
 [node name="Level" type="Node2D"]
 
-[node name="Border" parent="." instance=ExtResource("3_3xpag")]
+[node name="Border" type="TileMapLayer" parent="."]
+use_parent_material = true
+scale = Vector2(2.5, 2.5)
 tile_set = ExtResource("5_3xpag")
 
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
@@ -24,11 +25,12 @@ offset_right = 3114.0
 offset_bottom = 1910.0
 color = Color(0, 0, 0, 1)
 
-[node name="BG" parent="." instance=ExtResource("3_3xpag")]
+[node name="BG" type="TileMapLayer" parent="."]
+use_parent_material = true
+scale = Vector2(5, 5)
 tile_set = ExtResource("3_1tevl")
 
 [node name="Tiles" parent="." instance=ExtResource("3_3xpag")]
-tile_set = ExtResource("4_1tevl")
 
 [node name="Special Objects" type="Node2D" parent="."]
 

@@ -4,3 +4,4 @@
 
 [resource]
 shader = ExtResource("1_3hul6")
+shader_parameter/glow_strength = 1.0
