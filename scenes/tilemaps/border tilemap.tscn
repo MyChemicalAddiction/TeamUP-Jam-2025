@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d11t84xsc8k7a"]
+
+[ext_resource type="TileSet" uid="uid://p35k8y3kcuqe" path="res://resources/darkness_border.tres" id="1_djo4j"]
+
+[node name="Border" type="TileMapLayer"]
+use_parent_material = true
+scale = Vector2(2.5, 2.5)
+tile_set = ExtResource("1_djo4j")

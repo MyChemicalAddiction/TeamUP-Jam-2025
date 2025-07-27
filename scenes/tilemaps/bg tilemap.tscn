@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0mn1byomk45u"]
+
+[ext_resource type="TileSet" uid="uid://884ga5kdmv1k" path="res://resources/ground_bg_tileset.tres" id="1_ddhhc"]
+
+[node name="BG" type="TileMapLayer"]
+use_parent_material = true
+scale = Vector2(5, 5)
+tile_set = ExtResource("1_ddhhc")
