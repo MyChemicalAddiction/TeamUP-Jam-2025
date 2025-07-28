@@ -44,6 +44,9 @@ func change_data(property: String, value: Variant, duplicate_if_present=false):
 			if !duplicate_if_present:
 				return
 		ref.push_back(value)
+	elif ref is bool:
+		saveDataRes.set(property, value)
+		
 	save_game()
 
 func reset_data():

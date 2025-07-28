@@ -6,7 +6,10 @@ playing functionality to.
 """
 
 @export var cutscenes : Dictionary[String, bool]
+@export var intro_cutscene_path : String
 @export var anim_player : AnimationPlayer ## used for fading the screen
+
+signal finished_intro_cutscene
 
 func _ready():
 	update()
@@ -64,3 +67,37 @@ func play_cutscene():
 			cutscenes[cutscenes.keys()[index]] = true
 	else:
 		CutscenePlayer.finished.emit()
+
+func play_intro_cutscene():
+	visible = true
+	anim_player.play("fade_to_black")
+	
+	get_tree().paused = true
+			
+	await anim_player.animation_finished
+	
+	get_tree().get_first_node_in_group("main_theme").disable()
+	
+	var new_cutscene = load(intro_cutscene_path).instantiate()
+	
+	add_child(new_cutscene)
+	move_child(new_cutscene, 0)
+	
+	anim_player.play("fade_to_clear")
+	
+	await new_cutscene.finished
+	
+	anim_player.play("fade_to_black")
+	await anim_player.animation_finished
+
+	new_cutscene.queue_free()
+	
+	finished_intro_cutscene.emit()
+	
+	anim_player.play("fade_to_clear")
+	
+	await anim_player.animation_finished
+	
+	visible = false
+	
+	SaveLoad.change_data("played_intro_cutscene", true)

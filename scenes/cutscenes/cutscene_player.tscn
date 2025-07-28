@@ -60,7 +60,7 @@ _data = {
 process_mode = 3
 layer = 2
 
-[node name="Cutscene Player" type="Control" parent="." node_paths=PackedStringArray("anim_player")]
+[node name="Cutscene Player" type="Control" parent="." node_paths=PackedStringArray("anim_player") groups=["cutscene_player"]]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -72,6 +72,7 @@ script = ExtResource("1_1n5r7")
 cutscenes = Dictionary[String, bool]({
 "res://scenes/cutscenes/cutscene_3.tscn": false
 })
+intro_cutscene_path = "res://scenes/cutscenes/cutscene_0.tscn"
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="FmodEventEmitter2D" type="AudioStreamPlayer" parent="Cutscene Player"]

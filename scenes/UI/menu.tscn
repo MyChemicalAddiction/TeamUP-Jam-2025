@@ -29,7 +29,7 @@ current_section = NodePath("Sections/Main Menu UI")
 bank_paths = ["res://assets/fmod_build/Desktop//Master.strings.bank", "res://assets/fmod_build/Desktop//Master.bank", "res://assets/fmod_build/Desktop//UI.bank", "res://assets/fmod_build/Desktop//Menus.bank", "res://assets/fmod_build/Desktop//DoorsPlatforms.bank", "res://assets/fmod_build/Desktop//Mira.bank", "res://assets/fmod_build/Desktop//ButtonsSwitches.bank", "res://assets/fmod_build/Desktop//Elis.bank", "res://assets/fmod_build/Desktop//Death.bank", "res://assets/fmod_build/Desktop//CutScene.bank"]
 process_mode = 3
 
-[node name="Main Theme" type="FmodEventEmitter2D" parent="." node_paths=PackedStringArray("menu")]
+[node name="Main Theme" type="FmodEventEmitter2D" parent="." node_paths=PackedStringArray("menu") groups=["main_theme"]]
 event_name = "event:/MUSIC/MX_MainMenu"
 event_guid = "{83fde73f-8e21-43ff-abe5-c5b67496b8af}"
 autoplay = true

@@ -61,6 +61,8 @@ Possessable=""
 camera=""
 Player=""
 Menu=""
+cutscene_player=""
+main_theme=""
 
 [input]
 

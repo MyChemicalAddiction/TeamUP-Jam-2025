@@ -39,4 +39,15 @@ func update():
 
 ## Emits the level_select signal with the relevant level
 func select_level():
+	var index = len(SaveLoad.get_data("level_completed_data")) - 1
+	if index == -1: ## If this is the first level ever played:
+		if !SaveLoad.get_data("played_intro_cutscene"):
+			var cutscene_player = get_tree().get_first_node_in_group("cutscene_player")
+			cutscene_player.finished_intro_cutscene.connect(start_first_level)
+			cutscene_player.play_intro_cutscene()
+			return
+
+	level_select.emit(level)
+
+func start_first_level():
 	level_select.emit(level)
