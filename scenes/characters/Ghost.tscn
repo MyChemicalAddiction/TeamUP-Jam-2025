@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c77yqcnjp0x8p"]
+[gd_scene load_steps=20 format=3 uid="uid://c77yqcnjp0x8p"]
 
 [ext_resource type="Script" uid="uid://cnxen4dyqy530" path="res://scripts/classes/characters/ghost/GhostCharacter.gd" id="1_ddmg8"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_2cjv0"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://ry5dgo71msyk" path="res://scripts/functionality/audio/FMODPlayingStateListener.gd" id="12_matwj"]
 [ext_resource type="Script" uid="uid://hk3ym3rj1kh8" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/DestroyedBehavior/HurtboxSimpleDestroyedBehavior.gd" id="13_m8awq"]
 [ext_resource type="Script" uid="uid://drft6dfp41fxt" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/HitBehavior/HurtboxSimpleDamageHitBehavior.gd" id="14_25nvg"]
+[ext_resource type="Script" uid="uid://6x7jgp6hfnbu" path="res://scripts/functionality/death_SFX.gd" id="14_pwbk5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8bju"]
 size = Vector2(128, 128)
@@ -116,40 +117,48 @@ modulate = Color(1, 1, 1, 0.4)
 material = SubResource("ShaderMaterial_pwbk5")
 texture = ExtResource("2_2cjv0")
 
-[node name="EnteredAudio" type="FmodEventEmitter2D" parent="."]
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="EnteredAudio" type="FmodEventEmitter2D" parent="Audio"]
 event_name = "event:/Mira/Mira_Amulet_Enter"
 event_guid = "{bbbd5f27-5be6-4e2b-b911-34b4317b0b66}"
 
-[node name="HiddenListener" type="Node2D" parent="EnteredAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+[node name="HiddenListener" type="Node2D" parent="Audio/EnteredAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
 script = ExtResource("12_matwj")
 fmod_event_emitter = NodePath("..")
-state = NodePath("../../Components/MovementStateMachine/GhostHiddenState")
+state = NodePath("../../../Components/MovementStateMachine/GhostHiddenState")
 metadata/_custom_type_script = "uid://cga1lq65xwp1"
 
-[node name="PossessingListener" type="Node2D" parent="EnteredAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+[node name="PossessingListener" type="Node2D" parent="Audio/EnteredAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
 script = ExtResource("12_matwj")
 fmod_event_emitter = NodePath("..")
-state = NodePath("../../Components/MovementStateMachine/GhostPossessingState")
+state = NodePath("../../../Components/MovementStateMachine/GhostPossessingState")
 metadata/_custom_type_script = "uid://cga1lq65xwp1"
 
-[node name="ExitedAudio" type="FmodEventEmitter2D" parent="."]
+[node name="ExitedAudio" type="FmodEventEmitter2D" parent="Audio"]
 event_name = "event:/Mira/Mira_Amulet_Leave"
 event_guid = "{2f0134fd-94c0-4930-9951-cd91697ef23b}"
 
-[node name="HiddenListener" type="Node2D" parent="ExitedAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+[node name="HiddenListener" type="Node2D" parent="Audio/ExitedAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
 script = ExtResource("12_matwj")
 fmod_event_emitter = NodePath("..")
 on_enter = false
 on_exit = true
-state = NodePath("../../Components/MovementStateMachine/GhostHiddenState")
+state = NodePath("../../../Components/MovementStateMachine/GhostHiddenState")
 metadata/_custom_type_script = "uid://cga1lq65xwp1"
 
-[node name="PossessingListener" type="Node2D" parent="ExitedAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+[node name="PossessingListener" type="Node2D" parent="Audio/ExitedAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
 script = ExtResource("12_matwj")
 fmod_event_emitter = NodePath("..")
 on_enter = false
 on_exit = true
-state = NodePath("../../Components/MovementStateMachine/GhostPossessingState")
+state = NodePath("../../../Components/MovementStateMachine/GhostPossessingState")
 metadata/_custom_type_script = "uid://cga1lq65xwp1"
+
+[node name="Death" type="FmodEventEmitter2D" parent="Audio" node_paths=PackedStringArray("hurtbox")]
+event_name = "event:/Death"
+event_guid = "{a74bcc09-362f-4509-8df2-6758b1ab8ed7}"
+script = ExtResource("14_pwbk5")
+hurtbox = NodePath("../../Components/Hurtbox")
 
 [editable path="Components/MovementStateMachine"]

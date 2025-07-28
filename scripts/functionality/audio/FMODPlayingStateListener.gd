@@ -11,4 +11,5 @@ func _on_state_entered(): ## Overridden to provide behavior on the state being e
 
 func _on_state_exited():
 	if on_exit:
-		fmod_event_emitter.play()
+		if not get_tree().paused:
+			fmod_event_emitter.play()

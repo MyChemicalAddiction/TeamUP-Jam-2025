@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dnlp11cfws5mh"]
+[gd_scene load_steps=19 format=3 uid="uid://dnlp11cfws5mh"]
 
 [ext_resource type="Script" uid="uid://dqcux1xonf8to" path="res://scripts/classes/characters/human/HumanCharacter.gd" id="1_fn0a6"]
 [ext_resource type="PackedScene" uid="uid://bmakco5i5eh8i" path="res://scenes/functionality/complete state machines/characters/Human/HumanMovementStateMachine.tscn" id="2_1s6pi"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://bj3kpi7kuya4w" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Custom Resource/HurtboxRes.gd" id="11_jlbu2"]
 [ext_resource type="Script" uid="uid://hk3ym3rj1kh8" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/DestroyedBehavior/HurtboxSimpleDestroyedBehavior.gd" id="12_jlbu2"]
 [ext_resource type="Script" uid="uid://drft6dfp41fxt" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/HitBehavior/HurtboxSimpleDamageHitBehavior.gd" id="13_jlbu2"]
+[ext_resource type="Script" uid="uid://ry5dgo71msyk" path="res://scripts/functionality/audio/FMODPlayingStateListener.gd" id="13_l3q8g"]
+[ext_resource type="Script" uid="uid://6x7jgp6hfnbu" path="res://scripts/functionality/death_SFX.gd" id="14_ykh65"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s6pi"]
 size = Vector2(128, 128)
@@ -106,5 +108,21 @@ texture = ExtResource("2_rm4bp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rm4bp")
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Jump" type="FmodEventEmitter2D" parent="Audio"]
+
+[node name="JumpListener" type="Node2D" parent="Audio/Jump" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+script = ExtResource("13_l3q8g")
+fmod_event_emitter = NodePath("..")
+state = NodePath("../../../Components/MovementStateMachine/HumanJumpingState")
+metadata/_custom_type_script = "uid://cga1lq65xwp1"
+
+[node name="Death" type="FmodEventEmitter2D" parent="Audio" node_paths=PackedStringArray("hurtbox")]
+event_name = "event:/Death"
+event_guid = "{a74bcc09-362f-4509-8df2-6758b1ab8ed7}"
+script = ExtResource("14_ykh65")
+hurtbox = NodePath("../../Components/Hurtbox")
 
 [editable path="Components/MovementStateMachine"]

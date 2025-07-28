@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdfywic5viawj"]
+
+[ext_resource type="PackedScene" uid="uid://d11t84xsc8k7a" path="res://scenes/tilemaps/border tilemap.tscn" id="1_hyu7u"]
+[ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="2_hispy"]
+[ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/ground tilemap.tscn" id="3_t5k8b"]
+[ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/portals/finish_portal.tscn" id="4_lm1xb"]
+[ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="5_4ekgt"]
+[ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="6_n4m08"]
+[ext_resource type="PackedScene" uid="uid://lu4uv3fbhvq2" path="res://scenes/objects/portals/start_portal.tscn" id="7_e47hr"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Border" parent="." instance=ExtResource("1_hyu7u")]
+
+[node name="Black Darkness" type="ColorRect" parent="."]
+offset_left = -3073.0
+offset_top = -1870.0
+offset_right = 3114.0
+offset_bottom = 1910.0
+color = Color(0, 0, 0, 1)
+
+[node name="BG" parent="." instance=ExtResource("2_hispy")]
+
+[node name="Ground" parent="." instance=ExtResource("3_t5k8b")]
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="Audio"]
+bank_paths = ["res://assets/fmod_build/Desktop//Haunted_House.bank", "res://assets/fmod_build/Desktop//ButtonsSwitches.bank"]
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Audio"]
+event_name = "event:/AMBs/AMB_House"
+event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
+autoplay = true
+
+[node name="FmodEventEmitter2D2" type="FmodEventEmitter2D" parent="Audio"]
+event_name = "snapshot:/Reverb_Home"
+event_guid = "{9b0ed7d8-b7d0-4315-aeb0-6d0e5f616186}"
+autoplay = true
+
+[node name="Special Objects" type="Node2D" parent="."]
+
+[node name="FinishPortal" parent="Special Objects" instance=ExtResource("4_lm1xb")]
+position = Vector2(806, 3)
+
+[node name="Candles" type="Node2D" parent="Special Objects"]
+position = Vector2(-408, -89)
+
+[node name="Candle" parent="Special Objects/Candles" instance=ExtResource("5_4ekgt")]
+
+[node name="Hazards" type="Node2D" parent="Special Objects"]
+
+[node name="Interactable" type="Node2D" parent="Special Objects"]
+
+[node name="Possessables" type="Node2D" parent="Special Objects/Interactable"]
+
+[node name="Movable rigid bodies" type="Node2D" parent="Special Objects"]
+
+[node name="Enemies" type="Node2D" parent="Special Objects"]
+
+[node name="Moving Platforms" type="Node2D" parent="Special Objects"]
+
+[node name="PlayersStartMarker" type="Marker2D" parent="."]
+script = ExtResource("6_n4m08")
+metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
+
+[node name="StartPortal" parent="PlayersStartMarker" instance=ExtResource("7_e47hr")]
+
+[node name="Darkness" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[editable path="Special Objects/FinishPortal"]
