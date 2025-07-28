@@ -1,8 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccy3ybriga8j3"]
+[gd_scene load_steps=3 format=3 uid="uid://ccy3ybriga8j3"]
 
 [ext_resource type="Script" uid="uid://bsiqevxhcauek" path="res://scripts/classes/UI/buttons/LevelButton.gd" id="1_amcxq"]
-[ext_resource type="PackedScene" uid="uid://dnlpbofs2h540" path="res://scenes/Levels/Level 3.tscn" id="3_1vqby"]
-[ext_resource type="PackedScene" uid="uid://78xa0hq56pji" path="res://scenes/Levels/Level 2.tscn" id="4_vcfi5"]
 [ext_resource type="PackedScene" uid="uid://bmpxr4howyw3m" path="res://scenes/UI/buttons/section button.tscn" id="5_vcfi5"]
 
 [node name="Level Select UI" type="VBoxContainer"]
@@ -65,6 +63,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Level 1"
 script = ExtResource("1_amcxq")
+level_path = "res://scenes/Levels/Level 1.tscn"
 metadata/_custom_type_script = "uid://bsiqevxhcauek"
 
 [node name="1" type="Button" parent="CanvasLayer/Part 1"]
@@ -74,7 +73,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Level 2"
 script = ExtResource("1_amcxq")
-level = ExtResource("3_1vqby")
+level_path = "res://scenes/Levels/Level 2.tscn"
 metadata/_custom_type_script = "uid://bsiqevxhcauek"
 
 [node name="2" type="Button" parent="CanvasLayer/Part 1"]
@@ -84,11 +83,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Level 3"
 script = ExtResource("1_amcxq")
-level = ExtResource("4_vcfi5")
+level_path = "res://scenes/Levels/Level 3.tscn"
 metadata/_custom_type_script = "uid://bsiqevxhcauek"
 
 [node name="SectionButton" parent="CanvasLayer/Part 1" node_paths=PackedStringArray("section") instance=ExtResource("5_vcfi5")]
-visible = false
 layout_mode = 2
 section = NodePath("../../..")
 
@@ -121,7 +119,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Level 5"
 script = ExtResource("1_amcxq")
-level = ExtResource("3_1vqby")
 metadata/_custom_type_script = "uid://bsiqevxhcauek"
 
 [node name="2" type="Button" parent="CanvasLayer/Part 2"]
@@ -131,7 +128,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Level 6"
 script = ExtResource("1_amcxq")
-level = ExtResource("4_vcfi5")
 metadata/_custom_type_script = "uid://bsiqevxhcauek"
 
 [node name="SectionButton" parent="CanvasLayer/Part 2" node_paths=PackedStringArray("section") instance=ExtResource("5_vcfi5")]
@@ -167,7 +163,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Level 8"
 script = ExtResource("1_amcxq")
-level = ExtResource("3_1vqby")
 metadata/_custom_type_script = "uid://bsiqevxhcauek"
 
 [node name="2" type="Button" parent="CanvasLayer/Part 3"]
@@ -177,7 +172,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Level 9"
 script = ExtResource("1_amcxq")
-level = ExtResource("4_vcfi5")
 metadata/_custom_type_script = "uid://bsiqevxhcauek"
 
 [node name="SectionButton" parent="CanvasLayer/Part 3" node_paths=PackedStringArray("section") instance=ExtResource("5_vcfi5")]
