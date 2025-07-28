@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b3p14t07es2nd"]
 
 [ext_resource type="Script" uid="uid://d4esf4meclpan" path="res://scripts/classes/components/Implementations/animation/MovingDoorComponent.gd" id="1_h4sa2"]
-[ext_resource type="Texture2D" uid="uid://dgna04txtwnyb" path="res://addons/fmod/icons/d_parameter_icon.svg" id="2_m08a3"]
+[ext_resource type="Texture2D" uid="uid://d4jcxk77r24ti" path="res://assets/visual/objects/moving_door.png" id="2_v0kse"]
 [ext_resource type="Script" uid="uid://ba0im6i353yq8" path="res://scripts/classes/components/Implementations/functionality/AreaEnteredTrackerComponent.gd" id="3_m08a3"]
 [ext_resource type="Script" uid="uid://d0yw8lifbedu5" path="res://scripts/functionality/audio/MovingDoorAudio.gd" id="4_v0kse"]
 
@@ -31,8 +31,9 @@ rotation = -1.5708
 shape = SubResource("RectangleShape2D_jpl0x")
 
 [node name="DParameterIcon" type="Sprite2D" parent="."]
-scale = Vector2(23, 2.23807)
-texture = ExtResource("2_m08a3")
+rotation = 1.5708
+scale = Vector2(0.275, 0.275)
+texture = ExtResource("2_v0kse")
 
 [node name="AreaEnteredTrackerComponent3" type="Node2D" parent="." node_paths=PackedStringArray("tracking_area", "excluded")]
 script = ExtResource("3_m08a3")

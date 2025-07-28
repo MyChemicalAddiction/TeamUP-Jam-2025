@@ -31,7 +31,7 @@ DSP/dsp_buffer_count=4
 config/name="New Game Project"
 run/main_scene="uid://dajpopjceep4u"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dbtaclms6sjmv"
 
 [autoload]
 

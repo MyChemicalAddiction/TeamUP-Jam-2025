@@ -1,12 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://bf1uei6a8uqil"]
+[gd_scene load_steps=20 format=3 uid="uid://bf1uei6a8uqil"]
 
-[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="1_faw7v"]
 [ext_resource type="Script" uid="uid://1ngpyj4uh14m" path="res://scripts/objects/special/amulet.gd" id="1_ulww5"]
 [ext_resource type="PackedScene" uid="uid://dqmvrgjgqo846" path="res://scenes/functionality/complete state machines/AmuletStateMachine.tscn" id="2_nncdm"]
 [ext_resource type="Texture2D" uid="uid://dedeyo3g3qq10" path="res://assets/visual/placeholders/amulet_particle.png" id="2_ulww5"]
 [ext_resource type="Script" uid="uid://54i4rfyqkrcl" path="res://scripts/functionality/amulet_particles.gd" id="3_ns171"]
 [ext_resource type="Script" uid="uid://bp078yt1n57lh" path="res://scripts/classes/components/Implementations/input managers/Special Objects/AmuletInputManager.gd" id="5_c2c0c"]
 [ext_resource type="Texture2D" uid="uid://chkpxytu2u77f" path="res://assets/visual/placeholders/amulet_radius.png" id="5_ulww5"]
+[ext_resource type="Texture2D" uid="uid://dbtaclms6sjmv" path="res://assets/visual/objects/amulet.png" id="7_2n1rr"]
 [ext_resource type="Shader" uid="uid://c20s38gbqrkp3" path="res://shaders/cursed.gdshader" id="7_ol0n1"]
 [ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="8_2n1rr"]
 [ext_resource type="Script" uid="uid://cys4mdwpjj11c" path="res://scripts/functionality/amulet_radius_area.gd" id="8_ns171"]
@@ -41,7 +41,10 @@ shader = ExtResource("7_ol0n1")
 shader_parameter/glow_strength = 0.5
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c2c0c"]
-size = Vector2(130, 130)
+size = Vector2(100, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ol0n1"]
+size = Vector2(70, 50)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ahiox"]
 radius = 922.157
@@ -82,8 +85,8 @@ metadata/_custom_type_script = "uid://bp078yt1n57lh"
 
 [node name="Icon" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ol0n1")
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_faw7v")
+scale = Vector2(0.1625, 0.1625)
+texture = ExtResource("7_2n1rr")
 
 [node name="Icon2" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.177)
@@ -92,10 +95,16 @@ scale = Vector2(3.58203, 3.58203)
 texture = ExtResource("5_ulww5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 modulate = Color(0.831582, 0.831582, 0, 1)
+position = Vector2(0, 5)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_c2c0c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+modulate = Color(0.831582, 0.831582, 0, 1)
+position = Vector2(0, -8)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_ol0n1")
 
 [node name="AmuletRadiusArea" type="Area2D" parent="."]
 collision_layer = 0
