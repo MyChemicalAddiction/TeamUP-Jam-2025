@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://b0ckbwjy0xfp2"]
+[gd_scene load_steps=17 format=3 uid="uid://b0ckbwjy0xfp2"]
 
 [ext_resource type="Script" uid="uid://e0p143fkoaat" path="res://scripts/functionality/aimed_projectile_shooter_area.gd" id="1_by52x"]
 [ext_resource type="Script" uid="uid://bmjff2qd1s3id" path="res://scripts/classes/components/Implementations/functionality/ShooterAreaEnteredTrackerComponent.gd" id="2_sb7mf"]
@@ -8,16 +8,11 @@
 [ext_resource type="Script" uid="uid://bboji5tvpnhjv" path="res://scripts/classes/projectile/ProjectileShooter.gd" id="6_1uh4q"]
 [ext_resource type="PackedScene" uid="uid://hibwxjb2khf0" path="res://scenes/objects/projectiles/Stupid Simple Projectile.tscn" id="7_lrij2"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="8_5h66e"]
-[ext_resource type="Shader" uid="uid://c20s38gbqrkp3" path="res://shaders/cursed.gdshader" id="8_w2qrg"]
 [ext_resource type="Script" uid="uid://ddncd0mbjymm5" path="res://scripts/functionality/segment_collision_shape.gd" id="9_by52x"]
 [ext_resource type="Script" uid="uid://dma7f77yq7bot" path="res://scripts/functionality/simple_projectile_shooter_collisionshape_area_entered_tracker_component.gd" id="10_sb7mf"]
 [ext_resource type="Script" uid="uid://bp3r0ffx34h" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Hitbox.gd" id="11_oogkr"]
 [ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="12_1uh4q"]
 [ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="12_w2qrg"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1uh4q"]
-shader = ExtResource("8_w2qrg")
-shader_parameter/glow_strength = 0.26
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rm1jc"]
 b = Vector2(0, 1714)
@@ -69,7 +64,7 @@ metadata/_custom_type_script = "uid://bboji5tvpnhjv"
 
 [node name="Sprite2D" type="Sprite2D" parent="Components/ProjectileShooter"]
 modulate = Color(0.704081, 0, 0.0804177, 1)
-material = SubResource("ShaderMaterial_1uh4q")
+material = ExtResource("12_1uh4q")
 rotation = 1.5708
 texture = ExtResource("8_5h66e")
 
