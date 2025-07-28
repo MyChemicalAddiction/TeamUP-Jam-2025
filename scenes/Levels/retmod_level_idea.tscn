@@ -166,7 +166,7 @@ position = Vector2(1488, -574)
 color = Color(0, 0, 0, 1)
 
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(546, -668)
 script = ExtResource("9_0dblc")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 
