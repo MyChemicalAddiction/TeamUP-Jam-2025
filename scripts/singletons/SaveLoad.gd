@@ -38,4 +38,7 @@ func change_data(dict: String, key: Variant, value: Variant):
 	var dict_ref = saveDataRes.get(dict)
 	dict_ref[key] = value
 	save_game()
-	
+
+## Returns a dict from the save data resource
+func get_data(dict: String):
+	return saveDataRes.get(dict)

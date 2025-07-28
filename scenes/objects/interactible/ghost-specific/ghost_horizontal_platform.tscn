@@ -66,7 +66,6 @@ material = SubResource("ShaderMaterial_cjj3f")
 scale = Vector2(0.502326, 0.502326)
 sprite_frames = SubResource("SpriteFrames_61il1")
 autoplay = "default"
-frame_progress = 0.0893961
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5.5)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ypt6q1d4fpci"]
+
+[ext_resource type="Script" uid="uid://djojkqdpv6org" path="res://scripts/functionality/cutscene.gd" id="1_0y6ue"]
+
+[node name="Cutscene" type="AnimatedSprite2D"]
+script = ExtResource("1_0y6ue")
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dajpopjceep4u"]
+[gd_scene load_steps=11 format=3 uid="uid://dajpopjceep4u"]
 
 [ext_resource type="Script" uid="uid://653s076xfe72" path="res://scripts/classes/UI/Menu.gd" id="1_2un8v"]
 [ext_resource type="PackedScene" uid="uid://dr5fxdp8vo6rl" path="res://scenes/UI/main menu UI.tscn" id="1_u81ku"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ccy3ybriga8j3" path="res://scenes/UI/level select UI.tscn" id="4_ny0ke"]
 [ext_resource type="PackedScene" uid="uid://cc5seuil7h8lf" path="res://scenes/UI/controls.tscn" id="6_ofy2k"]
 [ext_resource type="PackedScene" uid="uid://c74c6g7dpdv28" path="res://scenes/UI/credits_UI.tscn" id="6_svcqa"]
+[ext_resource type="Script" uid="uid://mwm15cgwsr2q" path="res://scripts/functionality/cutscene_player.gd" id="9_ypw4e"]
 
 [sub_resource type="Environment" id="Environment_ofy2k"]
 glow_enabled = true
@@ -117,6 +118,15 @@ visible = false
 
 [node name="SectionButton" parent="CanvasLayer/Credits UI" index="2" node_paths=PackedStringArray("section")]
 section = NodePath("../../Main Menu UI")
+
+[node name="Cutscene Player" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_ypw4e")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ofy2k")

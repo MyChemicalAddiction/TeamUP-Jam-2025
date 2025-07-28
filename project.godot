@@ -38,6 +38,7 @@ config/icon="res://icon.svg"
 FmodManager="*res://addons/fmod/FmodManager.gd"
 SceneManager="*res://scripts/singletons/SceneManager.gd"
 SaveLoad="*res://scripts/singletons/SaveLoad.gd"
+CutscenePlayer="*res://scripts/singletons/CutscenePlayer.gd"
 
 [display]
 
