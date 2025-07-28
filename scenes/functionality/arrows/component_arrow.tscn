@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://da03mkmgnylvx"]
+[gd_scene load_steps=4 format=3 uid="uid://da03mkmgnylvx"]
 
 [ext_resource type="Texture2D" uid="uid://b8flm718yu8xs" path="res://assets/visual/placeholders/component arrow.png" id="1_a6lmt"]
+[ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="1_nru75"]
 [ext_resource type="Script" uid="uid://2s8mai6lqpyq" path="res://scripts/functionality/component_arrow.gd" id="2_sr461"]
 
 [node name="Component Arrow" type="Sprite2D"]
+material = ExtResource("1_nru75")
 scale = Vector2(0.6239, 0.6239)
 texture = ExtResource("1_a6lmt")
 script = ExtResource("2_sr461")

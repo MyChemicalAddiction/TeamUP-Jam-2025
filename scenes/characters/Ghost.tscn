@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c77yqcnjp0x8p"]
+[gd_scene load_steps=19 format=3 uid="uid://c77yqcnjp0x8p"]
 
 [ext_resource type="Script" uid="uid://cnxen4dyqy530" path="res://scripts/classes/characters/ghost/GhostCharacter.gd" id="1_ddmg8"]
 [ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_2cjv0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cd218insare6n" path="res://scripts/classes/components/Implementations/input managers/Characters/Ghost/GhostInteractInputManager.gd" id="9_qoedd"]
 [ext_resource type="Script" uid="uid://brwvuypl3ag2w" path="res://scripts/classes/Areas/interaction/interaction manager/InteractionManager.gd" id="10_matwj"]
 [ext_resource type="Script" uid="uid://bpwjpuysmtl7y" path="res://scripts/classes/components/Implementations/functionality/PushComponent.gd" id="10_qoedd"]
+[ext_resource type="Shader" uid="uid://c20s38gbqrkp3" path="res://shaders/cursed.gdshader" id="11_n8bju"]
 [ext_resource type="Script" uid="uid://dvixfmg80rixg" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Hurtbox.gd" id="11_pwbk5"]
 [ext_resource type="Script" uid="uid://bj3kpi7kuya4w" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Custom Resource/HurtboxRes.gd" id="12_25nvg"]
 [ext_resource type="Script" uid="uid://ry5dgo71msyk" path="res://scripts/functionality/audio/FMODPlayingStateListener.gd" id="12_matwj"]
@@ -26,6 +27,10 @@ size = Vector2(128, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddmg8"]
 size = Vector2(128, 128)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pwbk5"]
+shader = ExtResource("11_n8bju")
+shader_parameter/glow_strength = 0.3
 
 [node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("movement_component", "interaction_component", "hurtbox_component") groups=["Ghost", "Player"]]
 collision_layer = 4
@@ -108,6 +113,7 @@ shape = SubResource("RectangleShape2D_ddmg8")
 
 [node name="Icon" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.4)
+material = SubResource("ShaderMaterial_pwbk5")
 texture = ExtResource("2_2cjv0")
 
 [node name="EnteredAudio" type="FmodEventEmitter2D" parent="."]

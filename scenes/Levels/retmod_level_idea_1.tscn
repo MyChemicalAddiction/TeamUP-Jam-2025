@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dnlpbofs2h540"]
+[gd_scene load_steps=21 format=3 uid="uid://dnlpbofs2h540"]
 
 [ext_resource type="PackedScene" uid="uid://d11t84xsc8k7a" path="res://scenes/tilemaps/border tilemap.tscn" id="1_xllik"]
 [ext_resource type="PackedScene" uid="uid://c8lt7usj83dfv" path="res://aimed_projectile_shooter_area.tscn" id="2_n4ir2"]
@@ -17,7 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://cclkqpsjouer1" path="res://scenes/objects/doors/cursed_vertical_door.tscn" id="10_imigb"]
 [ext_resource type="PackedScene" uid="uid://deqeo7yuvxhl2" path="res://scenes/objects/doors/cursed_horizontal_door.tscn" id="11_imigb"]
 [ext_resource type="PackedScene" uid="uid://riuotyrpb2p2" path="res://scenes/functionality/levers & buttons/continuous_cursed_button_area.tscn" id="13_imigb"]
+[ext_resource type="Shader" uid="uid://c20s38gbqrkp3" path="res://shaders/cursed.gdshader" id="15_csi01"]
 [ext_resource type="PackedScene" uid="uid://lu4uv3fbhvq2" path="res://scenes/objects/portals/start_portal.tscn" id="18_vif2o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m4vey"]
+shader = ExtResource("15_csi01")
+shader_parameter/glow_strength = 1.0
 
 [node name="Level" type="Node2D"]
 
@@ -209,6 +214,9 @@ position = Vector2(17, 864)
 [node name="MAIN" parent="Special Objects/Moving Doors/Cursed Horizontal Door" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Switches/Ghost Continuous Button Area/MAIN")
 
+[node name="DParameterIcon" parent="Special Objects/Moving Doors/Cursed Horizontal Door" index="2"]
+material = SubResource("ShaderMaterial_m4vey")
+
 [node name="Switches" type="Node2D" parent="Special Objects"]
 
 [node name="Continuous Button Area" parent="Special Objects/Switches" instance=ExtResource("8_5s37k")]
@@ -217,8 +225,14 @@ position = Vector2(19, 1288)
 [node name="Ghost Continuous Button Area" parent="Special Objects/Switches" instance=ExtResource("13_imigb")]
 position = Vector2(-101, 284)
 
+[node name="Sprite2D" parent="Special Objects/Switches/Ghost Continuous Button Area" index="3"]
+material = SubResource("ShaderMaterial_m4vey")
+
 [node name="Ghost Continuous Button Area2" parent="Special Objects/Switches" instance=ExtResource("13_imigb")]
 position = Vector2(-1606, -267)
+
+[node name="Sprite2D" parent="Special Objects/Switches/Ghost Continuous Button Area2" index="3"]
+material = SubResource("ShaderMaterial_m4vey")
 
 [node name="AnimationPlayer" parent="Special Objects/Switches/Ghost Continuous Button Area2" index="4"]
 root_node = NodePath("../../Ghost Continuous Button Area2")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://78xa0hq56pji"]
+[gd_scene load_steps=23 format=3 uid="uid://78xa0hq56pji"]
 
 [ext_resource type="PackedScene" uid="uid://d11t84xsc8k7a" path="res://scenes/tilemaps/border tilemap.tscn" id="1_ij1pd"]
 [ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="2_p72ix"]
@@ -15,8 +15,13 @@
 [ext_resource type="PackedScene" uid="uid://boch8qluci7ev" path="res://scenes/functionality/levers & buttons/continuous_button_area.tscn" id="8_osvqq"]
 [ext_resource type="PackedScene" uid="uid://deqeo7yuvxhl2" path="res://scenes/objects/doors/cursed_horizontal_door.tscn" id="9_evl5c"]
 [ext_resource type="PackedScene" uid="uid://bhkad48ij8ha7" path="res://scenes/objects/doors/vertical_door.tscn" id="13_osvqq"]
+[ext_resource type="Shader" uid="uid://c20s38gbqrkp3" path="res://shaders/cursed.gdshader" id="14_mus5x"]
 [ext_resource type="Script" uid="uid://du7sowey406lo" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/DeleteComponent.gd" id="16_p72ix"]
 [ext_resource type="PackedScene" uid="uid://lu4uv3fbhvq2" path="res://scenes/objects/portals/start_portal.tscn" id="17_dg1x3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m4vey"]
+shader = ExtResource("14_mus5x")
+shader_parameter/glow_strength = 1.0
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_osvqq"]
 b = Vector2(0, 1752.26)
@@ -139,8 +144,14 @@ next_level_scene_path = "res://scenes/Levels/mock_level.tscn"
 [node name="Ghost Continuous Button Area" parent="Special Objects/Interactable" instance=ExtResource("8_85amx")]
 position = Vector2(266, 490)
 
+[node name="Sprite2D" parent="Special Objects/Interactable/Ghost Continuous Button Area" index="3"]
+material = SubResource("ShaderMaterial_m4vey")
+
 [node name="Ghost Continuous Button Area2" parent="Special Objects/Interactable" instance=ExtResource("8_85amx")]
 position = Vector2(1751, -887)
+
+[node name="Sprite2D" parent="Special Objects/Interactable/Ghost Continuous Button Area2" index="3"]
+material = SubResource("ShaderMaterial_m4vey")
 
 [node name="Continuous Button Area" parent="Special Objects/Interactable" instance=ExtResource("8_osvqq")]
 position = Vector2(-875, 417)
@@ -187,6 +198,9 @@ position = Vector2(-3, 326)
 
 [node name="MAIN" parent="Special Objects/Moving Platforms/Cursed Horizontal Door" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Interactable/Ghost Continuous Button Area/MAIN")
+
+[node name="DParameterIcon" parent="Special Objects/Moving Platforms/Cursed Horizontal Door" index="2"]
+material = SubResource("ShaderMaterial_m4vey")
 
 [node name="Vertical Door" parent="Special Objects/Moving Platforms" instance=ExtResource("13_osvqq")]
 position = Vector2(759, -653)

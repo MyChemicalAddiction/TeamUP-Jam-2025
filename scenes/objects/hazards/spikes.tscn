@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d27ix3phd1jfc"]
+[gd_scene load_steps=7 format=3 uid="uid://d27ix3phd1jfc"]
 
 [ext_resource type="Script" uid="uid://bp3r0ffx34h" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Hitbox.gd" id="1_upu3c"]
 [ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="2_mgefk"]
+[ext_resource type="Shader" uid="uid://c20s38gbqrkp3" path="res://shaders/cursed.gdshader" id="3_mgefk"]
 [ext_resource type="Texture2D" uid="uid://doysl83ej5mhi" path="res://assets/visual/placeholders/Spikes.png" id="3_upu3c"]
 
 [sub_resource type="Resource" id="Resource_l52yk"]
@@ -9,6 +10,10 @@ script = ExtResource("2_mgefk")
 damage = 1000.0
 knockback = 0.0
 metadata/_custom_type_script = "uid://dmohabdm78d23"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3jvo4"]
+shader = ExtResource("3_mgefk")
+shader_parameter/glow_strength = 1.0
 
 [node name="Fire" type="Area2D"]
 collision_layer = 6
@@ -23,6 +28,7 @@ polygon = PackedVector2Array(13.4363, 10.0772, -12.6459, 10.0772, 0.395186, -10.
 
 [node name="EvilHands" type="Sprite2D" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_3jvo4")
 position = Vector2(2, -2)
 scale = Vector2(0.257813, 0.20625)
 texture = ExtResource("3_upu3c")
