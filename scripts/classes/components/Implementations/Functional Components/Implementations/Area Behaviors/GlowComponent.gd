@@ -29,8 +29,10 @@ func _on_ready():
 	visual_target_modulate[3] = 0.25
 	
 func _on_use():
+	print('hi')
 	if component_enabled_check:
 		if !component_enabled_check.enabled:
+			print('hey')
 			return
 			
 	if current_tween:

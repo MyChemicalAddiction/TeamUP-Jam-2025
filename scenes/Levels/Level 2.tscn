@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://78xa0hq56pji"]
+[gd_scene load_steps=25 format=3 uid="uid://78xa0hq56pji"]
 
 [ext_resource type="PackedScene" uid="uid://d11t84xsc8k7a" path="res://scenes/tilemaps/border tilemap.tscn" id="1_tdbfg"]
 [ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="2_g2b7c"]
@@ -18,6 +18,8 @@
 [ext_resource type="Script" uid="uid://du7sowey406lo" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/DeleteComponent.gd" id="16_2v42r"]
 [ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="17_dende"]
 [ext_resource type="PackedScene" uid="uid://lu4uv3fbhvq2" path="res://scenes/objects/portals/start_portal.tscn" id="18_8ymyw"]
+[ext_resource type="PackedScene" uid="uid://chum35l360n6t" path="res://scenes/functionality/levers & buttons/cursed_lever.tscn" id="19_g2b7c"]
+[ext_resource type="PackedScene" uid="uid://ct57rtx3amdrv" path="res://scenes/functionality/levers & buttons/lever.tscn" id="20_27ao7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m4vey"]
 shader = ExtResource("8_mc8tk")
@@ -51,17 +53,14 @@ scale = Vector2(1, 1)
 [node name="Audio" type="Node2D" parent="."]
 position = Vector2(155, -906)
 
-[node name="FmodBankLoader2" type="FmodBankLoader" parent="Audio"]
-bank_paths = ["res://assets/fmod_build/Desktop//Haunted_House.bank", "res://assets/fmod_build/Desktop//ButtonsSwitches.bank"]
-
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Audio"]
 event_name = "event:/AMBs/AMB_House"
 event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
 autoplay = true
 
 [node name="FmodEventEmitter2D3" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "event:/AMBs/AMB_House"
-event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
+event_name = "event:/MUSIC/MX_House"
+event_guid = "{1bec39e2-90cd-4b62-9668-e1ae5cee0387}"
 autoplay = true
 
 [node name="FmodEventEmitter2D2" type="FmodEventEmitter2D" parent="Audio"]
@@ -294,6 +293,15 @@ metadata/_edit_group_ = true
 [node name="Darkness" type="CanvasModulate" parent="."]
 position = Vector2(155, -906)
 color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+
+[node name="Cursed Lever" parent="." instance=ExtResource("19_g2b7c")]
+position = Vector2(-172, -449)
+
+[node name="Cursed Lever2" parent="." instance=ExtResource("19_g2b7c")]
+position = Vector2(-176, -352)
+
+[node name="Lever" parent="." instance=ExtResource("20_27ao7")]
+position = Vector2(279, -379)
 
 [editable path="Special Objects/Interactable/FinishDoor"]
 [editable path="Special Objects/Interactable/Ghost Continuous Button Area"]

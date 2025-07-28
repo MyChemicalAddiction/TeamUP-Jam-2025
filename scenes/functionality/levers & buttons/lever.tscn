@@ -1,96 +1,87 @@
-[gd_scene load_steps=12 format=3 uid="uid://ct57rtx3amdrv"]
+[gd_scene load_steps=15 format=3 uid="uid://ct57rtx3amdrv"]
 
 [ext_resource type="Script" uid="uid://bt5qx0ha05v8h" path="res://scripts/classes/components/Implementations/animation/AnimationComponent.gd" id="1_8c6wm"]
 [ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/Areas/interaction/interaction area/InteractionArea.gd" id="1_w68oh"]
 [ext_resource type="Script" uid="uid://dav8v2ao4vgij" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/SwitchComponent.gd" id="3_717qw"]
-[ext_resource type="Script" uid="uid://bgglcirqtvtj3" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/Area Behaviors/GlowComponent.gd" id="4_717qw"]
-[ext_resource type="Texture2D" uid="uid://b4jxbh86chubi" path="res://addons/fmod/icons/snapshot_icon.svg" id="4_w68oh"]
+[ext_resource type="Texture2D" uid="uid://degjw2evsm4aa" path="res://assets/visual/objects/wall_lever.png" id="5_8kkmv"]
 [ext_resource type="PackedScene" uid="uid://da03mkmgnylvx" path="res://scenes/functionality/arrows/component_arrow.tscn" id="6_8kkmv"]
+[ext_resource type="Script" uid="uid://kbboeb0q588r" path="res://scripts/functionality/audio/AudioPlayerComponent.gd" id="7_36pdt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l07bw"]
-size = Vector2(38, 22)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8kkmv"]
+size = Vector2(12.7097, 17.683)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36pdt"]
+atlas = ExtResource("5_8kkmv")
+region = Rect2(160, 0, 160, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kkmv"]
+atlas = ExtResource("5_8kkmv")
+region = Rect2(0, 0, 160, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3g1u0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36pdt")
+}],
+"loop": false,
+"name": &"press",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kkmv")
+}],
+"loop": false,
+"name": &"release",
+"speed": 0.0
+}]
 
 [sub_resource type="Animation" id="Animation_x87ur"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/path = NodePath("Sprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MAIN:enabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [&"press"]
 }
 
 [sub_resource type="Animation" id="Animation_liwl2"]
 resource_name = "press"
-length = 0.5
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/path = NodePath("Sprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.5708]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MAIN:enabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true]
+"values": [&"press"]
 }
 
 [sub_resource type="Animation" id="Animation_c0lck"]
 resource_name = "release"
-length = 0.5
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/path = NodePath("Sprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.5708, 0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MAIN:enabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true]
+"values": [&"release"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c0lck"]
@@ -122,20 +113,16 @@ enabled = false
 enable_manager = NodePath("../MAIN")
 metadata/_custom_type_script = "uid://bt5qx0ha05v8h"
 
-[node name="GlowComponent" type="Node2D" parent="." node_paths=PackedStringArray("component_enabled_check", "visual", "area")]
-script = ExtResource("4_717qw")
-component_enabled_check = NodePath("../MAIN")
-visual = NodePath("../Sprite2D")
-area = NodePath("..")
-metadata/_custom_type_script = "uid://bgglcirqtvtj3"
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+scale = Vector2(5.45929, 5.45929)
+shape = SubResource("RectangleShape2D_8kkmv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(3.61929, 3.61929)
-shape = SubResource("RectangleShape2D_l07bw")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4.44444, 4.44444)
-texture = ExtResource("4_w68oh")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.433661, 0.433661)
+sprite_frames = SubResource("SpriteFrames_3g1u0")
+animation = &"press"
+autoplay = "release"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -144,3 +131,11 @@ libraries = {
 
 [node name="Component Arrow" parent="." node_paths=PackedStringArray("component") instance=ExtResource("6_8kkmv")]
 component = NodePath("../MAIN")
+
+[node name="AudioPlayerComponent" type="FmodEventEmitter2D" parent="." node_paths=PackedStringArray("component")]
+event_name = "event:/Buttons_Switches/Switches"
+event_guid = "{3af56f81-f0a9-45e7-b9a3-3a5fa43c7305}"
+script = ExtResource("7_36pdt")
+component = NodePath("../MAIN")
+mode = 3
+metadata/_custom_type_script = "uid://kbboeb0q588r"

@@ -10,7 +10,7 @@ by the level var.)
 @export var level_path: String
 
 ## The level that this button loads
-@onready var level = load(level_path)
+@onready var level = load(level_path) if level_path else null
 
 ## The top menu control node (to which it connects the section_switch signal)
 @onready var menu = get_tree().get_first_node_in_group("Menu")

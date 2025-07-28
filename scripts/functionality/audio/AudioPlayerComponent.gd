@@ -13,7 +13,7 @@ of Component classes, as well as to the use of Functional Components.
 @export var component: Component
 
 ## If this is audio is tied to a Component, whether it plays on its enable/disable depends on this variable. If it's a Functional Component, it again can play on disable/enable but also on use.
-@export_enum("On Disable", "On Enable", "On Use") var mode
+@export_enum("On Disable", "On Enable", "On Use", "On Activate") var mode
 
 func _ready():
 	match mode:
@@ -23,3 +23,5 @@ func _ready():
 			component.on_enabled.connect(play)
 		2:
 			component.used.connect(play)
+		3:
+			component.activated_changed.connect(play)

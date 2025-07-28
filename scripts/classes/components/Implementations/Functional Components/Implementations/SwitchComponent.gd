@@ -14,6 +14,10 @@ to stay activated/deactivated.
 ## Whether the lever is activated
 @export var activated := false
 
+signal lever_activated
+signal lever_deactivated
+signal activated_changed
+
 func _on_ready():
 	if !activated:
 		on_disabled.emit()
@@ -24,6 +28,10 @@ func _on_use():
 	if activated:
 		on_disabled.emit()
 		activated = false
+		lever_deactivated.emit()
+		activated_changed.emit()
 	else:
 		on_enabled.emit()
 		activated = true
+		lever_activated.emit()
+		activated_changed.emit()

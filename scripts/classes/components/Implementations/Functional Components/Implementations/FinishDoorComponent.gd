@@ -13,7 +13,7 @@ level when used.
 @export var current_level_path: String
 
 ## The level entered when this is used.
-@onready var next_level_scene: PackedScene = load(next_level_scene_path)
+@onready var next_level_scene: PackedScene = load(next_level_scene_path) if next_level_scene_path else null
 
 func _ready():
 	super()
