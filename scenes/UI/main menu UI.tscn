@@ -32,6 +32,10 @@ layout_mode = 2
 text = "Credits
 "
 
+[node name="SectionButton6" parent="." instance=ExtResource("2_rkpoj")]
+layout_mode = 2
+text = "Help"
+
 [node name="SectionButton5" type="Button" parent="." node_paths=PackedStringArray("audio_player")]
 layout_mode = 2
 text = "Reset Data

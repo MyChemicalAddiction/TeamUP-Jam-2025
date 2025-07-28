@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dajpopjceep4u"]
+[gd_scene load_steps=12 format=3 uid="uid://dajpopjceep4u"]
 
 [ext_resource type="Script" uid="uid://653s076xfe72" path="res://scripts/classes/UI/Menu.gd" id="1_2un8v"]
 [ext_resource type="PackedScene" uid="uid://dr5fxdp8vo6rl" path="res://scenes/UI/main menu UI.tscn" id="1_u81ku"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ccy3ybriga8j3" path="res://scenes/UI/level select UI.tscn" id="4_ny0ke"]
 [ext_resource type="PackedScene" uid="uid://cc5seuil7h8lf" path="res://scenes/UI/controls.tscn" id="6_ofy2k"]
 [ext_resource type="PackedScene" uid="uid://c74c6g7dpdv28" path="res://scenes/UI/credits_UI.tscn" id="6_svcqa"]
+[ext_resource type="PackedScene" uid="uid://br4eplmjapoim" path="res://scenes/UI/how_to_play.tscn" id="9_aklih"]
 [ext_resource type="PackedScene" uid="uid://b6ta458m66mt" path="res://scenes/cutscenes/cutscene_player.tscn" id="9_ypw4e"]
 
 [sub_resource type="Environment" id="Environment_ofy2k"]
@@ -83,6 +84,9 @@ section = NodePath("../../Settings UI")
 [node name="SectionButton4" parent="Sections/Main Menu UI" index="2" node_paths=PackedStringArray("section")]
 section = NodePath("../../Credits UI")
 
+[node name="SectionButton6" parent="Sections/Main Menu UI" index="3" node_paths=PackedStringArray("section")]
+section = NodePath("../../How to Play")
+
 [node name="Settings UI" parent="Sections" instance=ExtResource("2_2tfbb")]
 visible = false
 offset_left = -126.0
@@ -120,6 +124,11 @@ visible = false
 [node name="SectionButton" parent="Sections/Credits UI" index="2" node_paths=PackedStringArray("section")]
 section = NodePath("../../Main Menu UI")
 
+[node name="How to Play" parent="Sections" instance=ExtResource("9_aklih")]
+
+[node name="SectionButton" parent="Sections/How to Play" index="2" node_paths=PackedStringArray("section")]
+section = NodePath("../../Main Menu UI")
+
 [node name="Cutscene Player" parent="." instance=ExtResource("9_ypw4e")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -130,3 +139,4 @@ environment = SubResource("Environment_ofy2k")
 [editable path="Sections/Level Select UI"]
 [editable path="Sections/Controls"]
 [editable path="Sections/Credits UI"]
+[editable path="Sections/How to Play"]
