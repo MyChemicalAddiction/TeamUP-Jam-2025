@@ -1,58 +1,86 @@
-[gd_scene load_steps=11 format=3 uid="uid://boch8qluci7ev"]
+[gd_scene load_steps=14 format=3 uid="uid://boch8qluci7ev"]
 
 [ext_resource type="Script" uid="uid://bt5qx0ha05v8h" path="res://scripts/classes/components/Implementations/animation/AnimationComponent.gd" id="1_liwl2"]
 [ext_resource type="Script" uid="uid://ba0im6i353yq8" path="res://scripts/classes/components/Implementations/functionality/AreaEnteredTrackerComponent.gd" id="1_x87ur"]
-[ext_resource type="Texture2D" uid="uid://o2chsr07oeqs" path="res://addons/fmod/icons/bank_icon.svg" id="2_liwl2"]
+[ext_resource type="Texture2D" uid="uid://vmiw4db2cnff" path="res://assets/visual/objects/button.png" id="3_c0lck"]
 [ext_resource type="Script" uid="uid://kbboeb0q588r" path="res://scripts/functionality/audio/AudioPlayerComponent.gd" id="4_x87ur"]
 [ext_resource type="PackedScene" uid="uid://da03mkmgnylvx" path="res://scenes/functionality/arrows/component_arrow.tscn" id="5_c0lck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l07bw"]
-size = Vector2(19.8934, 20.9986)
+size = Vector2(19.8934, 11.8808)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xd54"]
+atlas = ExtResource("3_c0lck")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x25j3"]
+atlas = ExtResource("3_c0lck")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bh65p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xd54")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x25j3")
+}],
+"loop": true,
+"name": &"unpressed",
+"speed": 0.0
+}]
 
 [sub_resource type="Animation" id="Animation_x87ur"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/path = NodePath("Sprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
+"update": 1,
+"values": [&"pressed"]
 }
 
 [sub_resource type="Animation" id="Animation_liwl2"]
 resource_name = "press"
-length = 0.5
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/path = NodePath("Sprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"pressed"]
 }
 
 [sub_resource type="Animation" id="Animation_c0lck"]
 resource_name = "release"
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/path = NodePath("Sprite2D:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"unpressed"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c0lck"]
@@ -83,12 +111,14 @@ metadata/_custom_type_script = "uid://ba0im6i353yq8"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 16.5)
 scale = Vector2(3.61929, 3.61929)
 shape = SubResource("RectangleShape2D_l07bw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3.61929, 3.61929)
-texture = ExtResource("2_liwl2")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2375, 0.2375)
+sprite_frames = SubResource("SpriteFrames_bh65p")
+animation = &"pressed"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
