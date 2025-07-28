@@ -1,18 +1,50 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8tomno4vy81t"]
+[gd_scene load_steps=11 format=3 uid="uid://b8tomno4vy81t"]
 
-[ext_resource type="Texture2D" uid="uid://d11fuyffc5s15" path="res://assets/visual/placeholders/placeholder_tileset.png" id="1_3c25c"]
 [ext_resource type="Shader" uid="uid://c20s38gbqrkp3" path="res://shaders/cursed.gdshader" id="1_4dpk7"]
+[ext_resource type="Texture2D" uid="uid://cswvrx88cpcro" path="res://assets/visual/objects/boxes.png" id="2_4dpk7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i5els"]
 shader = ExtResource("1_4dpk7")
 shader_parameter/glow_strength = 0.487
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e0xvh"]
-atlas = ExtResource("1_3c25c")
-region = Rect2(0.0877228, 279.989, 128.004, 103.09)
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5els"]
+atlas = ExtResource("2_4dpk7")
+region = Rect2(0, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75u00"]
+atlas = ExtResource("2_4dpk7")
+region = Rect2(320, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hedjm"]
+atlas = ExtResource("2_4dpk7")
+region = Rect2(640, 320, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13c37"]
+atlas = ExtResource("2_4dpk7")
+region = Rect2(960, 320, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iw5lr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5els")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75u00")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hedjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13c37")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0xvh"]
-size = Vector2(130, 102)
+size = Vector2(102, 102)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3c25c"]
 size = Vector2(130, 102)
@@ -23,13 +55,15 @@ collision_mask = 449
 mass = 7.0
 can_sleep = false
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.16463, 0.443076, 0.348791, 1)
 material = SubResource("ShaderMaterial_i5els")
-texture = SubResource("AtlasTexture_e0xvh")
+scale = Vector2(0.318426, 0.318426)
+sprite_frames = SubResource("SpriteFrames_iw5lr")
+autoplay = "default"
+frame_progress = 0.0643796
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_e0xvh")
 
 [node name="Interacting Area" type="Area2D" parent="."]

@@ -1,13 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgudsm50jqbt8"]
+[gd_scene load_steps=5 format=3 uid="uid://dgudsm50jqbt8"]
 
-[ext_resource type="Texture2D" uid="uid://d11fuyffc5s15" path="res://assets/visual/placeholders/placeholder_tileset.png" id="1_2dn76"]
+[ext_resource type="Texture2D" uid="uid://cswvrx88cpcro" path="res://assets/visual/objects/boxes.png" id="1_2dn76"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e0xvh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w4d6"]
 atlas = ExtResource("1_2dn76")
-region = Rect2(0.0877228, 279.989, 128.004, 103.09)
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dka4n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4w4d6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e0xvh"]
-size = Vector2(130, 102)
+size = Vector2(102, 102)
 
 [node name="Box" type="RigidBody2D"]
 collision_layer = 256
@@ -15,8 +26,10 @@ collision_mask = 449
 mass = 7.0
 can_sleep = false
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("AtlasTexture_e0xvh")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.319229, 0.319229)
+sprite_frames = SubResource("SpriteFrames_dka4n")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_e0xvh")
