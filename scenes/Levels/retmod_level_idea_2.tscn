@@ -278,7 +278,7 @@ position = Vector2(-9, 3.5)
 shape = SubResource("RectangleShape2D_dg1x3")
 
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
-position = Vector2(341, -234)
+position = Vector2(33, -1553)
 script = ExtResource("5_85amx")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 

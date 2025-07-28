@@ -1,14 +1,14 @@
 [gd_scene load_steps=8 format=3 uid="uid://b75dcm16rsq2f"]
 
-[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="1_kdt2c"]
+[ext_resource type="Texture2D" uid="uid://dw3ej3frnxips" path="res://assets/visual/objects/moving_platform.png" id="1_fvtjl"]
 [ext_resource type="Script" uid="uid://dwqil4kc4xuat" path="res://scripts/classes/components/Implementations/functionality/HorizontalPlatformMovementComponent.gd" id="2_5mwxe"]
 [ext_resource type="Script" uid="uid://ba0im6i353yq8" path="res://scripts/classes/components/Implementations/functionality/AreaEnteredTrackerComponent.gd" id="3_fvtjl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kt7wl"]
-size = Vector2(19.9466, 20.5866)
+size = Vector2(19.9466, 45.4822)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_djl51"]
-size = Vector2(0.826538, 21.5442)
+size = Vector2(0.919998, 42.7944)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5mwxe"]
 size = Vector2(0.55101, 17.7141)
@@ -20,31 +20,21 @@ size = Vector2(0.55101, 17.7141)
 collision_layer = 64
 
 [node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(2.85715, 0.328833)
-texture = ExtResource("1_kdt2c")
-
-[node name="Icon2" type="Sprite2D" parent="Icon"]
-position = Vector2(-60.8998, -33.2086)
-scale = Vector2(0.0437501, 1.00164)
-texture = ExtResource("1_kdt2c")
-
-[node name="Icon3" type="Sprite2D" parent="Icon"]
-position = Vector2(60.8998, -30.1676)
-scale = Vector2(0.0437501, 1.00164)
-texture = ExtResource("1_kdt2c")
+scale = Vector2(0.502326, 0.502326)
+texture = ExtResource("1_fvtjl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.13928e-06, 0.500001)
+position = Vector2(0, 5.5)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_kt7wl")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-174, -8)
+position = Vector2(-172.5, -8.125)
 scale = Vector2(18.4783, 2.14397)
 shape = SubResource("RectangleShape2D_djl51")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(173.5, -7.5)
+position = Vector2(173.068, -8.25)
 scale = Vector2(18.4783, 2.14397)
 shape = SubResource("RectangleShape2D_djl51")
 
@@ -62,8 +52,8 @@ collision_layer = 0
 collision_mask = 455
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionDetector"]
-position = Vector2(-188, -1)
-scale = Vector2(18.1485, 2.08873)
+position = Vector2(-188, 0)
+scale = Vector2(18.1485, 5.84873)
 shape = SubResource("RectangleShape2D_5mwxe")
 
 [node name="AreaEnteredTrackerComponent" type="Node2D" parent="CollisionDetector" node_paths=PackedStringArray("tracking_area", "excluded")]
@@ -79,8 +69,8 @@ collision_layer = 0
 collision_mask = 455
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="CollisionDetector2"]
-position = Vector2(187, -1)
-scale = Vector2(18.1485, 2.08873)
+position = Vector2(188, 0)
+scale = Vector2(18.1485, 5.84873)
 shape = SubResource("RectangleShape2D_fvtjl")
 
 [node name="AreaEnteredTrackerComponent" type="Node2D" parent="CollisionDetector2" node_paths=PackedStringArray("tracking_area", "excluded")]

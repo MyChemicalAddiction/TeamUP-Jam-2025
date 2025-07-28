@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://c4el63hhb4nr5"]
 
-[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="1_odifh"]
+[ext_resource type="Texture2D" uid="uid://dw3ej3frnxips" path="res://assets/visual/objects/moving_platform.png" id="1_a70w8"]
 [ext_resource type="Script" uid="uid://bdnyff2fdmh3e" path="res://scripts/classes/components/Implementations/functionality/VerticalPlatformMovementComponent.gd" id="2_a70w8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a70w8"]
-size = Vector2(19.9466, 20.5866)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8svi"]
+size = Vector2(19.9466, 45.0034)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cpatd"]
-size = Vector2(0.826538, 21.5442)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjqqp"]
+size = Vector2(0.865881, 42.911)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0fo8"]
 size = Vector2(18.1833, 17.7141)
@@ -16,33 +16,23 @@ size = Vector2(18.1833, 17.7141)
 collision_layer = 64
 
 [node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(2.85715, 0.328833)
-texture = ExtResource("1_odifh")
+scale = Vector2(0.502326, 0.502326)
+texture = ExtResource("1_a70w8")
 
-[node name="Icon2" type="Sprite2D" parent="Icon"]
-position = Vector2(-60.8998, -33.2086)
-scale = Vector2(0.0437501, 1.00164)
-texture = ExtResource("1_odifh")
-
-[node name="Icon3" type="Sprite2D" parent="Icon"]
-position = Vector2(60.8998, -30.1676)
-scale = Vector2(0.0437501, 1.00164)
-texture = ExtResource("1_odifh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.13928e-06, 0.500001)
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
 scale = Vector2(18.1485, 2.08873)
-shape = SubResource("RectangleShape2D_a70w8")
+shape = SubResource("RectangleShape2D_c8svi")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-174, -8)
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(-172.318, -8.5)
 scale = Vector2(18.4783, 2.14397)
-shape = SubResource("RectangleShape2D_cpatd")
+shape = SubResource("RectangleShape2D_wjqqp")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
-position = Vector2(173.5, -7.5)
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="."]
+position = Vector2(173, -8)
 scale = Vector2(18.4783, 2.14397)
-shape = SubResource("RectangleShape2D_cpatd")
+shape = SubResource("RectangleShape2D_wjqqp")
 
 [node name="Components" type="Node2D" parent="."]
 
@@ -67,6 +57,6 @@ collision_layer = 0
 collision_mask = 455
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="DownCollisionDetector2"]
-position = Vector2(4.54747e-13, 23)
+position = Vector2(2.71051e-20, 72)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_q0fo8")
