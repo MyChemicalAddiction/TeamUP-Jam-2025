@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://c53hi0fheew2l"]
+[gd_scene load_steps=8 format=3 uid="uid://c53hi0fheew2l"]
 
 [ext_resource type="PackedScene" uid="uid://d11t84xsc8k7a" path="res://scenes/tilemaps/border tilemap.tscn" id="1_1tevl"]
 [ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="1_7n0sf"]
 [ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/ground tilemap.tscn" id="3_3xpag"]
 [ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="3_m4iu2"]
 [ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="4_m4iu2"]
-[ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/interactible/finish_door.tscn" id="5_7pycn"]
+[ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/portals/finish_portal.tscn" id="5_7pycn"]
+[ext_resource type="PackedScene" uid="uid://lu4uv3fbhvq2" path="res://scenes/objects/portals/start_portal.tscn" id="7_3xpag"]
 
 [node name="Level" type="Node2D"]
 
@@ -39,6 +40,9 @@ autoplay = true
 
 [node name="Special Objects" type="Node2D" parent="."]
 
+[node name="FinishPortal" parent="Special Objects" instance=ExtResource("5_7pycn")]
+position = Vector2(806, 3)
+
 [node name="Candles" type="Node2D" parent="Special Objects"]
 position = Vector2(-408, -89)
 
@@ -50,9 +54,6 @@ position = Vector2(-408, -89)
 
 [node name="Possessables" type="Node2D" parent="Special Objects/Interactable"]
 
-[node name="FinishDoor" parent="Special Objects/Interactable" instance=ExtResource("5_7pycn")]
-position = Vector2(2495, -117)
-
 [node name="Movable rigid bodies" type="Node2D" parent="Special Objects"]
 
 [node name="Enemies" type="Node2D" parent="Special Objects"]
@@ -63,7 +64,10 @@ position = Vector2(2495, -117)
 script = ExtResource("1_7n0sf")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 
+[node name="StartPortal" parent="PlayersStartMarker" instance=ExtResource("7_3xpag")]
+
 [node name="Darkness" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0, 0, 0, 1)
 
-[editable path="Special Objects/Interactable/FinishDoor"]
+[editable path="Special Objects/FinishPortal"]

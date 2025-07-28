@@ -1,10 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://78xa0hq56pji"]
+[gd_scene load_steps=21 format=3 uid="uid://78xa0hq56pji"]
 
 [ext_resource type="PackedScene" uid="uid://d11t84xsc8k7a" path="res://scenes/tilemaps/border tilemap.tscn" id="1_ij1pd"]
 [ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="2_p72ix"]
 [ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/ground tilemap.tscn" id="2_rhl33"]
 [ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="3_ohetx"]
-[ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/interactible/finish_door.tscn" id="4_cxlq3"]
+[ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/portals/finish_portal.tscn" id="4_cxlq3"]
 [ext_resource type="PackedScene" uid="uid://d27ix3phd1jfc" path="res://scenes/objects/hazards/spikes.tscn" id="4_d0vn0"]
 [ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="5_85amx"]
 [ext_resource type="PackedScene" uid="uid://b8tomno4vy81t" path="res://scenes/objects/movable rigid bodies/cursed box.tscn" id="5_cxlq3"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://deqeo7yuvxhl2" path="res://scenes/objects/doors/cursed_horizontal_door.tscn" id="9_evl5c"]
 [ext_resource type="PackedScene" uid="uid://bhkad48ij8ha7" path="res://scenes/objects/doors/vertical_door.tscn" id="13_osvqq"]
 [ext_resource type="Script" uid="uid://du7sowey406lo" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/DeleteComponent.gd" id="16_p72ix"]
+[ext_resource type="PackedScene" uid="uid://lu4uv3fbhvq2" path="res://scenes/objects/portals/start_portal.tscn" id="17_dg1x3"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_osvqq"]
 b = Vector2(0, 1752.26)
@@ -266,6 +267,8 @@ shape = SubResource("RectangleShape2D_dg1x3")
 position = Vector2(341, -234)
 script = ExtResource("5_85amx")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
+
+[node name="StartPortal" parent="PlayersStartMarker" instance=ExtResource("17_dg1x3")]
 
 [node name="Darkness" type="CanvasModulate" parent="."]
 position = Vector2(155, -906)
