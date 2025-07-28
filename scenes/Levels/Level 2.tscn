@@ -59,9 +59,14 @@ event_name = "event:/AMBs/AMB_House"
 event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
 autoplay = true
 
+[node name="FmodEventEmitter2D3" type="FmodEventEmitter2D" parent="Audio"]
+event_name = "event:/AMBs/AMB_House"
+event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
+autoplay = true
+
 [node name="FmodEventEmitter2D2" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "snapshot:/Reverb_Home"
-event_guid = "{9b0ed7d8-b7d0-4315-aeb0-6d0e5f616186}"
+event_name = "event:/MUSIC/MX_House"
+event_guid = "{1bec39e2-90cd-4b62-9668-e1ae5cee0387}"
 autoplay = true
 
 [node name="Special Objects" type="Node2D" parent="."]
@@ -183,7 +188,7 @@ position = Vector2(1704, -736)
 [node name="Enemies" type="Node2D" parent="Special Objects"]
 
 [node name="AimedProjectileShooterArea2" parent="Special Objects/Enemies" instance=ExtResource("12_4jcre")]
-position = Vector2(-1217, -928)
+position = Vector2(-1237, -733)
 rotation = -1.57079
 
 [node name="CollisionShape2D" parent="Special Objects/Enemies/AimedProjectileShooterArea2" index="1"]
@@ -279,12 +284,12 @@ position = Vector2(-9, 3.5)
 shape = SubResource("RectangleShape2D_dg1x3")
 
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
-position = Vector2(-1304, -1525)
+position = Vector2(91, -504)
 script = ExtResource("17_dende")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
+metadata/_edit_group_ = true
 
 [node name="StartPortal" parent="PlayersStartMarker" instance=ExtResource("18_8ymyw")]
-position = Vector2(1331, -56)
 
 [node name="Darkness" type="CanvasModulate" parent="."]
 position = Vector2(155, -906)
