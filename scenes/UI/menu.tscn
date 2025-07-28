@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://653s076xfe72" path="res://scripts/classes/UI/Menu.gd" id="1_2un8v"]
 [ext_resource type="PackedScene" uid="uid://dr5fxdp8vo6rl" path="res://scenes/UI/main menu UI.tscn" id="1_u81ku"]
 [ext_resource type="PackedScene" uid="uid://c7vh0fx3q7g3l" path="res://scenes/UI/settings UI.tscn" id="2_2tfbb"]
-[ext_resource type="Script" uid="uid://b8abnvxsbtb1" path="res://scripts/functionality/main_theme.gd" id="2_ny0ke"]
+[ext_resource type="Script" uid="uid://dg4y1l2s622l0" path="res://scripts/classes/functionality/audio/FmodMainThemePlayer.gd" id="2_aklih"]
 [ext_resource type="Script" uid="uid://0snjao7rq46i" path="res://scripts/functionality/UI/title_screen.gd" id="3_ofy2k"]
 [ext_resource type="PackedScene" uid="uid://ccy3ybriga8j3" path="res://scenes/UI/level select UI.tscn" id="4_ny0ke"]
 [ext_resource type="PackedScene" uid="uid://cc5seuil7h8lf" path="res://scenes/UI/controls.tscn" id="6_ofy2k"]
@@ -29,13 +29,11 @@ current_section = NodePath("Sections/Main Menu UI")
 bank_paths = ["res://assets/fmod_build/Desktop//Master.strings.bank", "res://assets/fmod_build/Desktop//Master.bank", "res://assets/fmod_build/Desktop//UI.bank", "res://assets/fmod_build/Desktop//Menus.bank", "res://assets/fmod_build/Desktop//DoorsPlatforms.bank", "res://assets/fmod_build/Desktop//Mira.bank", "res://assets/fmod_build/Desktop//ButtonsSwitches.bank", "res://assets/fmod_build/Desktop//Elis.bank", "res://assets/fmod_build/Desktop//Death.bank", "res://assets/fmod_build/Desktop//CutScene.bank", "res://assets/fmod_build/Desktop//Haunted_House.bank"]
 process_mode = 3
 
-[node name="Main Theme" type="FmodEventEmitter2D" parent="." node_paths=PackedStringArray("menu") groups=["main_theme"]]
-event_name = "event:/MUSIC/MX_MainMenu"
-event_guid = "{83fde73f-8e21-43ff-abe5-c5b67496b8af}"
-autoplay = true
-process_mode = 3
-script = ExtResource("2_ny0ke")
+[node name="MainTheme" type="Node2D" parent="." node_paths=PackedStringArray("menu") groups=["main_theme"]]
+script = ExtResource("2_aklih")
 menu = NodePath("..")
+event_GUID = "{83fde73f-8e21-43ff-abe5-c5b67496b8af}"
+metadata/_custom_type_script = "uid://dg4y1l2s622l0"
 
 [node name="Title Screen" type="Control" parent="."]
 layout_mode = 1
