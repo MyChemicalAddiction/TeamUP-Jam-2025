@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://d0yw8lifbedu5" path="res://scripts/functionality/audio/MovingDoorAudio.gd" id="4_v0kse"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpl0x"]
-size = Vector2(44, 414)
+size = Vector2(44, 396)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m08a3"]
 size = Vector2(0.0551013, 17.2354)
@@ -48,7 +48,7 @@ collision_layer = 0
 collision_mask = 323
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="AreaEnteredTrackerComponent3/CollisionDetector"]
-position = Vector2(-208, -5.96046e-08)
+position = Vector2(-199, -3.55271e-15)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_m08a3")
 
@@ -65,7 +65,7 @@ collision_layer = 0
 collision_mask = 323
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="AreaEnteredTrackerComponent4/CollisionDetector2"]
-position = Vector2(208, 0)
+position = Vector2(199, 0)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_m08a3")
 

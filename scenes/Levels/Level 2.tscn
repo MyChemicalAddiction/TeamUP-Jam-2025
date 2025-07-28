@@ -183,7 +183,7 @@ position = Vector2(1704, -736)
 [node name="Enemies" type="Node2D" parent="Special Objects"]
 
 [node name="AimedProjectileShooterArea2" parent="Special Objects/Enemies" instance=ExtResource("12_4jcre")]
-position = Vector2(-1234, -626)
+position = Vector2(-1217, -928)
 rotation = -1.57079
 
 [node name="CollisionShape2D" parent="Special Objects/Enemies/AimedProjectileShooterArea2" index="1"]
@@ -284,6 +284,7 @@ script = ExtResource("17_dende")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 
 [node name="StartPortal" parent="PlayersStartMarker" instance=ExtResource("18_8ymyw")]
+position = Vector2(1331, -56)
 
 [node name="Darkness" type="CanvasModulate" parent="."]
 position = Vector2(155, -906)

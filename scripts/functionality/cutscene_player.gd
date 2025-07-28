@@ -20,11 +20,11 @@ func _ready():
 ## Updates which cutscenes have already beenn played
 func update():
 	var level_completed_data = SaveLoad.get_data("level_completed_data")
-
+	
 	for i in range(len(cutscenes.keys())):
 		cutscenes[cutscenes.keys()[i]] = false
-
-	for i in range(clamp(len(level_completed_data), 0, len(cutscenes.keys()) - 1)):
+	
+	for i in range(clamp(len(level_completed_data), 0, len(cutscenes.keys()))):
 		cutscenes[cutscenes.keys()[i]] = true
 
 ## Instantiates a cutscene scene, awaits its finish signal then fades screen to black & at end of fade

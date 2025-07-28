@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://d0yw8lifbedu5" path="res://scripts/functionality/audio/MovingDoorAudio.gd" id="4_woniu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpl0x"]
-size = Vector2(44, 414)
+size = Vector2(44, 396)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cvve"]
 size = Vector2(2.09384, 0.478752)
@@ -26,10 +26,11 @@ is_enablee = true
 metadata/_custom_type_script = "uid://d4esf4meclpan"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_jpl0x")
 
 [node name="DParameterIcon" type="Sprite2D" parent="."]
-position = Vector2(0, -74)
+position = Vector2(0, -9)
 scale = Vector2(0.275, 0.275)
 texture = ExtResource("2_woniu")
 
@@ -63,7 +64,7 @@ collision_layer = 0
 collision_mask = 451
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="AreaEnteredTrackerComponent4/CollisionDetector2"]
-position = Vector2(0, 208)
+position = Vector2(0, 190)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_3cvve")
 
