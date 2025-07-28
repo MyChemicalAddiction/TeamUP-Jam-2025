@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b0ckbwjy0xfp2"]
+[gd_scene load_steps=19 format=3 uid="uid://b0ckbwjy0xfp2"]
 
 [ext_resource type="Script" uid="uid://e0p143fkoaat" path="res://scripts/functionality/aimed_projectile_shooter_area.gd" id="1_by52x"]
 [ext_resource type="Script" uid="uid://bmjff2qd1s3id" path="res://scripts/classes/components/Implementations/functionality/ShooterAreaEnteredTrackerComponent.gd" id="2_sb7mf"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://ddncd0mbjymm5" path="res://scripts/functionality/segment_collision_shape.gd" id="9_by52x"]
 [ext_resource type="Script" uid="uid://dma7f77yq7bot" path="res://scripts/functionality/simple_projectile_shooter_collisionshape_area_entered_tracker_component.gd" id="10_sb7mf"]
 [ext_resource type="Script" uid="uid://bp3r0ffx34h" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Hitbox.gd" id="11_oogkr"]
+[ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="12_1uh4q"]
 [ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="12_w2qrg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1uh4q"]
@@ -88,6 +89,7 @@ excluded = [NodePath("../..")]
 metadata/_custom_type_script = "uid://ba0im6i353yq8"
 
 [node name="Line2D" type="Line2D" parent="CollisionShape2D"]
+material = ExtResource("12_1uh4q")
 points = PackedVector2Array(0, 0, 0, 600)
 default_color = Color(0.148989, 0, 0.0273442, 1)
 
