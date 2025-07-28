@@ -15,9 +15,14 @@ level when used.
 ## The level entered when this is used.
 @onready var next_level_scene: PackedScene = load(next_level_scene_path)
 
+func _ready():
+	super()
+	CutscenePlayer.finished.connect(change_level)
+
 func _on_use():
 	SaveLoad.change_data('level_completed_data', current_level_path)
 	
 	CutscenePlayer.play_cutscene()
-	
-	#SceneManager.transition_to_scene(next_level_scene)
+
+func change_level():
+	SceneManager.transition_to_scene(next_level_scene)

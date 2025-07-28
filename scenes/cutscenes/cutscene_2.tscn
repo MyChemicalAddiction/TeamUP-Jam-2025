@@ -30,8 +30,5 @@ autoplay = "default"
 centered = false
 script = ExtResource("6_rfxie")
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/MUSIC/MX_CutScene"
-event_guid = "{14484f42-f195-44fd-9b3e-d309c5afefeb}"
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 autoplay = true
-process_mode = 3
