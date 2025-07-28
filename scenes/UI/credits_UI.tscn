@@ -24,12 +24,12 @@ fit_content = true
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 2
 bbcode_enabled = true
-text = "[b]Programming -[/b] retmod
-[b]Art -[/b] ArtHunterVera, Kaadu
-[b]SFX -[/b] Victoria Kaye
+text = "[b]Programming & Level Design -[/b] retmod
+[b]2D Art -[/b] Vera H (ArtHunterVera), Kiu Rutten (IceKiube)
+[b]Character Design -[/b] Kiu Rutten (IceKiube)
+[b]Sound Design -[/b] Victoria Salazar
 [b]Music -[/b] fishegg
-[b]Writing[/b] - 
-(you can replace these names with any other names you'd like. later we can also add hyperlinks to each name which will lead to any link you desire.)"
+[b]Writer[/b] - Felix S"
 fit_content = true
 
 [node name="SectionButton" parent="." instance=ExtResource("5_11jeb")]
