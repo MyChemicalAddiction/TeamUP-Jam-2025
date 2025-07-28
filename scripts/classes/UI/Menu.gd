@@ -32,7 +32,11 @@ var main_game_scene: Node
 ## Emitted when a level is selected
 signal level_selected 
 
+## Emitted when the game has quit back to the main menu.
+signal quit_to_menu
+
 func _ready():
+	SceneManager.quit.connect(_quit_to_menu)
 	default_section = current_section
 	current_section.visible = true
 	set_process(false) ## Makes it so Escape doesn't do anything when already in menu.
@@ -74,3 +78,8 @@ func _process(_delta) -> void:
 				untoggled.emit()
 				current_section.visible = false
 				main_game_scene.process_mode = Node.PROCESS_MODE_INHERIT
+
+func _quit_to_menu():
+	toggled.emit()
+	switch_section(default_section)
+	quit_to_menu.emit()

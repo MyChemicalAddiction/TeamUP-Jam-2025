@@ -140,7 +140,6 @@ position = Vector2(774, 843)
 position = Vector2(-1403, -285)
 
 [node name="MAIN" parent="Special Objects/Interactable/FinishDoor" index="0"]
-next_level_scene_path = "res://scenes/Levels/mock_level.tscn"
 current_level_path = "res://scenes/Levels/Level 2.tscn"
 
 [node name="Ghost Continuous Button Area" parent="Special Objects/Interactable" instance=ExtResource("7_pka8w")]

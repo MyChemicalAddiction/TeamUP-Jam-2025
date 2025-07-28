@@ -43,7 +43,14 @@ func finished_fading():
 	if currentScene:
 		currentScene.queue_free() ## Removes the old scene
 	
-	currentScene = default_scene.instantiate()
-	currentLevel.add_child(currentScene) ## Adds the new scene
+	if default_scene:
+		currentScene = default_scene.instantiate()
+		currentLevel.add_child(currentScene) ## Adds the new scene
+	
+	else:
+		queue_free()
+		SceneManager.quit.emit()
+		anim_player.play("FadeToNormal") ## Makes the screen unfade
+		return
 	
 	anim_player.play("FadeToNormal") ## Makes the screen unfade

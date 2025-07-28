@@ -9,5 +9,4 @@ func _toggle():
 	if cutscene_player.visible:
 		play()
 	else:
-
 		stop()
