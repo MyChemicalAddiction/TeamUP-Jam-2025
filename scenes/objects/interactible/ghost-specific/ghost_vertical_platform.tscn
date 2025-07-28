@@ -1,16 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0yt2e6rh6c05"]
+[gd_scene load_steps=11 format=3 uid="uid://d0yt2e6rh6c05"]
 
-[ext_resource type="Shader" uid="uid://c20s38gbqrkp3" path="res://shaders/cursed.gdshader" id="1_nvmaq"]
+[ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="1_nvmaq"]
 [ext_resource type="Texture2D" uid="uid://dw3ej3frnxips" path="res://assets/visual/objects/moving_platform.png" id="1_yo78c"]
 [ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/Areas/interaction/interaction area/InteractionArea.gd" id="2_obdj0"]
 [ext_resource type="Script" uid="uid://bgglcirqtvtj3" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/Area Behaviors/GlowComponent.gd" id="3_yo78c"]
 [ext_resource type="Script" uid="uid://bjisq1vjh82jp" path="res://scripts/classes/components/Implementations/Possessable Object Behaviors/GhostPlatformMovementComponent.gd" id="4_nvmaq"]
 [ext_resource type="Script" uid="uid://3o5qtevy1vo1" path="res://scripts/classes/components/Implementations/input managers/Platforms/HorizontalPlatformInputManager.gd" id="5_mwnj0"]
 [ext_resource type="Script" uid="uid://dmpdwlkpgkeb5" path="res://scripts/classes/components/Implementations/functionality/LightComponent.gd" id="7_mwnj0"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yo78c"]
-shader = ExtResource("1_nvmaq")
-shader_parameter/glow_strength = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvmaq"]
 size = Vector2(19.9466, 45.0034)
@@ -26,7 +22,7 @@ collision_layer = 64
 collision_mask = 3
 
 [node name="Icon" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_yo78c")
+material = ExtResource("1_nvmaq")
 scale = Vector2(0.502326, 0.502326)
 texture = ExtResource("1_yo78c")
 
