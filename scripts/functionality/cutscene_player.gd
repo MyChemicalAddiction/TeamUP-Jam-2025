@@ -6,6 +6,7 @@ playing functionality to.
 """
 
 @export var cutscenes : Dictionary[String, bool]
+@export var anim_player : AnimationPlayer ## used for fading the screen
 
 func _ready():
 	update()
@@ -25,22 +26,41 @@ func update():
 
 ## Instantiates a cutscene scene, awaits its finish signal then fades screen to black & at end of fade
 func play_cutscene():
-	get_tree().paused = true
-	visible = true
+
 	var index = len(SaveLoad.get_data("level_completed_data")) - 1
 
 	if !cutscenes[cutscenes.keys()[index]]:
 		if len(cutscenes.keys()[index]) > 2: ## Only instantiates a cutscene if the key at the index is longer than 2 characters (if not - means there is no cutscene after that amount of levels completed)
+			visible = true
+			anim_player.play("fade_to_black")
+			
+			get_tree().paused = true
+			
+			await anim_player.animation_finished
+
 			var new_cutscene = load(cutscenes.keys()[index]).instantiate()
 			cutscenes[cutscenes.keys()[index]] = true
 			
 			add_child(new_cutscene)
+			move_child(new_cutscene, 0)
+			
+			anim_player.play("fade_to_clear")
 			
 			await new_cutscene.finished
 			
+			anim_player.play("fade_to_black")
+			await anim_player.animation_finished
+			
 			CutscenePlayer.finished.emit()
+			new_cutscene.queue_free()
+			
+			anim_player.play("fade_to_clear")
+			await anim_player.animation_finished
+			
 			visible = false
+			
 		else:
 			CutscenePlayer.finished.emit()
-			visible = false
 			cutscenes[cutscenes.keys()[index]] = true
+	else:
+		CutscenePlayer.finished.emit()

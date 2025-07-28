@@ -62,6 +62,7 @@ metadata/_custom_type_script = "uid://dlpckao766xkb"
 metadata/_edit_group_ = true
 
 [node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("area")]
+process_mode = 3
 script = ExtResource("2_n83yo")
 area = NodePath("..")
 metadata/_custom_type_script = "uid://c46as10t6gpl0"

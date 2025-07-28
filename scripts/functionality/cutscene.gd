@@ -9,6 +9,5 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_released("cutscene_move"):
 		if frame == length:
 			finished.emit()
-			queue_free()
 			return
 		frame += 1
