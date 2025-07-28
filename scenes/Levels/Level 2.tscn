@@ -1,26 +1,26 @@
 [gd_scene load_steps=23 format=3 uid="uid://78xa0hq56pji"]
 
-[ext_resource type="PackedScene" uid="uid://d11t84xsc8k7a" path="res://scenes/tilemaps/border tilemap.tscn" id="1_ij1pd"]
-[ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="2_p72ix"]
-[ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/ground tilemap.tscn" id="2_rhl33"]
-[ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="3_ohetx"]
-[ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/portals/finish_portal.tscn" id="4_cxlq3"]
-[ext_resource type="PackedScene" uid="uid://d27ix3phd1jfc" path="res://scenes/objects/hazards/spikes.tscn" id="4_d0vn0"]
-[ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="5_85amx"]
-[ext_resource type="PackedScene" uid="uid://b8tomno4vy81t" path="res://scenes/objects/movable rigid bodies/cursed box.tscn" id="5_cxlq3"]
-[ext_resource type="PackedScene" uid="uid://dgudsm50jqbt8" path="res://scenes/objects/movable rigid bodies/box.tscn" id="5_ohetx"]
-[ext_resource type="PackedScene" uid="uid://b0ckbwjy0xfp2" path="res://scenes/objects/projectile shooters/linear_aimed_projectile_shooter.tscn" id="6_ij1pd"]
-[ext_resource type="PackedScene" uid="uid://b75dcm16rsq2f" path="res://scenes/objects/moving platforms/horizontal_platform.tscn" id="6_rhl33"]
-[ext_resource type="PackedScene" uid="uid://riuotyrpb2p2" path="res://scenes/functionality/levers & buttons/continuous_cursed_button_area.tscn" id="8_85amx"]
-[ext_resource type="PackedScene" uid="uid://boch8qluci7ev" path="res://scenes/functionality/levers & buttons/continuous_button_area.tscn" id="8_osvqq"]
-[ext_resource type="PackedScene" uid="uid://deqeo7yuvxhl2" path="res://scenes/objects/doors/cursed_horizontal_door.tscn" id="9_evl5c"]
-[ext_resource type="PackedScene" uid="uid://bhkad48ij8ha7" path="res://scenes/objects/doors/vertical_door.tscn" id="13_osvqq"]
-[ext_resource type="Shader" uid="uid://c20s38gbqrkp3" path="res://shaders/cursed.gdshader" id="14_mus5x"]
-[ext_resource type="Script" uid="uid://du7sowey406lo" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/DeleteComponent.gd" id="16_p72ix"]
-[ext_resource type="PackedScene" uid="uid://lu4uv3fbhvq2" path="res://scenes/objects/portals/start_portal.tscn" id="17_dg1x3"]
+[ext_resource type="PackedScene" uid="uid://d11t84xsc8k7a" path="res://scenes/tilemaps/border tilemap.tscn" id="1_tdbfg"]
+[ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="2_g2b7c"]
+[ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/ground tilemap.tscn" id="3_27ao7"]
+[ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="4_ckfx7"]
+[ext_resource type="PackedScene" uid="uid://d27ix3phd1jfc" path="res://scenes/objects/hazards/spikes.tscn" id="5_h32g1"]
+[ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/portals/finish_portal.tscn" id="6_ynlrf"]
+[ext_resource type="PackedScene" uid="uid://riuotyrpb2p2" path="res://scenes/functionality/levers & buttons/continuous_cursed_button_area.tscn" id="7_pka8w"]
+[ext_resource type="Shader" uid="uid://c20s38gbqrkp3" path="res://shaders/cursed.gdshader" id="8_mc8tk"]
+[ext_resource type="PackedScene" uid="uid://boch8qluci7ev" path="res://scenes/functionality/levers & buttons/continuous_button_area.tscn" id="9_d7t7m"]
+[ext_resource type="PackedScene" uid="uid://b8tomno4vy81t" path="res://scenes/objects/movable rigid bodies/cursed box.tscn" id="10_tuf06"]
+[ext_resource type="PackedScene" uid="uid://dgudsm50jqbt8" path="res://scenes/objects/movable rigid bodies/box.tscn" id="11_cmup6"]
+[ext_resource type="PackedScene" uid="uid://b0ckbwjy0xfp2" path="res://scenes/objects/projectile shooters/linear_aimed_projectile_shooter.tscn" id="12_4jcre"]
+[ext_resource type="PackedScene" uid="uid://b75dcm16rsq2f" path="res://scenes/objects/moving platforms/horizontal_platform.tscn" id="13_hcvnc"]
+[ext_resource type="PackedScene" uid="uid://deqeo7yuvxhl2" path="res://scenes/objects/doors/cursed_horizontal_door.tscn" id="14_lexwp"]
+[ext_resource type="PackedScene" uid="uid://bhkad48ij8ha7" path="res://scenes/objects/doors/vertical_door.tscn" id="15_t3ie4"]
+[ext_resource type="Script" uid="uid://du7sowey406lo" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/DeleteComponent.gd" id="16_2v42r"]
+[ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="17_dende"]
+[ext_resource type="PackedScene" uid="uid://lu4uv3fbhvq2" path="res://scenes/objects/portals/start_portal.tscn" id="18_8ymyw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m4vey"]
-shader = ExtResource("14_mus5x")
+shader = ExtResource("8_mc8tk")
 shader_parameter/glow_strength = 1.0
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_osvqq"]
@@ -34,7 +34,7 @@ size = Vector2(86, 75)
 
 [node name="Level" type="Node2D"]
 
-[node name="Border" parent="." instance=ExtResource("1_ij1pd")]
+[node name="Border" parent="." instance=ExtResource("1_tdbfg")]
 
 [node name="Black Darkness" type="ColorRect" parent="."]
 offset_left = -2918.0
@@ -43,10 +43,10 @@ offset_right = 3269.0
 offset_bottom = 1004.0
 color = Color(0, 0, 0, 1)
 
-[node name="BG" parent="." instance=ExtResource("2_p72ix")]
+[node name="BG" parent="." instance=ExtResource("2_g2b7c")]
 scale = Vector2(1, 1)
 
-[node name="Ground" parent="." instance=ExtResource("2_rhl33")]
+[node name="Ground" parent="." instance=ExtResource("3_27ao7")]
 
 [node name="Audio" type="Node2D" parent="."]
 position = Vector2(155, -906)
@@ -70,119 +70,120 @@ position = Vector2(155, -906)
 [node name="Candles" type="Node2D" parent="Special Objects"]
 position = Vector2(-408, -89)
 
-[node name="Candle" parent="Special Objects/Candles" instance=ExtResource("3_ohetx")]
+[node name="Candle" parent="Special Objects/Candles" instance=ExtResource("4_ckfx7")]
 position = Vector2(207, 87)
 
-[node name="Candle2" parent="Special Objects/Candles" instance=ExtResource("3_ohetx")]
+[node name="Candle2" parent="Special Objects/Candles" instance=ExtResource("4_ckfx7")]
 position = Vector2(-940, -522)
 
-[node name="Candle3" parent="Special Objects/Candles" instance=ExtResource("3_ohetx")]
+[node name="Candle3" parent="Special Objects/Candles" instance=ExtResource("4_ckfx7")]
 position = Vector2(1628, -538)
 
 [node name="Hazards" type="Node2D" parent="Special Objects"]
 
-[node name="Spikes" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(-1310, 846)
 
-[node name="Spikes2" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes2" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(-1183, 845)
 
-[node name="Spikes3" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes3" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(-1054, 845)
 
-[node name="Spikes4" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes4" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(-924, 846)
 
-[node name="Spikes5" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes5" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(-797, 845)
 
-[node name="Spikes6" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes6" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(-668, 845)
 
-[node name="Spikes7" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes7" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(-537, 845)
 
-[node name="Spikes8" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes8" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(-410, 844)
 
-[node name="Spikes9" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes9" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(-281, 844)
 
-[node name="Spikes10" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes10" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(-152, 844)
 
-[node name="Spikes11" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes11" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(-25, 843)
 
-[node name="Spikes12" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes12" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(104, 843)
 
-[node name="Spikes13" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes13" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(235, 844)
 
-[node name="Spikes14" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes14" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(362, 843)
 
-[node name="Spikes15" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes15" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(491, 843)
 
-[node name="Spikes16" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes16" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(633, 843)
 
-[node name="Spikes17" parent="Special Objects/Hazards" instance=ExtResource("4_d0vn0")]
+[node name="Spikes17" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
 position = Vector2(774, 843)
 
 [node name="Interactable" type="Node2D" parent="Special Objects"]
 
 [node name="Possessables" type="Node2D" parent="Special Objects/Interactable"]
 
-[node name="FinishDoor" parent="Special Objects/Interactable" instance=ExtResource("4_cxlq3")]
+[node name="FinishDoor" parent="Special Objects/Interactable" instance=ExtResource("6_ynlrf")]
 position = Vector2(-1403, -285)
 
 [node name="MAIN" parent="Special Objects/Interactable/FinishDoor" index="0"]
 next_level_scene_path = "res://scenes/Levels/mock_level.tscn"
+current_level_path = "res://scenes/Levels/Level 2.tscn"
 
-[node name="Ghost Continuous Button Area" parent="Special Objects/Interactable" instance=ExtResource("8_85amx")]
+[node name="Ghost Continuous Button Area" parent="Special Objects/Interactable" instance=ExtResource("7_pka8w")]
 position = Vector2(266, 490)
 
 [node name="Sprite2D" parent="Special Objects/Interactable/Ghost Continuous Button Area" index="3"]
 material = SubResource("ShaderMaterial_m4vey")
 
-[node name="Ghost Continuous Button Area2" parent="Special Objects/Interactable" instance=ExtResource("8_85amx")]
+[node name="Ghost Continuous Button Area2" parent="Special Objects/Interactable" instance=ExtResource("7_pka8w")]
 position = Vector2(1751, -887)
 
 [node name="Sprite2D" parent="Special Objects/Interactable/Ghost Continuous Button Area2" index="3"]
 material = SubResource("ShaderMaterial_m4vey")
 
-[node name="Continuous Button Area" parent="Special Objects/Interactable" instance=ExtResource("8_osvqq")]
+[node name="Continuous Button Area" parent="Special Objects/Interactable" instance=ExtResource("9_d7t7m")]
 position = Vector2(-875, 417)
 
 [node name="Movable rigid bodies" type="Node2D" parent="Special Objects"]
 
-[node name="Cursed Box" parent="Special Objects/Movable rigid bodies" instance=ExtResource("5_cxlq3")]
+[node name="Cursed Box" parent="Special Objects/Movable rigid bodies" instance=ExtResource("10_tuf06")]
 position = Vector2(43, 108)
 
-[node name="Cursed Box2" parent="Special Objects/Movable rigid bodies" instance=ExtResource("5_cxlq3")]
+[node name="Cursed Box2" parent="Special Objects/Movable rigid bodies" instance=ExtResource("10_tuf06")]
 position = Vector2(907, -792)
 
-[node name="Box" parent="Special Objects/Movable rigid bodies" instance=ExtResource("5_ohetx")]
+[node name="Box" parent="Special Objects/Movable rigid bodies" instance=ExtResource("11_cmup6")]
 position = Vector2(-128, 685)
 
-[node name="Box2" parent="Special Objects/Movable rigid bodies" instance=ExtResource("5_ohetx")]
+[node name="Box2" parent="Special Objects/Movable rigid bodies" instance=ExtResource("11_cmup6")]
 position = Vector2(2, 685)
 
-[node name="Box3" parent="Special Objects/Movable rigid bodies" instance=ExtResource("5_ohetx")]
+[node name="Box3" parent="Special Objects/Movable rigid bodies" instance=ExtResource("11_cmup6")]
 position = Vector2(1575, -633)
 
-[node name="Box4" parent="Special Objects/Movable rigid bodies" instance=ExtResource("5_ohetx")]
+[node name="Box4" parent="Special Objects/Movable rigid bodies" instance=ExtResource("11_cmup6")]
 position = Vector2(1705, -631)
 
-[node name="Box5" parent="Special Objects/Movable rigid bodies" instance=ExtResource("5_ohetx")]
+[node name="Box5" parent="Special Objects/Movable rigid bodies" instance=ExtResource("11_cmup6")]
 position = Vector2(1704, -736)
 
 [node name="Enemies" type="Node2D" parent="Special Objects"]
 
-[node name="AimedProjectileShooterArea2" parent="Special Objects/Enemies" instance=ExtResource("6_ij1pd")]
+[node name="AimedProjectileShooterArea2" parent="Special Objects/Enemies" instance=ExtResource("12_4jcre")]
 position = Vector2(-1234, -626)
 rotation = -1.57079
 
@@ -191,10 +192,10 @@ shape = SubResource("SegmentShape2D_osvqq")
 
 [node name="Moving Platforms" type="Node2D" parent="Special Objects"]
 
-[node name="horizontal_platform" parent="Special Objects/Moving Platforms" instance=ExtResource("6_rhl33")]
+[node name="horizontal_platform" parent="Special Objects/Moving Platforms" instance=ExtResource("13_hcvnc")]
 position = Vector2(-107, -480)
 
-[node name="Cursed Horizontal Door" parent="Special Objects/Moving Platforms" instance=ExtResource("9_evl5c")]
+[node name="Cursed Horizontal Door" parent="Special Objects/Moving Platforms" instance=ExtResource("14_lexwp")]
 position = Vector2(-3, 326)
 
 [node name="MAIN" parent="Special Objects/Moving Platforms/Cursed Horizontal Door" index="0" node_paths=PackedStringArray("enable_manager")]
@@ -203,13 +204,13 @@ enable_manager = NodePath("../../../Interactable/Ghost Continuous Button Area/MA
 [node name="DParameterIcon" parent="Special Objects/Moving Platforms/Cursed Horizontal Door" index="2"]
 material = SubResource("ShaderMaterial_m4vey")
 
-[node name="Vertical Door" parent="Special Objects/Moving Platforms" instance=ExtResource("13_osvqq")]
+[node name="Vertical Door" parent="Special Objects/Moving Platforms" instance=ExtResource("15_t3ie4")]
 position = Vector2(759, -653)
 
 [node name="MAIN" parent="Special Objects/Moving Platforms/Vertical Door" index="0" node_paths=PackedStringArray("enable_manager")]
 enable_manager = NodePath("../../../Interactable/Ghost Continuous Button Area2/MAIN")
 
-[node name="Vertical Door2" parent="Special Objects/Moving Platforms" instance=ExtResource("13_osvqq")]
+[node name="Vertical Door2" parent="Special Objects/Moving Platforms" instance=ExtResource("15_t3ie4")]
 position = Vector2(-1131, -372)
 
 [node name="MAIN" parent="Special Objects/Moving Platforms/Vertical Door2" index="0" node_paths=PackedStringArray("enable_manager")]
@@ -218,7 +219,7 @@ enable_manager = NodePath("../../../Interactable/Continuous Button Area/MAIN")
 [node name="Tutorials" type="Node2D" parent="Special Objects"]
 
 [node name="DeleteComponent" type="Node2D" parent="Special Objects/Tutorials" node_paths=PackedStringArray("area", "enabling_area")]
-script = ExtResource("16_p72ix")
+script = ExtResource("16_2v42r")
 area = NodePath("GhostArea")
 enabled = false
 enabling_area = NodePath("HumanArea")
@@ -255,7 +256,7 @@ position = Vector2(0, -780)
 shape = SubResource("RectangleShape2D_p72ix")
 
 [node name="DeleteComponent2" type="Node2D" parent="Special Objects/Tutorials" node_paths=PackedStringArray("area")]
-script = ExtResource("16_p72ix")
+script = ExtResource("16_2v42r")
 area = NodePath("HumanArea")
 metadata/_custom_type_script = "uid://du7sowey406lo"
 
@@ -279,11 +280,11 @@ position = Vector2(-9, 3.5)
 shape = SubResource("RectangleShape2D_dg1x3")
 
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
-position = Vector2(33, -1553)
-script = ExtResource("5_85amx")
+position = Vector2(-1304, -1525)
+script = ExtResource("17_dende")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 
-[node name="StartPortal" parent="PlayersStartMarker" instance=ExtResource("17_dg1x3")]
+[node name="StartPortal" parent="PlayersStartMarker" instance=ExtResource("18_8ymyw")]
 
 [node name="Darkness" type="CanvasModulate" parent="."]
 position = Vector2(155, -906)

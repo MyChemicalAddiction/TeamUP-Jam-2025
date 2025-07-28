@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmpkaefu6q6qo"]
+
+[ext_resource type="Texture2D" uid="uid://dokl5hefefle" path="res://assets/visual/cutscenes/cutscene 1/1.png" id="1_j1xx4"]
+[ext_resource type="Texture2D" uid="uid://ciav48dwe03fp" path="res://assets/visual/cutscenes/cutscene 1/2.png" id="2_15i2x"]
+[ext_resource type="Texture2D" uid="uid://24uex876rchm" path="res://assets/visual/cutscenes/cutscene 1/3.png" id="3_c8wig"]
+[ext_resource type="Texture2D" uid="uid://bnfwmyhvfx40s" path="res://assets/visual/cutscenes/cutscene 1/4.png" id="4_wogi8"]
+[ext_resource type="Texture2D" uid="uid://nnhu2ow8uv8h" path="res://assets/visual/cutscenes/cutscene 1/5.png" id="5_kq4sx"]
+[ext_resource type="Script" uid="uid://djojkqdpv6org" path="res://scripts/functionality/cutscene.gd" id="10_tcu2f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tp2nr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j1xx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_15i2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c8wig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wogi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kq4sx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Cutscene" type="AnimatedSprite2D"]
+process_mode = 3
+scale = Vector2(0.242437, 0.245298)
+sprite_frames = SubResource("SpriteFrames_tp2nr")
+autoplay = "default"
+centered = false
+script = ExtResource("10_tcu2f")
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/MUSIC/MX_CutScene"
+event_guid = "{14484f42-f195-44fd-9b3e-d309c5afefeb}"
+autoplay = true
+process_mode = 3

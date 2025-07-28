@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccy3ybriga8j3"]
+[gd_scene load_steps=5 format=3 uid="uid://ccy3ybriga8j3"]
 
 [ext_resource type="Script" uid="uid://bsiqevxhcauek" path="res://scripts/classes/UI/buttons/LevelButton.gd" id="1_amcxq"]
-[ext_resource type="PackedScene" uid="uid://c55ostl8df6lu" path="res://scenes/Levels/retmod_level_idea.tscn" id="2_taft8"]
-[ext_resource type="PackedScene" uid="uid://dnlpbofs2h540" path="res://scenes/Levels/retmod_level_idea_1.tscn" id="3_1vqby"]
-[ext_resource type="PackedScene" uid="uid://78xa0hq56pji" path="res://scenes/Levels/retmod_level_idea_2.tscn" id="4_vcfi5"]
+[ext_resource type="PackedScene" uid="uid://dnlpbofs2h540" path="res://scenes/Levels/Level 3.tscn" id="3_1vqby"]
+[ext_resource type="PackedScene" uid="uid://78xa0hq56pji" path="res://scenes/Levels/Level 2.tscn" id="4_vcfi5"]
 [ext_resource type="PackedScene" uid="uid://bmpxr4howyw3m" path="res://scenes/UI/buttons/section button.tscn" id="5_vcfi5"]
 
 [node name="Level Select UI" type="VBoxContainer"]
@@ -66,7 +65,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Level 1"
 script = ExtResource("1_amcxq")
-level = ExtResource("2_taft8")
 metadata/_custom_type_script = "uid://bsiqevxhcauek"
 
 [node name="1" type="Button" parent="CanvasLayer/Part 1"]
@@ -114,7 +112,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Level 4"
 script = ExtResource("1_amcxq")
-level = ExtResource("2_taft8")
 metadata/_custom_type_script = "uid://bsiqevxhcauek"
 
 [node name="1" type="Button" parent="CanvasLayer/Part 2"]
@@ -161,7 +158,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Level 7"
 script = ExtResource("1_amcxq")
-level = ExtResource("2_taft8")
 metadata/_custom_type_script = "uid://bsiqevxhcauek"
 
 [node name="1" type="Button" parent="CanvasLayer/Part 3"]

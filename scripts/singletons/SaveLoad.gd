@@ -17,6 +17,9 @@ signal loaded
 ## The resource that holds all save data
 @export var saveDataRes: Resource = preload("res://scripts/save data custom resources/Instances/SaveDataResource.tres")
 
+## The path to the resource that holds all save data
+@export var saveDataResPath: String = "res://scripts/save data custom resources/Instances/SaveDataResource.tres"
+
 ## Loads the save game data when launched
 func _ready():
 	load_game()
@@ -34,11 +37,20 @@ func load_game():
 	loaded.emit()
 
 ## Changes the key attribute of dict dictionary with value value in saveDataRes
-func change_data(dict: String, key: Variant, value: Variant):
-	var dict_ref = saveDataRes.get(dict)
-	dict_ref[key] = value
+func change_data(property: String, value: Variant, duplicate_if_present=false):
+	var ref = saveDataRes.get(property)
+	if ref is Array:
+		if value in ref:
+			if !duplicate_if_present:
+				return
+		ref.push_back(value)
 	save_game()
 
+func reset_data():
+	saveDataRes = load(saveDataResPath)
+	save_game()
+	loaded.emit()
+
 ## Returns a dict from the save data resource
-func get_data(dict: String):
-	return saveDataRes.get(dict)
+func get_data(ref: String):
+	return saveDataRes.get(ref)

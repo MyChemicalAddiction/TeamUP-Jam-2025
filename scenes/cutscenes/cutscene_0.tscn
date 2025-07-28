@@ -1,8 +1,60 @@
-[gd_scene load_steps=2 format=3 uid="uid://ypt6q1d4fpci"]
+[gd_scene load_steps=12 format=3 uid="uid://ypt6q1d4fpci"]
 
 [ext_resource type="Script" uid="uid://djojkqdpv6org" path="res://scripts/functionality/cutscene.gd" id="1_0y6ue"]
+[ext_resource type="Texture2D" uid="uid://d2ficeyshqbnd" path="res://assets/visual/cutscenes/cutscene 0/1.png" id="1_aind8"]
+[ext_resource type="Texture2D" uid="uid://coo0jggc5qu3n" path="res://assets/visual/cutscenes/cutscene 0/2.png" id="2_dvtd3"]
+[ext_resource type="Texture2D" uid="uid://c1ebqh0a87mf5" path="res://assets/visual/cutscenes/cutscene 0/3.png" id="3_khsxw"]
+[ext_resource type="Texture2D" uid="uid://cq1wkjufm1ygt" path="res://assets/visual/cutscenes/cutscene 0/4.png" id="4_caprq"]
+[ext_resource type="Texture2D" uid="uid://bfavgfdlxfuon" path="res://assets/visual/cutscenes/cutscene 0/5.png" id="5_en4nk"]
+[ext_resource type="Texture2D" uid="uid://7k5swloyxgtk" path="res://assets/visual/cutscenes/cutscene 0/6.png" id="6_wm40l"]
+[ext_resource type="Texture2D" uid="uid://chxlvx2xetjkq" path="res://assets/visual/cutscenes/cutscene 0/7.png" id="7_yf6fr"]
+[ext_resource type="Texture2D" uid="uid://clfwtrnskt0b2" path="res://assets/visual/cutscenes/cutscene 0/9.png" id="8_0pe7d"]
+[ext_resource type="Texture2D" uid="uid://dwpgkeh18fkdd" path="res://assets/visual/cutscenes/cutscene 0/8.png" id="9_upiph"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yyqkf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_aind8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dvtd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_khsxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_caprq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_en4nk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wm40l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yf6fr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_upiph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0pe7d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
 
 [node name="Cutscene" type="AnimatedSprite2D"]
+process_mode = 3
+scale = Vector2(0.242437, 0.245298)
+sprite_frames = SubResource("SpriteFrames_yyqkf")
+autoplay = "default"
+centered = false
 script = ExtResource("1_0y6ue")
 
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/MUSIC/MX_CutScene"
+event_guid = "{14484f42-f195-44fd-9b3e-d309c5afefeb}"
+autoplay = true

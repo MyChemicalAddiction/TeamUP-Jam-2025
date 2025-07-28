@@ -24,11 +24,11 @@ fit_content = true
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 2
 bbcode_enabled = true
-text = "[b]Programming & Level Design -[/b] retmod
-[b]2D Art -[/b] Vera H (ArtHunterVera), Kiu Rutten (IceKiube)
-[b]Character Design -[/b] Kiu Rutten (IceKiube)
-[b]Sound Design -[/b] Victoria Salazar
-[b]Music -[/b] fishegg
+text = "[b]Programmer & Level Designer -[/b] retmod
+[b]2D Artists -[/b] Vera H (ArtHunterVera), Kiu Rutten (IceKiube)
+[b]Character Designer -[/b] Kiu Rutten (IceKiube)
+[b]Sound Designer -[/b] Victoria Salazar
+[b]Composer -[/b] fishegg
 [b]Writer[/b] - Felix S"
 fit_content = true
 

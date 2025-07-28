@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ccy3ybriga8j3" path="res://scenes/UI/level select UI.tscn" id="4_ny0ke"]
 [ext_resource type="PackedScene" uid="uid://cc5seuil7h8lf" path="res://scenes/UI/controls.tscn" id="6_ofy2k"]
 [ext_resource type="PackedScene" uid="uid://c74c6g7dpdv28" path="res://scenes/UI/credits_UI.tscn" id="6_svcqa"]
-[ext_resource type="Script" uid="uid://mwm15cgwsr2q" path="res://scripts/functionality/cutscene_player.gd" id="9_ypw4e"]
+[ext_resource type="PackedScene" uid="uid://b6ta458m66mt" path="res://scenes/cutscenes/cutscene_player.tscn" id="9_ypw4e"]
 
 [sub_resource type="Environment" id="Environment_ofy2k"]
 glow_enabled = true
@@ -22,10 +22,11 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_2un8v")
-current_section = NodePath("CanvasLayer/Main Menu UI")
+current_section = NodePath("Sections/Main Menu UI")
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://assets/fmod_build/Desktop//Master.strings.bank", "res://assets/fmod_build/Desktop//Master.bank", "res://assets/fmod_build/Desktop//UI.bank", "res://assets/fmod_build/Desktop//Menus.bank", "res://assets/fmod_build/Desktop//DoorsPlatforms.bank", "res://assets/fmod_build/Desktop//Mira.bank", "res://assets/fmod_build/Desktop//ButtonsSwitches.bank", "res://assets/fmod_build/Desktop//Elis.bank", "res://assets/fmod_build/Desktop//Death.bank"]
+bank_paths = ["res://assets/fmod_build/Desktop//Master.strings.bank", "res://assets/fmod_build/Desktop//Master.bank", "res://assets/fmod_build/Desktop//UI.bank", "res://assets/fmod_build/Desktop//Menus.bank", "res://assets/fmod_build/Desktop//DoorsPlatforms.bank", "res://assets/fmod_build/Desktop//Mira.bank", "res://assets/fmod_build/Desktop//ButtonsSwitches.bank", "res://assets/fmod_build/Desktop//Elis.bank", "res://assets/fmod_build/Desktop//Death.bank", "res://assets/fmod_build/Desktop//CutScene.bank"]
+process_mode = 3
 
 [node name="Main Theme" type="FmodEventEmitter2D" parent="." node_paths=PackedStringArray("menu")]
 event_name = "event:/MUSIC/MX_MainMenu"
@@ -64,25 +65,25 @@ offset_bottom = 23.0
 grow_horizontal = 2
 text = "Title Screen"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Sections" type="CanvasLayer" parent="."]
 
-[node name="Main Menu UI" parent="CanvasLayer" instance=ExtResource("1_u81ku")]
+[node name="Main Menu UI" parent="Sections" instance=ExtResource("1_u81ku")]
 visible = false
 offset_left = -125.0
 offset_top = -33.0
 offset_right = 125.0
 offset_bottom = 33.0
 
-[node name="SectionButton2" parent="CanvasLayer/Main Menu UI" index="0" node_paths=PackedStringArray("section")]
+[node name="SectionButton2" parent="Sections/Main Menu UI" index="0" node_paths=PackedStringArray("section")]
 section = NodePath("../../Level Select UI")
 
-[node name="SectionButton3" parent="CanvasLayer/Main Menu UI" index="1" node_paths=PackedStringArray("section")]
+[node name="SectionButton3" parent="Sections/Main Menu UI" index="1" node_paths=PackedStringArray("section")]
 section = NodePath("../../Settings UI")
 
-[node name="SectionButton4" parent="CanvasLayer/Main Menu UI" index="2" node_paths=PackedStringArray("section")]
+[node name="SectionButton4" parent="Sections/Main Menu UI" index="2" node_paths=PackedStringArray("section")]
 section = NodePath("../../Credits UI")
 
-[node name="Settings UI" parent="CanvasLayer" instance=ExtResource("2_2tfbb")]
+[node name="Settings UI" parent="Sections" instance=ExtResource("2_2tfbb")]
 visible = false
 offset_left = -126.0
 offset_top = -46.0
@@ -91,48 +92,41 @@ offset_bottom = 47.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="SectionButton3" parent="CanvasLayer/Settings UI" index="1" node_paths=PackedStringArray("section")]
+[node name="SectionButton3" parent="Sections/Settings UI" index="1" node_paths=PackedStringArray("section")]
 section = NodePath("../../Controls")
 
-[node name="SectionButton2" parent="CanvasLayer/Settings UI" index="2" node_paths=PackedStringArray("section")]
+[node name="SectionButton2" parent="Sections/Settings UI" index="2" node_paths=PackedStringArray("section")]
 section = NodePath("../../Main Menu UI")
 
-[node name="Level Select UI" parent="CanvasLayer" instance=ExtResource("4_ny0ke")]
+[node name="Level Select UI" parent="Sections" instance=ExtResource("4_ny0ke")]
 visible = false
 offset_left = -125.0
 offset_top = -81.0
 offset_right = 125.0
 offset_bottom = 82.0
 
-[node name="SectionButton" parent="CanvasLayer/Level Select UI" index="4" node_paths=PackedStringArray("section")]
+[node name="SectionButton" parent="Sections/Level Select UI" index="4" node_paths=PackedStringArray("section")]
 section = NodePath("../../Main Menu UI")
 
-[node name="Controls" parent="CanvasLayer" instance=ExtResource("6_ofy2k")]
+[node name="Controls" parent="Sections" instance=ExtResource("6_ofy2k")]
 visible = false
 
-[node name="SectionButton" parent="CanvasLayer/Controls" index="1" node_paths=PackedStringArray("section")]
+[node name="SectionButton" parent="Sections/Controls" index="1" node_paths=PackedStringArray("section")]
 section = NodePath("../../Settings UI")
 
-[node name="Credits UI" parent="CanvasLayer" instance=ExtResource("6_svcqa")]
+[node name="Credits UI" parent="Sections" instance=ExtResource("6_svcqa")]
 visible = false
 
-[node name="SectionButton" parent="CanvasLayer/Credits UI" index="2" node_paths=PackedStringArray("section")]
+[node name="SectionButton" parent="Sections/Credits UI" index="2" node_paths=PackedStringArray("section")]
 section = NodePath("../../Main Menu UI")
 
-[node name="Cutscene Player" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("9_ypw4e")
+[node name="Cutscene Player" parent="." instance=ExtResource("9_ypw4e")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ofy2k")
 
-[editable path="CanvasLayer/Main Menu UI"]
-[editable path="CanvasLayer/Settings UI"]
-[editable path="CanvasLayer/Level Select UI"]
-[editable path="CanvasLayer/Controls"]
-[editable path="CanvasLayer/Credits UI"]
+[editable path="Sections/Main Menu UI"]
+[editable path="Sections/Settings UI"]
+[editable path="Sections/Level Select UI"]
+[editable path="Sections/Controls"]
+[editable path="Sections/Credits UI"]

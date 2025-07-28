@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr5fxdp8vo6rl"]
+[gd_scene load_steps=3 format=3 uid="uid://dr5fxdp8vo6rl"]
 
+[ext_resource type="Script" uid="uid://3yh74h4ykqq0" path="res://scripts/functionality/reset_data_button.gd" id="2_ix0x7"]
 [ext_resource type="PackedScene" uid="uid://bmpxr4howyw3m" path="res://scenes/UI/buttons/section button.tscn" id="2_rkpoj"]
 
 [node name="Main Menu UI" type="VBoxContainer"]
@@ -30,3 +31,14 @@ text = "Settings
 layout_mode = 2
 text = "Credits
 "
+
+[node name="SectionButton5" type="Button" parent="." node_paths=PackedStringArray("audio_player")]
+layout_mode = 2
+text = "Reset Data
+"
+script = ExtResource("2_ix0x7")
+audio_player = NodePath("FmodEventEmitter2D")
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="SectionButton5"]
+event_name = "event:/UI/SFX_UI_MainMenu"
+event_guid = "{37d6a8ad-0002-4313-bc15-0caaef2c321d}"

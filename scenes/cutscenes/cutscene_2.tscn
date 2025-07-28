@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://derdxs6ja4y4r"]
+
+[ext_resource type="Texture2D" uid="uid://cp0y834qvlfyx" path="res://assets/visual/cutscenes/cutscene 2/1.png" id="1_g21aw"]
+[ext_resource type="Texture2D" uid="uid://3bo1ifgq1sb6" path="res://assets/visual/cutscenes/cutscene 2/2.png" id="2_xxr61"]
+[ext_resource type="Texture2D" uid="uid://cb27662w3uemd" path="res://assets/visual/cutscenes/cutscene 2/3.png" id="3_cfh4k"]
+[ext_resource type="Script" uid="uid://djojkqdpv6org" path="res://scripts/functionality/cutscene.gd" id="6_rfxie"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1b55c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_g21aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xxr61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cfh4k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Cutscene" type="AnimatedSprite2D"]
+process_mode = 3
+scale = Vector2(0.242437, 0.245298)
+sprite_frames = SubResource("SpriteFrames_1b55c")
+autoplay = "default"
+centered = false
+script = ExtResource("6_rfxie")
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/MUSIC/MX_CutScene"
+event_guid = "{14484f42-f195-44fd-9b3e-d309c5afefeb}"
+autoplay = true
+process_mode = 3
