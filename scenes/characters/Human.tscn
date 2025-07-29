@@ -114,8 +114,8 @@ shape = SubResource("RectangleShape2D_rm4bp")
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="Jump" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "event:/Buttons_Switches/Buttons"
-event_guid = "{2b2ae986-103c-4033-a434-bf7cfeaaad9f}"
+event_name = "event:/Elis/Elis_Jump"
+event_guid = "{609c516d-84bb-4cf8-a94e-9b7315bbd009}"
 
 [node name="JumpListener" type="Node2D" parent="Audio/Jump" node_paths=PackedStringArray("fmod_event_emitter", "state")]
 script = ExtResource("13_l3q8g")
