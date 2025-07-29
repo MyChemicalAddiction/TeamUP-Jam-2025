@@ -199,7 +199,7 @@ scale = Vector2(0.31865, 0.31865)
 sprite_frames = SubResource("SpriteFrames_ctk4n")
 animation = &"left"
 autoplay = "right"
-frame_progress = 0.318948
+frame_progress = 0.927804
 script = ExtResource("14_kdffh")
 input_manager = NodePath("../Components/GhostMovementInputManager")
 
