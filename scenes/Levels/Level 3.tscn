@@ -247,7 +247,7 @@ material = SubResource("ShaderMaterial_m4vey")
 root_node = NodePath("../../Ghost Continuous Button Area2")
 
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
-position = Vector2(1422, 588)
+position = Vector2(-1516, 588)
 script = ExtResource("18_f3sqj")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 metadata/_edit_group_ = true
