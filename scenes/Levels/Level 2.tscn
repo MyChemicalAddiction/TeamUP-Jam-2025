@@ -137,7 +137,8 @@ position = Vector2(-1305, -320)
 current_level_path = "res://scenes/Levels/Level 2.tscn"
 
 [node name="Ghost Continuous Button Area" parent="Special Objects/Interactable" instance=ExtResource("7_pka8w")]
-position = Vector2(478, 490)
+position = Vector2(478, 511)
+rotation = -1.57079
 
 [node name="Sprite2D" parent="Special Objects/Interactable/Ghost Continuous Button Area" index="3"]
 material = SubResource("ShaderMaterial_m4vey")
