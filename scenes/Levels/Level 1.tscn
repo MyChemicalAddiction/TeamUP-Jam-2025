@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="6_n4m08"]
 [ext_resource type="PackedScene" uid="uid://lu4uv3fbhvq2" path="res://scenes/objects/portals/start_portal.tscn" id="7_e47hr"]
 [ext_resource type="PackedScene" uid="uid://boch8qluci7ev" path="res://scenes/functionality/levers & buttons/continuous_button_area.tscn" id="8_n4m08"]
-[ext_resource type="PackedScene" uid="uid://d27ix3phd1jfc" path="res://scenes/objects/hazards/spikes.tscn" id="8_t5k8b"]
+[ext_resource type="PackedScene" uid="uid://d27ix3phd1jfc" path="res://scenes/objects/hazards/fire.tscn" id="8_t5k8b"]
 [ext_resource type="PackedScene" uid="uid://bhkad48ij8ha7" path="res://scenes/objects/doors/vertical_door.tscn" id="9_e47hr"]
 [ext_resource type="PackedScene" uid="uid://b8xf6mcl8d82x" path="res://scenes/objects/interactible/ghost-specific/ghost_horizontal_platform.tscn" id="9_lm1xb"]
 [ext_resource type="PackedScene" uid="uid://riuotyrpb2p2" path="res://scenes/functionality/levers & buttons/continuous_cursed_button_area.tscn" id="9_ly0kq"]

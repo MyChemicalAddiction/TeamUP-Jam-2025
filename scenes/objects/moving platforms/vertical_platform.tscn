@@ -12,8 +12,10 @@ size = Vector2(0.865881, 42.911)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q0fo8"]
 size = Vector2(18.1833, 17.7141)
 
-[node name="ghost_platform" type="CharacterBody2D"]
+[node name="vertical_platform" type="CharacterBody2D"]
 collision_layer = 64
+platform_on_leave = 2
+platform_floor_layers = 0
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.502326, 0.502326)
