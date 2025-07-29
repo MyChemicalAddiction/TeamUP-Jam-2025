@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://bj3kpi7kuya4w"
 size = Vector2(60, 106.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddmg8"]
-size = Vector2(60, 128)
+size = Vector2(33.372, 107.732)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_25nvg"]
 shader = ExtResource("11_m8awq")
@@ -189,6 +189,7 @@ push_force = 250.0
 metadata/_custom_type_script = "uid://bpwjpuysmtl7y"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.66978, -4)
 scale = Vector2(1.57799, 1.57799)
 shape = SubResource("RectangleShape2D_ddmg8")
 
@@ -199,7 +200,7 @@ scale = Vector2(0.31865, 0.31865)
 sprite_frames = SubResource("SpriteFrames_ctk4n")
 animation = &"left"
 autoplay = "right"
-frame_progress = 0.927804
+frame_progress = 0.429688
 script = ExtResource("14_kdffh")
 input_manager = NodePath("../Components/GhostMovementInputManager")
 
