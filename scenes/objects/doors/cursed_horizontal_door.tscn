@@ -1,16 +1,52 @@
-[gd_scene load_steps=8 format=3 uid="uid://deqeo7yuvxhl2"]
+[gd_scene load_steps=13 format=3 uid="uid://deqeo7yuvxhl2"]
 
 [ext_resource type="Script" uid="uid://d4esf4meclpan" path="res://scripts/classes/components/Implementations/animation/MovingDoorComponent.gd" id="1_pcu7w"]
-[ext_resource type="Texture2D" uid="uid://dgna04txtwnyb" path="res://addons/fmod/icons/d_parameter_icon.svg" id="2_ecata"]
 [ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="2_iij8l"]
 [ext_resource type="Script" uid="uid://ba0im6i353yq8" path="res://scripts/classes/components/Implementations/functionality/AreaEnteredTrackerComponent.gd" id="3_ecata"]
+[ext_resource type="Texture2D" uid="uid://dop4u1l0e23ys" path="res://assets/visual/objects/moving_door_ghost.png" id="3_iij8l"]
 [ext_resource type="Script" uid="uid://d0yw8lifbedu5" path="res://scripts/functionality/audio/MovingDoorAudio.gd" id="4_i525v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpl0x"]
-size = Vector2(44, 414)
+size = Vector2(44, 396)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7d1x"]
+atlas = ExtResource("3_iij8l")
+region = Rect2(0, 0, 160, 1440)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpmgy"]
+atlas = ExtResource("3_iij8l")
+region = Rect2(160, 0, 160, 1440)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0cbn"]
+atlas = ExtResource("3_iij8l")
+region = Rect2(320, 0, 160, 1440)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di5bh"]
+atlas = ExtResource("3_iij8l")
+region = Rect2(480, 0, 160, 1440)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ivj7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7d1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpmgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0cbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di5bh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i525v"]
-size = Vector2(0.0551013, 17.2354)
+size = Vector2(0.028, 20.985)
 
 [node name="Cursed Horizontal Door" type="AnimatableBody2D"]
 collision_layer = 64
@@ -31,11 +67,14 @@ metadata/_custom_type_script = "uid://d4esf4meclpan"
 rotation = -1.5708
 shape = SubResource("RectangleShape2D_jpl0x")
 
-[node name="DParameterIcon" type="Sprite2D" parent="."]
-modulate = Color(0.584314, 1, 0.662745, 1)
+[node name="DParameterIcon" type="AnimatedSprite2D" parent="."]
 material = ExtResource("2_iij8l")
-scale = Vector2(23, 2.23807)
-texture = ExtResource("2_ecata")
+rotation = -1.57079
+scale = Vector2(0.27464, 0.27464)
+sprite_frames = SubResource("SpriteFrames_0ivj7")
+autoplay = "default"
+frame = 3
+frame_progress = 0.729017
 
 [node name="AreaEnteredTrackerComponent2" type="Node2D" parent="." node_paths=PackedStringArray("tracking_area", "excluded")]
 script = ExtResource("3_ecata")
@@ -46,11 +85,12 @@ excluded = [NodePath("..")]
 metadata/_custom_type_script = "uid://ba0im6i353yq8"
 
 [node name="CollisionDetector" type="Area2D" parent="AreaEnteredTrackerComponent2"]
+position = Vector2(9, 0)
 collision_layer = 0
 collision_mask = 455
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="AreaEnteredTrackerComponent2/CollisionDetector"]
-position = Vector2(-208, -5.96046e-08)
+position = Vector2(-207.75, 0)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_i525v")
 
@@ -67,7 +107,7 @@ collision_layer = 0
 collision_mask = 455
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="AreaEnteredTrackerComponent/CollisionDetector2"]
-position = Vector2(208, 0)
+position = Vector2(199, 0)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_i525v")
 
