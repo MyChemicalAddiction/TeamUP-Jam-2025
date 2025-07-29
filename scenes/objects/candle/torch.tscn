@@ -3,57 +3,57 @@
 [ext_resource type="Texture2D" uid="uid://bfvl2wm2l1iw2" path="res://assets/visual/placeholders/light_circle.png" id="1_m1p7u"]
 [ext_resource type="Texture2D" uid="uid://bp0o1hhx1o8yy" path="res://assets/visual/objects/torch.png" id="1_u2dvq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u2dvq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf0ow"]
 atlas = ExtResource("1_u2dvq")
-region = Rect2(0, 0, 181, 480)
+region = Rect2(0, 0, 160, 480)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eutao"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o5dm"]
 atlas = ExtResource("1_u2dvq")
-region = Rect2(181, 0, 181, 480)
+region = Rect2(160, 0, 160, 480)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fvcm6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbx5n"]
 atlas = ExtResource("1_u2dvq")
-region = Rect2(362, 0, 181, 480)
+region = Rect2(320, 0, 160, 480)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qadd6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0bc0"]
 atlas = ExtResource("1_u2dvq")
-region = Rect2(543, 0, 181, 480)
+region = Rect2(480, 0, 160, 480)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_52om1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3oosc"]
 atlas = ExtResource("1_u2dvq")
-region = Rect2(724, 0, 181, 480)
+region = Rect2(640, 0, 160, 480)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jhafy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ss77h"]
 atlas = ExtResource("1_u2dvq")
-region = Rect2(905, 0, 181, 480)
+region = Rect2(800, 0, 160, 480)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nh4fl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_am5it"]
 atlas = ExtResource("1_u2dvq")
-region = Rect2(1086, 0, 181, 480)
+region = Rect2(960, 0, 160, 480)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mg02r"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u2dvq")
+"texture": SubResource("AtlasTexture_pf0ow")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eutao")
+"texture": SubResource("AtlasTexture_0o5dm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fvcm6")
+"texture": SubResource("AtlasTexture_lbx5n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qadd6")
+"texture": SubResource("AtlasTexture_g0bc0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_52om1")
+"texture": SubResource("AtlasTexture_3oosc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jhafy")
+"texture": SubResource("AtlasTexture_ss77h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nh4fl")
+"texture": SubResource("AtlasTexture_am5it")
 }],
 "loop": true,
 "name": &"default",
@@ -68,10 +68,9 @@ position = Vector2(0, 3)
 scale = Vector2(0.263736, 0.263736)
 sprite_frames = SubResource("SpriteFrames_mg02r")
 autoplay = "default"
-frame = 4
-frame_progress = 0.603839
+frame_progress = 0.481817
 
-[node name="Candle" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.856405, 0.66547, 0.419512, 1)
 shadow_enabled = true
 texture = ExtResource("1_m1p7u")

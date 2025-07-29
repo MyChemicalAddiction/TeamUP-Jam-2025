@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bopf88lmq7pgb"
-path="res://.godot/imported/mira_ghost_ani.png-54f144555c9bd924ee0428cbf3795e95.ctex"
+path="res://.godot/imported/mira_ghost_ani_right.png-c8c0b2cd02ad71f62a7cd170392a97ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/visual/characters/Mira/mira_ghost_ani.png"
-dest_files=["res://.godot/imported/mira_ghost_ani.png-54f144555c9bd924ee0428cbf3795e95.ctex"]
+source_file="res://assets/visual/characters/Mira/mira_ghost_ani_right.png"
+dest_files=["res://.godot/imported/mira_ghost_ani_right.png-c8c0b2cd02ad71f62a7cd170392a97ab.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c77yqcnjp0x8p"]
+[gd_scene load_steps=30 format=3 uid="uid://c77yqcnjp0x8p"]
 
 [ext_resource type="Script" uid="uid://cnxen4dyqy530" path="res://scripts/classes/characters/ghost/GhostCharacter.gd" id="1_ddmg8"]
 [ext_resource type="PackedScene" uid="uid://bvci04mstcsnl" path="res://scenes/functionality/complete state machines/characters/Ghost/GhostMovementStateMachine.tscn" id="2_qoedd"]
@@ -9,8 +9,9 @@
 [ext_resource type="Shader" uid="uid://c20s38gbqrkp3" path="res://shaders/cursed.gdshader" id="11_m8awq"]
 [ext_resource type="Script" uid="uid://dvixfmg80rixg" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Hurtbox.gd" id="11_pwbk5"]
 [ext_resource type="Script" uid="uid://bj3kpi7kuya4w" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Custom Resource/HurtboxRes.gd" id="12_25nvg"]
+[ext_resource type="Texture2D" uid="uid://cii6p2cmavrwo" path="res://assets/visual/characters/Mira/mira_ghost_ani_left.png" id="12_m8awq"]
 [ext_resource type="Script" uid="uid://ry5dgo71msyk" path="res://scripts/classes/components/Implementations/state listeners/Implementations/FMODPlayingStateListener.gd" id="12_matwj"]
-[ext_resource type="Texture2D" uid="uid://bopf88lmq7pgb" path="res://assets/visual/characters/Mira/mira_ghost_ani.png" id="12_pwbk5"]
+[ext_resource type="Texture2D" uid="uid://bopf88lmq7pgb" path="res://assets/visual/characters/Mira/mira_ghost_ani_right.png" id="12_pwbk5"]
 [ext_resource type="Script" uid="uid://hk3ym3rj1kh8" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/DestroyedBehavior/HurtboxSimpleDestroyedBehavior.gd" id="13_m8awq"]
 [ext_resource type="Script" uid="uid://drft6dfp41fxt" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/HitBehavior/HurtboxSimpleDamageHitBehavior.gd" id="14_25nvg"]
 [ext_resource type="Script" uid="uid://6x7jgp6hfnbu" path="res://scripts/functionality/death_SFX.gd" id="14_pwbk5"]
@@ -33,6 +34,22 @@ size = Vector2(60, 128)
 shader = ExtResource("11_m8awq")
 shader_parameter/glow_strength = 0.1
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctk4n"]
+atlas = ExtResource("12_m8awq")
+region = Rect2(0, 0, 320, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqd2g"]
+atlas = ExtResource("12_m8awq")
+region = Rect2(320, 0, 320, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7gey"]
+atlas = ExtResource("12_m8awq")
+region = Rect2(640, 0, 320, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gulua"]
+atlas = ExtResource("12_m8awq")
+region = Rect2(960, 0, 320, 640)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8awq"]
 atlas = ExtResource("12_pwbk5")
 region = Rect2(0, 0, 320, 640)
@@ -53,6 +70,23 @@ region = Rect2(960, 0, 320, 640)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ctk4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqd2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7gey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gulua")
+}],
+"loop": true,
+"name": &"left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_m8awq")
 }, {
 "duration": 1.0,
@@ -65,8 +99,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_kdffh")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"right",
+"speed": 6.0
 }]
 
 [node name="Ghost" type="CharacterBody2D" node_paths=PackedStringArray("movement_component", "interaction_component", "hurtbox_component") groups=["Ghost", "Player"]]
@@ -160,7 +194,9 @@ modulate = Color(1, 1, 1, 0.4)
 material = SubResource("ShaderMaterial_25nvg")
 scale = Vector2(0.31865, 0.31865)
 sprite_frames = SubResource("SpriteFrames_ctk4n")
-frame_progress = 0.182481
+animation = &"left"
+autoplay = "right"
+frame_progress = 0.436016
 
 [node name="Audio" type="Node2D" parent="."]
 scale = Vector2(1.59625, 1.59625)

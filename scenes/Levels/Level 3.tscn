@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d11t84xsc8k7a" path="res://scenes/tilemaps/border tilemap.tscn" id="1_tpbas"]
 [ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="2_6vyoq"]
 [ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/ground tilemap.tscn" id="3_d2yvg"]
-[ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="4_kt2wg"]
+[ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/torch.tscn" id="4_kt2wg"]
 [ext_resource type="PackedScene" uid="uid://d27ix3phd1jfc" path="res://scenes/objects/hazards/fire.tscn" id="5_rvnrt"]
 [ext_resource type="PackedScene" uid="uid://b8xf6mcl8d82x" path="res://scenes/objects/interactible/ghost-specific/ghost_horizontal_platform.tscn" id="7_4hw37"]
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/portals/finish_portal.tscn" id="8_fwej7"]

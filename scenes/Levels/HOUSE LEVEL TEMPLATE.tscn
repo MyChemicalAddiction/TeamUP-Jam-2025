@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="1_7n0sf"]
 [ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/ground tilemap.tscn" id="3_3xpag"]
 [ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="3_m4iu2"]
-[ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="4_m4iu2"]
+[ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/torch.tscn" id="4_m4iu2"]
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/portals/finish_portal.tscn" id="5_7pycn"]
 [ext_resource type="PackedScene" uid="uid://lu4uv3fbhvq2" path="res://scenes/objects/portals/start_portal.tscn" id="7_3xpag"]
 

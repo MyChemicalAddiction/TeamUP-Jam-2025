@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://xw2i423f08wv" path="res://assets/visual/placeholders/wood.png" id="2_k0apv"]
 [ext_resource type="PackedScene" uid="uid://dgudsm50jqbt8" path="res://scenes/objects/movable rigid bodies/box.tscn" id="4_didsf"]
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/portals/finish_portal.tscn" id="6_y80pa"]
-[ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="8_0dblc"]
+[ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/torch.tscn" id="8_0dblc"]
 [ext_resource type="PackedScene" uid="uid://c8lt7usj83dfv" path="res://scenes/objects/projectile shooters/aimed_projectile_shooter_area.tscn" id="8_k0apv"]
 [ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="9_0dblc"]
 

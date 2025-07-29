@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="2_hispy"]
 [ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/ground tilemap.tscn" id="3_t5k8b"]
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/portals/finish_portal.tscn" id="4_lm1xb"]
-[ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/candle.tscn" id="5_4ekgt"]
+[ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/torch.tscn" id="5_4ekgt"]
 [ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="6_n4m08"]
 [ext_resource type="PackedScene" uid="uid://lu4uv3fbhvq2" path="res://scenes/objects/portals/start_portal.tscn" id="7_e47hr"]
 [ext_resource type="PackedScene" uid="uid://boch8qluci7ev" path="res://scenes/functionality/levers & buttons/continuous_button_area.tscn" id="8_n4m08"]
@@ -90,79 +90,82 @@ position = Vector2(1844, -10)
 [node name="Hazards" type="Node2D" parent="Special Objects"]
 
 [node name="Fire" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(-1078, 139)
+position = Vector2(-1073, 139)
 
 [node name="Fire2" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(-949, 139)
+position = Vector2(-946, 139)
 
 [node name="Fire3" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
 position = Vector2(-819, 139)
 
 [node name="Fire4" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(-689, 139)
+position = Vector2(-692, 139)
 
 [node name="Fire5" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(-558, 139)
+position = Vector2(-565, 139)
 
 [node name="Fire6" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(-426, 139)
+position = Vector2(-438, 139)
 
 [node name="Fire7" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(-297, 139)
+position = Vector2(-311, 139)
 
 [node name="Fire8" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(-167, 139)
+position = Vector2(-184, 139)
 
 [node name="Fire9" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(-37, 139)
+position = Vector2(-57, 139)
 
 [node name="Fire10" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(94, 139)
+position = Vector2(70, 139)
 
 [node name="Fire11" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(225, 139)
+position = Vector2(197, 139)
 
 [node name="Fire12" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(354, 139)
+position = Vector2(324, 139)
 
 [node name="Fire13" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(484, 139)
+position = Vector2(451, 139)
 
 [node name="Fire14" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(614, 139)
+position = Vector2(578, 139)
 
 [node name="Fire15" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(745, 139)
+position = Vector2(705, 139)
 
 [node name="Fire16" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(877, 139)
+position = Vector2(832, 139)
 
 [node name="Fire17" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(1006, 139)
+position = Vector2(959, 139)
 
 [node name="Fire18" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(1136, 139)
+position = Vector2(1086, 139)
 
 [node name="Fire19" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(1266, 139)
+position = Vector2(1213, 139)
 
 [node name="Fire20" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(1397, 139)
+position = Vector2(1340, 139)
 
 [node name="Fire21" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(1525, 139)
+position = Vector2(1467, 139)
 
 [node name="Fire22" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(1655, 139)
+position = Vector2(1594, 139)
 
 [node name="Fire23" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(1786, 139)
+position = Vector2(1701, 139)
 
 [node name="Fire24" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(1913, 139)
+position = Vector2(1822, 139)
 
 [node name="Fire25" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
-position = Vector2(2043, 139)
+position = Vector2(1944, 139)
+
+[node name="Fire26" parent="Special Objects/Hazards" instance=ExtResource("8_t5k8b")]
+position = Vector2(2048, 139)
 
 [node name="Interactable" type="Node2D" parent="Special Objects"]
 
@@ -233,6 +236,7 @@ collision_layer = 0
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Special Objects/Tutorials/DeleteComponent3/HumanArea"]
+visible = false
 position = Vector2(329.5, -38)
 shape = SubResource("RectangleShape2D_s2bim")
 
@@ -242,6 +246,7 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Special Objects/Tutorials/DeleteComponent3/GhostArea"]
+visible = false
 position = Vector2(328.5, -38)
 shape = SubResource("RectangleShape2D_yi8na")
 
@@ -270,6 +275,7 @@ collision_layer = 0
 collision_mask = 512
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Special Objects/Tutorials/DeleteComponent2/AmuletArea"]
+visible = false
 position = Vector2(0, -38)
 shape = SubResource("RectangleShape2D_7q6ip")
 
@@ -330,6 +336,7 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Special Objects/Tutorials/DeleteComponent6/GhostArea"]
+visible = false
 position = Vector2(579, 381)
 shape = SubResource("RectangleShape2D_yl2ot")
 
