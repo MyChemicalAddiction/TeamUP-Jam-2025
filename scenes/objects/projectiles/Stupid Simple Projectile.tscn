@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://hibwxjb2khf0"]
+[gd_scene load_steps=20 format=3 uid="uid://hibwxjb2khf0"]
 
 [ext_resource type="Script" uid="uid://cmdr7k4jfy66e" path="res://scripts/classes/projectile/Projectile.gd" id="1_0accw"]
 [ext_resource type="Script" uid="uid://ct5bew00lbo6h" path="res://scripts/classes/projectile/Custom Resource/StraightProjectileRes.gd" id="2_i53c3"]
-[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="3_ynni3"]
+[ext_resource type="Shader" uid="uid://mm0xeclo4mc4" path="res://shaders/unshaded.gdshader" id="3_0accw"]
+[ext_resource type="Texture2D" uid="uid://vnq5lxa3addp" path="res://assets/visual/objects/projectile_small.png" id="4_i53c3"]
 [ext_resource type="Script" uid="uid://bp3r0ffx34h" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Hitbox.gd" id="4_xvfdy"]
 [ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="5_bp250"]
 [ext_resource type="Script" uid="uid://by0f5pd4kfjdi" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Implementations/HitboxHitDeleteBehavior.gd" id="6_poy4d"]
@@ -11,6 +12,59 @@
 script = ExtResource("2_i53c3")
 SPEED = 6000
 metadata/_custom_type_script = "uid://ct5bew00lbo6h"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i53c3"]
+shader = ExtResource("3_0accw")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynni3"]
+atlas = ExtResource("4_i53c3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvfdy"]
+atlas = ExtResource("4_i53c3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bp250"]
+atlas = ExtResource("4_i53c3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poy4d"]
+atlas = ExtResource("4_i53c3")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjxnd"]
+atlas = ExtResource("4_i53c3")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62tt4"]
+atlas = ExtResource("4_i53c3")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4onaw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynni3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvfdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bp250")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poy4d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjxnd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62tt4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3df27"]
 size = Vector2(102, 102)
@@ -34,11 +88,12 @@ script = ExtResource("1_0accw")
 projectileRes = SubResource("Resource_6e4ye")
 metadata/_custom_type_script = "uid://cmdr7k4jfy66e"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-self_modulate = Color(1, 0.262745, 0.0901961, 0.756863)
-rotation = 1.5708
-scale = Vector2(0.265852, 0.265852)
-texture = ExtResource("3_ynni3")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_i53c3")
+rotation = -1.57079
+scale = Vector2(0.536536, 0.536536)
+sprite_frames = SubResource("SpriteFrames_4onaw")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

@@ -28,6 +28,11 @@ event_name = "snapshot:/Reverb_Home"
 event_guid = "{9b0ed7d8-b7d0-4315-aeb0-6d0e5f616186}"
 autoplay = true
 
+[node name="FmodEventEmitter2D3" type="FmodEventEmitter2D" parent="Audio"]
+event_name = "event:/MUSIC/MX_House"
+event_guid = "{1bec39e2-90cd-4b62-9668-e1ae5cee0387}"
+autoplay = true
+
 [node name="Special Objects" type="Node2D" parent="."]
 
 [node name="FinishPortal" parent="Special Objects" instance=ExtResource("5_7pycn")]

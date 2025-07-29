@@ -1,13 +1,75 @@
-[gd_scene load_steps=3 format=3 uid="uid://redl6f4o5wqv"]
+[gd_scene load_steps=11 format=3 uid="uid://redl6f4o5wqv"]
 
 [ext_resource type="Texture2D" uid="uid://bfvl2wm2l1iw2" path="res://assets/visual/placeholders/light_circle.png" id="1_m1p7u"]
-[ext_resource type="Texture2D" uid="uid://l3arbm5d7nno" path="res://assets/visual/placeholders/candle.png" id="2_u2dvq"]
+[ext_resource type="Texture2D" uid="uid://bp0o1hhx1o8yy" path="res://assets/visual/objects/torch.png" id="1_u2dvq"]
 
-[node name="Candle" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2dvq"]
+atlas = ExtResource("1_u2dvq")
+region = Rect2(0, 0, 181, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eutao"]
+atlas = ExtResource("1_u2dvq")
+region = Rect2(181, 0, 181, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvcm6"]
+atlas = ExtResource("1_u2dvq")
+region = Rect2(362, 0, 181, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qadd6"]
+atlas = ExtResource("1_u2dvq")
+region = Rect2(543, 0, 181, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52om1"]
+atlas = ExtResource("1_u2dvq")
+region = Rect2(724, 0, 181, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhafy"]
+atlas = ExtResource("1_u2dvq")
+region = Rect2(905, 0, 181, 480)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh4fl"]
+atlas = ExtResource("1_u2dvq")
+region = Rect2(1086, 0, 181, 480)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mg02r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2dvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eutao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvcm6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qadd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52om1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhafy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh4fl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Torch" type="Node2D"]
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_u2dvq")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 3)
+scale = Vector2(0.263736, 0.263736)
+sprite_frames = SubResource("SpriteFrames_mg02r")
+autoplay = "default"
+frame = 4
+frame_progress = 0.603839
 
 [node name="Candle" type="PointLight2D" parent="."]
 color = Color(0.856405, 0.66547, 0.419512, 1)
