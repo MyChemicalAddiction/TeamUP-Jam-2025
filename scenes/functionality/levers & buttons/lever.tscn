@@ -114,7 +114,7 @@ enable_manager = NodePath("../MAIN")
 metadata/_custom_type_script = "uid://bt5qx0ha05v8h"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0, -9)
+position = Vector2(0, 13)
 scale = Vector2(5.45929, 5.45929)
 shape = SubResource("RectangleShape2D_8kkmv")
 

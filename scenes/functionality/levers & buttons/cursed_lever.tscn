@@ -143,6 +143,7 @@ collision_layer = 8
 collision_mask = 8
 script = ExtResource("1_wtn63")
 metadata/_custom_type_script = "uid://dlpckao766xkb"
+metadata/_edit_group_ = true
 
 [node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("triggerer")]
 script = ExtResource("3_fgoh2")
@@ -160,7 +161,7 @@ enable_manager = NodePath("../MAIN")
 metadata/_custom_type_script = "uid://bt5qx0ha05v8h"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -9)
+position = Vector2(0, 14)
 scale = Vector2(5.45929, 5.45929)
 shape = SubResource("RectangleShape2D_l07bw")
 
