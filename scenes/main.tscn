@@ -25,7 +25,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MultiTargetCamera/AnimationPlayer/ColorRect:color")
+tracks/1/path = NodePath("MultiTargetCamera/AnimationPlayer/CanvasLayer/ColorRect:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -41,7 +41,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MultiTargetCamera/AnimationPlayer/ColorRect:color")
+tracks/0/path = NodePath("MultiTargetCamera/AnimationPlayer/CanvasLayer/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -56,7 +56,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MultiTargetCamera/AnimationPlayer/ColorRect:color")
+tracks/0/path = NodePath("MultiTargetCamera/AnimationPlayer/CanvasLayer/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -106,7 +106,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_85g3d")
 }
 
-[node name="ColorRect" type="ColorRect" parent="MultiTargetCamera/AnimationPlayer"]
+[node name="CanvasLayer" type="CanvasLayer" parent="MultiTargetCamera/AnimationPlayer"]
+
+[node name="ColorRect" type="ColorRect" parent="MultiTargetCamera/AnimationPlayer/CanvasLayer"]
 anchors_preset = -1
 anchor_left = -3.0
 anchor_top = -3.0

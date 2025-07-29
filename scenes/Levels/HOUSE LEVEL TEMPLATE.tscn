@@ -58,6 +58,7 @@ position = Vector2(-408, -89)
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
 script = ExtResource("1_7n0sf")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
+metadata/_edit_group_ = true
 
 [node name="StartPortal" parent="PlayersStartMarker" instance=ExtResource("7_3xpag")]
 
