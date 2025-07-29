@@ -149,7 +149,7 @@ position = Vector2(-113, 183)
 position = Vector2(1409, 723)
 
 [node name="MAIN" parent="Special Objects/Interactable/FinishDoor" index="0"]
-next_level_scene_path = "res://scenes/Levels/mock_level.tscn"
+next_level_scene_path = "res://scenes/Levels/Level 4.tscn"
 current_level_path = "res://scenes/Levels/Level 3.tscn"
 
 [node name="Movable rigid bodies" type="Node2D" parent="Special Objects"]

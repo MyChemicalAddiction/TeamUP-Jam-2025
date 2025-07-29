@@ -116,6 +116,7 @@ hurtbox_component = NodePath("Components/Hurtbox")
 metadata/_custom_type_script = "uid://cnxen4dyqy530"
 
 [node name="Components" type="Node2D" parent="."]
+position = Vector2(-0.0159988, -102.032)
 scale = Vector2(1.59625, 1.59625)
 
 [node name="MovementStateMachine" parent="Components" node_paths=PackedStringArray("input_manager", "object") instance=ExtResource("2_qoedd")]
@@ -171,7 +172,6 @@ metadata/_custom_type_script = "uid://dvixfmg80rixg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Hurtbox"]
 position = Vector2(0, -2.50587)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kdffh")
 
 [node name="HurtboxDestroyedLevelResetBehavior" type="Node2D" parent="Components/Hurtbox"]
@@ -189,13 +189,14 @@ push_force = 250.0
 metadata/_custom_type_script = "uid://bpwjpuysmtl7y"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5.66978, -4)
+position = Vector2(-5.68578, -106.032)
 scale = Vector2(1.57799, 1.57799)
 shape = SubResource("RectangleShape2D_ddmg8")
 
 [node name="Icon" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("input_manager")]
 modulate = Color(1, 1, 1, 0.4)
 material = SubResource("ShaderMaterial_25nvg")
+position = Vector2(-0.0159988, -102.032)
 scale = Vector2(0.31865, 0.31865)
 sprite_frames = SubResource("SpriteFrames_ctk4n")
 animation = &"left"
@@ -211,6 +212,7 @@ shadow_enabled = true
 texture = ExtResource("14_gevwg")
 
 [node name="Audio" type="Node2D" parent="."]
+position = Vector2(-0.0159988, -102.032)
 scale = Vector2(1.59625, 1.59625)
 
 [node name="EnteredAudio" type="FmodEventEmitter2D" parent="Audio"]

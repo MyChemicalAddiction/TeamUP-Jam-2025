@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://c55ostl8df6lu"]
+[gd_scene load_steps=10 format=4 uid="uid://b6wxx52coc7q4"]
 
 [ext_resource type="PackedScene" uid="uid://w4hb2qd8g6lr" path="res://scenes/objects/hazards/evil_hands.tscn" id="1_lr367"]
 [ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/ground tilemap.tscn" id="1_w4mb6"]
