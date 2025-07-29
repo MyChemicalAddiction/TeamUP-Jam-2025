@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c77yqcnjp0x8p"]
+[gd_scene load_steps=32 format=3 uid="uid://c77yqcnjp0x8p"]
 
 [ext_resource type="Script" uid="uid://cnxen4dyqy530" path="res://scripts/classes/characters/ghost/GhostCharacter.gd" id="1_ddmg8"]
 [ext_resource type="PackedScene" uid="uid://bvci04mstcsnl" path="res://scenes/functionality/complete state machines/characters/Ghost/GhostMovementStateMachine.tscn" id="2_qoedd"]
@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://bopf88lmq7pgb" path="res://assets/visual/characters/Mira/mira_ghost_ani_right.png" id="12_pwbk5"]
 [ext_resource type="Script" uid="uid://hk3ym3rj1kh8" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/DestroyedBehavior/HurtboxSimpleDestroyedBehavior.gd" id="13_m8awq"]
 [ext_resource type="Script" uid="uid://drft6dfp41fxt" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/HitBehavior/HurtboxSimpleDamageHitBehavior.gd" id="14_25nvg"]
+[ext_resource type="Texture2D" uid="uid://bfvl2wm2l1iw2" path="res://assets/visual/placeholders/light_circle.png" id="14_gevwg"]
+[ext_resource type="Script" uid="uid://p22s31y47g7w" path="res://scripts/functionality/animation/ghost_animated_sprite.gd" id="14_kdffh"]
 [ext_resource type="Script" uid="uid://6x7jgp6hfnbu" path="res://scripts/functionality/death_SFX.gd" id="14_pwbk5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8bju"]
@@ -25,7 +27,7 @@ HP = 1.0
 metadata/_custom_type_script = "uid://bj3kpi7kuya4w"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdffh"]
-size = Vector2(60, 128)
+size = Vector2(60, 106.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddmg8"]
 size = Vector2(60, 128)
@@ -168,7 +170,8 @@ holder = NodePath("../..")
 metadata/_custom_type_script = "uid://dvixfmg80rixg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Hurtbox"]
-visible = false
+position = Vector2(0, -2.50587)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kdffh")
 
 [node name="HurtboxDestroyedLevelResetBehavior" type="Node2D" parent="Components/Hurtbox"]
@@ -186,17 +189,25 @@ push_force = 250.0
 metadata/_custom_type_script = "uid://bpwjpuysmtl7y"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
+scale = Vector2(1.57799, 1.57799)
 shape = SubResource("RectangleShape2D_ddmg8")
 
-[node name="Icon" type="AnimatedSprite2D" parent="."]
+[node name="Icon" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("input_manager")]
 modulate = Color(1, 1, 1, 0.4)
 material = SubResource("ShaderMaterial_25nvg")
 scale = Vector2(0.31865, 0.31865)
 sprite_frames = SubResource("SpriteFrames_ctk4n")
 animation = &"left"
 autoplay = "right"
-frame_progress = 0.436016
+frame_progress = 0.318948
+script = ExtResource("14_kdffh")
+input_manager = NodePath("../Components/GhostMovementInputManager")
+
+[node name="PointLight2D" type="PointLight2D" parent="Icon"]
+scale = Vector2(2.01037, 2.01037)
+energy = 0.1
+shadow_enabled = true
+texture = ExtResource("14_gevwg")
 
 [node name="Audio" type="Node2D" parent="."]
 scale = Vector2(1.59625, 1.59625)

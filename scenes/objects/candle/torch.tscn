@@ -68,7 +68,7 @@ position = Vector2(0, 3)
 scale = Vector2(0.263736, 0.263736)
 sprite_frames = SubResource("SpriteFrames_mg02r")
 autoplay = "default"
-frame_progress = 0.481817
+frame_progress = 0.952293
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.856405, 0.66547, 0.419512, 1)

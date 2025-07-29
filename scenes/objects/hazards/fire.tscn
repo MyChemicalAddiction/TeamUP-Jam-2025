@@ -74,7 +74,7 @@ position = Vector2(0, -13)
 scale = Vector2(0.398948, 0.398948)
 sprite_frames = SubResource("SpriteFrames_haqpn")
 autoplay = "default"
-frame_progress = 0.748849
+frame_progress = 0.359746
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 visible = false
