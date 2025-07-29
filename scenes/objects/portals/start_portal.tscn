@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://lu4uv3fbhvq2"]
+[gd_scene load_steps=8 format=3 uid="uid://lu4uv3fbhvq2"]
 
 [ext_resource type="Material" uid="uid://bvdokttsx3yjq" path="res://resources/cursed shader.tres" id="1_71y32"]
+[ext_resource type="Script" uid="uid://cphbjtvf2d5my" path="res://scripts/functionality/audio/oneshot_event.gd" id="2_dnc64"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ipy04"]
 load_path = "res://.godot/imported/portals.png-7f86c3314c55c70c6689a711d59178ab.ctex"
@@ -59,3 +60,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_rkmwa")
 }
 autoplay = "spin"
+
+[node name="FmodEventEmitter2D3" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/Portal"
+event_guid = "{48e58be8-5c7e-4de8-bc46-4cd2552aefe6}"
+autoplay = true
+script = ExtResource("2_dnc64")

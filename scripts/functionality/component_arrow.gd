@@ -11,4 +11,4 @@ func _ready() -> void:
 	component.enablee_set.connect(point)
 
 func point(enablee):
-	rotation = (enablee.global_position - global_position).angle()
+	rotation = (enablee.global_position - global_position).angle() - get_parent().rotation

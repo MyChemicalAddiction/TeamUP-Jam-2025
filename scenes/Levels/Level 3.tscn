@@ -35,12 +35,14 @@ tile_map_data = PackedByteArray("AAAjACEAAQABAAEAAAAiACEAAQABAAEAAAAhACEAAQABAAE
 
 [node name="Audio" type="Node2D" parent="."]
 
-[node name="FmodBankLoader" type="FmodBankLoader" parent="Audio"]
-bank_paths = ["res://assets/fmod_build/Desktop//Haunted_House.bank", "res://assets/fmod_build/Desktop//ButtonsSwitches.bank"]
-
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Audio"]
 event_name = "event:/AMBs/AMB_House"
 event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
+autoplay = true
+
+[node name="FmodEventEmitter2D3" type="FmodEventEmitter2D" parent="Audio"]
+event_name = "event:/MUSIC/MX_House"
+event_guid = "{1bec39e2-90cd-4b62-9668-e1ae5cee0387}"
 autoplay = true
 
 [node name="FmodEventEmitter2D2" type="FmodEventEmitter2D" parent="Audio"]
@@ -244,7 +246,7 @@ material = SubResource("ShaderMaterial_m4vey")
 root_node = NodePath("../../Ghost Continuous Button Area2")
 
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
-position = Vector2(-1518, 552)
+position = Vector2(-1516, 505)
 script = ExtResource("18_f3sqj")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 metadata/_edit_group_ = true

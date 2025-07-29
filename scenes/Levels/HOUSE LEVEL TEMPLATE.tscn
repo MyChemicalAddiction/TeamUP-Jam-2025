@@ -18,9 +18,6 @@
 
 [node name="Audio" type="Node2D" parent="."]
 
-[node name="FmodBankLoader" type="FmodBankLoader" parent="Audio"]
-bank_paths = ["res://assets/fmod_build/Desktop//Haunted_House.bank", "res://assets/fmod_build/Desktop//ButtonsSwitches.bank"]
-
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Audio"]
 event_name = "event:/AMBs/AMB_House"
 event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
