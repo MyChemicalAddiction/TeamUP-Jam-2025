@@ -150,6 +150,7 @@ material = SubResource("ShaderMaterial_m4vey")
 
 [node name="Ghost Continuous Button Area2" parent="Special Objects/Interactable" instance=ExtResource("7_pka8w")]
 position = Vector2(1798, -815)
+rotation = -1.57079
 
 [node name="Sprite2D" parent="Special Objects/Interactable/Ghost Continuous Button Area2" index="3"]
 material = SubResource("ShaderMaterial_m4vey")

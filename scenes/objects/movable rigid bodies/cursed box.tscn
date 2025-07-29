@@ -50,8 +50,8 @@ size = Vector2(102, 102)
 size = Vector2(130, 102)
 
 [node name="Cursed Box" type="RigidBody2D"]
-collision_layer = 64
-collision_mask = 449
+collision_layer = 8256
+collision_mask = 12737
 mass = 7.0
 can_sleep = false
 

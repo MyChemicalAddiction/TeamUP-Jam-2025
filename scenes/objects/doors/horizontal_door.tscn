@@ -45,7 +45,7 @@ metadata/_custom_type_script = "uid://ba0im6i353yq8"
 
 [node name="CollisionDetector" type="Area2D" parent="AreaEnteredTrackerComponent3"]
 collision_layer = 0
-collision_mask = 323
+collision_mask = 12611
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="AreaEnteredTrackerComponent3/CollisionDetector"]
 position = Vector2(-199, -3.55271e-15)
@@ -62,7 +62,7 @@ metadata/_custom_type_script = "uid://ba0im6i353yq8"
 
 [node name="CollisionDetector2" type="Area2D" parent="AreaEnteredTrackerComponent4"]
 collision_layer = 0
-collision_mask = 323
+collision_mask = 12611
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="AreaEnteredTrackerComponent4/CollisionDetector2"]
 position = Vector2(199, 0)

@@ -83,7 +83,7 @@ points = PackedVector2Array(0, 0, 0, 600)
 default_color = Color(0.148989, 0, 0.0273442, 1)
 
 [node name="RayCast2D" type="RayCast2D" parent="CollisionShape2D"]
-collision_mask = 487
+collision_mask = 12775
 
 [node name="Dot" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_oogkr")

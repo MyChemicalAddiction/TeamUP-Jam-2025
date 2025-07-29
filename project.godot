@@ -169,6 +169,8 @@ cutscene_move={
 2d_physics/layer_10="The amulet."
 2d_physics/layer_11="Only the human."
 2d_physics/layer_12="Only the ghost."
+2d_physics/layer_13="The regular box."
+2d_physics/layer_14="The cursed box."
 
 [rendering]
 
