@@ -5,7 +5,21 @@ The Cutscene Player is what the CutscenePlayer singleton delegates cutscene
 playing functionality to.
 """
 
-@export var cutscenes : Dictionary[String, bool]
+## Maps cutscenes to whether they've been played already or not. The indexes in 
+## the dictionary show what order they should be played in. Keys that aren't 
+## paths represent a number of levels on which a cutscene needn't be played.
+@onready var cutscenes : Dictionary[String, bool] = {
+	"fs": false,
+	"dh": false,
+	"res://scenes/cutscenes/cutscene_1.tscn": false,
+	"fn": false,
+	"nh": false,
+	"res://scenes/cutscenes/cutscene_2.tscn": false,
+	"kr": false,
+	"se": false,
+	"res://scenes/cutscenes/cutscene_3.tscn": false,
+}
+
 @export var intro_cutscene_path : String
 @export var anim_player : AnimationPlayer ## used for fading the screen
 

@@ -150,6 +150,7 @@ position = Vector2(1409, 723)
 
 [node name="MAIN" parent="Special Objects/Interactable/FinishDoor" index="0"]
 next_level_scene_path = "res://scenes/Levels/mock_level.tscn"
+current_level_path = "res://scenes/Levels/Level 3.tscn"
 
 [node name="Movable rigid bodies" type="Node2D" parent="Special Objects"]
 
@@ -246,7 +247,7 @@ material = SubResource("ShaderMaterial_m4vey")
 root_node = NodePath("../../Ghost Continuous Button Area2")
 
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
-position = Vector2(-1516, 505)
+position = Vector2(1422, 588)
 script = ExtResource("18_f3sqj")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 metadata/_edit_group_ = true

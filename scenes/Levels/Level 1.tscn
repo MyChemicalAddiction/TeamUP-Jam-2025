@@ -224,6 +224,8 @@ theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
 text = "Move as [b]Elias[/b] with PL\" (up, left, right).
 Move as [b]Mira[/b] with WASD (up, left, down, right)."
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="HumanArea" type="Area2D" parent="Special Objects/Tutorials/DeleteComponent3"]
 position = Vector2(280, -248)
@@ -259,6 +261,8 @@ theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
 text = "[b]Elias[/b] is holding the amulet, whose visible radius restricts [b]Mira's[/b] movement. Hold [b]LMB[/b] as [b]Elias[/b] to charge up an [b]amulet throw.[/b] Press [b]M[/b] to retrieve the amulet."
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="AmuletArea" type="Area2D" parent="Special Objects/Tutorials/DeleteComponent2"]
 position = Vector2(280, -248)
@@ -299,6 +303,8 @@ theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
 text = "[b]Normal buttons[/b] can be pressed by any kind of [b]box[/b] or [b]Elias[/b] touching them, and they activate a nearby door."
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="DeleteComponent6" type="Node2D" parent="Special Objects/Tutorials" node_paths=PackedStringArray("area")]
 position = Vector2(-674, -1022)
@@ -315,6 +321,8 @@ theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
 text = "This [b]box[/b] is [b]cursed[/b], meaning both [b]Mira[/b] and [b]Elias[/b] can move it."
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="GhostArea" type="Area2D" parent="Special Objects/Tutorials/DeleteComponent6"]
 position = Vector2(280, -248)
@@ -340,6 +348,8 @@ theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
 text = "This [b]button[/b] is [b]cursed[/b], meaning both [b]Mira[/b] and [b]Elias[/b] can activate it (as well as boxes)."
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="Label" type="RichTextLabel" parent="Special Objects/Tutorials"]
 offset_left = -1080.0
@@ -350,9 +360,11 @@ theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
 text = "[b]Elias[/b] must make it to the final [b]portal[/b] to complete the level."
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
 
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
-position = Vector2(-1372, -465)
+position = Vector2(-1375, -455)
 script = ExtResource("6_n4m08")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 metadata/_edit_group_ = true
