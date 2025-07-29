@@ -4,6 +4,7 @@ class_name FmodEventPlayer
 var isPlaying: bool = true
 var event: FmodEvent = null
 
+
 @export var event_GUID: String
 @export var auto_play := true
 

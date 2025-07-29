@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b6ta458m66mt"]
 
 [ext_resource type="Script" uid="uid://mwm15cgwsr2q" path="res://scripts/functionality/cutscene_player.gd" id="1_1n5r7"]
-[ext_resource type="Script" uid="uid://b3v77f068eael" path="res://scripts/classes/functionality/audio/fmod_cutscene_event_player.gd" id="4_46yc2"]
+[ext_resource type="Script" uid="uid://ckytwjtwapw2r" path="res://scripts/classes/functionality/audio/FmodEmitterComponent.gd" id="3_55tgn"]
 
 [sub_resource type="Animation" id="Animation_cf6cx"]
 length = 0.001
@@ -91,11 +91,13 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="FmodEventPlayer" type="Node2D" parent="Cutscene Player"]
-script = ExtResource("4_46yc2")
-event_GUID = "{ca8d786c-ca8a-4cb6-aa57-e1965f9e86f4}"
-auto_play = false
-metadata/_custom_type_script = "uid://b3v77f068eael"
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Cutscene Player" node_paths=PackedStringArray("duck_typed_component")]
+event_name = "event:/MUSIC/MX_CutScene"
+event_guid = "{14484f42-f195-44fd-9b3e-d309c5afefeb}"
+script = ExtResource("3_55tgn")
+duck_typed_component = NodePath("..")
+on_enable = true
+metadata/_custom_type_script = "uid://ckytwjtwapw2r"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

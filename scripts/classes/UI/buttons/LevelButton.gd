@@ -43,7 +43,8 @@ func select_level():
 	if index == -1: ## If this is the first level ever played:
 		if !SaveLoad.get_data("played_intro_cutscene"):
 			var cutscene_player = get_tree().get_first_node_in_group("cutscene_player")
-			cutscene_player.finished_intro_cutscene.connect(start_first_level)
+			if !cutscene_player.finished_intro_cutscene.is_connected(start_first_level):
+				cutscene_player.finished_intro_cutscene.connect(start_first_level)
 			cutscene_player.play_intro_cutscene()
 			return
 

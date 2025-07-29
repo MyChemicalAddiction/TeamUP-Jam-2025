@@ -13,6 +13,9 @@ signal finished_intro_cutscene
 signal fading_in
 signal fading_out
 
+signal on_enabled
+signal on_disabled
+
 func _ready():
 	update()
 	SaveLoad.loaded.connect(update) ## Updates which cutscnees have alraedy been played only on load
@@ -51,9 +54,16 @@ func play_cutscene():
 			
 			anim_player.play("fade_to_clear")
 			
+			fading_in.emit()
+			on_enabled.emit()
+			
 			await new_cutscene.finished
 			
 			anim_player.play("fade_to_black")
+			
+			fading_out.emit()
+			on_disabled.emit()
+			
 			await anim_player.animation_finished
 			
 			CutscenePlayer.finished.emit()
@@ -88,10 +98,15 @@ func play_intro_cutscene():
 	anim_player.play("fade_to_clear")
 	
 	fading_in.emit()
+	on_enabled.emit()
 	
 	await new_cutscene.finished
 	
 	anim_player.play("fade_to_black")
+	
+	fading_out.emit()
+	on_disabled.emit()
+	
 	await anim_player.animation_finished
 
 	new_cutscene.queue_free()
@@ -100,7 +115,6 @@ func play_intro_cutscene():
 	
 	anim_player.play("fade_to_clear")
 	
-	fading_out.emit()
 	
 	await anim_player.animation_finished
 	
