@@ -10,6 +10,8 @@ playing functionality to.
 @export var anim_player : AnimationPlayer ## used for fading the screen
 
 signal finished_intro_cutscene
+signal fading_in
+signal fading_out
 
 func _ready():
 	update()
@@ -74,9 +76,9 @@ func play_intro_cutscene():
 	
 	get_tree().paused = true
 			
-	await anim_player.animation_finished
-	
 	get_tree().get_first_node_in_group("main_theme").disable()
+	
+	await anim_player.animation_finished
 	
 	var new_cutscene = load(intro_cutscene_path).instantiate()
 	
@@ -84,6 +86,8 @@ func play_intro_cutscene():
 	move_child(new_cutscene, 0)
 	
 	anim_player.play("fade_to_clear")
+	
+	fading_in.emit()
 	
 	await new_cutscene.finished
 	
@@ -95,6 +99,8 @@ func play_intro_cutscene():
 	finished_intro_cutscene.emit()
 	
 	anim_player.play("fade_to_clear")
+	
+	fading_out.emit()
 	
 	await anim_player.animation_finished
 	

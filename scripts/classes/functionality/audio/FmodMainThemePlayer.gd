@@ -15,7 +15,6 @@ func _on_menu_toggled():
 	enable()
 
 func _on_quit():
-	event.stop(0)
 	event.start()
 
 ## TODO: this is a janky workaround for not being able to pause events from an eventemitter node. maybe fix later??
@@ -23,7 +22,7 @@ func _on_menu_untoggled():
 	disable()
 
 func enable():
-	event.paused = false
+	event.start()
 
 func disable():
-	event.paused = true
+	event.stop(1)

@@ -50,15 +50,11 @@ event_name = "event:/AMBs/AMB_House"
 event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
 autoplay = true
 
-[node name="FmodEventEmitter2D3" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "event:/MUSIC/MX_House"
-event_guid = "{1bec39e2-90cd-4b62-9668-e1ae5cee0387}"
-autoplay = true
-
 [node name="FmodEventEmitter2D2" type="FmodEventEmitter2D" parent="Audio"]
 event_name = "event:/MUSIC/MX_House"
 event_guid = "{1bec39e2-90cd-4b62-9668-e1ae5cee0387}"
 autoplay = true
+volume = 0.25
 
 [node name="Special Objects" type="Node2D" parent="."]
 position = Vector2(155, -906)
