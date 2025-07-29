@@ -5,6 +5,7 @@ class_name FmodMainThemePlayer
 
 func _ready():
 	super()
+	SceneManager.quit.connect(_on_quit)
 	SceneManager.loading_scene.connect(_on_menu_untoggled)
 	
 	menu.toggled.connect(_on_menu_toggled)
@@ -12,6 +13,10 @@ func _ready():
 
 func _on_menu_toggled():
 	enable()
+
+func _on_quit():
+	event.stop(0)
+	event.start()
 
 ## TODO: this is a janky workaround for not being able to pause events from an eventemitter node. maybe fix later??
 func _on_menu_untoggled():
