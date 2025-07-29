@@ -5,6 +5,8 @@ class_name HumanIdleState
 @export var JumpingState: InputState
 @export var FallingState: InputState
 
+@export var push_component: PushComponent
+
 @export var ACCELERATE = 60.0
 
 func process_input(_delta):
@@ -18,8 +20,9 @@ func process_physics(_delta: float):
 	object.velocity.x = move_toward(object.velocity.x, 0, ACCELERATE)
 	if not object.is_on_floor():
 		return FallingState
-			
+	
 	object.move_and_slide()
+	push_component.process_physics(_delta)
 
 func _on_enter():
 	object.velocity.y = 0

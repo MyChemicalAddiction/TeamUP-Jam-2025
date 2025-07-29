@@ -1,6 +1,5 @@
 extends CollisionShape2D
 
-
 var target_area: Node = null
 
 @onready var segment := shape.duplicate() as SegmentShape2D
@@ -8,6 +7,8 @@ var target_area: Node = null
 
 @export var area_tracker: AreaEnteredTrackerComponent
 @export var line: Line2D
+
+@export var dot: CollisionShape2D
 
 func _ready():
 	shape = segment
@@ -32,6 +33,7 @@ func _physics_process(_delta: float) -> void:
 	target_area = area_tracker.active_areas[0]
 
 	var to_target_global = target_area.global_position - global_position
+	
 	var to_target_local = to_local(global_position + to_target_global)
 
 	var direction = original_b.normalized()
@@ -44,3 +46,5 @@ func _physics_process(_delta: float) -> void:
 	# Update the segment along original orientation
 	segment.b = direction * projected_length
 	line.points[1] = segment.b
+	
+	dot.position = segment.b

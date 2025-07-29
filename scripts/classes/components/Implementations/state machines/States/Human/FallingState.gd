@@ -10,6 +10,8 @@ The human player falls normally.
 @export var SPEED = 300.0
 @export var ACCELERATE = 60.0
 
+@export var push_component: PushComponent
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var horizontal_input = 0.0
@@ -27,6 +29,7 @@ func process_physics(delta: float):
 		return IdleState
 		
 	object.move_and_slide()
+	push_component.process_physics(delta)
 
 func _on_enter():
 	pass

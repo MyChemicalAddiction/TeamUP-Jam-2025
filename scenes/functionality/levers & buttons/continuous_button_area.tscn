@@ -93,6 +93,7 @@ _data = {
 [node name="Continuous Button Area" type="Area2D"]
 collision_layer = 32
 collision_mask = 32
+metadata/_edit_group_ = true
 
 [node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("animation_player", "area_tracker_component")]
 scale = Vector2(3.61929, 3.61929)

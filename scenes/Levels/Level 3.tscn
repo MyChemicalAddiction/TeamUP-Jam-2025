@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/portals/finish_portal.tscn" id="8_fwej7"]
 [ext_resource type="PackedScene" uid="uid://dgudsm50jqbt8" path="res://scenes/objects/movable rigid bodies/box.tscn" id="9_3jl0l"]
 [ext_resource type="PackedScene" uid="uid://b8tomno4vy81t" path="res://scenes/objects/movable rigid bodies/cursed box.tscn" id="10_3d7b6"]
-[ext_resource type="PackedScene" uid="uid://c8lt7usj83dfv" path="res://aimed_projectile_shooter_area.tscn" id="11_ipd5i"]
+[ext_resource type="PackedScene" uid="uid://c8lt7usj83dfv" path="res://scenes/objects/projectile shooters/aimed_projectile_shooter_area.tscn" id="11_ipd5i"]
 [ext_resource type="PackedScene" uid="uid://bhkad48ij8ha7" path="res://scenes/objects/doors/vertical_door.tscn" id="12_mg65y"]
 [ext_resource type="PackedScene" uid="uid://cclkqpsjouer1" path="res://scenes/objects/doors/cursed_vertical_door.tscn" id="13_as1il"]
 [ext_resource type="PackedScene" uid="uid://deqeo7yuvxhl2" path="res://scenes/objects/doors/cursed_horizontal_door.tscn" id="14_gltwb"]

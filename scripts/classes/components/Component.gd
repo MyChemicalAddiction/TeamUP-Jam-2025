@@ -35,6 +35,10 @@ signal enablee_set(en: Node)
 ## An area that, when entered [b]by another area[/b], enables this component, and when exited, disables it.
 @export var enabling_area: Area2D
 
+## How this component connects to the enabling area.
+@export var connect_to_bodies_entered := false
+@export var connect_to_areas_entered := true
+
 func _ready():
 	if enabler and enabler != self:
 		enabler.used.connect(enable)
@@ -45,8 +49,12 @@ func _ready():
 		enable_manager.on_disabled.connect(disable)
 		enable_manager.on_enabled.connect(enable)
 	if enabling_area:
-		enabling_area.area_entered.connect(_on_enabling_area_entered)
-		enabling_area.area_exited.connect(_on_enabling_area_exited)
+		if connect_to_areas_entered:
+			enabling_area.area_entered.connect(_on_enabling_area_entered)
+			enabling_area.area_exited.connect(_on_enabling_area_exited)
+		if connect_to_bodies_entered:
+			enabling_area.body_entered.connect(_on_enabling_area_entered)
+			enabling_area.body_exited.connect(_on_enabling_area_exited)
 	if enabled:
 		enable()
 	else:

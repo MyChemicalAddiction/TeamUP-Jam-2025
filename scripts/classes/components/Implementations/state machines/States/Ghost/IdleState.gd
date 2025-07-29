@@ -9,6 +9,8 @@ class_name GhostIdleState
 ## References the state machine so this state can force a change to self in the event of a level reset.
 @onready var state_machine = get_parent()
 
+@export var push_component: PushComponent
+
 func _ready():
 	SceneManager.loading_scene.connect(reset)
 
@@ -25,8 +27,9 @@ func process_input(_delta):
 func process_physics(_delta: float):
 	object.velocity.x = move_toward(object.velocity.x, 0, ACCELERATE)
 	object.velocity.y = move_toward(object.velocity.y, 0, ACCELERATE)
-			
+	
 	object.move_and_slide()
+	push_component.process_physics(_delta)
 
 func _on_enter():
 	pass

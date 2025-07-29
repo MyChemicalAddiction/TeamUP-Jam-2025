@@ -7,6 +7,8 @@ class_name GhostMovingState
 @export var IdleState: InputState
 @export var HiddenState: InputState
 
+@export var push_component: PushComponent
+
 var vertical_input = Vector2.ZERO
 var horizontal_input = Vector2.ZERO
 
@@ -26,10 +28,9 @@ func process_input(_delta):
 	else:
 		return IdleState
 	
-	object.move_and_slide()
-
 func process_physics(_delta: float):
-	pass
+	object.move_and_slide()
+	push_component.process_physics(_delta)
 
 func _on_enter():
 	pass

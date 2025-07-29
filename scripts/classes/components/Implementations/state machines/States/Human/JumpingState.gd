@@ -8,6 +8,8 @@ class_name HumanJumpingState
 @export var JUMP_VELOCITY = -620.0
 @export var JUMP_DECCELERATE = 0.85 ## The speed at which the vertical velocity deccelerates when the player releases the jump button (to enable varying-height jumps based on time the button is pressed).
 
+@export var push_component: PushComponent
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var vertical_input = Vector2.ZERO
@@ -29,6 +31,7 @@ func process_physics(delta: float):
 	object.velocity.y += gravity * delta
 	
 	object.move_and_slide()
+	push_component.process_physics(delta)
 
 func _on_enter():
 	object.velocity.y = JUMP_VELOCITY

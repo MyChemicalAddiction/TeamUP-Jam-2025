@@ -15,6 +15,7 @@ size = Vector2(2.09384, 0.478752)
 [node name="Cursed Vertical Door" type="AnimatableBody2D"]
 collision_layer = 64
 sync_to_physics = false
+metadata/_edit_group_ = true
 
 [node name="MAIN" type="Node2D" parent="." node_paths=PackedStringArray("object", "closing_collision_detector", "opening_collision_detector")]
 script = ExtResource("1_uef34")
