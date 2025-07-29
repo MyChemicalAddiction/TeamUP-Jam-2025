@@ -20,7 +20,7 @@ animations = [{
 
 [node name="Cutscene" type="AnimatedSprite2D"]
 process_mode = 3
-scale = Vector2(0.242437, 0.245298)
+scale = Vector2(1.00053, 1.01234)
 sprite_frames = SubResource("SpriteFrames_iuttr")
 autoplay = "default"
 centered = false
