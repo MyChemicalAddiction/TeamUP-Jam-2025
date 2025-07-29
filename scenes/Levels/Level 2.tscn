@@ -25,7 +25,6 @@ shader = ExtResource("8_mc8tk")
 shader_parameter/glow_strength = 1.0
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_g2b7c"]
-b = Vector2(0, 3095.02)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p72ix"]
 size = Vector2(6202, 2252)
@@ -189,6 +188,9 @@ rotation = -1.57079
 
 [node name="CollisionShape2D" parent="Special Objects/Enemies/AimedProjectileShooterArea2" index="1"]
 shape = SubResource("SegmentShape2D_g2b7c")
+
+[node name="RayCast2D" parent="Special Objects/Enemies/AimedProjectileShooterArea2/CollisionShape2D" index="1"]
+target_position = Vector2(0, 3095.51)
 
 [node name="Moving Platforms" type="Node2D" parent="Special Objects"]
 
