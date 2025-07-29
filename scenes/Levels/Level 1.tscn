@@ -355,7 +355,7 @@ bbcode_enabled = true
 text = "[b]Elias[/b] must make it to the final [b]white portal[/b] to complete the level."
 
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
-position = Vector2(-1376, -452)
+position = Vector2(1431, -1025)
 script = ExtResource("6_n4m08")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 metadata/_edit_group_ = true

@@ -14,6 +14,8 @@ The human player falls normally.
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var falling_velocity := 0.0
+
 var horizontal_input = 0.0
 var vertical_input = 0.0
 
@@ -25,9 +27,12 @@ func process_input(_delta):
 func process_physics(delta: float):
 	object.velocity.x = move_toward(object.velocity.x, SPEED * horizontal_input, ACCELERATE)
 	object.velocity.y += gravity * delta
+	
 	if object.is_on_floor():
 		return IdleState
-		
+	
+	falling_velocity = object.velocity.y
+	
 	object.move_and_slide()
 	push_component.process_physics(delta)
 
