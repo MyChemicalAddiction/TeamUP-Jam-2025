@@ -141,7 +141,7 @@ position = Vector2(1455, 1264)
 [node name="Possessables" type="Node2D" parent="Special Objects/Interactable"]
 
 [node name="ghost_platform" parent="Special Objects/Interactable/Possessables" instance=ExtResource("7_4hw37")]
-position = Vector2(-722, 183)
+position = Vector2(-113, 183)
 
 [node name="FinishDoor" parent="Special Objects/Interactable" instance=ExtResource("8_fwej7")]
 position = Vector2(1409, 723)

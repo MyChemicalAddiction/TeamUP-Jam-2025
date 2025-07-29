@@ -110,9 +110,11 @@ enabler = NodePath("../..")
 enable_manager = NodePath("../..")
 metadata/_custom_type_script = "uid://bjisq1vjh82jp"
 
-[node name="InputManager" type="Node" parent="Ghost Platform/Components"]
+[node name="InputManager" type="Node" parent="Ghost Platform/Components" node_paths=PackedStringArray("right_collision_detector", "left_collision_detector")]
 script = ExtResource("4_djl51")
 horizontal = true
+right_collision_detector = NodePath("../../../CollisionDetector2/AreaEnteredTrackerComponent")
+left_collision_detector = NodePath("../../../CollisionDetector/AreaEnteredTrackerComponent")
 metadata/_custom_type_script = "uid://3o5qtevy1vo1"
 
 [node name="LightComponent" type="Node2D" parent="Ghost Platform/Components" node_paths=PackedStringArray("sprite", "enable_manager")]

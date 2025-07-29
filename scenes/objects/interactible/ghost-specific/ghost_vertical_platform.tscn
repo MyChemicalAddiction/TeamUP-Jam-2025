@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0yt2e6rh6c05"]
+[gd_scene load_steps=13 format=3 uid="uid://d0yt2e6rh6c05"]
 
 [ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="1_nvmaq"]
 [ext_resource type="Texture2D" uid="uid://dw3ej3frnxips" path="res://assets/visual/objects/moving_platform.png" id="1_yo78c"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bjisq1vjh82jp" path="res://scripts/classes/components/Implementations/Possessable Object Behaviors/GhostPlatformMovementComponent.gd" id="4_nvmaq"]
 [ext_resource type="Script" uid="uid://3o5qtevy1vo1" path="res://scripts/classes/components/Implementations/input managers/Platforms/HorizontalPlatformInputManager.gd" id="5_mwnj0"]
 [ext_resource type="Script" uid="uid://dmpdwlkpgkeb5" path="res://scripts/classes/components/Implementations/functionality/LightComponent.gd" id="7_mwnj0"]
+[ext_resource type="Script" uid="uid://ba0im6i353yq8" path="res://scripts/classes/components/Implementations/functionality/AreaEnteredTrackerComponent.gd" id="8_nvmaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvmaq"]
 size = Vector2(19.9466, 45.0034)
@@ -69,9 +70,11 @@ enabler = NodePath("../..")
 enable_manager = NodePath("../..")
 metadata/_custom_type_script = "uid://bjisq1vjh82jp"
 
-[node name="InputManager" type="Node" parent="Ghost Platform/Components"]
+[node name="InputManager" type="Node" parent="Ghost Platform/Components" node_paths=PackedStringArray("up_collision_detector", "down_collision_detector")]
 script = ExtResource("5_mwnj0")
 vertical = true
+up_collision_detector = NodePath("../../../UpCollisionDetector/AreaEnteredTrackerComponent")
+down_collision_detector = NodePath("../../../DownCollisionDetector2/AreaEnteredTrackerComponent")
 metadata/_custom_type_script = "uid://3o5qtevy1vo1"
 
 [node name="LightComponent" type="Node2D" parent="Ghost Platform/Components" node_paths=PackedStringArray("sprite", "enable_manager")]
@@ -87,12 +90,15 @@ shape = SubResource("RectangleShape2D_ekpkx")
 
 [node name="UpCollisionDetector" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 449
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="UpCollisionDetector"]
 position = Vector2(6.13928e-06, -226.5)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_yo78c")
+
+[node name="AreaEnteredTrackerComponent" type="Node2D" parent="UpCollisionDetector"]
+script = ExtResource("8_nvmaq")
+metadata/_custom_type_script = "uid://ba0im6i353yq8"
 
 [node name="DownCollisionDetector2" type="Area2D" parent="."]
 collision_layer = 0
@@ -102,3 +108,7 @@ collision_mask = 455
 position = Vector2(2.71051e-20, 72)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_yo78c")
+
+[node name="AreaEnteredTrackerComponent" type="Node2D" parent="DownCollisionDetector2"]
+script = ExtResource("8_nvmaq")
+metadata/_custom_type_script = "uid://ba0im6i353yq8"

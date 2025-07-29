@@ -47,7 +47,6 @@ metadata/_custom_type_script = "uid://bdnyff2fdmh3e"
 
 [node name="UpCollisionDetector" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 449
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="UpCollisionDetector"]
 position = Vector2(6.13928e-06, -226.5)
