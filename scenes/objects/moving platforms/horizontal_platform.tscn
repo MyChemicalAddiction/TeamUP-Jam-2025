@@ -20,6 +20,7 @@ size = Vector2(0.55101, 17.7141)
 collision_layer = 64
 platform_on_leave = 2
 platform_floor_layers = 0
+metadata/_edit_group_ = true
 
 [node name="Icon" type="Sprite2D" parent="."]
 scale = Vector2(0.502326, 0.502326)
