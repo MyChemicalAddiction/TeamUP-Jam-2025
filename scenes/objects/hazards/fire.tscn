@@ -77,7 +77,6 @@ autoplay = "default"
 frame_progress = 0.359746
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
 scale = Vector2(2.48713, 2.48713)
 energy = 0.1
 shadow_enabled = true

@@ -65,6 +65,9 @@ position = Vector2(-408, -89)
 [node name="Candle" parent="Special Objects/Candles" instance=ExtResource("4_ckfx7")]
 position = Vector2(30, 96)
 
+[node name="Candle4" parent="Special Objects/Candles" instance=ExtResource("4_ckfx7")]
+position = Vector2(1221, -30)
+
 [node name="Candle2" parent="Special Objects/Candles" instance=ExtResource("4_ckfx7")]
 position = Vector2(-726, -786)
 
@@ -295,9 +298,8 @@ metadata/_edit_group_ = true
 [node name="StartPortal" parent="PlayersStartMarker" instance=ExtResource("18_8ymyw")]
 
 [node name="Darkness" type="CanvasModulate" parent="."]
-visible = false
 position = Vector2(155, -906)
-color = Color(0.0885599, 0.0885599, 0.0885599, 1)
+color = Color(0, 0, 0, 1)
 
 [editable path="Special Objects/Interactable/FinishDoor"]
 [editable path="Special Objects/Interactable/Ghost Continuous Button Area"]
