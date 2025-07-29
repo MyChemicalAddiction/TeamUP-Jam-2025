@@ -135,6 +135,29 @@ fmod_event_emitter = NodePath("..")
 state = NodePath("../../../Components/MovementStateMachine/HumanJumpingState")
 metadata/_custom_type_script = "uid://cga1lq65xwp1"
 
+[node name="Land" type="FmodEventEmitter2D" parent="Audio"]
+event_name = "event:/Elis/Elis_Land"
+event_guid = "{6be10282-4146-4797-b0d9-fabd35b65365}"
+
+[node name="LandListener" type="Node2D" parent="Audio/Land" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+script = ExtResource("13_l3q8g")
+fmod_event_emitter = NodePath("..")
+on_enter = false
+on_exit = true
+state = NodePath("../../../Components/MovementStateMachine/HumanFallingState")
+metadata/_custom_type_script = "uid://cga1lq65xwp1"
+
+[node name="Walk" type="FmodEventEmitter2D" parent="Audio"]
+event_name = "event:/Elis/Elis_FS"
+event_guid = "{c5dda1aa-0c3a-45c7-be81-6c0148fbfec3}"
+
+[node name="WalkListener" type="Node2D" parent="Audio/Walk" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+script = ExtResource("13_l3q8g")
+fmod_event_emitter = NodePath("..")
+continuous = true
+state = NodePath("../../../Components/MovementStateMachine/HumanWalkingState")
+metadata/_custom_type_script = "uid://cga1lq65xwp1"
+
 [node name="Death" type="FmodEventEmitter2D" parent="Audio" node_paths=PackedStringArray("hurtbox")]
 event_name = "event:/Death"
 event_guid = "{a74bcc09-362f-4509-8df2-6758b1ab8ed7}"
