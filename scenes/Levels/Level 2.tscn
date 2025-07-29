@@ -76,59 +76,59 @@ position = Vector2(1392, -746)
 
 [node name="Hazards" type="Node2D" parent="Special Objects"]
 
-[node name="Spikes" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(-1288, 884)
-
-[node name="Spikes18" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(-1400, 884)
-
-[node name="Spikes2" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(-1177, 883)
-
-[node name="Spikes3" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(-1069, 883)
-
-[node name="Spikes4" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(-939, 884)
-
-[node name="Spikes5" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(-812, 883)
-
-[node name="Spikes6" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(-683, 883)
-
-[node name="Spikes7" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(-552, 883)
-
-[node name="Spikes8" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(-425, 882)
-
-[node name="Spikes9" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(-296, 882)
-
-[node name="Spikes10" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(-167, 882)
-
-[node name="Spikes11" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(-40, 881)
-
-[node name="Spikes12" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(89, 881)
-
-[node name="Spikes13" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(220, 882)
-
-[node name="Spikes14" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(347, 881)
-
 [node name="Spikes15" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(476, 881)
+position = Vector2(511, 885)
 
 [node name="Spikes16" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(618, 881)
+position = Vector2(637, 885)
 
 [node name="Spikes17" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
-position = Vector2(759, 881)
+position = Vector2(763, 885)
+
+[node name="Spikes18" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(132, 885)
+
+[node name="Spikes19" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(258, 885)
+
+[node name="Spikes20" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(384, 885)
+
+[node name="Spikes21" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(-246, 885)
+
+[node name="Spikes22" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(-120, 885)
+
+[node name="Spikes23" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(6, 885)
+
+[node name="Spikes24" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(-625, 885)
+
+[node name="Spikes25" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(-499, 885)
+
+[node name="Spikes26" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(-373, 885)
+
+[node name="Spikes27" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(-1003, 885)
+
+[node name="Spikes28" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(-877, 885)
+
+[node name="Spikes29" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(-751, 885)
+
+[node name="Spikes30" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(-1382, 885)
+
+[node name="Spikes31" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(-1256, 885)
+
+[node name="Spikes32" parent="Special Objects/Hazards" instance=ExtResource("5_h32g1")]
+position = Vector2(-1130, 885)
 
 [node name="Interactable" type="Node2D" parent="Special Objects"]
 
