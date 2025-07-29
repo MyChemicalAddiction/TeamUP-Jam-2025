@@ -199,7 +199,7 @@ position = Vector2(745, -1001)
 enable_manager = NodePath("../../../Interactable/Continuous Button Area/MAIN")
 
 [node name="ghost_platform" parent="Special Objects/Moving Platforms" instance=ExtResource("10_lm1xb")]
-position = Vector2(1922, -28)
+position = Vector2(1915, -432)
 
 [node name="Vertical Door2" parent="Special Objects/Moving Platforms" instance=ExtResource("9_e47hr")]
 position = Vector2(-569, -1002)
@@ -355,7 +355,7 @@ bbcode_enabled = true
 text = "[b]Elias[/b] must make it to the final [b]white portal[/b] to complete the level."
 
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
-position = Vector2(-1352, -431)
+position = Vector2(-1372, -465)
 script = ExtResource("6_n4m08")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 metadata/_edit_group_ = true
