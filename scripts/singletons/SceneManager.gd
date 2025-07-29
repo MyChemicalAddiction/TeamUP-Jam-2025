@@ -15,6 +15,7 @@ signal loading_scene
 signal change_scene(new_scene: PackedScene)
 
 ## Emitted when transition_to_scene has been called with a null parameter, signaling that the game should quit back to main menu
+@warning_ignore("unused_signal")
 signal quit
 
 func transition_to_scene(new_scene: PackedScene): # For transitioning the player's location to a different scene
