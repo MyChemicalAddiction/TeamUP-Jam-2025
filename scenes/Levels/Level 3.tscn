@@ -28,13 +28,6 @@ shader_parameter/glow_strength = 1.0
 
 [node name="Border" parent="." instance=ExtResource("1_tpbas")]
 
-[node name="Black Darkness" type="ColorRect" parent="."]
-offset_left = -6564.0
-offset_top = -4003.0
-offset_right = 6605.0
-offset_bottom = 4043.0
-color = Color(0, 0, 0, 1)
-
 [node name="BG" parent="." instance=ExtResource("2_6vyoq")]
 
 [node name="Ground" parent="." instance=ExtResource("3_d2yvg")]

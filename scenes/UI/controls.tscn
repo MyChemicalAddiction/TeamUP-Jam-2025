@@ -21,8 +21,10 @@ bbcode_enabled = true
 text = "[b]Elias:[/b]
   left - L
   right - \"
-  jump - p
+  jump - P
   use - SPACE
+  throw - point & hold LMB
+  retrieve amulet - M
 
 [b]Mira[/b]:
   up - W  

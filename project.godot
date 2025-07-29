@@ -165,7 +165,9 @@ cutscene_move={
 2d_physics/layer_7="Rigid bodies collideable by both players"
 2d_physics/layer_8="Rigid bodies collideable by ghost only"
 2d_physics/layer_9="Rigid bodies collideable by human only"
+2d_physics/layer_10="The amulet."
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

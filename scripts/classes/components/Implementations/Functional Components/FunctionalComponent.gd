@@ -20,6 +20,9 @@ TLDR: the interface for implementing a functional component is to:
 @export var triggerer: Node ## A node that, when used, directly triggers this node's use function, too. This is typically assigned an InteractionArea node but can also be assigned another Functional Component, too, since they also emit this signal (polymorphism W).
 @export var one_shot = false ## If true, deletes self upon use.
 @export var area: Area2D ## The area that, when entered by another area (for example - by an InteractionManager's - which both players have), triggers this behavior.
+@export var connect_to_area_bodies_entered := false
+@export var connect_to_area_areas_entered := true
+@export var use_on_this_enable: Node ## A node that, when enabled, triggers this node's use()
 
 signal used ## Emmitted when used.
 
@@ -37,7 +40,12 @@ func _ready(): ## Connects own on_use functionality with triggerer's used signal
 	if triggerer and triggerer != self: 
 		triggerer.used.connect(use)
 	if area:
-		area.area_entered.connect(_on_area_entered)
+		if connect_to_area_areas_entered:
+			area.area_entered.connect(_on_area_entered)
+		if connect_to_area_bodies_entered:
+			area.body_entered.connect(_on_area_entered)
+	if use_on_this_enable:
+		use_on_this_enable.on_enabled.connect(use)
 	_on_ready()
 
 func _on_area_entered(_obj):

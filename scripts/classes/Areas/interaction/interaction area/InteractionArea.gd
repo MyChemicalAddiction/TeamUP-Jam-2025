@@ -36,6 +36,7 @@ func _ready(): ## Sets the InteractionArea's collision layer to be able to be de
 
 func interact(): ## Called when the player interacts with this area.
 	used.emit()
+	print('emitted')
 
 func disable():
 	on_disabled.emit() ## This disables all connected components

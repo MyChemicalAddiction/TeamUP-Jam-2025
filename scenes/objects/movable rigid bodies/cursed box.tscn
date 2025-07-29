@@ -61,13 +61,13 @@ material = SubResource("ShaderMaterial_i5els")
 scale = Vector2(0.318426, 0.318426)
 sprite_frames = SubResource("SpriteFrames_iw5lr")
 autoplay = "default"
-frame_progress = 0.0643796
+frame_progress = 0.609867
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_e0xvh")
 
 [node name="Interacting Area" type="Area2D" parent="."]
-collision_layer = 56
+collision_layer = 40
 collision_mask = 56
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interacting Area"]

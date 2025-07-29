@@ -4,5 +4,4 @@
 
 [node name="BG" type="TileMapLayer"]
 use_parent_material = true
-scale = Vector2(5, 5)
 tile_set = ExtResource("1_ddhhc")

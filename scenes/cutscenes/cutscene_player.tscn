@@ -70,6 +70,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1n5r7")
 cutscenes = Dictionary[String, bool]({
+"as": false,
+"df": false,
+"gh": false,
+"ij": false,
+"kl": false,
+"mn": false,
+"res://scenes/cutscenes/cutscene_1.tscn": false,
+"res://scenes/cutscenes/cutscene_2.tscn": false,
 "res://scenes/cutscenes/cutscene_3.tscn": false
 })
 intro_cutscene_path = "res://scenes/cutscenes/cutscene_0.tscn"

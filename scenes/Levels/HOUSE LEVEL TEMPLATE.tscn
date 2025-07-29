@@ -12,13 +12,6 @@
 
 [node name="Border" parent="." instance=ExtResource("1_1tevl")]
 
-[node name="Black Darkness" type="ColorRect" parent="."]
-offset_left = -3073.0
-offset_top = -1870.0
-offset_right = 3114.0
-offset_bottom = 1910.0
-color = Color(0, 0, 0, 1)
-
 [node name="BG" parent="." instance=ExtResource("3_m4iu2")]
 
 [node name="Ground" parent="." instance=ExtResource("3_3xpag")]
