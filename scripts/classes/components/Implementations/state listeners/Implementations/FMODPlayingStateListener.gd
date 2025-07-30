@@ -12,34 +12,39 @@ class_name FmodPlayingStateListener
 ## if true, keeps playing the event.
 @export var continuous := false
 
+## if true, is played even when the tree is paused.
+@export var play_if_paused := true
+
 func _ready() -> void:
 	super()
-	set_process(false)
+	set_physics_process(false)
 
 func _on_state_entered(): ## Overridden to provide behavior on the state being entered.
 	if on_enter:
 		if _check_condition():
 			if continuous:
-				set_process(true)
+				set_physics_process(true)
 				return
-			fmod_event_emitter.play()
+			
+			if !get_tree().paused or play_if_paused:
+				fmod_event_emitter.play()
 	else:
 		if continuous and stop_if_opposite:
-			set_process(false)
+			set_physics_process(false)
 
 func _on_state_exited():
 	if on_exit:
 		if _check_condition():
 			if not get_tree().paused:
 				if continuous:
-					set_process(true)
+					set_physics_process(true)
 					return
 				fmod_event_emitter.play()
 	else:
 		if continuous and stop_if_opposite:
-			set_process(false)
+			set_physics_process(false)
 
-func _process(_delta):
+func _physics_process(_delta):
 	call_deferred('_play')
 
 func _play():
