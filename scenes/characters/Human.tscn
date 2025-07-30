@@ -1,8 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://dnlp11cfws5mh"]
+[gd_scene load_steps=33 format=3 uid="uid://dnlp11cfws5mh"]
 
 [ext_resource type="Script" uid="uid://dqcux1xonf8to" path="res://scripts/classes/characters/human/HumanCharacter.gd" id="1_fn0a6"]
 [ext_resource type="PackedScene" uid="uid://bmakco5i5eh8i" path="res://scenes/functionality/complete state machines/characters/Human/HumanMovementStateMachine.tscn" id="2_1s6pi"]
-[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="2_rm4bp"]
 [ext_resource type="Script" uid="uid://cc4fjv8w3pibj" path="res://scripts/classes/components/Implementations/input managers/Characters/Human/HumanMovementInputManager.gd" id="7_0nw2b"]
 [ext_resource type="Script" uid="uid://cnh6wau76q5w6" path="res://scripts/classes/components/Implementations/input managers/Characters/Human/HumanInteractInputManager.gd" id="8_rv0c7"]
 [ext_resource type="Script" uid="uid://brwvuypl3ag2w" path="res://scripts/classes/Areas/interaction/interaction manager/InteractionManager.gd" id="9_1s6pi"]
@@ -12,13 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://bytehsip8oplv" path="res://assets/visual/placeholders/darknessblack.png" id="11_4yc4a"]
 [ext_resource type="Script" uid="uid://bj3kpi7kuya4w" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Custom Resource/HurtboxRes.gd" id="11_jlbu2"]
 [ext_resource type="Script" uid="uid://hk3ym3rj1kh8" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/DestroyedBehavior/HurtboxSimpleDestroyedBehavior.gd" id="12_jlbu2"]
+[ext_resource type="Texture2D" uid="uid://6pwwvtcgyoqk" path="res://assets/visual/characters/Elias/elias right.png" id="13_4yc4a"]
 [ext_resource type="Script" uid="uid://drft6dfp41fxt" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/HitBehavior/HurtboxSimpleDamageHitBehavior.gd" id="13_jlbu2"]
 [ext_resource type="Script" uid="uid://ry5dgo71msyk" path="res://scripts/classes/components/Implementations/state listeners/Implementations/FMODPlayingStateListener.gd" id="13_l3q8g"]
+[ext_resource type="Texture2D" uid="uid://b4u0b7lrftfb7" path="res://assets/visual/characters/Elias/elias left.png" id="14_l7b65"]
 [ext_resource type="Script" uid="uid://6x7jgp6hfnbu" path="res://scripts/functionality/death_SFX.gd" id="14_ykh65"]
 [ext_resource type="Script" uid="uid://cxmqilgfibmh1" path="res://scripts/classes/components/Implementations/state listeners/Implementations/Human Player/land_listener.gd" id="15_4yc4a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s6pi"]
-size = Vector2(128, 128)
+size = Vector2(29, 128)
 
 [sub_resource type="Resource" id="Resource_4yc4a"]
 script = ExtResource("11_jlbu2")
@@ -26,10 +27,98 @@ HP = 1.0
 metadata/_custom_type_script = "uid://bj3kpi7kuya4w"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3q8g"]
-size = Vector2(128, 128)
+size = Vector2(24, 119)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stoh6"]
+atlas = ExtResource("13_4yc4a")
+region = Rect2(320, 640, 320, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_121ej"]
+atlas = ExtResource("13_4yc4a")
+region = Rect2(0, 640, 320, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn4h5"]
+atlas = ExtResource("14_l7b65")
+region = Rect2(960, 0, 320, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfwvw"]
+atlas = ExtResource("14_l7b65")
+region = Rect2(640, 0, 320, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cqlf"]
+atlas = ExtResource("14_l7b65")
+region = Rect2(320, 0, 320, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhmsx"]
+atlas = ExtResource("14_l7b65")
+region = Rect2(0, 0, 320, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7b65"]
+atlas = ExtResource("13_4yc4a")
+region = Rect2(0, 0, 320, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uskaf"]
+atlas = ExtResource("13_4yc4a")
+region = Rect2(320, 0, 320, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usqyp"]
+atlas = ExtResource("13_4yc4a")
+region = Rect2(640, 0, 320, 640)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cklfy"]
+atlas = ExtResource("13_4yc4a")
+region = Rect2(960, 0, 320, 640)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_stoh6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stoh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_121ej")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn4h5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfwvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cqlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhmsx")
+}],
+"loop": true,
+"name": &"left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7b65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uskaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usqyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cklfy")
+}],
+"loop": true,
+"name": &"right",
+"speed": 6.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rm4bp"]
-size = Vector2(128, 128)
+size = Vector2(29, 121)
 
 [node name="Human" type="CharacterBody2D" node_paths=PackedStringArray("movement_component", "interaction_component", "hurtbox_component") groups=["Human", "Player"]]
 collision_layer = 1026
@@ -44,16 +133,19 @@ hurtbox_component = NodePath("Components/Hurtbox")
 metadata/_custom_type_script = "uid://dqcux1xonf8to"
 
 [node name="Components" type="Node2D" parent="."]
+scale = Vector2(1.50777, 1.50777)
 
 [node name="MovementStateMachine" parent="Components" node_paths=PackedStringArray("input_manager", "object") instance=ExtResource("2_1s6pi")]
 input_manager = NodePath("../HumanMovementInputManager")
 object = NodePath("../..")
 
-[node name="HumanIdleState" parent="Components/MovementStateMachine" index="0" node_paths=PackedStringArray("push_component")]
+[node name="HumanIdleState" parent="Components/MovementStateMachine" index="0" node_paths=PackedStringArray("push_component", "visual")]
 push_component = NodePath("../../PushComponent")
+visual = NodePath("../../../Visual/Icon")
 
-[node name="HumanWalkingState" parent="Components/MovementStateMachine" index="1" node_paths=PackedStringArray("push_component")]
+[node name="HumanWalkingState" parent="Components/MovementStateMachine" index="1" node_paths=PackedStringArray("push_component", "visual")]
 push_component = NodePath("../../PushComponent")
+visual = NodePath("../../../Visual/Icon")
 
 [node name="HumanFallingState" parent="Components/MovementStateMachine" index="2" node_paths=PackedStringArray("push_component")]
 push_component = NodePath("../../PushComponent")
@@ -79,6 +171,7 @@ input_manager = NodePath("../HumanInteractInputManager")
 metadata/_custom_type_script = "uid://brwvuypl3ag2w"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/InteractionManager"]
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_1s6pi")
 
 [node name="Hurtbox" type="Area2D" parent="Components" node_paths=PackedStringArray("holder")]
@@ -90,6 +183,7 @@ holder = NodePath("../..")
 metadata/_custom_type_script = "uid://dvixfmg80rixg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Hurtbox"]
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_l3q8g")
 
 [node name="HurtboxSimpleDestroyedBehavior" type="Node2D" parent="Components/Hurtbox"]
@@ -107,9 +201,9 @@ push_force = 250.0
 metadata/_custom_type_script = "uid://bpwjpuysmtl7y"
 
 [node name="Visual" type="Node2D" parent="."]
+scale = Vector2(1.50777, 1.50777)
 
 [node name="Throwing_Arrow" type="Sprite2D" parent="Visual"]
-modulate = Color(0.462291, 0.462291, 0.462291, 1)
 position = Vector2(-5.45695e-12, 0)
 rotation = -4.71238
 scale = Vector2(4.29478, 0.21)
@@ -120,13 +214,20 @@ offset = Vector2(-16, 0)
 script = ExtResource("9_ovymh")
 metadata/_custom_type_script = "uid://cga1lq65xwp1"
 
-[node name="Icon" type="Sprite2D" parent="Visual"]
-texture = ExtResource("2_rm4bp")
+[node name="Icon" type="AnimatedSprite2D" parent="Visual"]
+scale = Vector2(0.199825, 0.199825)
+sprite_frames = SubResource("SpriteFrames_stoh6")
+animation = &"right"
+autoplay = "idle"
+frame_progress = 0.253023
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 2.5)
+scale = Vector2(1.50777, 1.50777)
 shape = SubResource("RectangleShape2D_rm4bp")
 
 [node name="Audio" type="Node2D" parent="."]
+scale = Vector2(1.50777, 1.50777)
 
 [node name="Jump" type="FmodEventEmitter2D" parent="Audio"]
 event_name = "event:/Elis/Elis_Jump"

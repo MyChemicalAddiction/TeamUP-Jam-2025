@@ -13,6 +13,8 @@ var horizontal_input = Vector2.ZERO
 
 @export var push_component: PushComponent
 
+@export var visual: AnimatedSprite2D
+
 func process_input(_delta):
 	input_manager.process_input()
 	horizontal_input = input_manager.horizontal_input
@@ -31,6 +33,14 @@ func process_physics(_delta: float):
 		return FallingState
 	
 	object.move_and_slide()
+	
+	if object.velocity.x > 0:
+		visual.animation = "right"
+	elif object.velocity.x < 0:
+		visual.animation = "left"
+	else:
+		visual.animation = "idle"
+	
 	push_component.process_physics(_delta)
 
 func _on_enter():

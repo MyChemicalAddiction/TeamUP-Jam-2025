@@ -9,6 +9,8 @@ class_name HumanIdleState
 
 @export var ACCELERATE = 60.0
 
+@export var visual: AnimatedSprite2D
+
 func process_input(_delta):
 	input_manager.process_input()
 	if input_manager.horizontal_input:
@@ -25,6 +27,7 @@ func process_physics(_delta: float):
 	push_component.process_physics(_delta)
 
 func _on_enter():
+	visual.animation = "idle"
 	object.velocity.y = 0
 
 func _on_exit():
