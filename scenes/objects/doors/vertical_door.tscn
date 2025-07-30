@@ -9,7 +9,7 @@
 size = Vector2(44, 396)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3cvve"]
-size = Vector2(2.09384, 0.478752)
+size = Vector2(2.09384, 1.67566)
 
 [node name="Vertical Door" type="AnimatableBody2D"]
 collision_layer = 256
@@ -47,7 +47,7 @@ collision_layer = 0
 collision_mask = 12739
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="AreaEnteredTrackerComponent3/CollisionDetector"]
-position = Vector2(0, -208)
+position = Vector2(0, -209)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_3cvve")
 
@@ -64,7 +64,7 @@ collision_layer = 0
 collision_mask = 12739
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="AreaEnteredTrackerComponent4/CollisionDetector2"]
-position = Vector2(0, 190)
+position = Vector2(0, 191.25)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_3cvve")
 

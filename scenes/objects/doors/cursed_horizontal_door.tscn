@@ -50,7 +50,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i525v"]
-size = Vector2(0.028, 20.985)
+size = Vector2(0.165078, 20.985)
 
 [node name="Cursed Horizontal Door" type="AnimatableBody2D"]
 collision_layer = 64
@@ -94,7 +94,7 @@ collision_layer = 0
 collision_mask = 12743
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="AreaEnteredTrackerComponent2/CollisionDetector"]
-position = Vector2(-207.75, 0)
+position = Vector2(-209.502, 0)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_i525v")
 
@@ -111,7 +111,7 @@ collision_layer = 0
 collision_mask = 12743
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="AreaEnteredTrackerComponent/CollisionDetector2"]
-position = Vector2(199, 0)
+position = Vector2(200, 0)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_i525v")
 
