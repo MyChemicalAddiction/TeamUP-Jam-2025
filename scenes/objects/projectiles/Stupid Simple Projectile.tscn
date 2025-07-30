@@ -91,7 +91,7 @@ metadata/_custom_type_script = "uid://cmdr7k4jfy66e"
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 material = SubResource("ShaderMaterial_i53c3")
 rotation = -1.57079
-scale = Vector2(0.536536, 0.536536)
+scale = Vector2(0.796559, 0.796559)
 sprite_frames = SubResource("SpriteFrames_4onaw")
 autoplay = "default"
 

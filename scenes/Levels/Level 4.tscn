@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b3p14t07es2nd" path="res://scenes/objects/doors/horizontal_door.tscn" id="18_4xjy3"]
 [ext_resource type="PackedScene" uid="uid://riuotyrpb2p2" path="res://scenes/functionality/levers & buttons/continuous_cursed_button_area.tscn" id="20_lgplo"]
 
-[node name="Level" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="Border" parent="." instance=ExtResource("1_alnl0")]
 
