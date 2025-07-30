@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bf1uei6a8uqil"]
+[gd_scene load_steps=22 format=3 uid="uid://bf1uei6a8uqil"]
 
 [ext_resource type="Script" uid="uid://1ngpyj4uh14m" path="res://scripts/objects/special/amulet.gd" id="1_ulww5"]
 [ext_resource type="PackedScene" uid="uid://dqmvrgjgqo846" path="res://scenes/functionality/complete state machines/AmuletStateMachine.tscn" id="2_nncdm"]
@@ -11,6 +11,7 @@
 [ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="8_2n1rr"]
 [ext_resource type="Script" uid="uid://cys4mdwpjj11c" path="res://scripts/functionality/amulet_radius_area.gd" id="8_ns171"]
 [ext_resource type="Script" uid="uid://ry5dgo71msyk" path="res://scripts/classes/components/Implementations/state listeners/Implementations/FMODPlayingStateListener.gd" id="11_ol0n1"]
+[ext_resource type="Script" uid="uid://dblfjhyagcyhw" path="res://scripts/functionality/audio/play_if_bodyentered_audio.gd" id="12_143er"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2c0c"]
 bounce = 0.1
@@ -56,6 +57,8 @@ collision_mask = 321
 mass = 0.001
 physics_material_override = SubResource("PhysicsMaterial_c2c0c")
 continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 1
 script = ExtResource("1_ulww5")
 stateMachine = NodePath("Components/AmuletStateMachine")
 
@@ -141,6 +144,12 @@ fmod_event_emitter = NodePath("..")
 play_if_paused = false
 state = NodePath("../../../Components/AmuletStateMachine/HeldState")
 metadata/_custom_type_script = "uid://ry5dgo71msyk"
+
+[node name="Land Audio" type="FmodEventEmitter2D" parent="Audio" node_paths=PackedStringArray("object")]
+event_name = "event:/Amulet/Amulet_Land"
+event_guid = "{23ce5b74-f14e-4f3f-817f-c59debd42999}"
+script = ExtResource("12_143er")
+object = NodePath("../..")
 
 [connection signal="body_entered" from="AmuletRadiusArea" to="AmuletRadiusArea" method="_on_body_entered"]
 [connection signal="body_exited" from="AmuletRadiusArea" to="AmuletRadiusArea" method="_on_body_exited"]
