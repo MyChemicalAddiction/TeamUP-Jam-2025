@@ -27,7 +27,7 @@ HP = 1.0
 metadata/_custom_type_script = "uid://bj3kpi7kuya4w"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdffh"]
-size = Vector2(10.0435, 87.7456)
+size = Vector2(22.5729, 87.7456)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddmg8"]
 size = Vector2(33.372, 40.5985)
