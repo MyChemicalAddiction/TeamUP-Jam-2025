@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://cowniq528xl7q"]
+
+[ext_resource type="PackedScene" uid="uid://d11t84xsc8k7a" path="res://scenes/tilemaps/border tilemap.tscn" id="1_4yctu"]
+[ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="2_7gw5j"]
+[ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/ground tilemap.tscn" id="3_4u3g2"]
+[ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/portals/finish_portal.tscn" id="4_wwn15"]
+[ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/torch.tscn" id="5_72mdm"]
+[ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="6_fq8t5"]
+[ext_resource type="PackedScene" uid="uid://lu4uv3fbhvq2" path="res://scenes/objects/portals/start_portal.tscn" id="7_jh5q8"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Border" parent="." instance=ExtResource("1_4yctu")]
+
+[node name="BG" parent="." instance=ExtResource("2_7gw5j")]
+
+[node name="Ground" parent="." instance=ExtResource("3_4u3g2")]
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Audio"]
+event_name = "event:/AmBs/AMB_House"
+event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
+autoplay = true
+
+[node name="FmodEventEmitter2D2" type="FmodEventEmitter2D" parent="Audio"]
+event_name = "snapshot:/Reverb_Home"
+event_guid = "{9b0ed7d8-b7d0-4315-aeb0-6d0e5f616186}"
+autoplay = true
+
+[node name="FmodEventEmitter2D3" type="FmodEventEmitter2D" parent="Audio"]
+event_name = "event:/MUSIC/MX_House"
+event_guid = "{1bec39e2-90cd-4b62-9668-e1ae5cee0387}"
+autoplay = true
+
+[node name="Special Objects" type="Node2D" parent="."]
+
+[node name="FinishPortal" parent="Special Objects" instance=ExtResource("4_wwn15")]
+position = Vector2(806, 3)
+
+[node name="MAIN" parent="Special Objects/FinishPortal" index="0"]
+current_level_path = "res://scenes/Levels/level 9.tscn"
+
+[node name="Candles" type="Node2D" parent="Special Objects"]
+position = Vector2(-408, -89)
+
+[node name="Candle" parent="Special Objects/Candles" instance=ExtResource("5_72mdm")]
+
+[node name="Hazards" type="Node2D" parent="Special Objects"]
+
+[node name="Interactable" type="Node2D" parent="Special Objects"]
+
+[node name="Possessables" type="Node2D" parent="Special Objects/Interactable"]
+
+[node name="Movable rigid bodies" type="Node2D" parent="Special Objects"]
+
+[node name="Enemies" type="Node2D" parent="Special Objects"]
+
+[node name="Moving Platforms" type="Node2D" parent="Special Objects"]
+
+[node name="PlayersStartMarker" type="Marker2D" parent="."]
+script = ExtResource("6_fq8t5")
+metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
+metadata/_edit_group_ = true
+
+[node name="StartPortal" parent="PlayersStartMarker" instance=ExtResource("7_jh5q8")]
+
+[node name="Darkness" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0, 0, 0, 1)
+
+[editable path="Special Objects/FinishPortal"]
