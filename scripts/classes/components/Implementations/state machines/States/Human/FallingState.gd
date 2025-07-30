@@ -10,19 +10,27 @@ The human player falls normally.
 @export var SPEED = 300.0
 @export var ACCELERATE = 60.0
 
+@export var visual : AnimatedSprite2D
+
 @export var push_component: PushComponent
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var falling_velocity := 0.0
 
-var horizontal_input = 0.0
-var vertical_input = 0.0
+var horizontal_input := 0.0
+
+var vertical_input := 0.0
 
 func process_input(_delta):
 	input_manager.process_input()
 	vertical_input = input_manager.vertical_input
 	horizontal_input = input_manager.horizontal_input ## The horizontal direction toward which the player is moving.
+	
+	if input_manager.last_horizontal_input > 0:
+		visual.animation = "jump_right"
+	else:
+		visual.animation = "jump_left"
 	
 func process_physics(delta: float):
 	object.velocity.x = move_toward(object.velocity.x, SPEED * horizontal_input, ACCELERATE)
@@ -31,6 +39,7 @@ func process_physics(delta: float):
 	falling_velocity = object.velocity.y
 	
 	object.move_and_slide()
+
 	push_component.process_physics(delta)
 	
 	if object.is_on_floor():

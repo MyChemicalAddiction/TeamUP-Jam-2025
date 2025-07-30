@@ -35,6 +35,8 @@ func process_input(_delta):
 	else:
 		return IdleState
 	
+	visual.animation = 'left' if horizontal_input < 0 else 'right'
+	
 	if vertical_input < 0:
 		return JumpingState
 
@@ -58,8 +60,6 @@ func process_physics(_delta: float):
 		coyote_timer.timeout.connect(fall)
 	
 	object.move_and_slide()
-	
-	visual.animation = 'left' if horizontal_input < 0 else 'right'
 	
 	push_component.process_physics(_delta)
 

@@ -10,16 +10,23 @@ class_name HumanJumpingState
 
 @export var push_component: PushComponent
 
+@export var visual : AnimatedSprite2D
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var vertical_input = Vector2.ZERO
-var horizontal_input = Vector2.ZERO
+var vertical_input := 0.0
+var horizontal_input := 0.0
 
 func process_input(_delta):
 	input_manager.process_input()
 	vertical_input = input_manager.vertical_input
 	horizontal_input = input_manager.horizontal_input
 	object.velocity.x = move_toward(object.velocity.x, SPEED * horizontal_input, ACCELERATE)
+	
+	if input_manager.last_horizontal_input > 0:
+		visual.animation = "jump_right"
+	else:
+		visual.animation = "jump_left"
 	
 	if vertical_input >= 0:
 		object.velocity.y *= JUMP_DECCELERATE
@@ -31,6 +38,7 @@ func process_physics(delta: float):
 	object.velocity.y += gravity * delta
 	
 	object.move_and_slide()
+	
 	push_component.process_physics(delta)
 
 func _on_enter():
