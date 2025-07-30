@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c77yqcnjp0x8p"]
+[gd_scene load_steps=32 format=3 uid="uid://c77yqcnjp0x8p"]
 
 [ext_resource type="Script" uid="uid://cnxen4dyqy530" path="res://scripts/classes/characters/ghost/GhostCharacter.gd" id="1_ddmg8"]
 [ext_resource type="PackedScene" uid="uid://bvci04mstcsnl" path="res://scenes/functionality/complete state machines/characters/Ghost/GhostMovementStateMachine.tscn" id="2_qoedd"]
@@ -6,14 +6,12 @@
 [ext_resource type="Script" uid="uid://cd218insare6n" path="res://scripts/classes/components/Implementations/input managers/Characters/Ghost/GhostInteractInputManager.gd" id="9_qoedd"]
 [ext_resource type="Script" uid="uid://brwvuypl3ag2w" path="res://scripts/classes/Areas/interaction/interaction manager/InteractionManager.gd" id="10_matwj"]
 [ext_resource type="Script" uid="uid://bpwjpuysmtl7y" path="res://scripts/classes/components/Implementations/functionality/PushComponent.gd" id="10_qoedd"]
-[ext_resource type="Script" uid="uid://djpa325km3ptj" path="res://scripts/functionality/stuck_detector.gd" id="11_ctk4n"]
 [ext_resource type="Shader" uid="uid://c20s38gbqrkp3" path="res://shaders/cursed.gdshader" id="11_m8awq"]
 [ext_resource type="Script" uid="uid://dvixfmg80rixg" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Hurtbox.gd" id="11_pwbk5"]
 [ext_resource type="Script" uid="uid://bj3kpi7kuya4w" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Custom Resource/HurtboxRes.gd" id="12_25nvg"]
 [ext_resource type="Texture2D" uid="uid://cii6p2cmavrwo" path="res://assets/visual/characters/Mira/mira_ghost_ani_left.png" id="12_m8awq"]
 [ext_resource type="Script" uid="uid://ry5dgo71msyk" path="res://scripts/classes/components/Implementations/state listeners/Implementations/FMODPlayingStateListener.gd" id="12_matwj"]
 [ext_resource type="Texture2D" uid="uid://bopf88lmq7pgb" path="res://assets/visual/characters/Mira/mira_ghost_ani_right.png" id="12_pwbk5"]
-[ext_resource type="Script" uid="uid://ba0im6i353yq8" path="res://scripts/classes/components/Implementations/functionality/AreaEnteredTrackerComponent.gd" id="12_vqd2g"]
 [ext_resource type="Script" uid="uid://hk3ym3rj1kh8" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/DestroyedBehavior/HurtboxSimpleDestroyedBehavior.gd" id="13_m8awq"]
 [ext_resource type="Script" uid="uid://drft6dfp41fxt" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/HitBehavior/HurtboxSimpleDamageHitBehavior.gd" id="14_25nvg"]
 [ext_resource type="Texture2D" uid="uid://bfvl2wm2l1iw2" path="res://assets/visual/placeholders/light_circle.png" id="14_gevwg"]
@@ -32,10 +30,7 @@ metadata/_custom_type_script = "uid://bj3kpi7kuya4w"
 size = Vector2(60, 106.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddmg8"]
-size = Vector2(33.372, 107.732)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gevwg"]
-size = Vector2(33.372, 107.732)
+size = Vector2(33.372, 40.5985)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_25nvg"]
 shader = ExtResource("11_m8awq")
@@ -116,6 +111,7 @@ collision_mask = 8389
 motion_mode = 1
 platform_on_leave = 2
 platform_floor_layers = 4294955007
+platform_wall_layers = 1
 script = ExtResource("1_ddmg8")
 movement_component = NodePath("Components/MovementStateMachine")
 interaction_component = NodePath("Components/InteractionManager")
@@ -123,7 +119,7 @@ hurtbox_component = NodePath("Components/Hurtbox")
 metadata/_custom_type_script = "uid://cnxen4dyqy530"
 
 [node name="Components" type="Node2D" parent="."]
-position = Vector2(-0.0159988, -102.032)
+position = Vector2(-0.0159988, -0.0319982)
 scale = Vector2(1.59625, 1.59625)
 
 [node name="MovementStateMachine" parent="Components" node_paths=PackedStringArray("input_manager", "object") instance=ExtResource("2_qoedd")]
@@ -196,35 +192,15 @@ push_force = 250.0
 metadata/_custom_type_script = "uid://bpwjpuysmtl7y"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5.68578, -106.032)
+position = Vector2(-5.68578, -4.03201)
 scale = Vector2(1.57799, 1.57799)
 shape = SubResource("RectangleShape2D_ddmg8")
-
-[node name="StuckDetector" type="Area2D" parent="CollisionShape2D" node_paths=PackedStringArray("physical_collision", "area_entered_tracker_component", "ghost_possessing_state", "ghost_hidden_state")]
-collision_mask = 12737
-script = ExtResource("11_ctk4n")
-physical_collision = NodePath("..")
-area_entered_tracker_component = NodePath("AreaEnteredTrackerComponent")
-ghost_possessing_state = NodePath("../../Components/MovementStateMachine/GhostPossessingState")
-ghost_hidden_state = NodePath("../../Components/MovementStateMachine/GhostHiddenState")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/StuckDetector"]
-scale = Vector2(0.762236, 0.762236)
-shape = SubResource("RectangleShape2D_gevwg")
-
-[node name="AreaEnteredTrackerComponent" type="Node2D" parent="CollisionShape2D/StuckDetector" node_paths=PackedStringArray("tracking_area")]
-position = Vector2(3.60318, 67.1943)
-scale = Vector2(0.633718, 0.633718)
-script = ExtResource("12_vqd2g")
-tracking_area = NodePath("..")
-track_areas = false
-track_bodies = true
-metadata/_custom_type_script = "uid://ba0im6i353yq8"
+disabled = true
 
 [node name="Icon" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("input_manager")]
 modulate = Color(1, 1, 1, 0.4)
 material = SubResource("ShaderMaterial_25nvg")
-position = Vector2(-0.0159988, -102.032)
+position = Vector2(-0.0159988, -0.0319982)
 scale = Vector2(0.31865, 0.31865)
 sprite_frames = SubResource("SpriteFrames_ctk4n")
 animation = &"left"
@@ -240,7 +216,7 @@ shadow_enabled = true
 texture = ExtResource("14_gevwg")
 
 [node name="Audio" type="Node2D" parent="."]
-position = Vector2(-0.0159988, -102.032)
+position = Vector2(-0.0159988, -0.0319982)
 scale = Vector2(1.59625, 1.59625)
 
 [node name="EnteredAudio" type="FmodEventEmitter2D" parent="Audio"]
