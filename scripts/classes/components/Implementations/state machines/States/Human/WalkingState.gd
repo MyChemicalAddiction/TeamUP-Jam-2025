@@ -8,8 +8,8 @@ class_name HumanWalkingState
 @export var SPEED = 300.0
 @export var ACCELERATE = 60.0
 
-var vertical_input = Vector2.ZERO
-var horizontal_input = Vector2.ZERO
+var vertical_input := 0.0
+var horizontal_input := 0.0
 
 @export var push_component: PushComponent
 
@@ -34,12 +34,7 @@ func process_physics(_delta: float):
 	
 	object.move_and_slide()
 	
-	if object.velocity.x > 0:
-		visual.animation = "right"
-	elif object.velocity.x < 0:
-		visual.animation = "left"
-	else:
-		visual.animation = "idle"
+	visual.animation = 'left' if horizontal_input < 0 else 'right'
 	
 	push_component.process_physics(_delta)
 

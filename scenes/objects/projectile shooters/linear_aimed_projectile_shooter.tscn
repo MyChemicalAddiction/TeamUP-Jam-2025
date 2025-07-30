@@ -80,7 +80,7 @@ raycast = NodePath("RayCast2D")
 [node name="Line2D" type="Line2D" parent="CollisionShape2D"]
 material = ExtResource("12_1uh4q")
 points = PackedVector2Array(0, 0, 0, 600)
-default_color = Color(0.148989, 0, 0.0273442, 1)
+default_color = Color(0.719, 0, 0.253, 0.801)
 
 [node name="RayCast2D" type="RayCast2D" parent="CollisionShape2D"]
 collision_mask = 12775

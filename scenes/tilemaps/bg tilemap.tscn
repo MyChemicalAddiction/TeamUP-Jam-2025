@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0mn1byomk45u"]
+[gd_scene load_steps=4 format=3 uid="uid://d0mn1byomk45u"]
 
-[ext_resource type="TileSet" uid="uid://884ga5kdmv1k" path="res://resources/ground_bg_tileset.tres" id="1_ddhhc"]
+[ext_resource type="Texture2D" uid="uid://cg8ppitt7lh2h" path="res://assets/visual/bg/brick.png" id="1_ddhhc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddhhc"]
+texture = ExtResource("1_ddhhc")
+texture_region_size = Vector2i(320, 320)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fgi8c"]
+tile_size = Vector2i(320, 320)
+sources/3 = SubResource("TileSetAtlasSource_ddhhc")
 
 [node name="BG" type="TileMapLayer"]
 use_parent_material = true
-tile_set = ExtResource("1_ddhhc")
+tile_set = SubResource("TileSet_fgi8c")
