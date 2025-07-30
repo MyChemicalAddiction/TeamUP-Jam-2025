@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8lt7usj83dfv"]
+[gd_scene load_steps=19 format=3 uid="uid://c8lt7usj83dfv"]
 
 [ext_resource type="Script" uid="uid://e0p143fkoaat" path="res://scripts/functionality/aimed_projectile_shooter_area.gd" id="1_n6gy8"]
 [ext_resource type="Script" uid="uid://bmjff2qd1s3id" path="res://scripts/classes/components/Implementations/functionality/ShooterAreaEnteredTrackerComponent.gd" id="2_4qall"]
@@ -8,10 +8,32 @@
 [ext_resource type="Script" uid="uid://bboji5tvpnhjv" path="res://scripts/classes/projectile/ProjectileShooter.gd" id="6_iupv6"]
 [ext_resource type="PackedScene" uid="uid://hibwxjb2khf0" path="res://scenes/objects/projectiles/Stupid Simple Projectile.tscn" id="7_mu7ln"]
 [ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="8_ihu6t"]
-[ext_resource type="Texture2D" uid="uid://dhw74qgh08441" path="res://icon.svg" id="9_oijrj"]
+[ext_resource type="Texture2D" uid="uid://dfpimuoxncl0u" path="res://assets/visual/characters/enemies/enemy.png" id="9_n6gy8"]
 [ext_resource type="Texture2D" uid="uid://fd6n6kdqgxhl" path="res://assets/visual/enemies/red radius.png" id="10_8v4mp"]
 [ext_resource type="Script" uid="uid://bp3r0ffx34h" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Hitbox.gd" id="11_ena11"]
 [ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="12_ltd4s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2qrg"]
+atlas = ExtResource("9_n6gy8")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uh4q"]
+atlas = ExtResource("9_n6gy8")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qall"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2qrg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uh4q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_swc48"]
 radius = 732.699
@@ -63,11 +85,13 @@ projectile_scene = ExtResource("7_mu7ln")
 projectile_holder = NodePath("../..")
 metadata/_custom_type_script = "uid://bboji5tvpnhjv"
 
-[node name="Sprite2D" type="Sprite2D" parent="Components/ProjectileShooter"]
+[node name="Sprite2D2" type="AnimatedSprite2D" parent="Components/ProjectileShooter"]
 modulate = Color(0.704081, 0, 0.0804177, 1)
 material = ExtResource("8_ihu6t")
 rotation = 1.5708
-texture = ExtResource("9_oijrj")
+scale = Vector2(0.399678, 0.399678)
+sprite_frames = SubResource("SpriteFrames_4qall")
+autoplay = "default"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(1, 1, 1, 0.117647)
