@@ -49,6 +49,7 @@ autoplay = true
 position = Vector2(-1562, -2242)
 
 [node name="MAIN" parent="Special Objects/FinishPortal" index="0"]
+next_level_scene_path = "res://scenes/Levels/level 8.tscn"
 current_level_path = "res://scenes/Levels/level 7.tscn"
 
 [node name="Candles" type="Node2D" parent="Special Objects"]
