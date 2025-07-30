@@ -13,6 +13,8 @@
 [ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="12_1uh4q"]
 [ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="12_w2qrg"]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_rm1jc"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_w2qrg"]
 atlas = ExtResource("9_oogkr")
 region = Rect2(0, 0, 320, 320)
@@ -35,8 +37,6 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_rm1jc"]
-
 [sub_resource type="Resource" id="Resource_1uh4q"]
 script = ExtResource("12_w2qrg")
 damage = 10000.0
@@ -51,6 +51,20 @@ collision_mask = 455
 script = ExtResource("1_by52x")
 state_machine = NodePath("Components/StateMachine")
 metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." node_paths=PackedStringArray("line", "raycast")]
+shape = SubResource("SegmentShape2D_rm1jc")
+script = ExtResource("9_by52x")
+line = NodePath("Line2D")
+raycast = NodePath("RayCast2D")
+
+[node name="Line2D" type="Line2D" parent="CollisionShape2D"]
+material = ExtResource("12_1uh4q")
+points = PackedVector2Array(0, 0, 0, 600)
+default_color = Color(0.719, 0, 0.253, 0.801)
+
+[node name="RayCast2D" type="RayCast2D" parent="CollisionShape2D"]
+collision_mask = 12769
 
 [node name="Components" type="Node2D" parent="."]
 
@@ -86,25 +100,11 @@ metadata/_custom_type_script = "uid://bboji5tvpnhjv"
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Components/ProjectileShooter"]
 modulate = Color(0.704081, 0, 0.0804177, 1)
 material = ExtResource("12_1uh4q")
-rotation = 1.5708
+rotation = -1.57079
 scale = Vector2(0.399678, 0.399678)
 sprite_frames = SubResource("SpriteFrames_lrij2")
 autoplay = "default"
 frame_progress = 0.779307
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." node_paths=PackedStringArray("line", "raycast")]
-shape = SubResource("SegmentShape2D_rm1jc")
-script = ExtResource("9_by52x")
-line = NodePath("Line2D")
-raycast = NodePath("RayCast2D")
-
-[node name="Line2D" type="Line2D" parent="CollisionShape2D"]
-material = ExtResource("12_1uh4q")
-points = PackedVector2Array(0, 0, 0, 600)
-default_color = Color(0.719, 0, 0.253, 0.801)
-
-[node name="RayCast2D" type="RayCast2D" parent="CollisionShape2D"]
-collision_mask = 12769
 
 [node name="Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("holder")]
 collision_layer = 6
