@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cdfywic5viawj"]
+[gd_scene load_steps=20 format=4 uid="uid://cdfywic5viawj"]
 
 [ext_resource type="PackedScene" uid="uid://d11t84xsc8k7a" path="res://scenes/tilemaps/border tilemap.tscn" id="1_hyu7u"]
 [ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="2_hispy"]
@@ -16,9 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://b8tomno4vy81t" path="res://scenes/objects/movable rigid bodies/cursed box.tscn" id="11_s2bim"]
 [ext_resource type="PackedScene" uid="uid://dgudsm50jqbt8" path="res://scenes/objects/movable rigid bodies/box.tscn" id="12_7q6ip"]
 [ext_resource type="Script" uid="uid://du7sowey406lo" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/DeleteComponent.gd" id="14_s2bim"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2bim"]
-size = Vector2(745, 934)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yi8na"]
 size = Vector2(743, 934)
@@ -209,12 +206,10 @@ enable_manager = NodePath("../../../Interactable/Ghost Continuous Button Area/MA
 
 [node name="Tutorials" type="Node2D" parent="Special Objects"]
 
-[node name="DeleteComponent3" type="Node2D" parent="Special Objects/Tutorials" node_paths=PackedStringArray("area", "enabling_area")]
+[node name="DeleteComponent3" type="Node2D" parent="Special Objects/Tutorials" node_paths=PackedStringArray("area")]
 position = Vector2(-895, 0)
 script = ExtResource("14_s2bim")
 area = NodePath("GhostArea")
-enabled = false
-enabling_area = NodePath("HumanArea")
 metadata/_custom_type_script = "uid://du7sowey406lo"
 
 [node name="Label" type="RichTextLabel" parent="Special Objects/Tutorials/DeleteComponent3"]
@@ -228,17 +223,6 @@ bbcode_enabled = true
 text = "Move as [b]Elias[/b] with PL\" (up, left, right).
 Move as [b]Mira[/b] with WASD (up, left, down, right)."
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
-
-[node name="HumanArea" type="Area2D" parent="Special Objects/Tutorials/DeleteComponent3"]
-position = Vector2(280, -248)
-collision_layer = 0
-collision_mask = 32
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Special Objects/Tutorials/DeleteComponent3/HumanArea"]
-visible = false
-position = Vector2(329.5, -38)
-shape = SubResource("RectangleShape2D_s2bim")
 
 [node name="GhostArea" type="Area2D" parent="Special Objects/Tutorials/DeleteComponent3"]
 position = Vector2(280, -248)
@@ -246,7 +230,6 @@ collision_layer = 0
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Special Objects/Tutorials/DeleteComponent3/GhostArea"]
-visible = false
 position = Vector2(328.5, -38)
 shape = SubResource("RectangleShape2D_yi8na")
 
