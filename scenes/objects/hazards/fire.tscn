@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://d27ix3phd1jfc"]
+[gd_scene load_steps=12 format=3 uid="uid://d27ix3phd1jfc"]
 
 [ext_resource type="Script" uid="uid://bp3r0ffx34h" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Hitbox.gd" id="1_upu3c"]
 [ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="2_mgefk"]
 [ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="3_7hqyp"]
 [ext_resource type="Texture2D" uid="uid://crick3slrx00y" path="res://assets/visual/objects/ground_fire.png" id="3_upu3c"]
-[ext_resource type="Texture2D" uid="uid://bfvl2wm2l1iw2" path="res://assets/visual/placeholders/light_circle.png" id="5_3qmi5"]
 
 [sub_resource type="Resource" id="Resource_l52yk"]
 script = ExtResource("2_mgefk")
@@ -75,10 +74,3 @@ scale = Vector2(0.398948, 0.398948)
 sprite_frames = SubResource("SpriteFrames_haqpn")
 autoplay = "default"
 frame_progress = 0.359746
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-energy = 0.1
-shadow_enabled = true
-texture = ExtResource("5_3qmi5")
-texture_scale = 4.6
-metadata/_edit_lock_ = true
