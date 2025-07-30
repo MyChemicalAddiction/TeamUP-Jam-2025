@@ -157,6 +157,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Level 7"
 script = ExtResource("1_amcxq")
+level_path = "res://scenes/Levels/level 7.tscn"
 metadata/_custom_type_script = "uid://bsiqevxhcauek"
 
 [node name="1" type="Button" parent="CanvasLayer/Part 3"]
