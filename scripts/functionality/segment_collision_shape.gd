@@ -7,7 +7,6 @@ var target_area: Node = null
 @onready var original_b := raycast.target_position
 
 @export var line: Line2D
-@export var dot: CollisionShape2D
 @export var raycast: RayCast2D
 
 func _ready():
@@ -33,5 +32,4 @@ func _physics_process(_delta: float) -> void:
 		segment.b = original_b
 
 	# Update visuals
-	dot.position = segment.b
 	line.points[1] = segment.b
