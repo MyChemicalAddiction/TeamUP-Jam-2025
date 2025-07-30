@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dnlpbofs2h540"]
+[gd_scene load_steps=19 format=4 uid="uid://dnlpbofs2h540"]
 
 [ext_resource type="PackedScene" uid="uid://d11t84xsc8k7a" path="res://scenes/tilemaps/border tilemap.tscn" id="1_tpbas"]
 [ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="2_6vyoq"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://b8xf6mcl8d82x" path="res://scenes/objects/interactible/ghost-specific/ghost_horizontal_platform.tscn" id="7_4hw37"]
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/portals/finish_portal.tscn" id="8_fwej7"]
 [ext_resource type="PackedScene" uid="uid://dgudsm50jqbt8" path="res://scenes/objects/movable rigid bodies/box.tscn" id="9_3jl0l"]
-[ext_resource type="PackedScene" uid="uid://b8tomno4vy81t" path="res://scenes/objects/movable rigid bodies/cursed box.tscn" id="10_3d7b6"]
 [ext_resource type="PackedScene" uid="uid://c8lt7usj83dfv" path="res://scenes/objects/projectile shooters/aimed_projectile_shooter_area.tscn" id="11_ipd5i"]
 [ext_resource type="PackedScene" uid="uid://bhkad48ij8ha7" path="res://scenes/objects/doors/vertical_door.tscn" id="12_mg65y"]
 [ext_resource type="PackedScene" uid="uid://cclkqpsjouer1" path="res://scenes/objects/doors/cursed_vertical_door.tscn" id="13_as1il"]
@@ -189,14 +188,14 @@ position = Vector2(-1302, -47)
 [node name="Box6" parent="Special Objects/Movable rigid bodies" instance=ExtResource("9_3jl0l")]
 position = Vector2(-1404, -47)
 
-[node name="Cursed Box" parent="Special Objects/Movable rigid bodies" instance=ExtResource("10_3d7b6")]
-position = Vector2(-1506, -149)
-
-[node name="Cursed Box3" parent="Special Objects/Movable rigid bodies" instance=ExtResource("10_3d7b6")]
-position = Vector2(-1506, -47)
-
 [node name="Box8" parent="Special Objects/Movable rigid bodies" instance=ExtResource("9_3jl0l")]
 position = Vector2(-1404, -149)
+
+[node name="Box14" parent="Special Objects/Movable rigid bodies" instance=ExtResource("9_3jl0l")]
+position = Vector2(-1506, -47)
+
+[node name="Box15" parent="Special Objects/Movable rigid bodies" instance=ExtResource("9_3jl0l")]
+position = Vector2(-1506, -149)
 
 [node name="Enemies" type="Node2D" parent="Special Objects"]
 
