@@ -168,16 +168,13 @@ position = Vector2(21, 83)
 position = Vector2(896, -799)
 
 [node name="Box" parent="Special Objects/Movable rigid bodies" instance=ExtResource("11_cmup6")]
-position = Vector2(-159, 683)
+position = Vector2(-164, 683)
 
 [node name="Box2" parent="Special Objects/Movable rigid bodies" instance=ExtResource("11_cmup6")]
-position = Vector2(-56, 683)
+position = Vector2(-62, 683)
 
 [node name="Box6" parent="Special Objects/Movable rigid bodies" instance=ExtResource("11_cmup6")]
-position = Vector2(47, 683)
-
-[node name="Box7" parent="Special Objects/Movable rigid bodies" instance=ExtResource("11_cmup6")]
-position = Vector2(150, 683)
+position = Vector2(40, 683)
 
 [node name="Box3" parent="Special Objects/Movable rigid bodies" instance=ExtResource("11_cmup6")]
 position = Vector2(1676, -520)

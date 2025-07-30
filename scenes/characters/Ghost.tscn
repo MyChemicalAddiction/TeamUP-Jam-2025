@@ -27,7 +27,7 @@ HP = 1.0
 metadata/_custom_type_script = "uid://bj3kpi7kuya4w"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdffh"]
-size = Vector2(60, 106.5)
+size = Vector2(10.0435, 109.046)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ddmg8"]
 size = Vector2(33.372, 40.5985)
@@ -174,7 +174,8 @@ holder = NodePath("../..")
 metadata/_custom_type_script = "uid://dvixfmg80rixg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Hurtbox"]
-position = Vector2(0, -2.50587)
+position = Vector2(-0.626468, -2.50587)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kdffh")
 
 [node name="HurtboxDestroyedLevelResetBehavior" type="Node2D" parent="Components/Hurtbox"]

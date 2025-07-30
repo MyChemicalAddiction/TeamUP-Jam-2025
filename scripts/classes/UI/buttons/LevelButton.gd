@@ -33,8 +33,6 @@ func _ready():
 
 func update():
 	if level_path in SaveLoad.get_data("level_completed_data") and level_path:
-		print(level_path)
-		
 		if !("(Completed)" in text): text += " (Completed)"
 	else:
 		text = original_text

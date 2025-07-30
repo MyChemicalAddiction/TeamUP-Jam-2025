@@ -47,7 +47,7 @@ tile_map_data = PackedByteArray("AADk////AQABAAEAAADk/wAAAQABAAIAAADk//7/AQABAAA
 position = Vector2(-391, -225)
 
 [node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "event:/AMBs/AMB_House"
+event_name = "event:/AmBs/AMB_House"
 event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
 autoplay = true
 
