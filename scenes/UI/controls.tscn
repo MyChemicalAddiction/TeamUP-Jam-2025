@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc5seuil7h8lf"]
+[gd_scene load_steps=3 format=3 uid="uid://cc5seuil7h8lf"]
 
 [ext_resource type="PackedScene" uid="uid://bmpxr4howyw3m" path="res://scenes/UI/buttons/section button.tscn" id="1_1osir"]
+[ext_resource type="Texture2D" uid="uid://0myr6mvbfn3w" path="res://assets/visual/placeholders/ninepatchrect.png" id="1_djm0g"]
 
 [node name="controls" type="VBoxContainer"]
 anchors_preset = 8
@@ -35,7 +36,7 @@ text = "[b]Elias:[/b]
   use - E"
 fit_content = true
 
-[node name="ColorRect" type="ColorRect" parent="RichTextLabel"]
+[node name="ColorRect" type="NinePatchRect" parent="RichTextLabel"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -43,7 +44,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("1_djm0g")
+region_rect = Rect2(0.899317, 1, 126.101, 126)
 
 [node name="SectionButton" parent="." instance=ExtResource("1_1osir")]
 layout_mode = 2

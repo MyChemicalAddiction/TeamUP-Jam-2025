@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://br4eplmjapoim"]
+[gd_scene load_steps=3 format=3 uid="uid://br4eplmjapoim"]
 
+[ext_resource type="Texture2D" uid="uid://0myr6mvbfn3w" path="res://assets/visual/placeholders/ninepatchrect.png" id="1_wmjcn"]
 [ext_resource type="PackedScene" uid="uid://bmpxr4howyw3m" path="res://scenes/UI/buttons/section button.tscn" id="1_yoyup"]
 
 [node name="How to Play" type="VBoxContainer"]
@@ -21,7 +22,7 @@ bbcode_enabled = true
 text = "[center][b]How to Play[/b][/center]"
 fit_content = true
 
-[node name="ColorRect" type="ColorRect" parent="RichTextLabel"]
+[node name="ColorRect2" type="NinePatchRect" parent="RichTextLabel"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -29,7 +30,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("1_wmjcn")
+region_rect = Rect2(0.899317, 1, 126.101, 126)
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 2
@@ -40,7 +42,7 @@ It is recommended you start from top to bottom however, as in the beginning you'
 Controls are under [b]Settings>Controls[/b]."
 fit_content = true
 
-[node name="ColorRect" type="ColorRect" parent="RichTextLabel2"]
+[node name="ColorRect2" type="NinePatchRect" parent="RichTextLabel2"]
 show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
@@ -48,7 +50,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+texture = ExtResource("1_wmjcn")
+region_rect = Rect2(0.899317, 1, 126.101, 126)
 
 [node name="SectionButton" parent="." instance=ExtResource("1_yoyup")]
 layout_mode = 2
