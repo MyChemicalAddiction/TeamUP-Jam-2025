@@ -67,7 +67,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3df27"]
-size = Vector2(102, 102)
+size = Vector2(102, 188.075)
 
 [sub_resource type="Resource" id="Resource_h1ddd"]
 script = ExtResource("5_bp250")
@@ -76,7 +76,7 @@ knockback = 0.0
 metadata/_custom_type_script = "uid://dmohabdm78d23"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tb14o"]
-size = Vector2(128, 827.528)
+size = Vector2(128, 188.075)
 
 [node name="Stupid Simple Projectile" type="RigidBody2D"]
 collision_layer = 0
