@@ -123,6 +123,7 @@ visible = false
 section = NodePath("../../Main Menu UI")
 
 [node name="How to Play" parent="Sections" instance=ExtResource("9_aklih")]
+visible = false
 
 [node name="SectionButton" parent="Sections/How to Play" index="2" node_paths=PackedStringArray("section")]
 section = NodePath("../../Main Menu UI")

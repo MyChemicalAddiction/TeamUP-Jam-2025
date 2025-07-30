@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c74c6g7dpdv28"]
+[gd_scene load_steps=3 format=3 uid="uid://c74c6g7dpdv28"]
 
 [ext_resource type="PackedScene" uid="uid://bmpxr4howyw3m" path="res://scenes/UI/buttons/section button.tscn" id="5_11jeb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3ond"]
+bg_color = Color(0.377919, 0.377919, 0.377919, 1)
 
 [node name="Credits UI" type="VBoxContainer"]
 anchors_preset = 8
@@ -21,8 +24,19 @@ bbcode_enabled = true
 text = "[center][b]Credits[/b][/center]"
 fit_content = true
 
+[node name="ColorRect" type="ColorRect" parent="RichTextLabel"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_d3ond")
 bbcode_enabled = true
 text = "[b]Programmer & Level Designer -[/b] retmod
 [b]2D Artists -[/b] Vera H (ArtHunterVera), Kiu Rutten (IceKiube)
@@ -31,6 +45,16 @@ text = "[b]Programmer & Level Designer -[/b] retmod
 [b]Composer -[/b] Jason Liang (FishEgg) 
 [b]Writer[/b] - Felix S"
 fit_content = true
+
+[node name="ColorRect" type="ColorRect" parent="RichTextLabel2"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="SectionButton" parent="." instance=ExtResource("5_11jeb")]
 layout_mode = 2
