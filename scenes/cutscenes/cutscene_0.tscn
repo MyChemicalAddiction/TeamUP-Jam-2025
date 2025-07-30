@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ypt6q1d4fpci"]
+[gd_scene load_steps=14 format=3 uid="uid://ypt6q1d4fpci"]
 
 [ext_resource type="Script" uid="uid://djojkqdpv6org" path="res://scripts/functionality/cutscene.gd" id="1_0y6ue"]
 [ext_resource type="Texture2D" uid="uid://d2ficeyshqbnd" path="res://assets/visual/cutscenes/cutscene 0/1.png" id="1_aind8"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://chxlvx2xetjkq" path="res://assets/visual/cutscenes/cutscene 0/7.png" id="7_yf6fr"]
 [ext_resource type="Texture2D" uid="uid://clfwtrnskt0b2" path="res://assets/visual/cutscenes/cutscene 0/9.png" id="8_0pe7d"]
 [ext_resource type="Texture2D" uid="uid://dwpgkeh18fkdd" path="res://assets/visual/cutscenes/cutscene 0/8.png" id="9_upiph"]
+[ext_resource type="Texture2D" uid="uid://c45kjewendexl" path="res://assets/visual/cutscenes/cutscene 0/intro_extra_1.png" id="10_khsxw"]
+[ext_resource type="Texture2D" uid="uid://mqnjelr1dbny" path="res://assets/visual/cutscenes/cutscene 0/intro_extra_2.png" id="11_caprq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yyqkf"]
 animations = [{
@@ -40,6 +42,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_0pe7d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_khsxw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_caprq")
 }],
 "loop": true,
 "name": &"default",
