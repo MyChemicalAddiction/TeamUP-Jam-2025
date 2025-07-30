@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://da03mkmgnylvx" path="res://scenes/functionality/arrows/component_arrow.tscn" id="5_6u3ko"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l07bw"]
-size = Vector2(14.3675, 11.8808)
+size = Vector2(12.1571, 11.8808)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6u3ko"]
 atlas = ExtResource("3_6u3ko")
@@ -156,7 +156,7 @@ metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 16.5)
-scale = Vector2(3.61929, 3.61929)
+scale = Vector2(3.60702, 3.60702)
 shape = SubResource("RectangleShape2D_l07bw")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]

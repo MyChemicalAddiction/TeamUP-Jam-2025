@@ -195,7 +195,6 @@ metadata/_custom_type_script = "uid://bpwjpuysmtl7y"
 position = Vector2(-5.68578, -4.03201)
 scale = Vector2(1.57799, 1.57799)
 shape = SubResource("RectangleShape2D_ddmg8")
-disabled = true
 
 [node name="Icon" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("input_manager")]
 modulate = Color(1, 1, 1, 0.4)

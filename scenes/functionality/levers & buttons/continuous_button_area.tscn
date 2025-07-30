@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://da03mkmgnylvx" path="res://scenes/functionality/arrows/component_arrow.tscn" id="5_c0lck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l07bw"]
-size = Vector2(14.3675, 11.8808)
+size = Vector2(11.0519, 11.8808)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6xd54"]
 atlas = ExtResource("3_c0lck")
