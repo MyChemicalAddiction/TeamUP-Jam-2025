@@ -76,7 +76,7 @@ knockback = 0.0
 metadata/_custom_type_script = "uid://dmohabdm78d23"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tb14o"]
-size = Vector2(128, 128)
+size = Vector2(128, 827.528)
 
 [node name="Stupid Simple Projectile" type="RigidBody2D"]
 collision_layer = 0
