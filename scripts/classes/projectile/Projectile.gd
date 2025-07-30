@@ -29,7 +29,7 @@ func _ready():
 func _on_body_entered(_body): ## TODO: later, this can be modified to add special effects when a projectile hits a wall or other phyisical object.
 	queue_free()
 	
-func shoot(direction: Vector2):
+func shoot(direction: Vector2, holder=null):
 	if projectileRes == null:
 		push_error("ProjectileRes is not assigned.")
 		return
@@ -38,7 +38,10 @@ func shoot(direction: Vector2):
 		push_error("Invalid direction passed to shoot().")
 		return
 	
-	
 	direction = direction.normalized()
-	look_at(direction)
+	
+	rotation = direction.angle()
+	if holder:
+		rotation -= holder.rotation
+	
 	linear_velocity = direction * projectileRes.SPEED

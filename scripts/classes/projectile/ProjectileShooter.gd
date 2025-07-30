@@ -32,4 +32,4 @@ func _fire_projectile():
 	#instance.position = self.position
 
 	var direction = Vector2.RIGHT.rotated(global_rotation)  ## Facing direction
-	instance.shoot(direction)
+	instance.shoot(direction, projectile_holder)
