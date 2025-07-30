@@ -144,9 +144,14 @@ object = NodePath("../..")
 push_component = NodePath("../../PushComponent")
 visual = NodePath("../../../Visual/Icon")
 
-[node name="HumanWalkingState" parent="Components/MovementStateMachine" index="1" node_paths=PackedStringArray("push_component", "visual")]
+[node name="HumanWalkingState" parent="Components/MovementStateMachine" index="1" node_paths=PackedStringArray("push_component", "visual", "coyote_timer")]
 push_component = NodePath("../../PushComponent")
 visual = NodePath("../../../Visual/Icon")
+coyote_timer = NodePath("Timer")
+
+[node name="Timer" type="Timer" parent="Components/MovementStateMachine/HumanWalkingState" index="0"]
+wait_time = 0.2
+one_shot = true
 
 [node name="HumanFallingState" parent="Components/MovementStateMachine" index="2" node_paths=PackedStringArray("push_component")]
 push_component = NodePath("../../PushComponent")
