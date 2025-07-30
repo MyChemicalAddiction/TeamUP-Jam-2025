@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="12_ltd4s"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_swc48"]
-radius = 522.004
+radius = 732.699
 
 [sub_resource type="Resource" id="Resource_4qall"]
 script = ExtResource("12_ltd4s")

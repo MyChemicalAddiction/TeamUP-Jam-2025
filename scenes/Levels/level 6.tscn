@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dcuahptdj36th"]
+[gd_scene load_steps=14 format=4 uid="uid://dcuahptdj36th"]
 
 [ext_resource type="PackedScene" uid="uid://d11t84xsc8k7a" path="res://scenes/tilemaps/border tilemap.tscn" id="1_si8ls"]
 [ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="2_erm23"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://b3p14t07es2nd" path="res://scenes/objects/doors/horizontal_door.tscn" id="9_tj6wf"]
 [ext_resource type="PackedScene" uid="uid://chum35l360n6t" path="res://scenes/functionality/levers & buttons/cursed_lever.tscn" id="10_j81xf"]
 [ext_resource type="PackedScene" uid="uid://b8xf6mcl8d82x" path="res://scenes/objects/interactible/ghost-specific/ghost_horizontal_platform.tscn" id="12_6kgxd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6kgxd"]
+radius = 520.0
 
 [node name="Level" type="Node2D"]
 
@@ -127,6 +130,7 @@ scale = Vector2(0.59187, 2.03626)
 
 [node name="CollisionShape2D" parent="Special Objects/Hazards/AimedProjectileShooterArea" index="3"]
 visible = true
+shape = SubResource("CircleShape2D_6kgxd")
 
 [node name="Interactable" type="Node2D" parent="Special Objects"]
 
