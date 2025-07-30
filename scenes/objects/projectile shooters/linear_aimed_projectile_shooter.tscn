@@ -90,7 +90,7 @@ rotation = 1.5708
 scale = Vector2(0.399678, 0.399678)
 sprite_frames = SubResource("SpriteFrames_lrij2")
 autoplay = "default"
-frame_progress = 0.992077
+frame_progress = 0.779307
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." node_paths=PackedStringArray("line", "raycast")]
 shape = SubResource("SegmentShape2D_rm1jc")

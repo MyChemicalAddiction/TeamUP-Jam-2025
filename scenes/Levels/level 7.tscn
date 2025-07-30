@@ -235,7 +235,6 @@ metadata/_edit_group_ = true
 [node name="StartPortal" parent="PlayersStartMarker" instance=ExtResource("7_xwkl4")]
 
 [node name="Darkness" type="CanvasModulate" parent="."]
-visible = false
 color = Color(0, 0, 0, 1)
 
 [node name="Box" parent="." instance=ExtResource("14_e4nqb")]
