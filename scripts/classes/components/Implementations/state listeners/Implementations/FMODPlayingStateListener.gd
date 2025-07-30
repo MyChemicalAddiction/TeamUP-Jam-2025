@@ -40,7 +40,11 @@ func _on_state_exited():
 			set_process(false)
 
 func _process(_delta):
-	fmod_event_emitter.play(false)
+	call_deferred('_play')
+
+func _play():
+	if fmod_event_emitter:
+		fmod_event_emitter.play(false)
 
 func _check_condition() -> bool: ## Overridden by implementations to check for a condition before playing.
 	return true

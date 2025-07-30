@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dnlp11cfws5mh"]
+[gd_scene load_steps=34 format=3 uid="uid://dnlp11cfws5mh"]
 
 [ext_resource type="Script" uid="uid://dqcux1xonf8to" path="res://scripts/classes/characters/human/HumanCharacter.gd" id="1_fn0a6"]
 [ext_resource type="PackedScene" uid="uid://bmakco5i5eh8i" path="res://scenes/functionality/complete state machines/characters/Human/HumanMovementStateMachine.tscn" id="2_1s6pi"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://6pwwvtcgyoqk" path="res://assets/visual/characters/Elias/elias right.png" id="13_4yc4a"]
 [ext_resource type="Script" uid="uid://drft6dfp41fxt" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/HitBehavior/HurtboxSimpleDamageHitBehavior.gd" id="13_jlbu2"]
 [ext_resource type="Script" uid="uid://ry5dgo71msyk" path="res://scripts/classes/components/Implementations/state listeners/Implementations/FMODPlayingStateListener.gd" id="13_l3q8g"]
+[ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="13_uskaf"]
 [ext_resource type="Texture2D" uid="uid://b4u0b7lrftfb7" path="res://assets/visual/characters/Elias/elias left.png" id="14_l7b65"]
 [ext_resource type="Script" uid="uid://6x7jgp6hfnbu" path="res://scripts/functionality/death_SFX.gd" id="14_ykh65"]
 [ext_resource type="Script" uid="uid://cxmqilgfibmh1" path="res://scripts/classes/components/Implementations/state listeners/Implementations/Human Player/land_listener.gd" id="15_4yc4a"]
@@ -215,6 +216,7 @@ script = ExtResource("9_ovymh")
 metadata/_custom_type_script = "uid://cga1lq65xwp1"
 
 [node name="Icon" type="AnimatedSprite2D" parent="Visual"]
+material = ExtResource("13_uskaf")
 scale = Vector2(0.199825, 0.199825)
 sprite_frames = SubResource("SpriteFrames_stoh6")
 animation = &"right"
