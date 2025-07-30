@@ -10,6 +10,12 @@ var default_ghost_collision_mask: int = -1 ## Stores the default mask of the Gho
 
 @onready var current_tween : Tween
 
+## Emitted when it starts pulling the ghost
+signal on_enabled
+
+## Emitted when it stops pulling the ghost
+signal on_disabled
+
 func _ready():
 	default_ghost_collision_mask = object.collision_mask
 	
@@ -24,6 +30,8 @@ func _on_body_entered(body: Node2D) -> void:
 		set_physics_process(false)
 		
 		object.collision_mask = default_ghost_collision_mask
+		
+		on_disabled.emit()
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is GhostCharacter:
@@ -37,6 +45,8 @@ func _on_body_exited(body: Node2D) -> void:
 		current_tween.tween_property(self, "force_multiplier", 1.0, TIME_TO_SPEED) ## Makes the ghost go quicker toward the area as more time passes with it outside it.
 		set_physics_process(true)
 		object.collision_mask = 0
+		
+		on_enabled.emit()
 
 func _physics_process(_delta: float) -> void:
 	object.velocity = (global_position - object.global_position).normalized() * MAX_ATTRACTION_SPEED * force_multiplier

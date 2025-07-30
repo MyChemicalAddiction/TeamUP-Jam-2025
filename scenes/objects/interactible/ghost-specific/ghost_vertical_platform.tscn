@@ -96,8 +96,9 @@ position = Vector2(6.13928e-06, -226.5)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_yo78c")
 
-[node name="AreaEnteredTrackerComponent" type="Node2D" parent="UpCollisionDetector"]
+[node name="AreaEnteredTrackerComponent" type="Node2D" parent="UpCollisionDetector" node_paths=PackedStringArray("tracking_area")]
 script = ExtResource("8_nvmaq")
+tracking_area = NodePath("..")
 metadata/_custom_type_script = "uid://ba0im6i353yq8"
 
 [node name="DownCollisionDetector2" type="Area2D" parent="."]
@@ -109,6 +110,7 @@ position = Vector2(2.71051e-20, 72)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_yo78c")
 
-[node name="AreaEnteredTrackerComponent" type="Node2D" parent="DownCollisionDetector2"]
+[node name="AreaEnteredTrackerComponent" type="Node2D" parent="DownCollisionDetector2" node_paths=PackedStringArray("tracking_area")]
 script = ExtResource("8_nvmaq")
+tracking_area = NodePath("..")
 metadata/_custom_type_script = "uid://ba0im6i353yq8"

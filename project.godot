@@ -65,6 +65,7 @@ Menu=""
 cutscene_player=""
 main_theme=""
 Moving_Platform=""
+amulet_radius=""
 
 [input]
 
