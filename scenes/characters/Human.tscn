@@ -184,6 +184,7 @@ visual = NodePath("../../../Visual/Icon")
 push_component = NodePath("../../PushComponent")
 
 [node name="HumanJumpingState" parent="Components/MovementStateMachine" index="3" node_paths=PackedStringArray("push_component", "visual")]
+JUMP_VELOCITY = -635.0
 push_component = NodePath("../../PushComponent")
 visual = NodePath("../../../Visual/Icon")
 
