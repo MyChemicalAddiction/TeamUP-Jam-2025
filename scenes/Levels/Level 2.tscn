@@ -148,7 +148,7 @@ next_level_scene_path = "res://scenes/Levels/Level 3.tscn"
 current_level_path = "res://scenes/Levels/Level 2.tscn"
 
 [node name="Ghost Continuous Button Area" parent="Special Objects/Interactable" instance=ExtResource("7_pka8w")]
-position = Vector2(478, 511)
+position = Vector2(478, 575)
 rotation = -1.57079
 
 [node name="Sprite2D" parent="Special Objects/Interactable/Ghost Continuous Button Area" index="3"]
@@ -181,6 +181,9 @@ position = Vector2(-62, 683)
 [node name="Box6" parent="Special Objects/Movable rigid bodies" instance=ExtResource("11_cmup6")]
 position = Vector2(40, 683)
 
+[node name="Box7" parent="Special Objects/Movable rigid bodies" instance=ExtResource("11_cmup6")]
+position = Vector2(142, 683)
+
 [node name="Box3" parent="Special Objects/Movable rigid bodies" instance=ExtResource("11_cmup6")]
 position = Vector2(1676, -520)
 
@@ -196,7 +199,7 @@ position = Vector2(1781, -623)
 position = Vector2(-1261, -687)
 rotation = -1.57079
 
-[node name="CollisionShape2D" parent="Special Objects/Enemies/AimedProjectileShooterArea2" index="1"]
+[node name="CollisionShape2D" parent="Special Objects/Enemies/AimedProjectileShooterArea2" index="0"]
 shape = SubResource("SegmentShape2D_g2b7c")
 
 [node name="RayCast2D" parent="Special Objects/Enemies/AimedProjectileShooterArea2/CollisionShape2D" index="1"]
