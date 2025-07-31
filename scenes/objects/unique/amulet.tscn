@@ -123,11 +123,11 @@ shape = SubResource("CircleShape2D_ahiox")
 position = Vector2(-0.0159988, -102.032)
 scale = Vector2(1.59625, 1.59625)
 
-[node name="ThrownAudio" type="FmodEventEmitter2D" parent="Audio"]
+[node name="Thrown Audio" type="FmodEventEmitter2D" parent="Audio"]
 event_name = "event:/Amulet/Amulet_Throw"
 event_guid = "{4723f59b-59bc-483c-8df1-45190730b4a0}"
 
-[node name="ThrownListener" type="Node2D" parent="Audio/ThrownAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+[node name="ThrownListener" type="Node2D" parent="Audio/Thrown Audio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
 script = ExtResource("11_ol0n1")
 fmod_event_emitter = NodePath("..")
 play_if_paused = false
@@ -143,6 +143,17 @@ script = ExtResource("11_ol0n1")
 fmod_event_emitter = NodePath("..")
 play_if_paused = false
 state = NodePath("../../../Components/AmuletStateMachine/HeldState")
+metadata/_custom_type_script = "uid://ry5dgo71msyk"
+
+[node name="Throwing Audio" type="FmodEventEmitter2D" parent="Audio"]
+event_name = "event:/Amulet/Amulet_Charging_Throw"
+event_guid = "{f9ee3161-614a-427d-a14b-3786df0efee8}"
+
+[node name="ThrowingListener" type="Node2D" parent="Audio/Throwing Audio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+script = ExtResource("11_ol0n1")
+fmod_event_emitter = NodePath("..")
+play_if_paused = false
+state = NodePath("../../../Components/AmuletStateMachine/ThrowingState")
 metadata/_custom_type_script = "uid://ry5dgo71msyk"
 
 [node name="Land Audio" type="FmodEventEmitter2D" parent="Audio" node_paths=PackedStringArray("object")]
