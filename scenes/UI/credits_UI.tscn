@@ -40,13 +40,14 @@ region_rect = Rect2(0.899317, 1, 126.101, 126)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_d3ond")
 bbcode_enabled = true
-text = "[b]Programmer -[/b] retmod
-[b]2D Artists -[/b] Vera H (ArtHunterVera), Kiu Rutten (IceKiube)
-[b]Character Designer -[/b] Kiu Rutten (IceKiube)
-[b]Sound Designer -[/b] Victoria Salazar
-[b]Composer -[/b] Jason Liang (FishEgg) 
-[b]Writer[/b] - Felix S
-[b]Tester -[/b] Ovidiu C."
+text = " [b]Programmer -[/b] retmod
+ [b]2D Artists -[/b] Vera H (ArtHunterVera), 
+ Kiu Rutten (IceKiube)
+ [b]Character Designer -[/b] Kiu Rutten (IceKiube)
+ [b]Sound Designer -[/b] Victoria Salazar
+ [b]Composer -[/b] Jason Liang (FishEgg) 
+ [b]Writer[/b] - Felix S
+ [b]Tester -[/b] Ovidiu C."
 fit_content = true
 
 [node name="ColorRect2" type="NinePatchRect" parent="RichTextLabel2"]

@@ -19,7 +19,7 @@ grow_vertical = 2
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 2
 bbcode_enabled = true
-text = "[b]Elias:[/b]
+text = " [b]Elias:[/b]
   left - L
   right - \"
   jump - P
@@ -27,7 +27,7 @@ text = "[b]Elias:[/b]
   throw - point & hold LMB
   retrieve amulet - M
 
-[b]Mira[/b]:
+ [b]Mira[/b]:
   up - W  
   left - A
   down - S

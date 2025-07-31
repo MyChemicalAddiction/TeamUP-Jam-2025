@@ -36,10 +36,15 @@ region_rect = Rect2(0.899317, 1, 126.101, 126)
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 layout_mode = 2
 bbcode_enabled = true
-text = "You can play any of the levels in any order you like. Completing more levels will show you more memories. 
-It is recommended you start from top to bottom however, as in the beginning you'll be introduced to the mechanics via tutorials.
+text = " You can play any of the levels in any 
+ order you like. Completing more levels 
+ will show you more memories. 
+ It is recommended you start from top 
+ to bottom however, as in the 
+ beginning you'll be introduced to the 
+ mechanics via tutorials.
 
-Controls are under [b]Settings>Controls[/b]."
+ Controls are under [b]Settings>Controls[/b]."
 fit_content = true
 
 [node name="ColorRect2" type="NinePatchRect" parent="RichTextLabel2"]
