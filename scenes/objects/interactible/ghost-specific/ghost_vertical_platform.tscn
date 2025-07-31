@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0yt2e6rh6c05"]
+[gd_scene load_steps=12 format=3 uid="uid://d0yt2e6rh6c05"]
 
 [ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="1_nvmaq"]
 [ext_resource type="Texture2D" uid="uid://dw3ej3frnxips" path="res://assets/visual/objects/moving_platform.png" id="1_yo78c"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://bgglcirqtvtj3" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/Area Behaviors/GlowComponent.gd" id="3_yo78c"]
 [ext_resource type="Script" uid="uid://bjisq1vjh82jp" path="res://scripts/classes/components/Implementations/Possessable Object Behaviors/GhostPlatformMovementComponent.gd" id="4_nvmaq"]
 [ext_resource type="Script" uid="uid://3o5qtevy1vo1" path="res://scripts/classes/components/Implementations/input managers/Platforms/HorizontalPlatformInputManager.gd" id="5_mwnj0"]
-[ext_resource type="Script" uid="uid://dmpdwlkpgkeb5" path="res://scripts/classes/components/Implementations/functionality/LightComponent.gd" id="7_mwnj0"]
 [ext_resource type="Script" uid="uid://ba0im6i353yq8" path="res://scripts/classes/components/Implementations/functionality/AreaEnteredTrackerComponent.gd" id="8_nvmaq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvmaq"]
@@ -76,13 +75,6 @@ vertical = true
 up_collision_detector = NodePath("../../../UpCollisionDetector/AreaEnteredTrackerComponent")
 down_collision_detector = NodePath("../../../DownCollisionDetector2/AreaEnteredTrackerComponent")
 metadata/_custom_type_script = "uid://3o5qtevy1vo1"
-
-[node name="LightComponent" type="Node2D" parent="Ghost Platform/Components" node_paths=PackedStringArray("sprite", "enable_manager")]
-script = ExtResource("7_mwnj0")
-sprite = NodePath("../../../Icon")
-enabled = false
-enable_manager = NodePath("../PlatformMovementComponent")
-metadata/_custom_type_script = "uid://dmpdwlkpgkeb5"
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ghost Platform"]
 scale = Vector2(18.1485, 2.08873)
