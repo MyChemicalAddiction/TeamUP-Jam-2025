@@ -228,7 +228,7 @@ position = Vector2(-247, -1974)
 enable_manager = NodePath("../../../Interactable/Continuous Button Area/MAIN")
 
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
-position = Vector2(0, -130)
+position = Vector2(0, -1)
 script = ExtResource("6_hp3xq")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 metadata/_edit_group_ = true

@@ -275,7 +275,7 @@ position = Vector2(1340, -1275)
 enable_manager = NodePath("../../../Interactable/Lever/MAIN")
 
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
-position = Vector2(-1226, -6)
+position = Vector2(-1234, -287)
 script = ExtResource("6_snwjq")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 metadata/_edit_group_ = true
