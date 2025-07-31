@@ -174,7 +174,6 @@ metadata/_custom_type_script = "uid://dvixfmg80rixg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Hurtbox"]
 position = Vector2(-0.626468, -2.50587)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kdffh")
 
 [node name="HurtboxDestroyedLevelResetBehavior" type="Node2D" parent="Components/Hurtbox"]

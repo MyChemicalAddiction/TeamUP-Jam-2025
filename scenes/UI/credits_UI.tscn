@@ -40,7 +40,7 @@ region_rect = Rect2(0.899317, 1, 126.101, 126)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_d3ond")
 bbcode_enabled = true
-text = "[b]Programmer & Level Designer -[/b] retmod
+text = "[b]Programmer -[/b] retmod
 [b]2D Artists -[/b] Vera H (ArtHunterVera), Kiu Rutten (IceKiube)
 [b]Character Designer -[/b] Kiu Rutten (IceKiube)
 [b]Sound Designer -[/b] Victoria Salazar
