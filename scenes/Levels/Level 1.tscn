@@ -57,6 +57,7 @@ autoplay = true
 event_name = "event:/MUSIC/MX_House"
 event_guid = "{1bec39e2-90cd-4b62-9668-e1ae5cee0387}"
 autoplay = true
+allow_fadeout = false
 volume = 0.25
 
 [node name="Special Objects" type="Node2D" parent="."]

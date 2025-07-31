@@ -43,6 +43,7 @@ autoplay = true
 event_name = "event:/MUSIC/MX_House_2"
 event_guid = "{94f5a016-a249-466f-aec5-6f5695616c56}"
 autoplay = true
+allow_fadeout = false
 
 [node name="Special Objects" type="Node2D" parent="."]
 

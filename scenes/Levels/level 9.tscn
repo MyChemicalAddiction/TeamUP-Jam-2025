@@ -42,6 +42,7 @@ autoplay = true
 event_name = "event:/MUSIC/MX_Field"
 event_guid = "{ca8d786c-ca8a-4cb6-aa57-e1965f9e86f4}"
 autoplay = true
+allow_fadeout = false
 
 [node name="Special Objects" type="Node2D" parent="."]
 
