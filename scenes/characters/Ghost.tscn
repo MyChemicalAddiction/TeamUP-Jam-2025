@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://6x7jgp6hfnbu" path="res://scripts/functionality/death_SFX.gd" id="14_pwbk5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8bju"]
-size = Vector2(60, 128)
+size = Vector2(60, 92.6772)
 
 [sub_resource type="Resource" id="Resource_gevwg"]
 script = ExtResource("12_25nvg")
@@ -162,7 +162,7 @@ input_manager = NodePath("../GhostInteractInputManager")
 metadata/_custom_type_script = "uid://brwvuypl3ag2w"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/InteractionManager"]
-visible = false
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_n8bju")
 
 [node name="Hurtbox" type="Area2D" parent="Components" node_paths=PackedStringArray("holder")]
@@ -175,7 +175,6 @@ metadata/_custom_type_script = "uid://dvixfmg80rixg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/Hurtbox"]
 position = Vector2(-0.626468, -2.50587)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kdffh")
 
 [node name="HurtboxDestroyedLevelResetBehavior" type="Node2D" parent="Components/Hurtbox"]
