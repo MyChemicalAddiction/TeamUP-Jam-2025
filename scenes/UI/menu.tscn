@@ -59,9 +59,9 @@ texture = ExtResource("4_wav1i")
 [node name="Main Menu UI" parent="Sections" instance=ExtResource("1_u81ku")]
 visible = false
 offset_left = -125.0
-offset_top = -85.5
+offset_top = -73.0
 offset_right = 125.0
-offset_bottom = 85.5
+offset_bottom = 73.0
 
 [node name="SectionButton2" parent="Sections/Main Menu UI" index="0" node_paths=PackedStringArray("section")]
 section = NodePath("../../Level Select UI")
@@ -78,9 +78,9 @@ section = NodePath("../../How to Play")
 [node name="Settings UI" parent="Sections" instance=ExtResource("2_2tfbb")]
 visible = false
 offset_left = -126.0
-offset_top = -46.5
+offset_top = -30.0
 offset_right = 126.0
-offset_bottom = 46.5
+offset_bottom = 30.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
@@ -93,33 +93,33 @@ section = NodePath("../../Main Menu UI")
 [node name="Level Select UI" parent="Sections" instance=ExtResource("4_ny0ke")]
 visible = false
 offset_left = -125.0
-offset_top = -81.5
+offset_top = -69.0
 offset_right = 125.0
-offset_bottom = 81.5
+offset_bottom = 69.0
 
 [node name="SectionButton" parent="Sections/Level Select UI" index="4" node_paths=PackedStringArray("section")]
 section = NodePath("../../Main Menu UI")
 
 [node name="Controls" parent="Sections" instance=ExtResource("6_ofy2k")]
 visible = false
-offset_top = -190.0
-offset_bottom = 190.0
+offset_top = -157.0
+offset_bottom = 157.0
 
 [node name="SectionButton" parent="Sections/Controls" index="1" node_paths=PackedStringArray("section")]
 section = NodePath("../../Settings UI")
 
 [node name="Credits UI" parent="Sections" instance=ExtResource("6_svcqa")]
 visible = false
-offset_top = -169.0
-offset_bottom = 169.0
+offset_top = -111.0
+offset_bottom = 111.0
 
 [node name="SectionButton" parent="Sections/Credits UI" index="2" node_paths=PackedStringArray("section")]
 section = NodePath("../../Main Menu UI")
 
 [node name="How to Play" parent="Sections" instance=ExtResource("9_aklih")]
 visible = false
-offset_top = -169.0
-offset_bottom = 169.0
+offset_top = -110.0
+offset_bottom = 110.0
 
 [node name="SectionButton" parent="Sections/How to Play" index="2" node_paths=PackedStringArray("section")]
 section = NodePath("../../Main Menu UI")
