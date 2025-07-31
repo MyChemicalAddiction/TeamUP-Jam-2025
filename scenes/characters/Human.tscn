@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://bngv2rtf3degk" path="res://scripts/classes/components/Implementations/state listeners/Implementations/Human Player/AmuletThrowingStateListener.gd" id="9_ovymh"]
 [ext_resource type="Script" uid="uid://dvixfmg80rixg" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Hurtbox.gd" id="10_2vwdl"]
 [ext_resource type="Script" uid="uid://bpwjpuysmtl7y" path="res://scripts/classes/components/Implementations/functionality/PushComponent.gd" id="10_l3q8g"]
-[ext_resource type="Texture2D" uid="uid://bytehsip8oplv" path="res://assets/visual/placeholders/darknessblack.png" id="11_4yc4a"]
+[ext_resource type="Texture2D" uid="uid://dh2j8mhspv3ti" path="res://assets/visual/placeholders/beige_arrow.png" id="11_cklfy"]
 [ext_resource type="Script" uid="uid://bj3kpi7kuya4w" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Custom Resource/HurtboxRes.gd" id="11_jlbu2"]
 [ext_resource type="Script" uid="uid://hk3ym3rj1kh8" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/DestroyedBehavior/HurtboxSimpleDestroyedBehavior.gd" id="12_jlbu2"]
 [ext_resource type="Texture2D" uid="uid://6pwwvtcgyoqk" path="res://assets/visual/characters/Elias/elias right.png" id="13_4yc4a"]
@@ -236,14 +236,10 @@ push_force = 250.0
 metadata/_custom_type_script = "uid://bpwjpuysmtl7y"
 
 [node name="Visual" type="Node2D" parent="."]
-scale = Vector2(1.50777, 1.50777)
 
 [node name="Throwing_Arrow" type="Sprite2D" parent="Visual"]
-position = Vector2(-5.45695e-12, 0)
-rotation = -4.71238
-scale = Vector2(4.29478, 0.21)
-texture = ExtResource("11_4yc4a")
-offset = Vector2(-16, 0)
+texture = ExtResource("11_cklfy")
+offset = Vector2(0, -64)
 
 [node name="StateListener" type="Node2D" parent="Visual/Throwing_Arrow"]
 script = ExtResource("9_ovymh")
@@ -251,7 +247,7 @@ metadata/_custom_type_script = "uid://cga1lq65xwp1"
 
 [node name="Icon" type="AnimatedSprite2D" parent="Visual"]
 material = ExtResource("13_uskaf")
-scale = Vector2(0.199825, 0.199825)
+scale = Vector2(0.302, 0.302)
 sprite_frames = SubResource("SpriteFrames_stoh6")
 animation = &"jump_right"
 autoplay = "idle"

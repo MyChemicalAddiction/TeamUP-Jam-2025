@@ -21,7 +21,7 @@ func _on_state_exited(): ## Makes the arrow invisible.
 	set_physics_process(false) 
 
 func _physics_process(_delta: float) -> void:
-	object.rotation = (global_position - state.mouse_pos).angle()
+	object.rotation = (global_position - state.mouse_pos).angle() - PI / 2
 	
 	## TODO: remove this later, this is hardcoded visual feedback for debugging purposes only 
 	modulate_alpha = state.force_multiplier

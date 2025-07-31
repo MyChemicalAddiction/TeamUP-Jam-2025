@@ -162,7 +162,6 @@ input_manager = NodePath("../GhostInteractInputManager")
 metadata/_custom_type_script = "uid://brwvuypl3ag2w"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Components/InteractionManager"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_n8bju")
 
 [node name="Hurtbox" type="Area2D" parent="Components" node_paths=PackedStringArray("holder")]
