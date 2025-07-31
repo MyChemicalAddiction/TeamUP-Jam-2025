@@ -122,7 +122,7 @@ shape = SubResource("RectangleShape2D_ekpkx")
 
 [node name="CollisionDetector" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 12743
+collision_mask = 13255
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="CollisionDetector"]
 position = Vector2(-188, 0)
@@ -139,7 +139,7 @@ metadata/_custom_type_script = "uid://ba0im6i353yq8"
 
 [node name="CollisionDetector2" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 12743
+collision_mask = 13255
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="CollisionDetector2"]
 position = Vector2(188, 0)
