@@ -248,7 +248,7 @@ offset_bottom = -88.0
 theme_override_font_sizes/normal_font_size = 40
 theme_override_font_sizes/bold_font_size = 40
 bbcode_enabled = true
-text = "[b]Elias[/b] is holding the amulet, whose visible radius restricts [b]Mira's[/b] movement. Hold [b]LMB[/b] as [b]Elias[/b] to charge up an [b]amulet throw.[/b] Press [b]M[/b] to retrieve the amulet."
+text = "[b]Elias[/b] is holding the amulet, whose visible radius restricts [b]Mira's[/b] movement. Hold [b]Left Click[/b] as [b]Elias[/b] to charge up an [b]amulet throw.[/b] Press [b]M[/b] to retrieve the amulet."
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
