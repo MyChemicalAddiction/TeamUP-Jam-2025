@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3p14t07es2nd"]
+[gd_scene load_steps=8 format=3 uid="uid://b3p14t07es2nd"]
 
 [ext_resource type="Script" uid="uid://d4esf4meclpan" path="res://scripts/classes/components/Implementations/animation/MovingDoorComponent.gd" id="1_h4sa2"]
 [ext_resource type="Texture2D" uid="uid://d4jcxk77r24ti" path="res://assets/visual/objects/moving_door.png" id="2_v0kse"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpl0x"]
 size = Vector2(44, 396)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0kse"]
+size = Vector2(0.192854, 17.2354)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m08a3"]
 size = Vector2(0.192854, 17.2354)
@@ -50,7 +53,7 @@ collision_mask = 13123
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="AreaEnteredTrackerComponent3/CollisionDetector"]
 position = Vector2(-200.25, -3.55271e-15)
 scale = Vector2(18.1485, 2.08873)
-shape = SubResource("RectangleShape2D_m08a3")
+shape = SubResource("RectangleShape2D_v0kse")
 
 [node name="AreaEnteredTrackerComponent4" type="Node2D" parent="." node_paths=PackedStringArray("tracking_area", "excluded")]
 script = ExtResource("3_m08a3")

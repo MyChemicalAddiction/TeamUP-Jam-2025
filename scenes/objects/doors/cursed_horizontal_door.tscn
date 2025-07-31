@@ -50,7 +50,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i525v"]
-size = Vector2(0.165078, 20.985)
+size = Vector2(0.165078, 18.1929)
 
 [node name="Cursed Horizontal Door" type="AnimatableBody2D"]
 collision_layer = 64
