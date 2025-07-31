@@ -116,3 +116,8 @@ shape = SubResource("RectangleShape2D_tb14o")
 [node name="HitboxHitDeleteBehavior" type="Node2D" parent="Hitbox"]
 script = ExtResource("6_poy4d")
 metadata/_custom_type_script = "uid://by0f5pd4kfjdi"
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
+event_name = "event:/Projectiles/Fire_Projectiles"
+event_guid = "{40453a1e-a64a-4c8a-8738-cddd22d7c770}"
+autoplay = true
