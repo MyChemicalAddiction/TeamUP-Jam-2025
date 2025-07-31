@@ -13,4 +13,5 @@ sources/3 = SubResource("TileSetAtlasSource_ddhhc")
 
 [node name="BG" type="TileMapLayer"]
 use_parent_material = true
+scale = Vector2(2.25, 2.25)
 tile_set = SubResource("TileSet_fgi8c")
