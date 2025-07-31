@@ -100,7 +100,7 @@ metadata/_custom_type_script = "uid://bboji5tvpnhjv"
 [node name="Sprite2D" type="AnimatedSprite2D" parent="Components/ProjectileShooter"]
 modulate = Color(0.704081, 0, 0.0804177, 1)
 material = ExtResource("12_1uh4q")
-rotation = -1.57079
+rotation = 1.57079
 scale = Vector2(0.399678, 0.399678)
 sprite_frames = SubResource("SpriteFrames_lrij2")
 autoplay = "default"
