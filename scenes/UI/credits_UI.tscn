@@ -45,7 +45,8 @@ text = "[b]Programmer & Level Designer -[/b] retmod
 [b]Character Designer -[/b] Kiu Rutten (IceKiube)
 [b]Sound Designer -[/b] Victoria Salazar
 [b]Composer -[/b] Jason Liang (FishEgg) 
-[b]Writer[/b] - Felix S"
+[b]Writer[/b] - Felix S
+[b]Tester -[/b] Ovidiu C."
 fit_content = true
 
 [node name="ColorRect2" type="NinePatchRect" parent="RichTextLabel2"]
