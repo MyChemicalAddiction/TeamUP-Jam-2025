@@ -67,6 +67,10 @@ main_theme=""
 Moving_Platform=""
 amulet_radius=""
 
+[gui]
+
+theme/custom_font="uid://dgt6g3tchb1re"
+
 [input]
 
 human_move_left={

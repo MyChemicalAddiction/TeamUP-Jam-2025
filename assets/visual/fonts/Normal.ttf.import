@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bmtgt3aqvuu5u"
-path="res://.godot/imported/On Fire Free Trial.otf-5a5a4d4a2f95d546c1b182aefe435ed7.fontdata"
+uid="uid://dgt6g3tchb1re"
+path="res://.godot/imported/Normal.ttf-2d1d473835a58df3da4e1293ca746d6a.fontdata"
 
 [deps]
 
-source_file="res://assets/visual/fonts/On Fire Free Trial.otf"
-dest_files=["res://.godot/imported/On Fire Free Trial.otf-5a5a4d4a2f95d546c1b182aefe435ed7.fontdata"]
+source_file="res://assets/visual/fonts/Normal.ttf"
+dest_files=["res://.godot/imported/Normal.ttf-2d1d473835a58df3da4e1293ca746d6a.fontdata"]
 
 [params]
 
