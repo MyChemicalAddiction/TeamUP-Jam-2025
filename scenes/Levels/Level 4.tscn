@@ -55,6 +55,7 @@ allow_fadeout = false
 position = Vector2(-3080, -1489)
 
 [node name="MAIN" parent="Special Objects/FinishPortal" index="0"]
+next_level_scene_path = "res://scenes/Levels/level 5.tscn"
 current_level_path = "res://scenes/Levels/Level 4.tscn"
 
 [node name="Candles" type="Node2D" parent="Special Objects"]
