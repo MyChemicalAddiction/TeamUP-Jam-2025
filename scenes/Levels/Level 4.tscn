@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b3p14t07es2nd" path="res://scenes/objects/doors/horizontal_door.tscn" id="18_4xjy3"]
 [ext_resource type="PackedScene" uid="uid://riuotyrpb2p2" path="res://scenes/functionality/levers & buttons/continuous_cursed_button_area.tscn" id="20_lgplo"]
 
-[node name="Level2" type="Node2D"]
+[node name="Level3" type="Node2D"]
 
 [node name="Border" parent="." instance=ExtResource("1_alnl0")]
 
@@ -398,6 +398,22 @@ position = Vector2(-508, -1398)
 enable_manager = NodePath("../../../Interactable/Continuous Button Area2/MAIN")
 
 [node name="Tutorials" type="Node2D" parent="Special Objects"]
+
+[node name="DeleteComponent2" type="Node2D" parent="Special Objects/Tutorials" node_paths=PackedStringArray("triggerer")]
+script = ExtResource("9_gx541")
+triggerer = NodePath("../../Interactable/Lever/MAIN")
+metadata/_custom_type_script = "uid://du7sowey406lo"
+
+[node name="Label" type="RichTextLabel" parent="Special Objects/Tutorials/DeleteComponent2"]
+offset_left = 248.0
+offset_top = -839.0
+offset_right = 808.0
+offset_bottom = -600.0
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "Press [b][SPACE][/b] as [b]Elias[/b] to switch a [b]lever[/b]."
+metadata/_edit_use_anchors_ = true
 
 [node name="DeleteComponent" type="Node2D" parent="Special Objects/Tutorials" node_paths=PackedStringArray("use_on_this_enable")]
 script = ExtResource("9_gx541")
