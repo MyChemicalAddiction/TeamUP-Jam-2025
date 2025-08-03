@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7vh0fx3q7g3l"]
+[gd_scene load_steps=3 format=3 uid="uid://c7vh0fx3q7g3l"]
 
 [ext_resource type="PackedScene" uid="uid://bmpxr4howyw3m" path="res://scenes/UI/buttons/section button.tscn" id="2_m4wj0"]
+[ext_resource type="Script" uid="uid://jseqdu4jsmf2" path="res://scenes/UI/fullscreenbutton.gd" id="2_x2xs3"]
 
 [node name="Settings UI" type="VBoxContainer"]
 anchors_preset = 8
@@ -24,6 +25,11 @@ fit_content = true
 layout_mode = 2
 text = "Controls
 "
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+text = "Toggle Fullscreen"
+script = ExtResource("2_x2xs3")
 
 [node name="SectionButton2" parent="." instance=ExtResource("2_m4wj0")]
 layout_mode = 2
