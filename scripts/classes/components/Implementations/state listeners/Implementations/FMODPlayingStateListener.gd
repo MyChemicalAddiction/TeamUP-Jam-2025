@@ -12,12 +12,26 @@ class_name FmodPlayingStateListener
 ## if true, keeps playing the event.
 @export var continuous := false
 
+## if continuous is true, this is the rate (in seconds) at which the audio gets played
+@export var play_delay := 0.0
+var timer : Timer = null
+
 ## if true, is played even when the tree is paused.
 @export var play_if_paused := true
 
 func _ready() -> void:
 	super()
+	
+	if play_delay:
+		timer = Timer.new()
+		timer.wait_time = play_delay
+		timer.timeout.connect(enable_physics_process)
+		add_child(timer)
+	
 	set_physics_process(false)
+
+func enable_physics_process():
+	set_physics_process(true)
 
 func _on_state_entered(): ## Overridden to provide behavior on the state being entered.
 	if on_enter:
@@ -31,6 +45,8 @@ func _on_state_entered(): ## Overridden to provide behavior on the state being e
 	else:
 		if continuous and stop_if_opposite:
 			set_physics_process(false)
+			if timer:
+				timer.stop()
 
 func _on_state_exited():
 	if on_exit:
@@ -43,9 +59,14 @@ func _on_state_exited():
 	else:
 		if continuous and stop_if_opposite:
 			set_physics_process(false)
+			if timer:
+				timer.stop()
 
 func _physics_process(_delta):
 	call_deferred('_play')
+	if play_delay:
+		set_physics_process(false)
+		timer.start()
 
 func _play():
 	if fmod_event_emitter:

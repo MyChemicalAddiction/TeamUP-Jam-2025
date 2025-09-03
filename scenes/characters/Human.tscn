@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dnlp11cfws5mh"]
+[gd_scene load_steps=61 format=3 uid="uid://dnlp11cfws5mh"]
 
 [ext_resource type="Script" uid="uid://dqcux1xonf8to" path="res://scripts/classes/characters/human/HumanCharacter.gd" id="1_fn0a6"]
 [ext_resource type="PackedScene" uid="uid://bmakco5i5eh8i" path="res://scenes/functionality/complete state machines/characters/Human/HumanMovementStateMachine.tscn" id="2_1s6pi"]
@@ -16,10 +16,33 @@
 [ext_resource type="Script" uid="uid://ry5dgo71msyk" path="res://scripts/classes/components/Implementations/state listeners/Implementations/FMODPlayingStateListener.gd" id="13_l3q8g"]
 [ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="13_uskaf"]
 [ext_resource type="Texture2D" uid="uid://b4u0b7lrftfb7" path="res://assets/visual/characters/Elias/elias left.png" id="14_l7b65"]
-[ext_resource type="Script" uid="uid://6x7jgp6hfnbu" path="res://scripts/functionality/death_SFX.gd" id="14_ykh65"]
 [ext_resource type="Script" uid="uid://cxmqilgfibmh1" path="res://scripts/classes/components/Implementations/state listeners/Implementations/Human Player/land_listener.gd" id="15_4yc4a"]
 [ext_resource type="Texture2D" uid="uid://ssck8fsf8rr8" path="res://assets/visual/characters/Elias/elias_jump_left.png" id="15_cklfy"]
 [ext_resource type="Texture2D" uid="uid://cn86et3hwd8k3" path="res://assets/visual/characters/Elias/elias_jump_right.png" id="15_usqyp"]
+[ext_resource type="AudioStream" uid="uid://bqamljqv3lo64" path="res://assets/audio/Raw Sound/Elis_Jump/Elis_Jump_01.wav" id="20_jfwvw"]
+[ext_resource type="AudioStream" uid="uid://byyuei88fd3ad" path="res://assets/audio/Raw Sound/Death/Death_02.wav" id="20_stoh6"]
+[ext_resource type="AudioStream" uid="uid://cxwsltdh46s0x" path="res://assets/audio/Raw Sound/Elis_Land/Elis_land_01.wav" id="22_jfwvw"]
+[ext_resource type="AudioStream" uid="uid://74s8xd1og2pe" path="res://assets/audio/Raw Sound/Elis_FS/Elis_FS_01.wav" id="23_jfwvw"]
+[ext_resource type="AudioStream" uid="uid://dessqnnt3s2vb" path="res://assets/audio/Raw Sound/Elis_Land/Elis_land_02.wav" id="24_3gauw"]
+[ext_resource type="Script" uid="uid://6k616opq222l" path="res://scripts/classes/functionality/audio/integrated-audio/SFXRandomizer/implementations/SFXRandomizer.gd" id="24_jfwvw"]
+[ext_resource type="AudioStream" uid="uid://dtluder24oe5b" path="res://assets/audio/Raw Sound/Elis_Land/Elis_land_03.wav" id="25_we7ni"]
+[ext_resource type="AudioStream" uid="uid://dnw14shji4sll" path="res://assets/audio/Raw Sound/Elis_Land/Elis_land_04.wav" id="26_aq8xj"]
+[ext_resource type="AudioStream" uid="uid://b0gekh5o2llj4" path="res://assets/audio/Raw Sound/Elis_Land/Elis_land_05.wav" id="27_nluah"]
+[ext_resource type="AudioStream" uid="uid://nkqdmpbagwct" path="res://assets/audio/Raw Sound/Elis_Land/Elis_land_06.wav" id="28_7qi58"]
+[ext_resource type="AudioStream" uid="uid://bnt4vgg5hqmvw" path="res://assets/audio/Raw Sound/Elis_Jump/Elis_Jump_02.wav" id="30_sa3bl"]
+[ext_resource type="AudioStream" uid="uid://bxbpcdy2wxb5x" path="res://assets/audio/Raw Sound/Elis_Jump/Elis_Jump_03.wav" id="31_wlxkg"]
+[ext_resource type="AudioStream" uid="uid://dato4v2u4fsq2" path="res://assets/audio/Raw Sound/Elis_Jump/Elis_Jump_04.wav" id="32_bg6py"]
+[ext_resource type="AudioStream" uid="uid://dqussfug8orn" path="res://assets/audio/Raw Sound/Elis_Jump/Elis_Jump_05.wav" id="33_5ffap"]
+[ext_resource type="AudioStream" uid="uid://p7cd1q0fgsx8" path="res://assets/audio/Raw Sound/Elis_Jump/Elis_Jump_06.wav" id="34_1rd7p"]
+[ext_resource type="AudioStream" uid="uid://u7b4mk5hkry3" path="res://assets/audio/Raw Sound/Elis_FS/Elis_FS_02.wav" id="36_5au2g"]
+[ext_resource type="AudioStream" uid="uid://hnifu3uyr75q" path="res://assets/audio/Raw Sound/Elis_FS/Elis_FS_03.wav" id="37_mpb6g"]
+[ext_resource type="Script" uid="uid://bos6e8fgh3c6d" path="res://scripts/classes/functionality/audio/integrated-audio/SFXRandomizer/implementations/DeathSFXRandomizer.gd" id="38_86el1"]
+[ext_resource type="AudioStream" uid="uid://3i0o06f3012b" path="res://assets/audio/Raw Sound/Elis_FS/Elis_FS_04.wav" id="38_tlgax"]
+[ext_resource type="AudioStream" uid="uid://dl3bxa8vvcnq4" path="res://assets/audio/Raw Sound/Elis_FS/Elis_FS_05.wav" id="39_lmtmf"]
+[ext_resource type="AudioStream" uid="uid://bp2htqsqcqvtw" path="res://assets/audio/Raw Sound/Death/Death_01.wav" id="39_p0r1q"]
+[ext_resource type="AudioStream" uid="uid://bkfjemymdhc7g" path="res://assets/audio/Raw Sound/Death/Death_03.wav" id="41_2yrjs"]
+[ext_resource type="AudioStream" uid="uid://d1s8pskve2y08" path="res://assets/audio/Raw Sound/Death/Death_04.wav" id="42_h3xjn"]
+[ext_resource type="AudioStream" uid="uid://det6noexqcf8h" path="res://assets/audio/Raw Sound/Death/Death_05.wav" id="43_lyvsq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1s6pi"]
 size = Vector2(29, 128)
@@ -260,44 +283,64 @@ shape = SubResource("RectangleShape2D_rm4bp")
 [node name="Audio" type="Node2D" parent="."]
 scale = Vector2(1.50777, 1.50777)
 
-[node name="Jump" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "event:/Elis/Elis_Jump"
-event_guid = "{609c516d-84bb-4cf8-a94e-9b7315bbd009}"
+[node name="Land_SFX" type="Node" parent="Audio" node_paths=PackedStringArray("audio_player")]
+script = ExtResource("24_jfwvw")
+audio_player = NodePath("Land_SFX")
+audio_list = Array[AudioStream]([ExtResource("22_jfwvw"), ExtResource("24_3gauw"), ExtResource("25_we7ni"), ExtResource("26_aq8xj"), ExtResource("27_nluah"), ExtResource("28_7qi58")])
+metadata/_custom_type_script = "uid://6k616opq222l"
 
-[node name="JumpListener" type="Node2D" parent="Audio/Jump" node_paths=PackedStringArray("fmod_event_emitter", "state")]
-script = ExtResource("13_l3q8g")
-fmod_event_emitter = NodePath("..")
-state = NodePath("../../../Components/MovementStateMachine/HumanJumpingState")
-metadata/_custom_type_script = "uid://ry5dgo71msyk"
+[node name="Land_SFX" type="AudioStreamPlayer" parent="Audio/Land_SFX"]
 
-[node name="Land" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "event:/Elis/Elis_Land"
-event_guid = "{6be10282-4146-4797-b0d9-fabd35b65365}"
-
-[node name="LandListener" type="Node2D" parent="Audio/Land" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+[node name="LandListener" type="Node2D" parent="Audio/Land_SFX/Land_SFX" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+scale = Vector2(1.50777, 1.50777)
 script = ExtResource("15_4yc4a")
 falling_velocity_treshold = 300
-fmod_event_emitter = NodePath("..")
+fmod_event_emitter = NodePath("../..")
 on_enter = false
 on_exit = true
-state = NodePath("../../../Components/MovementStateMachine/HumanFallingState")
+state = NodePath("../../../../Components/MovementStateMachine/HumanFallingState")
 metadata/_custom_type_script = "uid://ry5dgo71msyk"
 
-[node name="Walk" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "event:/Elis/Elis_FS"
-event_guid = "{c5dda1aa-0c3a-45c7-be81-6c0148fbfec3}"
+[node name="Jump_SFX" type="Node" parent="Audio" node_paths=PackedStringArray("audio_player")]
+script = ExtResource("24_jfwvw")
+audio_player = NodePath("Jump_SFX")
+audio_list = Array[AudioStream]([ExtResource("20_jfwvw"), ExtResource("30_sa3bl"), ExtResource("31_wlxkg"), ExtResource("32_bg6py"), ExtResource("33_5ffap"), ExtResource("34_1rd7p")])
+metadata/_custom_type_script = "uid://6k616opq222l"
 
-[node name="WalkListener" type="Node2D" parent="Audio/Walk" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+[node name="Jump_SFX" type="AudioStreamPlayer" parent="Audio/Jump_SFX"]
+
+[node name="JumpListener" type="Node2D" parent="Audio/Jump_SFX/Jump_SFX" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+scale = Vector2(1.50777, 1.50777)
 script = ExtResource("13_l3q8g")
-fmod_event_emitter = NodePath("..")
-continuous = true
-state = NodePath("../../../Components/MovementStateMachine/HumanWalkingState")
+fmod_event_emitter = NodePath("../..")
+state = NodePath("../../../../Components/MovementStateMachine/HumanJumpingState")
 metadata/_custom_type_script = "uid://ry5dgo71msyk"
 
-[node name="Death" type="FmodEventEmitter2D" parent="Audio" node_paths=PackedStringArray("hurtbox")]
-event_name = "event:/Death"
-event_guid = "{a74bcc09-362f-4509-8df2-6758b1ab8ed7}"
-script = ExtResource("14_ykh65")
+[node name="Walk_SFX" type="Node" parent="Audio" node_paths=PackedStringArray("audio_player")]
+script = ExtResource("24_jfwvw")
+audio_player = NodePath("Walk_SFX")
+audio_list = Array[AudioStream]([ExtResource("23_jfwvw"), ExtResource("36_5au2g"), ExtResource("37_mpb6g"), ExtResource("38_tlgax"), ExtResource("39_lmtmf")])
+metadata/_custom_type_script = "uid://6k616opq222l"
+
+[node name="Walk_SFX" type="AudioStreamPlayer" parent="Audio/Walk_SFX"]
+volume_db = -10.0
+
+[node name="WalkListener" type="Node2D" parent="Audio/Walk_SFX/Walk_SFX" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+scale = Vector2(1.50777, 1.50777)
+script = ExtResource("13_l3q8g")
+fmod_event_emitter = NodePath("../..")
+continuous = true
+play_delay = 0.25
+state = NodePath("../../../../Components/MovementStateMachine/HumanWalkingState")
+metadata/_custom_type_script = "uid://ry5dgo71msyk"
+
+[node name="DeathSFX" type="Node" parent="Audio" node_paths=PackedStringArray("hurtbox", "audio_player")]
+script = ExtResource("38_86el1")
 hurtbox = NodePath("../../Components/Hurtbox")
+audio_player = NodePath("death")
+audio_list = Array[AudioStream]([ExtResource("39_p0r1q"), ExtResource("20_stoh6"), ExtResource("41_2yrjs"), ExtResource("42_h3xjn"), ExtResource("43_lyvsq")])
+metadata/_custom_type_script = "uid://6k616opq222l"
+
+[node name="death" type="AudioStreamPlayer" parent="Audio/DeathSFX"]
 
 [editable path="Components/MovementStateMachine"]

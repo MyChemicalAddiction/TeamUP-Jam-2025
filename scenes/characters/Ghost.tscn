@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c77yqcnjp0x8p"]
+[gd_scene load_steps=46 format=3 uid="uid://c77yqcnjp0x8p"]
 
 [ext_resource type="Script" uid="uid://cnxen4dyqy530" path="res://scripts/classes/characters/ghost/GhostCharacter.gd" id="1_ddmg8"]
 [ext_resource type="PackedScene" uid="uid://bvci04mstcsnl" path="res://scenes/functionality/complete state machines/characters/Ghost/GhostMovementStateMachine.tscn" id="2_qoedd"]
@@ -16,7 +16,21 @@
 [ext_resource type="Script" uid="uid://drft6dfp41fxt" path="res://scripts/classes/Hurtbox & Hitbox/Hurtbox/Implementations/HitBehavior/HurtboxSimpleDamageHitBehavior.gd" id="14_25nvg"]
 [ext_resource type="Texture2D" uid="uid://bfvl2wm2l1iw2" path="res://assets/visual/placeholders/light_circle.png" id="14_gevwg"]
 [ext_resource type="Script" uid="uid://p22s31y47g7w" path="res://scripts/functionality/animation/ghost_animated_sprite.gd" id="14_kdffh"]
-[ext_resource type="Script" uid="uid://6x7jgp6hfnbu" path="res://scripts/functionality/death_SFX.gd" id="14_pwbk5"]
+[ext_resource type="AudioStream" uid="uid://byyuei88fd3ad" path="res://assets/audio/Raw Sound/Death/Death_02.wav" id="18_kdffh"]
+[ext_resource type="AudioStream" uid="uid://baev8pmiho6ot" path="res://assets/audio/Raw Sound/Mira_Amulet_Enter/Mira_Amulet_Enter_01.wav" id="18_vqd2g"]
+[ext_resource type="AudioStream" uid="uid://dphv4213b0i3b" path="res://assets/audio/Raw Sound/Mira_Amulet_Leave/Mira_Amulet_Leave_01.wav" id="20_q7gey"]
+[ext_resource type="Script" uid="uid://6k616opq222l" path="res://scripts/classes/functionality/audio/integrated-audio/SFXRandomizer/implementations/SFXRandomizer.gd" id="20_vqd2g"]
+[ext_resource type="AudioStream" uid="uid://bjtx74ne1x3cq" path="res://assets/audio/Raw Sound/Mira_Amulet_Enter/Mira_Amulet_Enter_02.wav" id="22_ivx5d"]
+[ext_resource type="AudioStream" uid="uid://bdgn7h0rx5u8w" path="res://assets/audio/Raw Sound/Mira_Amulet_Enter/Mira_Amulet_Enter_03.wav" id="23_chofe"]
+[ext_resource type="AudioStream" uid="uid://crbtsbswtqvbm" path="res://assets/audio/Raw Sound/Mira_Amulet_Enter/Mira_Amulet_Enter_04.wav" id="24_dn7tv"]
+[ext_resource type="AudioStream" uid="uid://1fyrka8pldsl" path="res://assets/audio/Raw Sound/Mira_Amulet_Leave/Mira_Amulet_Leave_02.wav" id="25_8m6gu"]
+[ext_resource type="AudioStream" uid="uid://bech0kg72lyfd" path="res://assets/audio/Raw Sound/Mira_Amulet_Leave/Mira_Amulet_Leave_03.wav" id="26_waoim"]
+[ext_resource type="AudioStream" uid="uid://b5yl7gafc4ro4" path="res://assets/audio/Raw Sound/Mira_Amulet_Leave/Mira_Amulet_Leave_04.wav" id="27_mdu3n"]
+[ext_resource type="AudioStream" uid="uid://bp2htqsqcqvtw" path="res://assets/audio/Raw Sound/Death/Death_01.wav" id="27_ohg4w"]
+[ext_resource type="Script" uid="uid://bos6e8fgh3c6d" path="res://scripts/classes/functionality/audio/integrated-audio/SFXRandomizer/implementations/DeathSFXRandomizer.gd" id="28_waoim"]
+[ext_resource type="AudioStream" uid="uid://bkfjemymdhc7g" path="res://assets/audio/Raw Sound/Death/Death_03.wav" id="29_5aq3l"]
+[ext_resource type="AudioStream" uid="uid://d1s8pskve2y08" path="res://assets/audio/Raw Sound/Death/Death_04.wav" id="30_xmwac"]
+[ext_resource type="AudioStream" uid="uid://det6noexqcf8h" path="res://assets/audio/Raw Sound/Death/Death_05.wav" id="31_qi861"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8bju"]
 size = Vector2(60, 92.6772)
@@ -217,46 +231,66 @@ texture = ExtResource("14_gevwg")
 position = Vector2(-0.0159988, -0.0319982)
 scale = Vector2(1.59625, 1.59625)
 
-[node name="EnteredAudio" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "event:/Mira/Mira_Amulet_Enter"
-event_guid = "{bbbd5f27-5be6-4e2b-b911-34b4317b0b66}"
+[node name="EnteredAudio" type="Node" parent="Audio" node_paths=PackedStringArray("audio_player")]
+script = ExtResource("20_vqd2g")
+audio_player = NodePath("EnteredAudio")
+audio_list = Array[AudioStream]([ExtResource("18_vqd2g"), ExtResource("22_ivx5d"), ExtResource("23_chofe"), ExtResource("24_dn7tv")])
+metadata/_custom_type_script = "uid://6k616opq222l"
 
-[node name="HiddenListener" type="Node2D" parent="Audio/EnteredAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+[node name="EnteredAudio" type="AudioStreamPlayer" parent="Audio/EnteredAudio"]
+
+[node name="HiddenListener" type="Node2D" parent="Audio/EnteredAudio/EnteredAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+position = Vector2(-0.0159988, -0.0319982)
+scale = Vector2(1.59625, 1.59625)
 script = ExtResource("12_matwj")
-fmod_event_emitter = NodePath("..")
-state = NodePath("../../../Components/MovementStateMachine/GhostHiddenState")
+fmod_event_emitter = NodePath("../..")
+state = NodePath("../../../../Components/MovementStateMachine/GhostHiddenState")
 metadata/_custom_type_script = "uid://ry5dgo71msyk"
 
-[node name="PossessingListener" type="Node2D" parent="Audio/EnteredAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+[node name="PossessingListener" type="Node2D" parent="Audio/EnteredAudio/EnteredAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+position = Vector2(-0.0159988, -0.0319982)
+scale = Vector2(1.59625, 1.59625)
 script = ExtResource("12_matwj")
-fmod_event_emitter = NodePath("..")
-state = NodePath("../../../Components/MovementStateMachine/GhostPossessingState")
+fmod_event_emitter = NodePath("../..")
+state = NodePath("../../../../Components/MovementStateMachine/GhostPossessingState")
 metadata/_custom_type_script = "uid://ry5dgo71msyk"
 
-[node name="ExitedAudio" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "event:/Mira/Mira_Amulet_Leave"
-event_guid = "{2f0134fd-94c0-4930-9951-cd91697ef23b}"
+[node name="ExitedAudio" type="Node" parent="Audio" node_paths=PackedStringArray("audio_player")]
+script = ExtResource("20_vqd2g")
+audio_player = NodePath("ExitedAudio")
+audio_list = Array[AudioStream]([ExtResource("20_q7gey"), ExtResource("25_8m6gu"), ExtResource("26_waoim"), ExtResource("27_mdu3n")])
+metadata/_custom_type_script = "uid://6k616opq222l"
 
-[node name="HiddenListener" type="Node2D" parent="Audio/ExitedAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+[node name="ExitedAudio" type="AudioStreamPlayer" parent="Audio/ExitedAudio"]
+stream = ExtResource("20_q7gey")
+
+[node name="HiddenListener" type="Node2D" parent="Audio/ExitedAudio/ExitedAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+position = Vector2(-0.0159988, -0.0319982)
+scale = Vector2(1.59625, 1.59625)
 script = ExtResource("12_matwj")
-fmod_event_emitter = NodePath("..")
+fmod_event_emitter = NodePath("../..")
 on_enter = false
 on_exit = true
-state = NodePath("../../../Components/MovementStateMachine/GhostHiddenState")
+state = NodePath("../../../../Components/MovementStateMachine/GhostHiddenState")
 metadata/_custom_type_script = "uid://ry5dgo71msyk"
 
-[node name="PossessingListener" type="Node2D" parent="Audio/ExitedAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+[node name="PossessingListener" type="Node2D" parent="Audio/ExitedAudio/ExitedAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+position = Vector2(-0.0159988, -0.0319982)
+scale = Vector2(1.59625, 1.59625)
 script = ExtResource("12_matwj")
-fmod_event_emitter = NodePath("..")
+fmod_event_emitter = NodePath("../..")
 on_enter = false
 on_exit = true
-state = NodePath("../../../Components/MovementStateMachine/GhostPossessingState")
+state = NodePath("../../../../Components/MovementStateMachine/GhostPossessingState")
 metadata/_custom_type_script = "uid://ry5dgo71msyk"
 
-[node name="Death" type="FmodEventEmitter2D" parent="Audio" node_paths=PackedStringArray("hurtbox")]
-event_name = "event:/Death"
-event_guid = "{a74bcc09-362f-4509-8df2-6758b1ab8ed7}"
-script = ExtResource("14_pwbk5")
+[node name="DeathSFX" type="Node" parent="Audio" node_paths=PackedStringArray("hurtbox", "audio_player")]
+script = ExtResource("28_waoim")
 hurtbox = NodePath("../../Components/Hurtbox")
+audio_player = NodePath("death")
+audio_list = Array[AudioStream]([ExtResource("27_ohg4w"), ExtResource("18_kdffh"), ExtResource("29_5aq3l"), ExtResource("30_xmwac"), ExtResource("31_qi861")])
+metadata/_custom_type_script = "uid://6k616opq222l"
+
+[node name="death" type="AudioStreamPlayer" parent="Audio/DeathSFX"]
 
 [editable path="Components/MovementStateMachine"]

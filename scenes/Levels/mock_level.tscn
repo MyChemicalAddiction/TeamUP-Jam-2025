@@ -39,9 +39,8 @@ shape = SubResource("RectangleShape2D_00pat")
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("1_1a2xh")
 
-[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea" node_paths=PackedStringArray("object", "triggerer")]
+[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea" node_paths=PackedStringArray("triggerer")]
 script = ExtResource("3_00pat")
-object = NodePath("..")
 triggerer = NodePath("..")
 metadata/_custom_type_script = "uid://du7sowey406lo"
 
@@ -66,9 +65,8 @@ shape = SubResource("RectangleShape2D_00pat")
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("1_1a2xh")
 
-[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea2" node_paths=PackedStringArray("object", "triggerer")]
+[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea2" node_paths=PackedStringArray("triggerer")]
 script = ExtResource("3_00pat")
-object = NodePath("..")
 triggerer = NodePath("..")
 metadata/_custom_type_script = "uid://du7sowey406lo"
 
@@ -93,9 +91,8 @@ shape = SubResource("RectangleShape2D_00pat")
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("1_1a2xh")
 
-[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea3" node_paths=PackedStringArray("object", "triggerer")]
+[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea3" node_paths=PackedStringArray("triggerer")]
 script = ExtResource("3_00pat")
-object = NodePath("..")
 triggerer = NodePath("..")
 metadata/_custom_type_script = "uid://du7sowey406lo"
 
@@ -120,9 +117,8 @@ shape = SubResource("RectangleShape2D_00pat")
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("1_1a2xh")
 
-[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea4" node_paths=PackedStringArray("object", "triggerer")]
+[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea4" node_paths=PackedStringArray("triggerer")]
 script = ExtResource("3_00pat")
-object = NodePath("..")
 triggerer = NodePath("..")
 metadata/_custom_type_script = "uid://du7sowey406lo"
 
@@ -147,9 +143,8 @@ shape = SubResource("RectangleShape2D_00pat")
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("1_1a2xh")
 
-[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea6" node_paths=PackedStringArray("object", "triggerer")]
+[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea6" node_paths=PackedStringArray("triggerer")]
 script = ExtResource("3_00pat")
-object = NodePath("..")
 triggerer = NodePath("..")
 metadata/_custom_type_script = "uid://du7sowey406lo"
 
@@ -174,9 +169,8 @@ shape = SubResource("RectangleShape2D_00pat")
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("1_1a2xh")
 
-[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea8" node_paths=PackedStringArray("object", "triggerer")]
+[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea8" node_paths=PackedStringArray("triggerer")]
 script = ExtResource("3_00pat")
-object = NodePath("..")
 triggerer = NodePath("..")
 metadata/_custom_type_script = "uid://du7sowey406lo"
 
@@ -202,9 +196,8 @@ shape = SubResource("RectangleShape2D_00pat")
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("1_1a2xh")
 
-[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea7" node_paths=PackedStringArray("object", "triggerer")]
+[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea7" node_paths=PackedStringArray("triggerer")]
 script = ExtResource("3_00pat")
-object = NodePath("..")
 triggerer = NodePath("..")
 metadata/_custom_type_script = "uid://du7sowey406lo"
 
@@ -229,9 +222,8 @@ shape = SubResource("RectangleShape2D_00pat")
 modulate = Color(0, 0, 0, 1)
 texture = ExtResource("1_1a2xh")
 
-[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea5" node_paths=PackedStringArray("object", "triggerer")]
+[node name="DeleteComponent" type="Node2D" parent="Special Objects/InteractionArea5" node_paths=PackedStringArray("triggerer")]
 script = ExtResource("3_00pat")
-object = NodePath("..")
 triggerer = NodePath("..")
 metadata/_custom_type_script = "uid://du7sowey406lo"
 
