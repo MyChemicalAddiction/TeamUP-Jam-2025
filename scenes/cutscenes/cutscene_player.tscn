@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6ta458m66mt"]
+[gd_scene load_steps=8 format=3 uid="uid://b6ta458m66mt"]
 
 [ext_resource type="Script" uid="uid://mwm15cgwsr2q" path="res://scripts/functionality/cutscene_player.gd" id="1_1n5r7"]
-[ext_resource type="Script" uid="uid://ckytwjtwapw2r" path="res://scripts/classes/functionality/audio/FmodEmitterComponent.gd" id="3_55tgn"]
+[ext_resource type="Script" uid="uid://cd6ku1sqpy8jf" path="res://scripts/classes/functionality/audio/integrated-audio/AudioPlayingComponent/AudioPlayingComponent.gd" id="3_46yc2"]
+[ext_resource type="AudioStream" uid="uid://dpgu8euqescyh" path="res://assets/audio/cutscene.wav" id="4_l65dn"]
 
 [sub_resource type="Animation" id="Animation_cf6cx"]
 length = 0.001
@@ -80,13 +81,16 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Cutscene Player" node_paths=PackedStringArray("duck_typed_component")]
-event_name = "event:/MUSIC/MX_CutScene"
-event_guid = "{14484f42-f195-44fd-9b3e-d309c5afefeb}"
-script = ExtResource("3_55tgn")
-duck_typed_component = NodePath("..")
+[node name="MusicSFX" type="Node" parent="Cutscene Player" node_paths=PackedStringArray("audio_player", "component")]
+script = ExtResource("3_46yc2")
+audio_player = NodePath("AudioStreamPlayer")
+component = NodePath("..")
 on_enable = true
-metadata/_custom_type_script = "uid://ckytwjtwapw2r"
+stop_on_disable = true
+metadata/_custom_type_script = "uid://cd6ku1sqpy8jf"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Cutscene Player/MusicSFX"]
+stream = ExtResource("4_l65dn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

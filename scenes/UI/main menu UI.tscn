@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr5fxdp8vo6rl"]
+[gd_scene load_steps=9 format=3 uid="uid://dr5fxdp8vo6rl"]
 
 [ext_resource type="Script" uid="uid://3yh74h4ykqq0" path="res://scripts/functionality/reset_data_button.gd" id="2_ix0x7"]
 [ext_resource type="PackedScene" uid="uid://bmpxr4howyw3m" path="res://scenes/UI/buttons/section button.tscn" id="2_rkpoj"]
+[ext_resource type="Script" uid="uid://6k616opq222l" path="res://scripts/classes/functionality/audio/integrated-audio/SFXRandomizer/implementations/SFXRandomizer.gd" id="3_wo5hj"]
+[ext_resource type="AudioStream" uid="uid://c8lp6ffqsbqxt" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_01.wav" id="4_g6dtj"]
+[ext_resource type="AudioStream" uid="uid://dc2karlxi4gm6" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_02.wav" id="5_u2fm2"]
+[ext_resource type="AudioStream" uid="uid://5sdc4asbby1u" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_03.wav" id="6_r2ycp"]
+[ext_resource type="AudioStream" uid="uid://cwwwr38rbv0ry" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_04.wav" id="7_ebslv"]
+[ext_resource type="AudioStream" uid="uid://beyh7njxo0mj" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_05.wav" id="8_ifbre"]
 
 [node name="Main Menu UI" type="VBoxContainer"]
 anchors_preset = 8
@@ -41,8 +47,13 @@ layout_mode = 2
 text = "Reset Data
 "
 script = ExtResource("2_ix0x7")
-audio_player = NodePath("FmodEventEmitter2D")
+audio_player = NodePath("SFXRandomizer")
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="SectionButton5"]
-event_name = "event:/UI/SFX_UI_MainMenu"
-event_guid = "{37d6a8ad-0002-4313-bc15-0caaef2c321d}"
+[node name="SFXRandomizer" type="Node" parent="SectionButton5" node_paths=PackedStringArray("audio_player")]
+script = ExtResource("3_wo5hj")
+audio_player = NodePath("AudioStreamPlayer")
+audio_list = Array[AudioStream]([ExtResource("4_g6dtj"), ExtResource("5_u2fm2"), ExtResource("6_r2ycp"), ExtResource("7_ebslv"), ExtResource("8_ifbre")])
+metadata/_custom_type_script = "uid://6k616opq222l"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SectionButton5/SFXRandomizer"]
+volume_db = -12.0

@@ -87,7 +87,7 @@ size_flags_vertical = 4
 [node name="SectionButton3" parent="Sections/Settings UI" index="1" node_paths=PackedStringArray("section")]
 section = NodePath("../../Controls")
 
-[node name="SectionButton2" parent="Sections/Settings UI" index="2" node_paths=PackedStringArray("section")]
+[node name="SectionButton2" parent="Sections/Settings UI" index="3" node_paths=PackedStringArray("section")]
 section = NodePath("../../Main Menu UI")
 
 [node name="Level Select UI" parent="Sections" instance=ExtResource("4_ny0ke")]

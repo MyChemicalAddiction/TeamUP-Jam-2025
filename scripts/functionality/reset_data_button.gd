@@ -1,6 +1,6 @@
 extends Button
 
-@export var audio_player: FmodEventEmitter2D
+@export var audio_player: Node
 
 func _ready():
 	button_up.connect(reset)

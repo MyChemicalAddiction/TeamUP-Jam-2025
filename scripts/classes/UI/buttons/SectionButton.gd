@@ -11,7 +11,7 @@ signal section_switch(new_section)
 @onready var menu = get_tree().get_first_node_in_group("Menu")
 
 ## The FMOD event emitter that plays SFX for this button when it's pressed
-@export var audio_player: FmodEventEmitter2D
+@export var audio_player: Node
 
 func _ready():
 	button_up.connect(switch_section)

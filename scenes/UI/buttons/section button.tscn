@@ -1,13 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmpxr4howyw3m"]
+[gd_scene load_steps=8 format=3 uid="uid://bmpxr4howyw3m"]
 
 [ext_resource type="Script" uid="uid://bro3w88p8iojd" path="res://scripts/classes/UI/buttons/SectionButton.gd" id="1_5b0hf"]
+[ext_resource type="Script" uid="uid://6k616opq222l" path="res://scripts/classes/functionality/audio/integrated-audio/SFXRandomizer/implementations/SFXRandomizer.gd" id="2_j3eo2"]
+[ext_resource type="AudioStream" uid="uid://c8lp6ffqsbqxt" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_01.wav" id="3_s72rc"]
+[ext_resource type="AudioStream" uid="uid://dc2karlxi4gm6" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_02.wav" id="4_k4ks2"]
+[ext_resource type="AudioStream" uid="uid://5sdc4asbby1u" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_03.wav" id="5_06e72"]
+[ext_resource type="AudioStream" uid="uid://cwwwr38rbv0ry" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_04.wav" id="6_sm6ej"]
+[ext_resource type="AudioStream" uid="uid://beyh7njxo0mj" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_05.wav" id="7_mv4fl"]
 
 [node name="SectionButton" type="Button" node_paths=PackedStringArray("audio_player")]
 text = "Back"
 script = ExtResource("1_5b0hf")
-audio_player = NodePath("FmodEventEmitter2D")
+audio_player = NodePath("SFXRandomizer")
 metadata/_custom_type_script = "uid://bro3w88p8iojd"
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/UI/SFX_UI_MainMenu"
-event_guid = "{37d6a8ad-0002-4313-bc15-0caaef2c321d}"
+[node name="SFXRandomizer" type="Node" parent="." node_paths=PackedStringArray("audio_player")]
+script = ExtResource("2_j3eo2")
+audio_player = NodePath("AudioStreamPlayer")
+audio_list = Array[AudioStream]([ExtResource("3_s72rc"), ExtResource("4_k4ks2"), ExtResource("5_06e72"), ExtResource("6_sm6ej"), ExtResource("7_mv4fl")])
+metadata/_custom_type_script = "uid://6k616opq222l"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFXRandomizer"]
+volume_db = -12.0
