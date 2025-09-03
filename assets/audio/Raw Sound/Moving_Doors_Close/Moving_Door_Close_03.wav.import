@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bta5xqrtjsqcw"
+path="res://.godot/imported/Moving_Door_Close_03.wav-9cde7a8124fcd0442ade343d2fe0d144.sample"
+
+[deps]
+
+source_file="res://assets/audio/Raw Sound/Moving_Doors_Close/Moving_Door_Close_03.wav"
+dest_files=["res://.godot/imported/Moving_Door_Close_03.wav-9cde7a8124fcd0442ade343d2fe0d144.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

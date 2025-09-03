@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bu0xjn0du4r0"
+path="res://.godot/imported/Switch_02.wav-f5aeb4072008f5fbef2bbe35c1275a09.sample"
+
+[deps]
+
+source_file="res://assets/audio/Raw Sound/Switches/Switch_02.wav"
+dest_files=["res://.godot/imported/Switch_02.wav-f5aeb4072008f5fbef2bbe35c1275a09.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

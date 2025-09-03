@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ch4m1kv0sdhwj"
+path="res://.godot/imported/Field_Loop.wav-9df15174ac8237d3bc748d4da6399013.sample"
+
+[deps]
+
+source_file="res://assets/audio/Raw Sound/MX_Field/Field_Loop.wav"
+dest_files=["res://.godot/imported/Field_Loop.wav-9df15174ac8237d3bc748d4da6399013.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

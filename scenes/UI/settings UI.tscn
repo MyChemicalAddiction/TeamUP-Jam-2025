@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7vh0fx3q7g3l"]
 
 [ext_resource type="PackedScene" uid="uid://bmpxr4howyw3m" path="res://scenes/UI/buttons/section button.tscn" id="2_m4wj0"]
-[ext_resource type="Script" uid="uid://jseqdu4jsmf2" path="res://scenes/UI/fullscreenbutton.gd" id="2_x2xs3"]
+[ext_resource type="Script" uid="uid://jseqdu4jsmf2" path="res://scripts/functionality/UI/fullscreenbutton.gd" id="2_x2xs3"]
 
 [node name="Settings UI" type="VBoxContainer"]
 anchors_preset = 8

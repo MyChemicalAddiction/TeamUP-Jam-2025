@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ox78g6adiph4"
+path="res://.godot/imported/Amulet_Land_02.wav-c70e48c9dec539d8d84095e418d88c40.sample"
+
+[deps]
+
+source_file="res://assets/audio/Raw Sound/Amulet/amulet_land/Amulet_Land_02.wav"
+dest_files=["res://.godot/imported/Amulet_Land_02.wav-c70e48c9dec539d8d84095e418d88c40.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

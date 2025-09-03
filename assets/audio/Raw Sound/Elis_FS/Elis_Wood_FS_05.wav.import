@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ddciurfa7ln53"
+path="res://.godot/imported/Elis_Wood_FS_05.wav-962fc8db6a2c4c235980b54c411fe24d.sample"
+
+[deps]
+
+source_file="res://assets/audio/Raw Sound/Elis_FS/Elis_Wood_FS_05.wav"
+dest_files=["res://.godot/imported/Elis_Wood_FS_05.wav-962fc8db6a2c4c235980b54c411fe24d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

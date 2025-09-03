@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3i0o06f3012b"
+path="res://.godot/imported/Elis_FS_04.wav-b627f2acfbddf5278fd4c52f6fa882cc.sample"
+
+[deps]
+
+source_file="res://assets/audio/Raw Sound/Elis_FS/Elis_FS_04.wav"
+dest_files=["res://.godot/imported/Elis_FS_04.wav-b627f2acfbddf5278fd4c52f6fa882cc.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

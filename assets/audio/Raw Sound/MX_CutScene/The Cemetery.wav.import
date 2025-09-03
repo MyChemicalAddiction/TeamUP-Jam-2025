@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://tngta5w74n03"
+path="res://.godot/imported/The Cemetery.wav-c6f4d8c18525096be6612f7e26a80035.sample"
+
+[deps]
+
+source_file="res://assets/audio/Raw Sound/MX_CutScene/The Cemetery.wav"
+dest_files=["res://.godot/imported/The Cemetery.wav-c6f4d8c18525096be6612f7e26a80035.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

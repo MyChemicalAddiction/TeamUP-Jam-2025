@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://p7cd1q0fgsx8"
+path="res://.godot/imported/Elis_Jump_06.wav-a5910b8fe9c0bf39521cc27f7078a3af.sample"
+
+[deps]
+
+source_file="res://assets/audio/Raw Sound/Elis_Jump/Elis_Jump_06.wav"
+dest_files=["res://.godot/imported/Elis_Jump_06.wav-a5910b8fe9c0bf39521cc27f7078a3af.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

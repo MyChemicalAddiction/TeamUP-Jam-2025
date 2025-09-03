@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bhklrm0aa4y2w"
+path="res://.godot/imported/Alumet_Metal_07.wav-433ba09c59ae587a5f5d597563a03da7.sample"
+
+[deps]
+
+source_file="res://assets/audio/Raw Sound/Amulet/amulet_retrieve/Alumet_Metal_07.wav"
+dest_files=["res://.godot/imported/Alumet_Metal_07.wav-433ba09c59ae587a5f5d597563a03da7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

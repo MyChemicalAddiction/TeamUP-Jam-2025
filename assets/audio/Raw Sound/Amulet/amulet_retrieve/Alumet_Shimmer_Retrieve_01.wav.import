@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://co256r05cdklo"
+path="res://.godot/imported/Alumet_Shimmer_Retrieve_01.wav-345d7c9bd22d73390e2549050d5b3212.sample"
+
+[deps]
+
+source_file="res://assets/audio/Raw Sound/Amulet/amulet_retrieve/Alumet_Shimmer_Retrieve_01.wav"
+dest_files=["res://.godot/imported/Alumet_Shimmer_Retrieve_01.wav-345d7c9bd22d73390e2549050d5b3212.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

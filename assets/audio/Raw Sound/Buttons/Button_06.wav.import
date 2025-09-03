@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dc3kfm157l8rs"
+path="res://.godot/imported/Button_06.wav-9ec315c22a53f9784dde345f5ba1d1e2.sample"
+
+[deps]
+
+source_file="res://assets/audio/Raw Sound/Buttons/Button_06.wav"
+dest_files=["res://.godot/imported/Button_06.wav-9ec315c22a53f9784dde345f5ba1d1e2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

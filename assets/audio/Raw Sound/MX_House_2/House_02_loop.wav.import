@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dd0wpj0d5pd80"
+path="res://.godot/imported/House_02_loop.wav-2aa09623682c4affa1cf219ce13ef89f.sample"
+
+[deps]
+
+source_file="res://assets/audio/Raw Sound/MX_House_2/House_02_loop.wav"
+dest_files=["res://.godot/imported/House_02_loop.wav-2aa09623682c4affa1cf219ce13ef89f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

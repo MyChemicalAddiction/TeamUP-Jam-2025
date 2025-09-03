@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bjtx74ne1x3cq"
+path="res://.godot/imported/Mira_Amulet_Enter_02.wav-86843babac3a8e2a3600a2065a5f999a.sample"
+
+[deps]
+
+source_file="res://assets/audio/Raw Sound/Mira_Amulet_Enter/Mira_Amulet_Enter_02.wav"
+dest_files=["res://.godot/imported/Mira_Amulet_Enter_02.wav-86843babac3a8e2a3600a2065a5f999a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
