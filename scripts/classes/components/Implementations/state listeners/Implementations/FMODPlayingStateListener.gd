@@ -1,7 +1,7 @@
 extends StateListener
 class_name FmodPlayingStateListener
 
-@export var fmod_event_emitter: FmodEventEmitter2D
+@export var fmod_event_emitter: Node
 
 @export var on_enter := true
 @export var on_exit := false
