@@ -26,10 +26,15 @@ layout_mode = 2
 text = "Controls
 "
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." node_paths=PackedStringArray("audio_player")]
 layout_mode = 2
 text = "Toggle Fullscreen"
 script = ExtResource("2_x2xs3")
+audio_player = NodePath("FmodEventEmitter2D")
+
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Button"]
+event_name = "event:/UI/SFX_UI_MainMenu"
+event_guid = "{37d6a8ad-0002-4313-bc15-0caaef2c321d}"
 
 [node name="SectionButton2" parent="." instance=ExtResource("2_m4wj0")]
 layout_mode = 2
