@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://mwm15cgwsr2q" path="res://scripts/functionality/cutscene_player.gd" id="1_1n5r7"]
 [ext_resource type="Script" uid="uid://cd6ku1sqpy8jf" path="res://scripts/classes/functionality/audio/integrated-audio/AudioPlayingComponent/AudioPlayingComponent.gd" id="3_46yc2"]
-[ext_resource type="AudioStream" uid="uid://dpgu8euqescyh" path="res://assets/audio/cutscene.wav" id="4_l65dn"]
+[ext_resource type="AudioStream" uid="uid://tngta5w74n03" path="res://assets/audio/Raw Sound/MX_CutScene/The Cemetery.wav" id="3_55tgn"]
 
 [sub_resource type="Animation" id="Animation_cf6cx"]
 length = 0.001
@@ -90,7 +90,7 @@ stop_on_disable = true
 metadata/_custom_type_script = "uid://cd6ku1sqpy8jf"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Cutscene Player/MusicSFX"]
-stream = ExtResource("4_l65dn")
+stream = ExtResource("3_55tgn")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
