@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bf1uei6a8uqil"]
+[gd_scene load_steps=42 format=3 uid="uid://bf1uei6a8uqil"]
 
 [ext_resource type="Script" uid="uid://1ngpyj4uh14m" path="res://scripts/objects/special/amulet.gd" id="1_ulww5"]
 [ext_resource type="PackedScene" uid="uid://dqmvrgjgqo846" path="res://scenes/functionality/complete state machines/AmuletStateMachine.tscn" id="2_nncdm"]
@@ -11,9 +11,27 @@
 [ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="8_2n1rr"]
 [ext_resource type="Script" uid="uid://cys4mdwpjj11c" path="res://scripts/functionality/amulet_radius_area.gd" id="8_ns171"]
 [ext_resource type="Script" uid="uid://ry5dgo71msyk" path="res://scripts/classes/components/Implementations/state listeners/Implementations/FMODPlayingStateListener.gd" id="11_ol0n1"]
-[ext_resource type="Script" uid="uid://dblfjhyagcyhw" path="res://scripts/functionality/audio/play_if_bodyentered_audio.gd" id="12_143er"]
+[ext_resource type="AudioStream" uid="uid://gco8e853hhee" path="res://assets/audio/Raw Sound/Amulet/amulet_charging_throw/amulet_charging_throw_01.wav" id="13_6povc"]
 [ext_resource type="Script" uid="uid://6k616opq222l" path="res://scripts/classes/functionality/audio/integrated-audio/SFXRandomizer/implementations/SFXRandomizer.gd" id="13_m4vey"]
+[ext_resource type="AudioStream" uid="uid://bb06r6thhni4e" path="res://assets/audio/Raw Sound/Amulet/amulet_charging_throw/amulet_charging_throw_02.wav" id="14_5rwye"]
 [ext_resource type="Script" uid="uid://4xug42ixg5gv" path="res://scripts/functionality/audio/integrated-audio/land_audio.gd" id="14_bfjiw"]
+[ext_resource type="AudioStream" uid="uid://ci5pgwnjqsho8" path="res://assets/audio/Raw Sound/Amulet/amulet_land/Amulet_Land_01.wav" id="14_kxhu8"]
+[ext_resource type="AudioStream" uid="uid://co256r05cdklo" path="res://assets/audio/Raw Sound/Amulet/amulet_retrieve/Alumet_Shimmer_Retrieve_01.wav" id="15_23yf0"]
+[ext_resource type="AudioStream" uid="uid://ox78g6adiph4" path="res://assets/audio/Raw Sound/Amulet/amulet_land/Amulet_Land_02.wav" id="15_m0xju"]
+[ext_resource type="AudioStream" uid="uid://t4ue1g0qf0aq" path="res://assets/audio/Raw Sound/Amulet/amulet_land/Amulet_Land_03.wav" id="16_6povc"]
+[ext_resource type="AudioStream" uid="uid://dxefsaplya6fe" path="res://assets/audio/Raw Sound/Amulet/amulet_retrieve/Alumet_Shimmer_Retrieve_02.wav" id="16_bhqhe"]
+[ext_resource type="AudioStream" uid="uid://bjdq81fhuo006" path="res://assets/audio/Raw Sound/Amulet/amulet_land/Amulet_Land_04.wav" id="17_5rwye"]
+[ext_resource type="AudioStream" uid="uid://dnup3kjs7phbq" path="res://assets/audio/Raw Sound/Amulet/amulet_retrieve/Alumet_Shimmer_Retrieve_03.wav" id="17_8s2yg"]
+[ext_resource type="AudioStream" uid="uid://b2wsvbdmp46jd" path="res://assets/audio/Raw Sound/Amulet/amulet_land/Amulet_Land_05.wav" id="18_61nhh"]
+[ext_resource type="AudioStream" uid="uid://dimh0jlv0i2ak" path="res://assets/audio/Raw Sound/Amulet/amulet_retrieve/Alumet_Shimmer_Retrieve_04.wav" id="18_r457b"]
+[ext_resource type="AudioStream" uid="uid://5qmo06l3pc46" path="res://assets/audio/Raw Sound/Amulet/amulet_throw/Alumet_Shimmer_Throw_01.wav" id="19_4kjyl"]
+[ext_resource type="AudioStream" uid="uid://3bu30piwcp02" path="res://assets/audio/Raw Sound/Amulet/amulet_land/Amulet_Land_06.wav" id="19_5tsx6"]
+[ext_resource type="AudioStream" uid="uid://5sn772lkms1a" path="res://assets/audio/Raw Sound/Amulet/amulet_land/Amulet_Land_07.wav" id="20_23yf0"]
+[ext_resource type="AudioStream" uid="uid://da377x77bg3xy" path="res://assets/audio/Raw Sound/Amulet/amulet_throw/Alumet_Shimmer_Throw_02.wav" id="20_sutc2"]
+[ext_resource type="AudioStream" uid="uid://b7jcsux4p75e6" path="res://assets/audio/Raw Sound/Amulet/amulet_land/Amulet_Land_08.wav" id="21_bhqhe"]
+[ext_resource type="AudioStream" uid="uid://cw628ckc1eo7f" path="res://assets/audio/Raw Sound/Amulet/amulet_throw/Alumet_Shimmer_Throw_03.wav" id="21_cpdhr"]
+[ext_resource type="AudioStream" uid="uid://bwtro53d6m1ys" path="res://assets/audio/Raw Sound/Amulet/amulet_land/Amulet_Land_09.wav" id="22_8s2yg"]
+[ext_resource type="AudioStream" uid="uid://bb3btbxteio3y" path="res://assets/audio/Raw Sound/Amulet/amulet_throw/Alumet_Shimmer_Throw_04.wav" id="22_lsthr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2c0c"]
 bounce = 0.1
@@ -125,56 +143,65 @@ shape = SubResource("CircleShape2D_ahiox")
 position = Vector2(-0.0159988, -102.032)
 scale = Vector2(1.59625, 1.59625)
 
-[node name="Thrown Audio" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "event:/Amulet/Amulet_Throw"
-event_guid = "{4723f59b-59bc-483c-8df1-45190730b4a0}"
-
-[node name="ThrownListener" type="Node2D" parent="Audio/Thrown Audio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+[node name="ThrownListener" type="Node2D" parent="Audio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+scale = Vector2(1.0000001, 1.0000001)
 script = ExtResource("11_ol0n1")
-fmod_event_emitter = NodePath("..")
+fmod_event_emitter = NodePath("Thrown_Audio")
 play_if_paused = false
-state = NodePath("../../../Components/AmuletStateMachine/ThrownState")
+state = NodePath("../../Components/AmuletStateMachine/ThrownState")
 metadata/_custom_type_script = "uid://ry5dgo71msyk"
 
-[node name="Retrieved Audio" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "event:/Amulet/Amulet_Retrieve"
-event_guid = "{1ca19d1f-91c7-4fb7-8277-826bb1628d74}"
-
-[node name="RetrievedListener" type="Node2D" parent="Audio/Retrieved Audio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
-script = ExtResource("11_ol0n1")
-fmod_event_emitter = NodePath("..")
-play_if_paused = false
-state = NodePath("../../../Components/AmuletStateMachine/HeldState")
-metadata/_custom_type_script = "uid://ry5dgo71msyk"
-
-[node name="Throwing Audio" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "event:/Amulet/Amulet_Charging_Throw"
-event_guid = "{f9ee3161-614a-427d-a14b-3786df0efee8}"
-
-[node name="ThrowingListener" type="Node2D" parent="Audio/Throwing Audio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
-script = ExtResource("11_ol0n1")
-fmod_event_emitter = NodePath("..")
-play_if_paused = false
-state = NodePath("../../../Components/AmuletStateMachine/ThrowingState")
-metadata/_custom_type_script = "uid://ry5dgo71msyk"
-
-[node name="Land Audio" type="FmodEventEmitter2D" parent="Audio" node_paths=PackedStringArray("object")]
-event_name = "event:/Amulet/Amulet_Land"
-event_guid = "{23ce5b74-f14e-4f3f-817f-c59debd42999}"
-script = ExtResource("12_143er")
-object = NodePath("../..")
-
-[node name="Thrown_Audio" type="Node" parent="Audio"]
+[node name="Thrown_Audio" type="Node" parent="Audio/ThrownListener" node_paths=PackedStringArray("audio_player")]
 script = ExtResource("13_m4vey")
+audio_player = NodePath("AudioStreamPlayer")
+audio_list = Array[AudioStream]([ExtResource("19_4kjyl"), ExtResource("20_sutc2"), ExtResource("21_cpdhr"), ExtResource("22_lsthr")])
 metadata/_custom_type_script = "uid://6k616opq222l"
 
-[node name="Retrieved_Audio" type="Node" parent="Audio"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/ThrownListener/Thrown_Audio"]
+volume_db = -8.0
+
+[node name="RetrievedListener" type="Node2D" parent="Audio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+scale = Vector2(1.0000001, 1.0000001)
+script = ExtResource("11_ol0n1")
+fmod_event_emitter = NodePath("Retrieved_Audio")
+play_if_paused = false
+state = NodePath("../../Components/AmuletStateMachine/HeldState")
+metadata/_custom_type_script = "uid://ry5dgo71msyk"
+
+[node name="Retrieved_Audio" type="Node" parent="Audio/RetrievedListener" node_paths=PackedStringArray("audio_player")]
 script = ExtResource("13_m4vey")
+audio_player = NodePath("AudioStreamPlayer")
+audio_list = Array[AudioStream]([ExtResource("15_23yf0"), ExtResource("16_bhqhe"), ExtResource("17_8s2yg"), ExtResource("18_r457b")])
 metadata/_custom_type_script = "uid://6k616opq222l"
 
-[node name="Land_Audio" type="Node" parent="Audio"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/RetrievedListener/Retrieved_Audio"]
+volume_db = -8.0
+
+[node name="ThrowingListener" type="Node2D" parent="Audio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
+scale = Vector2(1.0000001, 1.0000001)
+script = ExtResource("11_ol0n1")
+fmod_event_emitter = NodePath("Throwing_Audio")
+play_if_paused = false
+state = NodePath("../../Components/AmuletStateMachine/ThrowingState")
+metadata/_custom_type_script = "uid://ry5dgo71msyk"
+
+[node name="Throwing_Audio" type="Node" parent="Audio/ThrowingListener" node_paths=PackedStringArray("audio_player")]
+script = ExtResource("13_m4vey")
+audio_player = NodePath("AudioStreamPlayer")
+audio_list = Array[AudioStream]([ExtResource("13_6povc"), ExtResource("14_5rwye")])
+metadata/_custom_type_script = "uid://6k616opq222l"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/ThrowingListener/Throwing_Audio"]
+
+[node name="Land_Audio" type="Node" parent="Audio" node_paths=PackedStringArray("object", "audio_player")]
 script = ExtResource("14_bfjiw")
+object = NodePath("../..")
+audio_player = NodePath("AudioStreamPlayer")
+audio_list = Array[AudioStream]([ExtResource("14_kxhu8"), ExtResource("15_m0xju"), ExtResource("16_6povc"), ExtResource("17_5rwye"), ExtResource("18_61nhh"), ExtResource("19_5tsx6"), ExtResource("20_23yf0"), ExtResource("21_bhqhe"), ExtResource("22_8s2yg")])
 metadata/_custom_type_script = "uid://6k616opq222l"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio/Land_Audio"]
+volume_db = -8.0
 
 [connection signal="body_entered" from="AmuletRadiusArea" to="AmuletRadiusArea" method="_on_body_entered"]
 [connection signal="body_exited" from="AmuletRadiusArea" to="AmuletRadiusArea" method="_on_body_exited"]
