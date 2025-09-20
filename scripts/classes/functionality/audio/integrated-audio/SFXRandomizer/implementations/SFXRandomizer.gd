@@ -12,3 +12,6 @@ a delegated AudioStreamPlayer play.
 func play(param=null):
 	audio_player.stream = audio_list.pick_random()
 	audio_player.play()
+
+func stop(param=null):
+	audio_player.stop()

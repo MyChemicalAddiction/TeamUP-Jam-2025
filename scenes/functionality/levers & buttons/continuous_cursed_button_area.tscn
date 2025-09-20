@@ -196,3 +196,4 @@ audio_list = Array[AudioStream]([ExtResource("8_hg62q"), ExtResource("9_o1d56"),
 metadata/_custom_type_script = "uid://6k616opq222l"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayingComponent/SFXRandomizer"]
+volume_db = -6.0

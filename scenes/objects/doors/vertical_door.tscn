@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhkad48ij8ha7"]
+[gd_scene load_steps=12 format=3 uid="uid://bhkad48ij8ha7"]
 
 [ext_resource type="Script" uid="uid://d4esf4meclpan" path="res://scripts/classes/components/Implementations/animation/MovingDoorComponent.gd" id="1_y4ggs"]
 [ext_resource type="Texture2D" uid="uid://d4jcxk77r24ti" path="res://assets/visual/objects/moving_door.png" id="2_woniu"]
 [ext_resource type="Script" uid="uid://ba0im6i353yq8" path="res://scripts/classes/components/Implementations/functionality/AreaEnteredTrackerComponent.gd" id="3_3cvve"]
-[ext_resource type="Script" uid="uid://d0yw8lifbedu5" path="res://scripts/functionality/audio/MovingDoorAudio.gd" id="4_woniu"]
+[ext_resource type="Script" uid="uid://wg4n7lcqrwya" path="res://scripts/functionality/audio/integrated-audio/door_sfx.gd" id="4_4xydp"]
+[ext_resource type="Script" uid="uid://6k616opq222l" path="res://scripts/classes/functionality/audio/integrated-audio/SFXRandomizer/implementations/SFXRandomizer.gd" id="5_p28m3"]
+[ext_resource type="AudioStream" uid="uid://ctr2c4eobs5nm" path="res://assets/audio/Raw Sound/Moving_Door_Open/Moving_Door_Open_01.wav" id="6_wxmyu"]
+[ext_resource type="AudioStream" uid="uid://du7dxvmqlt28w" path="res://assets/audio/Raw Sound/Moving_Doors_Close/Moving_Door_Close.wav" id="7_fcyxw"]
+[ext_resource type="AudioStream" uid="uid://cmuk2vn0bgatj" path="res://assets/audio/Raw Sound/Moving_Doors_Close/Moving_Door_Close_02.wav" id="8_3stc0"]
+[ext_resource type="AudioStream" uid="uid://bta5xqrtjsqcw" path="res://assets/audio/Raw Sound/Moving_Doors_Close/Moving_Door_Close_03.wav" id="9_eay4m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jpl0x"]
 size = Vector2(44, 396)
@@ -68,15 +73,31 @@ position = Vector2(0, 191.25)
 scale = Vector2(18.1485, 2.08873)
 shape = SubResource("RectangleShape2D_3cvve")
 
-[node name="Open" type="FmodEventEmitter2D" parent="." node_paths=PackedStringArray("door_component")]
-event_name = "event:/Doors/Moving_Doors_Open"
-event_guid = "{d6e9f475-7c92-466b-b30b-cf43f5c6fc8c}"
-script = ExtResource("4_woniu")
+[node name="Open Door SFX" type="Node" parent="." node_paths=PackedStringArray("door_component", "audio_player")]
+script = ExtResource("4_4xydp")
 door_component = NodePath("../MAIN")
+audio_player = NodePath("SFXRandomizer")
 
-[node name="Close" type="FmodEventEmitter2D" parent="." node_paths=PackedStringArray("door_component")]
-event_name = "event:/Doors/Moving_Doors_Close"
-event_guid = "{76f57fad-b59e-4d30-80db-0de9adae715f}"
-script = ExtResource("4_woniu")
+[node name="SFXRandomizer" type="Node" parent="Open Door SFX" node_paths=PackedStringArray("audio_player")]
+script = ExtResource("5_p28m3")
+audio_player = NodePath("AudioStreamPlayer")
+audio_list = Array[AudioStream]([ExtResource("6_wxmyu")])
+metadata/_custom_type_script = "uid://6k616opq222l"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Open Door SFX/SFXRandomizer"]
+volume_db = -8.0
+
+[node name="Close Door SFX" type="Node" parent="." node_paths=PackedStringArray("door_component", "audio_player")]
+script = ExtResource("4_4xydp")
 door_component = NodePath("../MAIN")
 mode = 1
+audio_player = NodePath("SFXRandomizer")
+
+[node name="SFXRandomizer" type="Node" parent="Close Door SFX" node_paths=PackedStringArray("audio_player")]
+script = ExtResource("5_p28m3")
+audio_player = NodePath("AudioStreamPlayer")
+audio_list = Array[AudioStream]([ExtResource("7_fcyxw"), ExtResource("8_3stc0"), ExtResource("9_eay4m")])
+metadata/_custom_type_script = "uid://6k616opq222l"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Close Door SFX/SFXRandomizer"]
+volume_db = -8.0
