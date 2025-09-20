@@ -342,5 +342,6 @@ audio_list = Array[AudioStream]([ExtResource("39_p0r1q"), ExtResource("20_stoh6"
 metadata/_custom_type_script = "uid://6k616opq222l"
 
 [node name="death" type="AudioStreamPlayer" parent="Audio/DeathSFX"]
+volume_db = -8.0
 
 [editable path="Components/MovementStateMachine"]

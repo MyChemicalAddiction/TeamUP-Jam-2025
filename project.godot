@@ -36,7 +36,7 @@ run/icon="uid://dbtaclms6sjmv"
 
 [autoload]
 
-FmodManager="*res://addons/fmod/FmodManager.gd"
+FmodManager="res://addons/fmod/FmodManager.gd"
 SceneManager="*res://scripts/singletons/SceneManager.gd"
 SaveLoad="*res://scripts/singletons/SaveLoad.gd"
 CutscenePlayer="*res://scripts/singletons/CutscenePlayer.gd"
@@ -49,10 +49,6 @@ window/size/viewport_height=600
 window/size/mode=1
 window/size/borderless=true
 window/stretch/mode="canvas_items"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/fmod/plugin.cfg")
 
 [global_group]
 

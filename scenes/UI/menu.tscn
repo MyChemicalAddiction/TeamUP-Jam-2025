@@ -27,10 +27,6 @@ size_flags_horizontal = 4
 script = ExtResource("1_2un8v")
 current_section = NodePath("Sections/Main Menu UI")
 
-[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://assets/fmod_build/Desktop//Master.strings.bank", "res://assets/fmod_build/Desktop//Master.bank", "res://assets/fmod_build/Desktop//UI.bank", "res://assets/fmod_build/Desktop//Menus.bank", "res://assets/fmod_build/Desktop//DoorsPlatforms.bank", "res://assets/fmod_build/Desktop//Mira.bank", "res://assets/fmod_build/Desktop//ButtonsSwitches.bank", "res://assets/fmod_build/Desktop//Elis.bank", "res://assets/fmod_build/Desktop//Death.bank", "res://assets/fmod_build/Desktop//Haunted_House.bank", "res://assets/fmod_build/Desktop//Projectiles.bank"]
-process_mode = 3
-
 [node name="MainThemeSFX" type="AudioStreamPlayer" parent="." node_paths=PackedStringArray("menu") groups=["main_theme"]]
 stream = ExtResource("3_2ruad")
 script = ExtResource("4_7amk3")

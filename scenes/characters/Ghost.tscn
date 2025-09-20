@@ -238,6 +238,7 @@ audio_list = Array[AudioStream]([ExtResource("18_vqd2g"), ExtResource("22_ivx5d"
 metadata/_custom_type_script = "uid://6k616opq222l"
 
 [node name="EnteredAudio" type="AudioStreamPlayer" parent="Audio/EnteredAudio"]
+volume_db = -8.0
 
 [node name="HiddenListener" type="Node2D" parent="Audio/EnteredAudio/EnteredAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
 position = Vector2(-0.0159988, -0.0319982)
@@ -263,6 +264,7 @@ metadata/_custom_type_script = "uid://6k616opq222l"
 
 [node name="ExitedAudio" type="AudioStreamPlayer" parent="Audio/ExitedAudio"]
 stream = ExtResource("20_q7gey")
+volume_db = -8.0
 
 [node name="HiddenListener" type="Node2D" parent="Audio/ExitedAudio/ExitedAudio" node_paths=PackedStringArray("fmod_event_emitter", "state")]
 position = Vector2(-0.0159988, -0.0319982)
@@ -292,5 +294,6 @@ audio_list = Array[AudioStream]([ExtResource("27_ohg4w"), ExtResource("18_kdffh"
 metadata/_custom_type_script = "uid://6k616opq222l"
 
 [node name="death" type="AudioStreamPlayer" parent="Audio/DeathSFX"]
+volume_db = -8.0
 
 [editable path="Components/MovementStateMachine"]
