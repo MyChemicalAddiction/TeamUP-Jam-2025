@@ -1,11 +1,13 @@
-[gd_scene load_steps=20 format=4 uid="uid://cdfywic5viawj"]
+[gd_scene load_steps=22 format=4 uid="uid://cdfywic5viawj"]
 
 [ext_resource type="PackedScene" uid="uid://d11t84xsc8k7a" path="res://scenes/tilemaps/border tilemap.tscn" id="1_hyu7u"]
 [ext_resource type="PackedScene" uid="uid://d0mn1byomk45u" path="res://scenes/tilemaps/bg tilemap.tscn" id="2_hispy"]
 [ext_resource type="PackedScene" uid="uid://cdall12cf0ipl" path="res://scenes/tilemaps/ground tilemap.tscn" id="3_t5k8b"]
 [ext_resource type="PackedScene" uid="uid://b33oe1nbvhdl1" path="res://scenes/objects/portals/finish_portal.tscn" id="4_lm1xb"]
 [ext_resource type="PackedScene" uid="uid://redl6f4o5wqv" path="res://scenes/objects/candle/torch.tscn" id="5_4ekgt"]
+[ext_resource type="AudioStream" uid="uid://dd8bwlpauni6q" path="res://assets/audio/Raw Sound/AMB_House/House_Base.wav" id="5_7q6ip"]
 [ext_resource type="Script" uid="uid://dbk8fl1n0dor5" path="res://scripts/classes/functionality/PlayersStartMarker.gd" id="6_n4m08"]
+[ext_resource type="AudioStream" uid="uid://dmhxfpdjbdtkv" path="res://assets/audio/Raw Sound/MX_House/House_loop.wav" id="6_yi8na"]
 [ext_resource type="PackedScene" uid="uid://lu4uv3fbhvq2" path="res://scenes/objects/portals/start_portal.tscn" id="7_e47hr"]
 [ext_resource type="PackedScene" uid="uid://boch8qluci7ev" path="res://scenes/functionality/levers & buttons/continuous_button_area.tscn" id="8_n4m08"]
 [ext_resource type="PackedScene" uid="uid://d27ix3phd1jfc" path="res://scenes/objects/hazards/fire.tscn" id="8_t5k8b"]
@@ -124,22 +126,15 @@ tile_map_data = PackedByteArray("AADk////AQABAAEAAADk/wAAAQABAAIAAADk//7/AQABAAA
 [node name="Audio" type="Node2D" parent="."]
 position = Vector2(-391, -225)
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "event:/AmBs/AMB_House"
-event_guid = "{10559af0-a101-45d6-9ab4-bf394489e23d}"
+[node name="Ambience" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("5_7q6ip")
+volume_db = 2.0
 autoplay = true
 
-[node name="FmodEventEmitter2D2" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "snapshot:/Reverb_Home"
-event_guid = "{9b0ed7d8-b7d0-4315-aeb0-6d0e5f616186}"
+[node name="Music" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("6_yi8na")
+volume_db = -8.0
 autoplay = true
-
-[node name="FmodEventEmitter2D3" type="FmodEventEmitter2D" parent="Audio"]
-event_name = "event:/MUSIC/MX_House"
-event_guid = "{1bec39e2-90cd-4b62-9668-e1ae5cee0387}"
-autoplay = true
-allow_fadeout = false
-volume = 0.25
 
 [node name="Special Objects" type="Node2D" parent="."]
 position = Vector2(-391, -225)
