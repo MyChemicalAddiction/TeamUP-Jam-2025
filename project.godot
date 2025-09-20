@@ -40,6 +40,7 @@ FmodManager="*res://addons/fmod/FmodManager.gd"
 SceneManager="*res://scripts/singletons/SceneManager.gd"
 SaveLoad="*res://scripts/singletons/SaveLoad.gd"
 CutscenePlayer="*res://scripts/singletons/CutscenePlayer.gd"
+GlobalSFX="*res://scenes/singletons/GlobalSFX.tscn"
 
 [display]
 

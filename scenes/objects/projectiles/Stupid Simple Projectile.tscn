@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://hibwxjb2khf0"]
+[gd_scene load_steps=29 format=3 uid="uid://hibwxjb2khf0"]
 
 [ext_resource type="Script" uid="uid://cmdr7k4jfy66e" path="res://scripts/classes/projectile/Projectile.gd" id="1_0accw"]
 [ext_resource type="Script" uid="uid://ct5bew00lbo6h" path="res://scripts/classes/projectile/Custom Resource/StraightProjectileRes.gd" id="2_i53c3"]
@@ -7,6 +7,15 @@
 [ext_resource type="Script" uid="uid://bp3r0ffx34h" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Hitbox.gd" id="4_xvfdy"]
 [ext_resource type="Script" uid="uid://dmohabdm78d23" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Custom Resource/HitboxRes.gd" id="5_bp250"]
 [ext_resource type="Script" uid="uid://by0f5pd4kfjdi" path="res://scripts/classes/Hurtbox & Hitbox/Hitbox/Implementations/HitboxHitDeleteBehavior.gd" id="6_poy4d"]
+[ext_resource type="Script" uid="uid://6k616opq222l" path="res://scripts/classes/functionality/audio/integrated-audio/SFXRandomizer/implementations/SFXRandomizer.gd" id="8_awdm4"]
+[ext_resource type="AudioStream" uid="uid://b645bt5qr7ndm" path="res://assets/audio/Raw Sound/Fire_Projectiles/Fire_Projectiles_01.wav" id="9_jilyg"]
+[ext_resource type="AudioStream" uid="uid://bhe8dci5vr6rq" path="res://assets/audio/Raw Sound/Fire_Projectiles/Fire_Projectiles_02.wav" id="10_etjh8"]
+[ext_resource type="AudioStream" uid="uid://ciuq3y73bkosg" path="res://assets/audio/Raw Sound/Fire_Projectiles/Fire_Projectiles_03.wav" id="11_k58qn"]
+[ext_resource type="AudioStream" uid="uid://c80oruqn4kba2" path="res://assets/audio/Raw Sound/Fire_Projectiles/Fire_Projectiles_04.wav" id="12_00oe3"]
+[ext_resource type="AudioStream" uid="uid://qrr8j2rrth0r" path="res://assets/audio/Raw Sound/Fire_Projectiles/Fire_Projectiles_05.wav" id="13_166vy"]
+[ext_resource type="AudioStream" uid="uid://frd42ugfo6pw" path="res://assets/audio/Raw Sound/Fire_Projectiles/Fire_Projectiles_06.wav" id="14_urten"]
+[ext_resource type="AudioStream" uid="uid://dls4p5mtr20i3" path="res://assets/audio/Raw Sound/Fire_Projectiles/Fire_Projectiles_07.wav" id="15_7kcgw"]
+[ext_resource type="AudioStream" uid="uid://di56c77ix3qm8" path="res://assets/audio/Raw Sound/Fire_Projectiles/Fire_Projectiles_08.wav" id="16_fhg0s"]
 
 [sub_resource type="Resource" id="Resource_6e4ye"]
 script = ExtResource("2_i53c3")
@@ -117,7 +126,8 @@ shape = SubResource("RectangleShape2D_tb14o")
 script = ExtResource("6_poy4d")
 metadata/_custom_type_script = "uid://by0f5pd4kfjdi"
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/Projectiles/Fire_Projectiles"
-event_guid = "{40453a1e-a64a-4c8a-8738-cddd22d7c770}"
+[node name="SFXRandomizer" type="Node" parent="."]
+script = ExtResource("8_awdm4")
 autoplay = true
+audio_list = Array[AudioStream]([ExtResource("9_jilyg"), ExtResource("10_etjh8"), ExtResource("11_k58qn"), ExtResource("12_00oe3"), ExtResource("13_166vy"), ExtResource("14_urten"), ExtResource("15_7kcgw"), ExtResource("16_fhg0s")])
+metadata/_custom_type_script = "uid://6k616opq222l"
