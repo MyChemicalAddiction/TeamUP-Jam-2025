@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bf1uei6a8uqil"]
+[gd_scene load_steps=24 format=3 uid="uid://bf1uei6a8uqil"]
 
 [ext_resource type="Script" uid="uid://1ngpyj4uh14m" path="res://scripts/objects/special/amulet.gd" id="1_ulww5"]
 [ext_resource type="PackedScene" uid="uid://dqmvrgjgqo846" path="res://scenes/functionality/complete state machines/AmuletStateMachine.tscn" id="2_nncdm"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://cys4mdwpjj11c" path="res://scripts/functionality/amulet_radius_area.gd" id="8_ns171"]
 [ext_resource type="Script" uid="uid://ry5dgo71msyk" path="res://scripts/classes/components/Implementations/state listeners/Implementations/FMODPlayingStateListener.gd" id="11_ol0n1"]
 [ext_resource type="Script" uid="uid://dblfjhyagcyhw" path="res://scripts/functionality/audio/play_if_bodyentered_audio.gd" id="12_143er"]
+[ext_resource type="Script" uid="uid://6k616opq222l" path="res://scripts/classes/functionality/audio/integrated-audio/SFXRandomizer/implementations/SFXRandomizer.gd" id="13_m4vey"]
+[ext_resource type="Script" uid="uid://4xug42ixg5gv" path="res://scripts/functionality/audio/integrated-audio/land_audio.gd" id="14_bfjiw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_c2c0c"]
 bounce = 0.1
@@ -161,6 +163,18 @@ event_name = "event:/Amulet/Amulet_Land"
 event_guid = "{23ce5b74-f14e-4f3f-817f-c59debd42999}"
 script = ExtResource("12_143er")
 object = NodePath("../..")
+
+[node name="Thrown_Audio" type="Node" parent="Audio"]
+script = ExtResource("13_m4vey")
+metadata/_custom_type_script = "uid://6k616opq222l"
+
+[node name="Retrieved_Audio" type="Node" parent="Audio"]
+script = ExtResource("13_m4vey")
+metadata/_custom_type_script = "uid://6k616opq222l"
+
+[node name="Land_Audio" type="Node" parent="Audio"]
+script = ExtResource("14_bfjiw")
+metadata/_custom_type_script = "uid://6k616opq222l"
 
 [connection signal="body_entered" from="AmuletRadiusArea" to="AmuletRadiusArea" method="_on_body_entered"]
 [connection signal="body_exited" from="AmuletRadiusArea" to="AmuletRadiusArea" method="_on_body_exited"]
