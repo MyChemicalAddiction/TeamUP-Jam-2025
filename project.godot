@@ -28,7 +28,7 @@ DSP/dsp_buffer_count=4
 
 [application]
 
-config/name="New Game Project"
+config/name="Burning Echoes"
 run/main_scene="uid://dajpopjceep4u"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://uy4iquqtuoxb"
@@ -46,7 +46,7 @@ GlobalSFX="*res://scenes/singletons/GlobalSFX.tscn"
 
 window/size/viewport_width=800
 window/size/viewport_height=600
-window/size/mode=1
+window/size/mode=4
 window/size/borderless=true
 window/stretch/mode="canvas_items"
 

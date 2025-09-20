@@ -1,13 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://c7vh0fx3q7g3l"]
+[gd_scene load_steps=2 format=3 uid="uid://c7vh0fx3q7g3l"]
 
 [ext_resource type="PackedScene" uid="uid://bmpxr4howyw3m" path="res://scenes/UI/buttons/section button.tscn" id="2_m4wj0"]
-[ext_resource type="Script" uid="uid://jseqdu4jsmf2" path="res://scripts/functionality/UI/fullscreenbutton.gd" id="2_x2xs3"]
-[ext_resource type="Script" uid="uid://6k616opq222l" path="res://scripts/classes/functionality/audio/integrated-audio/SFXRandomizer/implementations/SFXRandomizer.gd" id="3_4syqw"]
-[ext_resource type="AudioStream" uid="uid://c8lp6ffqsbqxt" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_01.wav" id="4_8wpu3"]
-[ext_resource type="AudioStream" uid="uid://dc2karlxi4gm6" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_02.wav" id="5_0h3tp"]
-[ext_resource type="AudioStream" uid="uid://5sdc4asbby1u" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_03.wav" id="6_x20y7"]
-[ext_resource type="AudioStream" uid="uid://cwwwr38rbv0ry" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_04.wav" id="7_t14uy"]
-[ext_resource type="AudioStream" uid="uid://beyh7njxo0mj" path="res://assets/audio/Raw Sound/UI_Menu/UI_Menu_05.wav" id="8_rgc5x"]
 
 [node name="Settings UI" type="VBoxContainer"]
 anchors_preset = 8
@@ -31,21 +24,6 @@ fit_content = true
 layout_mode = 2
 text = "Controls
 "
-
-[node name="Button" type="Button" parent="." node_paths=PackedStringArray("audio_player")]
-layout_mode = 2
-text = "Toggle Fullscreen"
-script = ExtResource("2_x2xs3")
-audio_player = NodePath("SFXRandomizer")
-
-[node name="SFXRandomizer" type="Node" parent="Button" node_paths=PackedStringArray("audio_player")]
-script = ExtResource("3_4syqw")
-audio_player = NodePath("AudioStreamPlayer")
-audio_list = Array[AudioStream]([ExtResource("4_8wpu3"), ExtResource("5_0h3tp"), ExtResource("6_x20y7"), ExtResource("7_t14uy"), ExtResource("8_rgc5x")])
-metadata/_custom_type_script = "uid://6k616opq222l"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Button/SFXRandomizer"]
-volume_db = -12.0
 
 [node name="SectionButton2" parent="." instance=ExtResource("2_m4wj0")]
 layout_mode = 2
