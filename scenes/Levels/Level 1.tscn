@@ -351,7 +351,7 @@ metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
 
 [node name="PlayersStartMarker" type="Marker2D" parent="."]
-position = Vector2(-1361, -421)
+position = Vector2(-1362, -443)
 script = ExtResource("6_n4m08")
 metadata/_custom_type_script = "uid://dbk8fl1n0dor5"
 metadata/_edit_group_ = true

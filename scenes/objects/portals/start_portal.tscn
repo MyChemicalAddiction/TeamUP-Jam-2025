@@ -1,7 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://lu4uv3fbhvq2"]
+[gd_scene load_steps=15 format=3 uid="uid://lu4uv3fbhvq2"]
 
 [ext_resource type="Material" uid="uid://bvdokttsx3yjq" path="res://resources/cursed shader.tres" id="1_71y32"]
-[ext_resource type="Script" uid="uid://cphbjtvf2d5my" path="res://scripts/functionality/audio/oneshot_event.gd" id="2_dnc64"]
+[ext_resource type="Script" uid="uid://6k616opq222l" path="res://scripts/classes/functionality/audio/integrated-audio/SFXRandomizer/implementations/SFXRandomizer.gd" id="2_dnc64"]
+[ext_resource type="AudioStream" uid="uid://bku0p7201j020" path="res://assets/audio/Raw Sound/Portal/Portal_01.wav" id="3_63s7c"]
+[ext_resource type="AudioStream" uid="uid://cplqqfsj0nipc" path="res://assets/audio/Raw Sound/Portal/Portal_02.wav" id="4_thdbv"]
+[ext_resource type="AudioStream" uid="uid://dj2xvja3084kd" path="res://assets/audio/Raw Sound/Portal/Portal_03.wav" id="5_53w4q"]
+[ext_resource type="AudioStream" uid="uid://dkey3f70g67sm" path="res://assets/audio/Raw Sound/Portal/Portal_04.wav" id="6_lp7jl"]
+[ext_resource type="AudioStream" uid="uid://cwuvj2cwmsj3j" path="res://assets/audio/Raw Sound/Portal/Portal_05.wav" id="7_vmerk"]
+[ext_resource type="AudioStream" uid="uid://d2dm5s34qdmq0" path="res://assets/audio/Raw Sound/Portal/Portal_06.wav" id="8_txa50"]
+[ext_resource type="AudioStream" uid="uid://o2rm6u8j030e" path="res://assets/audio/Raw Sound/Portal/Portal_07.wav" id="9_rgoxw"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ipy04"]
 load_path = "res://.godot/imported/portals.png-7f86c3314c55c70c6689a711d59178ab.ctex"
@@ -61,8 +68,11 @@ libraries = {
 }
 autoplay = "spin"
 
-[node name="FmodEventEmitter2D3" type="FmodEventEmitter2D" parent="."]
-event_name = "event:/Portal"
-event_guid = "{48e58be8-5c7e-4de8-bc46-4cd2552aefe6}"
-autoplay = true
+[node name="SFXRandomizer" type="Node" parent="." node_paths=PackedStringArray("audio_player")]
 script = ExtResource("2_dnc64")
+autoplay = true
+audio_player = NodePath("AudioStreamPlayer")
+audio_list = Array[AudioStream]([ExtResource("3_63s7c"), ExtResource("4_thdbv"), ExtResource("5_53w4q"), ExtResource("6_lp7jl"), ExtResource("7_vmerk"), ExtResource("8_txa50"), ExtResource("9_rgoxw")])
+metadata/_custom_type_script = "uid://6k616opq222l"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFXRandomizer"]

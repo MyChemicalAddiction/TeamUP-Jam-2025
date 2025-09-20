@@ -1,10 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://b33oe1nbvhdl1"]
+[gd_scene load_steps=19 format=3 uid="uid://b33oe1nbvhdl1"]
 
 [ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/Areas/interaction/interaction area/InteractionArea.gd" id="1_png8r"]
 [ext_resource type="Script" uid="uid://c46as10t6gpl0" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/FinishDoorComponent.gd" id="2_n83yo"]
 [ext_resource type="Material" uid="uid://oqlbjqny1lt6" path="res://resources/unshaded.tres" id="3_abi0l"]
 [ext_resource type="Texture2D" uid="uid://7r8m5oinwj67" path="res://assets/visual/objects/portals.png" id="3_g6w8r"]
-[ext_resource type="Script" uid="uid://ckytwjtwapw2r" path="res://scripts/classes/functionality/audio/FmodEmitterComponent.gd" id="5_g6w8r"]
+[ext_resource type="Script" uid="uid://cd6ku1sqpy8jf" path="res://scripts/classes/functionality/audio/integrated-audio/AudioPlayingComponent/AudioPlayingComponent.gd" id="6_rp1hf"]
+[ext_resource type="Script" uid="uid://6k616opq222l" path="res://scripts/classes/functionality/audio/integrated-audio/SFXRandomizer/implementations/SFXRandomizer.gd" id="7_qdeug"]
+[ext_resource type="AudioStream" uid="uid://bku0p7201j020" path="res://assets/audio/Raw Sound/Portal/Portal_01.wav" id="8_lex32"]
+[ext_resource type="AudioStream" uid="uid://cplqqfsj0nipc" path="res://assets/audio/Raw Sound/Portal/Portal_02.wav" id="9_x062l"]
+[ext_resource type="AudioStream" uid="uid://dj2xvja3084kd" path="res://assets/audio/Raw Sound/Portal/Portal_03.wav" id="10_yf0qr"]
+[ext_resource type="AudioStream" uid="uid://dkey3f70g67sm" path="res://assets/audio/Raw Sound/Portal/Portal_04.wav" id="11_0agax"]
+[ext_resource type="AudioStream" uid="uid://cwuvj2cwmsj3j" path="res://assets/audio/Raw Sound/Portal/Portal_05.wav" id="12_x1k5p"]
+[ext_resource type="AudioStream" uid="uid://d2dm5s34qdmq0" path="res://assets/audio/Raw Sound/Portal/Portal_06.wav" id="13_ptiyh"]
+[ext_resource type="AudioStream" uid="uid://o2rm6u8j030e" path="res://assets/audio/Raw Sound/Portal/Portal_07.wav" id="14_fpp7q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_joic0"]
 atlas = ExtResource("3_g6w8r")
@@ -79,11 +87,18 @@ libraries = {
 }
 autoplay = "spin"
 
-[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." node_paths=PackedStringArray("component")]
-event_name = "event:/Portal"
-event_guid = "{48e58be8-5c7e-4de8-bc46-4cd2552aefe6}"
+[node name="AudioPlayingComponent" type="Node" parent="." node_paths=PackedStringArray("audio_player", "component")]
 process_mode = 3
-script = ExtResource("5_g6w8r")
+script = ExtResource("6_rp1hf")
+audio_player = NodePath("SFXRandomizer")
 component = NodePath("../MAIN")
 on_use = true
-metadata/_custom_type_script = "uid://ckytwjtwapw2r"
+metadata/_custom_type_script = "uid://cd6ku1sqpy8jf"
+
+[node name="SFXRandomizer" type="Node" parent="AudioPlayingComponent" node_paths=PackedStringArray("audio_player")]
+script = ExtResource("7_qdeug")
+audio_player = NodePath("AudioStreamPlayer")
+audio_list = Array[AudioStream]([ExtResource("8_lex32"), ExtResource("9_x062l"), ExtResource("10_yf0qr"), ExtResource("11_0agax"), ExtResource("12_x1k5p"), ExtResource("13_ptiyh"), ExtResource("14_fpp7q")])
+metadata/_custom_type_script = "uid://6k616opq222l"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayingComponent/SFXRandomizer"]
