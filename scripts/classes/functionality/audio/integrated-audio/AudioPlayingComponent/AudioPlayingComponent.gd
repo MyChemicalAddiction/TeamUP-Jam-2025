@@ -12,6 +12,7 @@ audio via a delegated AudioStreamPlayer node.
 @export var on_enable := false
 @export var on_disable := false
 @export var on_use := false
+@export var on_activate := false
 
 @export var stop_on_enable := false
 @export var stop_on_disable := false
@@ -24,7 +25,9 @@ func _ready():
 		component.on_disabled.connect(play)
 	if on_use:
 		component.used.connect(play)
-		
+	if on_activate:
+		component.activated_changed.connect(play)
+
 	if stop_on_enable:
 		component.on_enabled.connect(stop)
 	if stop_on_disable:

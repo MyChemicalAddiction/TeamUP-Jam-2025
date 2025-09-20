@@ -1,11 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://ct57rtx3amdrv"]
+[gd_scene load_steps=20 format=3 uid="uid://ct57rtx3amdrv"]
 
 [ext_resource type="Script" uid="uid://bt5qx0ha05v8h" path="res://scripts/classes/components/Implementations/animation/AnimationComponent.gd" id="1_8c6wm"]
 [ext_resource type="Script" uid="uid://dlpckao766xkb" path="res://scripts/classes/Areas/interaction/interaction area/InteractionArea.gd" id="1_w68oh"]
 [ext_resource type="Script" uid="uid://dav8v2ao4vgij" path="res://scripts/classes/components/Implementations/Functional Components/Implementations/SwitchComponent.gd" id="3_717qw"]
 [ext_resource type="Texture2D" uid="uid://degjw2evsm4aa" path="res://assets/visual/objects/wall_lever.png" id="5_8kkmv"]
 [ext_resource type="PackedScene" uid="uid://da03mkmgnylvx" path="res://scenes/functionality/arrows/component_arrow.tscn" id="6_8kkmv"]
-[ext_resource type="Script" uid="uid://kbboeb0q588r" path="res://scripts/functionality/audio/AudioPlayerComponent.gd" id="7_36pdt"]
+[ext_resource type="Script" uid="uid://cd6ku1sqpy8jf" path="res://scripts/classes/functionality/audio/integrated-audio/AudioPlayingComponent/AudioPlayingComponent.gd" id="6_aac7p"]
+[ext_resource type="Script" uid="uid://6k616opq222l" path="res://scripts/classes/functionality/audio/integrated-audio/SFXRandomizer/implementations/SFXRandomizer.gd" id="7_rch81"]
+[ext_resource type="AudioStream" uid="uid://boua68ns7csyi" path="res://assets/audio/Raw Sound/Switches/Switch_01.wav" id="8_ajh6w"]
+[ext_resource type="AudioStream" uid="uid://bu0xjn0du4r0" path="res://assets/audio/Raw Sound/Switches/Switch_02.wav" id="9_raky2"]
+[ext_resource type="AudioStream" uid="uid://bsx8f40bsyjgj" path="res://assets/audio/Raw Sound/Switches/Switch_03.wav" id="10_if7po"]
+[ext_resource type="AudioStream" uid="uid://gw8ags1wrqag" path="res://assets/audio/Raw Sound/Switches/Switch_04.wav" id="11_fkf1n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8kkmv"]
 size = Vector2(12.7097, 17.683)
@@ -133,10 +138,18 @@ libraries = {
 [node name="Component Arrow" parent="." node_paths=PackedStringArray("component") instance=ExtResource("6_8kkmv")]
 component = NodePath("../MAIN")
 
-[node name="AudioPlayerComponent" type="FmodEventEmitter2D" parent="." node_paths=PackedStringArray("component")]
-event_name = "event:/Buttons_Switches/Switches"
-event_guid = "{3af56f81-f0a9-45e7-b9a3-3a5fa43c7305}"
-script = ExtResource("7_36pdt")
+[node name="AudioPlayingComponent" type="Node" parent="." node_paths=PackedStringArray("audio_player", "component")]
+script = ExtResource("6_aac7p")
+audio_player = NodePath("SFXRandomizer")
 component = NodePath("../MAIN")
-mode = 3
-metadata/_custom_type_script = "uid://kbboeb0q588r"
+on_activate = true
+metadata/_custom_type_script = "uid://cd6ku1sqpy8jf"
+
+[node name="SFXRandomizer" type="Node" parent="AudioPlayingComponent" node_paths=PackedStringArray("audio_player")]
+script = ExtResource("7_rch81")
+audio_player = NodePath("AudioStreamPlayer")
+audio_list = Array[AudioStream]([ExtResource("8_ajh6w"), ExtResource("9_raky2"), ExtResource("10_if7po"), ExtResource("11_fkf1n")])
+metadata/_custom_type_script = "uid://6k616opq222l"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AudioPlayingComponent/SFXRandomizer"]
+volume_db = -12.0
